@@ -2,22 +2,23 @@
 /* ******************************************* */
 
 .reveal-footer {
+  display: block;
   position: absolute;
-  bottom: 1em;
-  left: 1em;
-  /* right: 1em; */
-  font-size: 0.5em;
+  font-size: 0.7em;
+  visibility: visible;
   color: var(--r-half-color);
-  display: flex;
-  justify-content: center;
-  gap: 0.5em;
-  z-index: 100;
+
+  left: 8px;
+  bottom: 8px;
+  z-index: 31;
+  line-height: 1;
+  padding: 5px;
 }
 
 .reveal .slide-number {
-  font-family: var(--r-main-font);
+  font-family: "Computer Modern Serif", serif;
   font-weight: bold;
-  font-size: 0.5em;
+  font-size: 0.7em;
   color: var(--r-main-color);
   background-color: var(--r-bg-color);
 }
@@ -153,7 +154,7 @@ button:hover {
   /* display: flex; */
   /* justify-content: left; */
   text-align: center;
-  font-size: 0.5em;
+  font-size: 0.7em;
   z-index: 1000;
 }
 
