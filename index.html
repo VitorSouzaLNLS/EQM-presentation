@@ -1,41 +1,34 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
-    />
 
-    <title>Exame de Qualificação de Mestrado - Vitor Davi de Souza</title>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
-    <script>
-      window.MathJax = {
-        tex: {
-          inlineMath: [
-            ["$", "$"],
-            ["\\(", "\\)"],
-          ],
-        },
-        svg: { fontCache: "global" },
-      };
-    </script>
-    <script
-      id="MathJax-script"
-      async
-      src="dist/mathjax-dist/tex-svg-full.js"
-      defer
-    ></script>
+  <title>Exame de Qualificação de Mestrado - Vitor Davi de Souza</title>
 
-    <link rel="stylesheet" href="dist/reveal-dist/reset.css" />
-    <link rel="stylesheet" href="dist/reveal-dist/reveal.css" />
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [
+          ["$", "$"],
+          ["\\(", "\\)"],
+        ],
+      },
+      svg: { fontCache: "global" },
+    };
+  </script>
+  <script id="MathJax-script" async src="dist/mathjax-dist/tex-svg-full.js" defer></script>
 
-    <link rel="stylesheet" href="fonts/cm-fontfaces.css" />
-    <link rel="stylesheet" href="styles/rootstyle.css" id="rootstyle" />
-    <link rel="stylesheet" href="styles/mystyle.css" id="mystyle" />
-    <link rel="stylesheet" href="styles/white.css" id="theme" />
+  <link rel="stylesheet" href="dist/reveal-dist/reset.css" />
+  <link rel="stylesheet" href="dist/reveal-dist/reveal.css" />
 
-    <script type="importmap">
+  <link rel="stylesheet" href="fonts/cm-fontfaces.css" />
+  <link rel="stylesheet" href="styles/rootstyle.css" id="rootstyle" />
+  <link rel="stylesheet" href="styles/mystyle.css" id="mystyle" />
+  <link rel="stylesheet" href="styles/white.css" id="theme" />
+
+  <script type="importmap">
       {
         "imports": {
           "three": "./dist/three-dist/build/three.module.min.js",
@@ -43,1001 +36,971 @@
         }
       }
     </script>
-  </head>
+</head>
 
-  <body data-theme="light">
-    <div id="clickbox">
-      <topmenu id="URMenu">☰</topmenu>
-      <header id="menuOptions">
-        <button id="toggleTheme">🌙</button>
-        <button id="resetAll">🔄</button>
-      </header>
-    </div>
+<body data-theme="light">
+  <div id="clickbox">
+    <topmenu id="URMenu">☰</topmenu>
+    <header id="menuOptions">
+      <button id="toggleTheme">🌙</button>
+      <button id="resetAll">🔄</button>
+    </header>
+  </div>
 
-    <div class="reveal">
-      <div class="slides">
-        <!-- Slide de Título -->
-        <section>
-          <h1 id="title">
-            Alternative Beam-Based Alignment techniques for SIRIUS
-          </h1>
-          <h3 style="font-weight: normal; margin-top: 1em">
-            Qualification Exam
-          </h3>
-          <h4 style="margin-top: 2em">Vitor Davi de Souza</h4>
-          <p style="margin-top: 2em"><em>Supervisor</em>: Prof. Dr. Liu Lin</p>
-          <p style="font-size: 0.8em; margin-top: 2em">
-            <em>April X, 2026</em>
-          </p>
-        </section>
+  <div class="reveal">
+    <div class="slides">
+      <!-- Slide de Título -->
+      <section>
+        <h1 id="title">
+          Alternative Beam-Based Alignment techniques for SIRIUS
+        </h1>
+        <h3 style="font-weight: normal; margin-top: 1em">
+          Qualification Exam
+        </h3>
+        <h4 style="margin-top: 2em">Vitor Davi de Souza</h4>
+        <p style="margin-top: 2em"><em>Supervisor</em>: Prof. Dr. Liu Lin</p>
+        <p style="font-size: 0.8em; margin-top: 2em">
+          <em>April X, 2026</em>
+        </p>
+      </section>
 
-        <!-- Sumário -->
-        <section>
-          <h2>Contents</h2>
-          <ul id="contentsList"></ul>
-        </section>
+      <!-- Sumário -->
+      <section>
+        <h2>Contents</h2>
+        <ul id="contentsList"></ul>
+      </section>
 
-        <!-- Introdução - Seção Divisória -->
+      <!-- Introdução - Seção Divisória -->
 
-        <section>
-          <h1>Introduction</h1>
-        </section>
+      <section>
+        <h1>Introduction</h1>
+      </section>
 
-        <!-- SIRIUS -->
-        <section>
-          <h2>SIRIUS</h2>
-          <div class="two-columns">
-            <div class="column">
-              <p style="text-align: left">
-                SIRIUS is the Brazilian 4th-generation synchrotron light source,
-                operated by the Brazilian Synchrotron Light Laboratory (LNLS) at
-                the Brazilian Center for Research in Energy and Materials
-                (CNPEM) in Campinas, São Paulo.
-              </p>
+      <!-- SIRIUS -->
+      <section>
+        <h2>SIRIUS</h2>
+        <div class="two-columns">
+          <div class="column">
+            <p style="text-align: left">
+              SIRIUS is the Brazilian 4th-generation synchrotron light source,
+              operated by the Brazilian Synchrotron Light Laboratory (LNLS) at
+              the Brazilian Center for Research in Energy and Materials
+              (CNPEM) in Campinas, São Paulo.
+            </p>
 
-              <table
-                class="latex-table"
-                style="margin-top: 1em; font-size: 0.7em"
-              >
-                <tr class="top-and-bottom-rule">
-                  <th colspan="3" style="text-align: center">
-                    SIRIUS Storage Ring Parameters
-                  </th>
-                </tr>
-                <tr class="no-rule">
-                  <td>Energy</td>
-                  <td colspan="2" style="text-align: center">3 GeV</td>
-                </tr>
-                <tr class="no-rule">
-                  <td>Emittance (hor.)</td>
-                  <td colspan="2" style="text-align: center">250 pm.rad</td>
-                </tr>
-                <tr class="bottom-rule">
-                  <td>Operation mode</td>
-                  <td colspan="2" style="text-align: center">Top-up</td>
-                </tr>
-                <tr class="mid-rule">
-                  <td style="text-align: left">Parameter</td>
-                  <td style="text-align: center">Currently</td>
-                  <td style="text-align: center">Phase II</td>
-                </tr>
-                <tr class="no-rule">
-                  <td>Beam current</td>
-                  <td style="text-align: center">200 mA</td>
-                  <td style="text-align: center">350 mA</td>
-                </tr>
-                <tr class="no-rule">
-                  <td>Lifetime</td>
-                  <td style="text-align: center">≈ 17 h</td>
-                  <td style="text-align: center">≈ 10 h</td>
-                </tr>
-                <tr class="bottom-rule">
-                  <td>Number of beamlines</td>
-                  <td style="text-align: center">A</td>
-                  <td style="text-align: center">B</td>
-                </tr>
-              </table>
-            </div>
-
-            <div class="column">
-              <img
-                src="images/sirius-picture.png"
-                alt="SIRIUS"
-                style="width: 100%; margin-top: 1em"
-              />
-              <p style="font-size: 0.5em; text-align: center; margin-top: -0.5em">
-                Aerial view of the SIRIUS facility at CNPEM.[2]
-              </p>
-            </div>
+            <table class="latex-table" style="margin-top: 1em; font-size: 0.7em">
+              <tr class="top-and-bottom-rule">
+                <th colspan="3" style="text-align: center">
+                  SIRIUS Storage Ring Parameters
+                </th>
+              </tr>
+              <tr class="no-rule">
+                <td>Energy</td>
+                <td colspan="2" style="text-align: center">3 GeV</td>
+              </tr>
+              <tr class="no-rule">
+                <td>Emittance (hor.)</td>
+                <td colspan="2" style="text-align: center">250 pm.rad</td>
+              </tr>
+              <tr class="bottom-rule">
+                <td>Operation mode</td>
+                <td colspan="2" style="text-align: center">Top-up</td>
+              </tr>
+              <tr class="mid-rule">
+                <td style="text-align: left">Parameter</td>
+                <td style="text-align: center">Currently</td>
+                <td style="text-align: center">Phase II</td>
+              </tr>
+              <tr class="no-rule">
+                <td>Beam current</td>
+                <td style="text-align: center">200 mA</td>
+                <td style="text-align: center">350 mA</td>
+              </tr>
+              <tr class="no-rule">
+                <td>Lifetime</td>
+                <td style="text-align: center">≈ 17 h</td>
+                <td style="text-align: center">≈ 10 h</td>
+              </tr>
+              <tr class="bottom-rule">
+                <td>Number of beamlines</td>
+                <td style="text-align: center">A</td>
+                <td style="text-align: center">B</td>
+              </tr>
+            </table>
           </div>
-        </section>
 
-        <section>
-          <h2>The Problem</h2>
-          <div class="two-columns">
-            <div class="column">
-              <p style="text-align: left">
-                The Storage Ring orbit must be controlled with micrometer-level
-                stability to preserve the ultra-low emittance and deliver
-                high-quality synchrotron light to the beamlines.[1][2]
-              </p>
-              <p style="text-align: left">
-                Beam Position Monitors (BPMs) provide sub-micrometer resolution
-                for relative position changes, but their absolute accuracy is
-                only at the level of hundreds of micrometers, which is
-                insufficient for 4th-generation tolerances.[1]
-              </p>
-              <p style="text-align: left">
-                The standard Beam-Based Alignment (BBA) procedure used at SIRIUS
-                is accurate but sequential and slow, taking about 6-8 hours to
-                calibrate all 160 BPMs in the Storage Ring.[1]
-              </p>
-            </div>
-            <div class="column">
-              <ul>
-                <li>
-                  High number of BPM-quadrupole pairs to calibrate
-                  (~160&nbsp;BPMs).[1]
-                </li>
-                <li>
-                  Long machine time required for traditional BBA (operational
-                  bottleneck).[1]
-                </li>
-                <li>
-                  Need to maintain or improve measurement accuracy while
-                  reducing execution time and human intervention.[1]
-                </li>
-              </ul>
-            </div>
+          <div class="column">
+            <img src="images/sirius-picture.png" alt="SIRIUS" style="width: 100%; margin-top: 1em" />
+            <p style="font-size: 0.5em; text-align: center; margin-top: -0.5em">
+              Aerial view of the SIRIUS facility at CNPEM.[2]
+            </p>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section>
-          <h2>Objectives</h2>
-          <div class="two-columns">
-            <div class="column">
-              <h3>Main Goal</h3>
-              <p style="text-align: left">
-                To study, validate and implement alternative Beam-Based
-                Alignment techniques for BPM calibration in the SIRIUS Storage
-                Ring, reducing calibration time while preserving accuracy and
-                precision.[1]
-              </p>
-            </div>
-            <div class="column">
-              <h3>Specific Objectives</h3>
-              <ul>
-                <li>
-                  Study the traditional BBA procedure and its implementation at
-                  SIRIUS.[1]
-                </li>
-                <li>
-                  Review and understand alternative BBA methods proposed in the
-                  literature (parallel and AC-based techniques).[1]
-                </li>
-                <li>
-                  Simulate selected alternative BBA schemes using SIRIUS models
-                  (pyaccel, pymodels, apsuite).[1]
-                </li>
-                <li>
-                  Implement, test and experimentally validate at least one
-                  alternative BBA method at SIRIUS.[1]
-                </li>
-              </ul>
-            </div>
+      <section>
+        <h2>The Problem</h2>
+        <div class="two-columns">
+          <div class="column">
+            <p style="text-align: left">
+              The Storage Ring orbit must be controlled with micrometer-level
+              stability to preserve the ultra-low emittance and deliver
+              high-quality synchrotron light to the beamlines.[1][2]
+            </p>
+            <p style="text-align: left">
+              Beam Position Monitors (BPMs) provide sub-micrometer resolution
+              for relative position changes, but their absolute accuracy is
+              only at the level of hundreds of micrometers, which is
+              insufficient for 4th-generation tolerances.[1]
+            </p>
+            <p style="text-align: left">
+              The standard Beam-Based Alignment (BBA) procedure used at SIRIUS
+              is accurate but sequential and slow, taking about 6-8 hours to
+              calibrate all 160 BPMs in the Storage Ring.[1]
+            </p>
           </div>
-        </section>
-
-        <section>
-          <h1>Theoretical Background</h1>
-        </section>
-
-        <section>
-          <h2>Synchrotron Main Components</h2>
-          <div class="two-columns">
-            <div class="column">
-              <p style="text-align: left">
-                Synchrotrons are circular accelerators where charged particles
-                are guided and accelerated to high energies using magnetic and
-                radiofrequency (RF) systems.[3][2]
-              </p>
-              <ul>
-                <li>
-                  Injection system: generates and injects the electron beam into
-                  the ring.
-                </li>
-                <li>
-                  Bending magnets: define the design orbit and generate
-                  synchrotron radiation.[3][2]
-                </li>
-                <li>
-                  RF cavities: restore energy losses due to radiation and define
-                  longitudinal dynamics.[2][3]
-                </li>
-              </ul>
-            </div>
-            <div class="column">
-              <ul>
-                <li>
-                  Quadrupoles and higher-order magnets: provide focusing and
-                  control of chromatic and nonlinear effects.[3][2]
-                </li>
-                <li>
-                  Vacuum system: ensures ultra-high vacuum to minimize beam
-                  losses.[2][3]
-                </li>
-                <li>
-                  Diagnostics (BPMs, etc.): monitor orbit, optics and stability,
-                  and are central to BBA procedures.[2][1]
-                </li>
-              </ul>
-            </div>
+          <div class="column">
+            <ul>
+              <li>
+                High number of BPM-quadrupole pairs to calibrate
+                (~160&nbsp;BPMs).[1]
+              </li>
+              <li>
+                Long machine time required for traditional BBA (operational
+                bottleneck).[1]
+              </li>
+              <li>
+                Need to maintain or improve measurement accuracy while
+                reducing execution time and human intervention.[1]
+              </li>
+            </ul>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section>
-          <h3>Bending Magnets</h3>
-          <div class="two-columns">
-            <div class="column">
-              <p style="text-align: left">
-                Dipole (bending) magnets generate a nearly uniform vertical
-                magnetic field that bends the trajectory of electrons in the
-                horizontal plane, defining the closed design orbit.[3][2]
-              </p>
-              <p style="text-align: left">
-                The magnetic rigidity and the dipole field fix the nominal
-                energy of the Storage Ring through the curvature function
-                $G(s)$:
-              </p>
-              <p>$G(s) = \dfrac{1}{\rho(s)} = \dfrac{ec}{E_0} B_0(s)$.</p>
-            </div>
-            <div class="column">
-              <ul>
-                <li>
-                  Dipoles are the main source of horizontal dispersion, since
-                  off-energy particles follow orbits with different
-                  lengths.[3][2]
-                </li>
-                <li>
-                  In a perfectly planar ring, dipoles should not generate
-                  vertical dispersion; misalignments and coupling lead to
-                  residual vertical dispersion.[2]
-                </li>
-              </ul>
-            </div>
+      <section>
+        <h2>Objectives</h2>
+        <div class="two-columns">
+          <div class="column">
+            <h3>Main Goal</h3>
+            <p style="text-align: left">
+              To study, validate and implement alternative Beam-Based
+              Alignment techniques for BPM calibration in the SIRIUS Storage
+              Ring, reducing calibration time while preserving accuracy and
+              precision.[1]
+            </p>
           </div>
-        </section>
+          <div class="column">
+            <h3>Specific Objectives</h3>
+            <ul>
+              <li>
+                Study the traditional BBA procedure and its implementation at
+                SIRIUS.[1]
+              </li>
+              <li>
+                Review and understand alternative BBA methods proposed in the
+                literature (parallel and AC-based techniques).[1]
+              </li>
+              <li>
+                Simulate selected alternative BBA schemes using SIRIUS models
+                (pyaccel, pymodels, apsuite).[1]
+              </li>
+              <li>
+                Implement, test and experimentally validate at least one
+                alternative BBA method at SIRIUS.[1]
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
 
-        <section>
-          <h3>Focusing Magnets</h3>
-          <div class="two-columns">
-            <div class="column">
-              <p style="text-align: left">
-                Quadrupole magnets provide linear focusing in one transverse
-                plane and defocusing in the orthogonal plane, acting as magnetic
-                lenses for the beam.[3][2][1]
-              </p>
-              <p style="text-align: left">
-                Their strength is described by the focusing function $K(s)$,
-                proportional to the transverse gradient of the magnetic field:
-              </p>
-              <p
-                style="
+      <section>
+        <h1>Theoretical Background</h1>
+      </section>
+
+      <section>
+        <h2>Synchrotron Main Components</h2>
+        <!-- <div class="two-columns">
+          <div class="column">
+            <p style="text-align: left">
+              Synchrotrons are circular accelerators where charged particles
+              are guided and accelerated to high energies using magnetic and
+              radiofrequency (RF) systems.[3][2]
+            </p>
+            <ul>
+              <li>
+                Injection system: generates and injects the electron beam into
+                the ring.
+              </li>
+              <li>
+                Bending magnets: define the design orbit and generate
+                synchrotron radiation.[3][2]
+              </li>
+              <li>
+                RF cavities: restore energy losses due to radiation and define
+                longitudinal dynamics.[2][3]
+              </li>
+            </ul>
+          </div>
+          <div class="column">
+            <ul>
+              <li>
+                Quadrupoles and higher-order magnets: provide focusing and
+                control of chromatic and nonlinear effects.[3][2]
+              </li>
+              <li>
+                Vacuum system: ensures ultra-high vacuum to minimize beam
+                losses.[2][3]
+              </li>
+              <li>
+                Diagnostics (BPMs, etc.): monitor orbit, optics and stability,
+                and are central to BBA procedures.[2][1]
+              </li>
+            </ul>
+          </div>
+        </div> -->
+
+      <iframe src="images/asy/sync-scheme.html" width="100%" height="400" frameborder="0"></iframe>
+      </section>
+
+      <section>
+        <h3>Bending Magnets</h3>
+        <div class="two-columns">
+          <div class="column">
+            <p style="text-align: left">
+              Dipole (bending) magnets generate a nearly uniform vertical
+              magnetic field that bends the trajectory of electrons in the
+              horizontal plane, defining the closed design orbit.[3][2]
+            </p>
+            <p style="text-align: left">
+              The magnetic rigidity and the dipole field fix the nominal
+              energy of the Storage Ring through the curvature function
+              $G(s)$:
+            </p>
+            <p>$G(s) = \dfrac{1}{\rho(s)} = \dfrac{ec}{E_0} B_0(s)$.</p>
+          </div>
+          <div class="column">
+            <ul>
+              <li>
+                Dipoles are the main source of horizontal dispersion, since
+                off-energy particles follow orbits with different
+                lengths.[3][2]
+              </li>
+              <li>
+                In a perfectly planar ring, dipoles should not generate
+                vertical dispersion; misalignments and coupling lead to
+                residual vertical dispersion.[2]
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3>Focusing Magnets</h3>
+        <div class="two-columns">
+          <div class="column">
+            <p style="text-align: left">
+              Quadrupole magnets provide linear focusing in one transverse
+              plane and defocusing in the orthogonal plane, acting as magnetic
+              lenses for the beam.[3][2][1]
+            </p>
+            <p style="text-align: left">
+              Their strength is described by the focusing function $K(s)$,
+              proportional to the transverse gradient of the magnetic field:
+            </p>
+            <p style="
                   text-align: left;
                   font-size: 0.9em;
                   margin-top: 0.5em;
                   font-family: &quot;Computer Modern&quot;, serif;
-                "
-              >
-                $K(s) = \frac{ec}{E_0} \left.\frac{\partial B_y}{\partial
-                x}\right|_{x=0} = \frac{ec}{E_0} \left.\frac{\partial
-                B_x}{\partial y}\right|_{y=0}$.[1][2]
-              </p>
-            </div>
-            <div class="column">
-              <ul>
-                <li>
-                  Linear transverse dynamics (no energy deviation) reduce to
-                  Hill’s equations, with solutions described by betatron
-                  functions and phase advance.[2][1]
-                </li>
-                <li>
-                  Quadrupole strength modulation is the core knob used in BBA
-                  techniques, since orbit changes depend on the beam offset
-                  inside the quadrupole.[1]
-                </li>
-              </ul>
-            </div>
+                ">
+              $K(s) = \frac{ec}{E_0} \left.\frac{\partial B_y}{\partial
+              x}\right|_{x=0} = \frac{ec}{E_0} \left.\frac{\partial
+              B_x}{\partial y}\right|_{y=0}$.[1][2]
+            </p>
           </div>
-        </section>
+          <div class="column">
+            <ul>
+              <li>
+                Linear transverse dynamics (no energy deviation) reduce to
+                Hill's equations, with solutions described by betatron
+                functions and phase advance.[2][1]
+              </li>
+              <li>
+                Quadrupole strength modulation is the core knob used in BBA
+                techniques, since orbit changes depend on the beam offset
+                inside the quadrupole.[1]
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
 
-        <section>
-          <h2>Coordinate System</h2>
+      <section>
+        <h2>Coordinate System</h2>
 
-          <div style="display: flex; justify-content: center">
-            <object
-              data="images/siscoord.svg"
-              type="image/svg+xml"
-              width="50%"
-            ></object>
+        <div class="two-columns">
+          <div class="column">
+            <!-- <div style="display: flex; justify-content: center">
+              <object data="images/siscoord.svg" type="image/svg+xml" width="100%"></object>
+            </div> -->
+            <iframe src="images/asy/siscoord.html" width=100% height=400 frameborder="0"></iframe>
           </div>
 
-          <p style="text-align: left; margin-top: 0.8em">
-            Accelerator physics adopts a curvilinear Frenet-Serret frame
-            following the design orbit, and the state of a particle is written
-            as:
-          </p>
-          <p
-            style="
-              text-align: left;
-              font-size: 0.9em;
-              margin-top: 0.3em;
-              font-family: &quot;Computer Modern&quot;, serif;
-            "
-          >
-            $\mathbf{x} = (x, x', y, y', \delta, z)^T$.[3][2][1]
-          </p>
-          <ul>
-            <li>
-              $x, y$: transverse displacements with respect to the design orbit.
-            </li>
-            <li>
-              $x', y'$: conjugate momenta, approximated as transverse angles for
-              ultra-relativistic beams.
-            </li>
-            <li>$\delta$: relative momentum (or energy) deviation.</li>
-            <li>
-              $z$: path length or longitudinal coordinate relative to the
-              synchronous particle.[3][2][1]
-            </li>
-          </ul>
-        </section>
+          <div class="column">
+            <p style="text-align: left; margin-top: 0.8em">
+              Accelerator physics adopts a curvilinear Frenet-Serret frame
+              following the design orbit, and the state of a particle is written
+              as:
+            </p>
+            <p>$\mathbf{x} = (x, x', y, y', \delta, z)^T$.[3][2][1]</p>
+            <ul>
+              <li>
+                $x, y$: transverse displacements with respect to the design orbit.
+              </li>
+              <li>
+                $x', y'$: conjugate momenta, approximated as transverse angles for
+                ultra-relativistic beams.
+              </li>
+              <li>$\delta$: relative momentum (or energy) deviation.</li>
+              <li>
+                $z$: longitudinal path length deviation.
+              </li>
+            </ul>
 
-        <section>
-          <h2>Transverse Dynamics</h2>
-          <div class="two-columns">
-            <div class="column">
-              <p style="text-align: left">
-                In the linear approximation and in the presence of curvature
-                $G(s)$ and focusing $K(s)$, the transverse motion obeys:[2][1]
-              </p>
-              <p
-                style="
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Transverse Dynamics</h2>
+        <div class="two-columns">
+          <div class="column">
+            <p style="text-align: left">
+              In the linear approximation and in the presence of curvature
+              $G(s)$ and focusing $K(s)$, the transverse motion obeys:[2][1]
+            </p>
+            <p style="
                   text-align: left;
                   font-size: 0.9em;
                   margin-top: 0.5em;
                   font-family: &quot;Computer Modern&quot;, serif;
-                "
-              >
-                $x'' = -(K + G^2)\, x + G\, \delta,$<br />
-                $y'' = K\, y.$
-              </p>
-              <p style="text-align: left; margin-top: 0.6em">
-                For on-energy particles ($\delta = 0$), the dynamics reduce to
-                Hill’s equation and the general solution can be written as:
-              </p>
-              <p
-                style="
+                ">
+              $x'' = -(K + G^2)\, x + G\, \delta,$<br />
+              $y'' = K\, y.$
+            </p>
+            <p style="text-align: left; margin-top: 0.6em">
+              For on-energy particles ($\delta = 0$), the dynamics reduce to
+              Hill’s equation and the general solution can be written as:
+            </p>
+            <p style="
                   text-align: left;
                   font-size: 0.9em;
                   margin-top: 0.5em;
                   font-family: &quot;Computer Modern&quot;, serif;
-                "
-              >
-                $u(s) = \dfrac{a}{\sqrt{\beta_u(s)}} \cos(\phi_u(s) - \phi_0),
-                \quad u = x, y.$[2][1]
-              </p>
-            </div>
-            <div class="column">
-              <p style="text-align: left">
-                When energy deviation is included, the particular solution for
-                the horizontal plane introduces the dispersion function
-                $\eta(s)$, via:
-              </p>
-              <p
-                style="
-                  text-align: left;
-                  font-size: 0.9em;
-                  margin-top: 0.5em;
-                  font-family: &quot;Computer Modern&quot;, serif;
-                "
-              >
-                $x_\delta(s) = \eta(s)\, \delta,\quad \eta'' = -(K + G^2) \eta +
-                G.$[3][2][1]
-              </p>
-              <p style="text-align: left; margin-top: 0.6em">
-                Dispersion is a key optical function for understanding orbit
-                distortions due to energy spread, and vertical dispersion
-                control at SIRIUS has been studied and corrected through
-                dedicated methods (QS, CV).[2]
-              </p>
-            </div>
+                ">
+              $u(s) = \dfrac{a}{\sqrt{\beta_u(s)}} \cos(\phi_u(s) - \phi_0),
+              \quad u = x, y.$[2][1]
+            </p>
           </div>
-        </section>
+          <div class="column">
+            <p style="text-align: left">
+              When energy deviation is included, the particular solution for
+              the horizontal plane introduces the dispersion function
+              $\eta(s)$, via:
+            </p>
+            <p style="
+                  text-align: left;
+                  font-size: 0.9em;
+                  margin-top: 0.5em;
+                  font-family: &quot;Computer Modern&quot;, serif;
+                ">
+              $x_\delta(s) = \eta(s)\, \delta,\quad \eta'' = -(K + G^2) \eta +
+              G.$[3][2][1]
+            </p>
+            <p style="text-align: left; margin-top: 0.6em">
+              Dispersion is a key optical function for understanding orbit
+              distortions due to energy spread, and vertical dispersion
+              control at SIRIUS has been studied and corrected through
+              dedicated methods (QS, CV).[2]
+            </p>
+          </div>
+        </div>
+      </section>
 
-        <section>
-          <h2>Maps Formulation</h2>
-          <div class="two-columns">
-            <div class="column">
-              <p style="text-align: left">
-                In tracking codes such as Trackcpp, accelerators are modeled as
-                ordered sequences of elements, each represented by a transfer
-                map acting on the 6D state vector.[3]
-              </p>
-              <p style="text-align: left">
-                A simple drift of length $L_d$ is represented by the map:
-              </p>
-              <p
-                style="
+      <section>
+        <h2>Maps Formulation</h2>
+        <div class="two-columns">
+          <div class="column">
+            <p style="text-align: left">
+              In tracking codes such as Trackcpp, accelerators are modeled as
+              ordered sequences of elements, each represented by a transfer
+              map acting on the 6D state vector.[3]
+            </p>
+            <p style="text-align: left">
+              A simple drift of length $L_d$ is represented by the map:
+            </p>
+            <p style="
                   text-align: left;
                   font-size: 0.85em;
                   margin-top: 0.5em;
                   font-family: &quot;Computer Modern&quot;, serif;
-                "
-              >
-                $x \leftarrow x_0 + x'_0 L_d,\quad x' \leftarrow x'_0,$<br />
-                $y \leftarrow y_0 + y'_0 L_d,\quad y' \leftarrow y'_0,$<br />
-                $\delta \leftarrow \delta_0,\quad z \leftarrow z_0 +
-                \dfrac{L_d}{2}\dfrac{x'^2_0 + y'^2_0}{(1+\delta_0)^2}.$[3]
-              </p>
-            </div>
-            <div class="column">
-              <p style="text-align: left">
-                The one-turn map $M$ is the composition of all element maps
-                along the ring:
-              </p>
-              <p
-                style="
-                  text-align: left;
-                  font-size: 0.9em;
-                  margin-top: 0.5em;
-                  font-family: &quot;Computer Modern&quot;, serif;
-                "
-              >
-                $M = M_N \circ M_{N-1} \circ \dots \circ M_1,\quad
-                \mathbf{x}_{n+1} = M(\mathbf{x}_n).$[3]
-              </p>
-              <p style="text-align: left; margin-top: 0.6em">
-                The closed orbit $\mathbf{x}^*$ is the fixed point of the
-                one-turn map, satisfying $M(\mathbf{x}^*) = \mathbf{x}^*$;
-                numerically, it is obtained using iterative methods such as
-                Newton-Raphson applied to the 6D map.[3]
-              </p>
-            </div>
+                ">
+              $x \leftarrow x_0 + x'_0 L_d,\quad x' \leftarrow x'_0,$<br />
+              $y \leftarrow y_0 + y'_0 L_d,\quad y' \leftarrow y'_0,$<br />
+              $\delta \leftarrow \delta_0,\quad z \leftarrow z_0 +
+              \dfrac{L_d}{2}\dfrac{x'^2_0 + y'^2_0}{(1+\delta_0)^2}.$[3]
+            </p>
           </div>
-        </section>
-
-        <section>
-          <h1>Beam-Based Alignment Techniques</h1>
-        </section>
-
-        <section>
-          <h2>Standard BBA</h2>
-          <div class="two-columns">
-            <div class="column">
-              <p style="text-align: left">
-                In the traditional BBA, the goal is to determine the BPM offset
-                relative to the magnetic center of the nearest quadrupole, using
-                the beam itself as a probe.[1]
-              </p>
-              <p style="text-align: left">
-                For each BPM-quadrupole pair $i$, the beam is steered to a set
-                of transverse positions $(x_i, y_i)$ around the nominal orbit:
-              </p>
-              <p
-                style="
+          <div class="column">
+            <p style="text-align: left">
+              The one-turn map $M$ is the composition of all element maps
+              along the ring:
+            </p>
+            <p style="
                   text-align: left;
                   font-size: 0.9em;
                   margin-top: 0.5em;
                   font-family: &quot;Computer Modern&quot;, serif;
-                "
-              >
-                $x_i = x_{i0} + n\, \Delta x,\quad y_i = y_{i0} + m\, \Delta
-                y,\quad n, m = 0,1,2,\dots$[1]
-              </p>
-            </div>
-            <div class="column">
-              <p style="text-align: left">
-                For each beam position, the quadrupole strength is modulated
-                around its nominal value:
-              </p>
-              <p
-                style="
+                ">
+              $M = M_N \circ M_{N-1} \circ \dots \circ M_1,\quad
+              \mathbf{x}_{n+1} = M(\mathbf{x}_n).$[3]
+            </p>
+            <p style="text-align: left; margin-top: 0.6em">
+              The closed orbit $\mathbf{x}^*$ is the fixed point of the
+              one-turn map, satisfying $M(\mathbf{x}^*) = \mathbf{x}^*$;
+              numerically, it is obtained using iterative methods such as
+              Newton-Raphson applied to the 6D map.[3]
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h1>Beam-Based Alignment Techniques</h1>
+      </section>
+
+      <section>
+        <h2>Standard BBA</h2>
+        <div class="two-columns">
+          <div class="column">
+            <p style="text-align: left">
+              In the traditional BBA, the goal is to determine the BPM offset
+              relative to the magnetic center of the nearest quadrupole, using
+              the beam itself as a probe.[1]
+            </p>
+            <p style="text-align: left">
+              For each BPM-quadrupole pair $i$, the beam is steered to a set
+              of transverse positions $(x_i, y_i)$ around the nominal orbit:
+            </p>
+            <p style="
                   text-align: left;
                   font-size: 0.9em;
                   margin-top: 0.5em;
                   font-family: &quot;Computer Modern&quot;, serif;
-                "
-              >
-                $K = K_0 \pm \Delta K,$[1]
-              </p>
-              <p style="text-align: left; margin-top: 0.6em">
-                and the induced orbit change is measured in all BPMs:
-              </p>
-              <p
-                style="
+                ">
+              $x_i = x_{i0} + n\, \Delta x,\quad y_i = y_{i0} + m\, \Delta
+              y,\quad n, m = 0,1,2,\dots$[1]
+            </p>
+          </div>
+          <div class="column">
+            <p style="text-align: left">
+              For each beam position, the quadrupole strength is modulated
+              around its nominal value:
+            </p>
+            <p style="
+                  text-align: left;
+                  font-size: 0.9em;
+                  margin-top: 0.5em;
+                  font-family: &quot;Computer Modern&quot;, serif;
+                ">
+              $K = K_0 \pm \Delta K,$[1]
+            </p>
+            <p style="text-align: left; margin-top: 0.6em">
+              and the induced orbit change is measured in all BPMs:
+            </p>
+            <p style="
                   text-align: left;
                   font-size: 0.85em;
                   margin-top: 0.5em;
                   font-family: &quot;Computer Modern&quot;, serif;
-                "
-              >
-                $\Delta \text{orb}_x = \text{orb}_x(+\Delta K) -
-                \text{orb}_x(-\Delta K),$<br />
-                $\Delta \text{orb}_y = \text{orb}_y(+\Delta K) -
-                \text{orb}_y(-\Delta K).$[1]
-              </p>
-              <p style="text-align: left; margin-top: 0.6em">
-                The BPM offset is obtained from the beam position where the
-                induced orbit change vanishes, i.e. where the beam passes
-                exactly through the quadrupole magnetic center:[1]
-              </p>
-              <p
-                style="
+                ">
+              $\Delta \text{orb}_x = \text{orb}_x(+\Delta K) -
+              \text{orb}_x(-\Delta K),$<br />
+              $\Delta \text{orb}_y = \text{orb}_y(+\Delta K) -
+              \text{orb}_y(-\Delta K).$[1]
+            </p>
+            <p style="text-align: left; margin-top: 0.6em">
+              The BPM offset is obtained from the beam position where the
+              induced orbit change vanishes, i.e. where the beam passes
+              exactly through the quadrupole magnetic center:[1]
+            </p>
+            <p style="
                   text-align: left;
                   font-size: 0.85em;
                   margin-top: 0.5em;
                   font-family: &quot;Computer Modern&quot;, serif;
-                "
-              >
-                $x_{i,\text{offset}} = x_i\ \big|\ \Delta\text{orb}_x = 0,\quad
-                y_{i,\text{offset}} = y_i\ \big|\ \Delta\text{orb}_y = 0.$[1]
-              </p>
-            </div>
+                ">
+              $x_{i,\text{offset}} = x_i\ \big|\ \Delta\text{orb}_x = 0,\quad
+              y_{i,\text{offset}} = y_i\ \big|\ \Delta\text{orb}_y = 0.$[1]
+            </p>
           </div>
-          <p style="text-align: left; margin-top: 0.8em">
-            Although very accurate and conceptually simple, this serial
-            procedure must be repeated for all BPM-quadrupole pairs and multiple
-            beam positions, resulting in long calibration times at SIRIUS.[1]
-          </p>
-        </section>
+        </div>
+        <p style="text-align: left; margin-top: 0.8em">
+          Although very accurate and conceptually simple, this serial
+          procedure must be repeated for all BPM-quadrupole pairs and multiple
+          beam positions, resulting in long calibration times at SIRIUS.[1]
+        </p>
+      </section>
 
-        <section>
-          <h2>Parallel BBA</h2>
-          <div class="two-columns">
-            <div class="column">
-              <p style="text-align: left">
-                Parallel BBA techniques aim at measuring the alignment of
-                multiple quadrupoles simultaneously by correcting or analyzing
-                the orbit response to combined quadrupole strength
-                variations.[1]
-              </p>
-              <p style="text-align: left">
-                An example is the “Simultaneous beam-based alignment measurement
-                for multiple magnets by correcting induced orbit shift”, where
-                orbit distortions induced by quadrupole modulation are corrected
-                using steering magnets, and the required corrector strengths
-                encode the quadrupole-BPM offsets.[1]
-              </p>
-            </div>
-            <div class="column">
-              <ul>
-                <li>
-                  Exploits global orbit response instead of scanning one
-                  quadrupole at a time.[1]
-                </li>
-                <li>
-                  Potentially reduces total measurement time and allows for more
-                  automated procedures.[1]
-                </li>
-                <li>
-                  Requires careful modeling of optics and corrector/BPM systems,
-                  and robust data analysis (e.g., SVD-based inversion).[2][1]
-                </li>
-              </ul>
-            </div>
+      <section>
+        <h2>Parallel BBA</h2>
+        <div class="two-columns">
+          <div class="column">
+            <p style="text-align: left">
+              Parallel BBA techniques aim at measuring the alignment of
+              multiple quadrupoles simultaneously by correcting or analyzing
+              the orbit response to combined quadrupole strength
+              variations.[1]
+            </p>
+            <p style="text-align: left">
+              An example is the “Simultaneous beam-based alignment measurement
+              for multiple magnets by correcting induced orbit shift”, where
+              orbit distortions induced by quadrupole modulation are corrected
+              using steering magnets, and the required corrector strengths
+              encode the quadrupole-BPM offsets.[1]
+            </p>
           </div>
-        </section>
-
-        <section>
-          <h2>Fast AC BBA</h2>
-          <div class="two-columns">
-            <div class="column">
-              <p style="text-align: left">
-                Fast AC BBA techniques use time-varying (usually sinusoidal)
-                excitation of quadrupole strengths and synchronous detection of
-                the beam response at BPMs to extract offsets.[1]
-              </p>
-              <p style="text-align: left">
-                Instead of stepping $K$ to $K_0 \pm \Delta K$ quasi-statically,
-                a small AC modulation is applied around the nominal strength,
-                and the resulting orbit oscillation at the modulation frequency
-                is measured.[1]
-              </p>
-            </div>
-            <div class="column">
-              <ul>
-                <li>
-                  Frequency-domain analysis improves signal-to-noise ratio and
-                  allows faster data acquisition.[1]
-                </li>
-                <li>
-                  AC methods can be combined with parallel schemes to obtain
-                  multi-magnet BBA with reduced machine time.[1]
-                </li>
-                <li>
-                  Implementation at SIRIUS must consider hardware limits,
-                  available modulation channels and impact on stored beam
-                  stability.[2][1]
-                </li>
-              </ul>
-            </div>
+          <div class="column">
+            <ul>
+              <li>
+                Exploits global orbit response instead of scanning one
+                quadrupole at a time.[1]
+              </li>
+              <li>
+                Potentially reduces total measurement time and allows for more
+                automated procedures.[1]
+              </li>
+              <li>
+                Requires careful modeling of optics and corrector/BPM systems,
+                and robust data analysis (e.g., SVD-based inversion).[2][1]
+              </li>
+            </ul>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section>
-          <h1>Research Plan</h1>
-        </section>
-
-        <section>
-          <h2>The Project's Schedule</h2>
-          <div class="two-columns">
-            <div class="column">
-              <h3>Past and Ongoing (2025)</h3>
-              <ul>
-                <li>
-                  Mar-Jul/2025: Literature review on traditional and alternative
-                  BBA methods.[1]
-                </li>
-                <li>
-                  Apr-Aug/2025: Discussions with the LNLS Accelerator Physics
-                  Group (FAC) on candidate BBA techniques and feasibility at
-                  SIRIUS.[1]
-                </li>
-                <li>
-                  Aug-Sep/2025: Selection of the first method to be studied in
-                  depth (Parallel BBA) and start of simulations and initial
-                  implementation.[1]
-                </li>
-                <li>
-                  Oct/2025: First machine test of the Parallel BBA procedure at
-                  SIRIUS (experiment on 13/10/2025).[1]
-                </li>
-              </ul>
-            </div>
-            <div class="column">
-              <h3>Future (2025-2026)</h3>
-              <ul>
-                <li>
-                  Oct-Dec/2025: Analysis of first experiment data, debugging and
-                  optimization of PBBA scripts for SIRIUS.[1]
-                </li>
-                <li>
-                  Jan-Mar/2026: Additional PBBA experiments after machine
-                  shutdown, evaluation of the need for implementing further BBA
-                  methods.[1]
-                </li>
-                <li>
-                  Mar-Jun/2026: Additional PBBA runs (when available) and
-                  possible in-depth study of a second alternative BBA
-                  technique.[1]
-                </li>
-                <li>
-                  By Dec/2026: Completion of dissertation and final
-                  implementation recommendations for BBA at SIRIUS.[1]
-                </li>
-              </ul>
-            </div>
+      <section>
+        <h2>Fast AC BBA</h2>
+        <div class="two-columns">
+          <div class="column">
+            <p style="text-align: left">
+              Fast AC BBA techniques use time-varying (usually sinusoidal)
+              excitation of quadrupole strengths and synchronous detection of
+              the beam response at BPMs to extract offsets.[1]
+            </p>
+            <p style="text-align: left">
+              Instead of stepping $K$ to $K_0 \pm \Delta K$ quasi-statically,
+              a small AC modulation is applied around the nominal strength,
+              and the resulting orbit oscillation at the modulation frequency
+              is measured.[1]
+            </p>
           </div>
-        </section>
-
-        <section>
-          <h2>Academic Schedule</h2>
-          <div class="two-columns">
-            <div class="column">
-              <h3>Completed / Ongoing</h3>
-              <ul>
-                <li>
-                  1st semester 2025: Advanced Mechanics (FI-195), Quantum
-                  Mechanics I (FI-001).[1]
-                </li>
-                <li>
-                  2nd semester 2025: Techniques with Synchrotron Light (FI-089),
-                  dissertation plan writing.[1]
-                </li>
-                <li>English proficiency exam completed.[1]</li>
-              </ul>
-            </div>
-            <div class="column">
-              <h3>Planned</h3>
-              <ul>
-                <li>
-                  1st semester 2026: Electrodynamics I (FI-008 or equivalent),
-                  attendance at IFGW seminars and defenses.[1]
-                </li>
-                <li>
-                  1st semester 2026: Qualification Exam and prerequisite
-                  seminar.[1]
-                </li>
-                <li>2nd semester 2026: Dissertation writing and defense.[1]</li>
-              </ul>
-            </div>
+          <div class="column">
+            <ul>
+              <li>
+                Frequency-domain analysis improves signal-to-noise ratio and
+                allows faster data acquisition.[1]
+              </li>
+              <li>
+                AC methods can be combined with parallel schemes to obtain
+                multi-magnet BBA with reduced machine time.[1]
+              </li>
+              <li>
+                Implementation at SIRIUS must consider hardware limits,
+                available modulation channels and impact on stored beam
+                stability.[2][1]
+              </li>
+            </ul>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section>
-          <h1>Experiments</h1>
-        </section>
+      <section>
+        <h1>Research Plan</h1>
+      </section>
 
-        <section>
-          <h2>Experimental Setup</h2>
-          <div class="two-columns">
-            <div class="column">
-              <p style="text-align: left">
-                The main experimental system is the SIRIUS Storage Ring, with
-                its orbit correction system, quadrupole families and 160 BPMs
-                distributed along the ring.[2][1]
-              </p>
-              <p style="text-align: left">
-                The FAC group tools used for modeling and online control include
-                pyaccel, pymodels, apsuite and siriuspy, which provide optics
-                calculations, orbit and optics correction and high-level machine
-                control interfaces.[3][2][1]
-              </p>
-            </div>
-            <div class="column">
-              <ul>
-                <li>
-                  Orbit steering system and vertical/horizontal correctors.[2]
-                </li>
-                <li>
-                  Quadrupole families with programmable strengths for BBA
-                  modulation.[2][1]
-                </li>
-                <li>
-                  BPM system capable of acquiring orbit data during BBA
-                  procedures with sub-micrometer resolution.[2][1]
-                </li>
-                <li>
-                  Data analysis scripts for orbit response, SVD and fitting of
-                  BBA signals (in analogy with tools like Pynel used in
-                  dispersion studies).[3][2]
-                </li>
-              </ul>
-            </div>
+      <section>
+        <h2>The Project's Schedule</h2>
+        <div class="two-columns">
+          <div class="column">
+            <h3>Past and Ongoing (2025)</h3>
+            <ul>
+              <li>
+                Mar-Jul/2025: Literature review on traditional and alternative
+                BBA methods.[1]
+              </li>
+              <li>
+                Apr-Aug/2025: Discussions with the LNLS Accelerator Physics
+                Group (FAC) on candidate BBA techniques and feasibility at
+                SIRIUS.[1]
+              </li>
+              <li>
+                Aug-Sep/2025: Selection of the first method to be studied in
+                depth (Parallel BBA) and start of simulations and initial
+                implementation.[1]
+              </li>
+              <li>
+                Oct/2025: First machine test of the Parallel BBA procedure at
+                SIRIUS (experiment on 13/10/2025).[1]
+              </li>
+            </ul>
           </div>
-        </section>
-
-        <section>
-          <h2>Preliminary Results</h2>
-          <div class="two-columns">
-            <div class="column">
-              <p style="text-align: left">
-                Previous work at LNLS has successfully implemented and validated
-                advanced optics correction techniques (e.g., vertical dispersion
-                correction using QS and CV methods) and longitudinal dynamics
-                improvements in Trackcpp, demonstrating the feasibility of
-                combining modeling, simulations and machine experiments.[3][2]
-              </p>
-              <p style="text-align: left">
-                These experiences provide the methodological basis for the
-                current project, where Parallel and fast BBA techniques are
-                being implemented and tested at SIRIUS.[3][2][1]
-              </p>
-            </div>
-            <div class="column">
-              <ul>
-                <li>
-                  First PBBA implementation completed and tested in a machine
-                  experiment on 13/10/2025.[1]
-                </li>
-                <li>
-                  Initial analysis shows consistency between model predictions
-                  and measured orbit responses, but detailed performance
-                  evaluation (time reduction, robustness) is ongoing.[1]
-                </li>
-                <li>
-                  Further experiments in 2026 will refine the method and assess
-                  whether additional BBA techniques (e.g., Fast AC BBA) need to
-                  be implemented.[1]
-                </li>
-              </ul>
-            </div>
+          <div class="column">
+            <h3>Future (2025-2026)</h3>
+            <ul>
+              <li>
+                Oct-Dec/2025: Analysis of first experiment data, debugging and
+                optimization of PBBA scripts for SIRIUS.[1]
+              </li>
+              <li>
+                Jan-Mar/2026: Additional PBBA experiments after machine
+                shutdown, evaluation of the need for implementing further BBA
+                methods.[1]
+              </li>
+              <li>
+                Mar-Jun/2026: Additional PBBA runs (when available) and
+                possible in-depth study of a second alternative BBA
+                technique.[1]
+              </li>
+              <li>
+                By Dec/2026: Completion of dissertation and final
+                implementation recommendations for BBA at SIRIUS.[1]
+              </li>
+            </ul>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section>
-          <h1>Next Steps</h1>
-        </section>
+      <section>
+        <h2>Academic Schedule</h2>
+        <div class="two-columns">
+          <div class="column">
+            <h3>Completed / Ongoing</h3>
+            <ul>
+              <li>
+                1st semester 2025: Advanced Mechanics (FI-195), Quantum
+                Mechanics I (FI-001).[1]
+              </li>
+              <li>
+                2nd semester 2025: Techniques with Synchrotron Light (FI-089),
+                dissertation plan writing.[1]
+              </li>
+              <li>English proficiency exam completed.[1]</li>
+            </ul>
+          </div>
+          <div class="column">
+            <h3>Planned</h3>
+            <ul>
+              <li>
+                1st semester 2026: Electrodynamics I (FI-008 or equivalent),
+                attendance at IFGW seminars and defenses.[1]
+              </li>
+              <li>
+                1st semester 2026: Qualification Exam and prerequisite
+                seminar.[1]
+              </li>
+              <li>2nd semester 2026: Dissertation writing and defense.[1]</li>
+            </ul>
+          </div>
+        </div>
+      </section>
 
-        <section>
-          <h1>Conclusion</h1>
-          <p style="text-align: left; margin-top: 0.8em">
-            The SIRIUS Storage Ring requires precise and efficient BPM
-            calibration to fully exploit its 4th-generation performance,
-            motivating the study of alternative Beam-Based Alignment techniques
-            beyond the traditional, time-consuming serial method.[2][1]
-          </p>
-          <p style="text-align: left; margin-top: 0.4em">
-            Building on previous experience with optics correction and advanced
-            simulation tools at LNLS, this project combines theoretical
-            modeling, numerical simulations and machine experiments to validate
-            Parallel and fast BBA schemes tailored to the SIRIUS
-            environment.[3][2][1]
-          </p>
-          <p style="text-align: left; margin-top: 0.4em">
-            The expected outcome is a robust BBA procedure that significantly
-            reduces calibration time while preserving or improving BPM accuracy
-            and reproducibility, contributing directly to SIRIUS orbit control
-            and beam quality.[1]
-          </p>
-        </section>
+      <section>
+        <h1>Experiments</h1>
+      </section>
 
-        <section>
-          <h1>Aknowledgments</h1>
-          <p style="text-align: left; margin-top: 0.8em">
-            I would like to thank my supervisor, Prof. Dr. Liu Lin, and
-            co-supervisor, Prof. Dr. Tulio C. R. da Rocha, for their guidance
-            and support throughout this project.[1]
-          </p>
-          <p style="text-align: left; margin-top: 0.4em">
-            I also acknowledge the FAC group at LNLS for fruitful discussions,
-            technical support and for providing the simulation and control
-            infrastructure used in this work.[2][3][1]
-          </p>
-          <p style="text-align: left; margin-top: 0.4em">
-            This work is supported by CAPES and carried out within the
-            collaboration between IFGW/UNICAMP and LNLS/CNPEM.[1]
-          </p>
-        </section>
-      </div>
+      <section>
+        <h2>Experimental Setup</h2>
+        <div class="two-columns">
+          <div class="column">
+            <p style="text-align: left">
+              The main experimental system is the SIRIUS Storage Ring, with
+              its orbit correction system, quadrupole families and 160 BPMs
+              distributed along the ring.[2][1]
+            </p>
+            <p style="text-align: left">
+              The FAC group tools used for modeling and online control include
+              pyaccel, pymodels, apsuite and siriuspy, which provide optics
+              calculations, orbit and optics correction and high-level machine
+              control interfaces.[3][2][1]
+            </p>
+          </div>
+          <div class="column">
+            <ul>
+              <li>
+                Orbit steering system and vertical/horizontal correctors.[2]
+              </li>
+              <li>
+                Quadrupole families with programmable strengths for BBA
+                modulation.[2][1]
+              </li>
+              <li>
+                BPM system capable of acquiring orbit data during BBA
+                procedures with sub-micrometer resolution.[2][1]
+              </li>
+              <li>
+                Data analysis scripts for orbit response, SVD and fitting of
+                BBA signals (in analogy with tools like Pynel used in
+                dispersion studies).[3][2]
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Preliminary Results</h2>
+        <div class="two-columns">
+          <div class="column">
+            <p style="text-align: left">
+              Previous work at LNLS has successfully implemented and validated
+              advanced optics correction techniques (e.g., vertical dispersion
+              correction using QS and CV methods) and longitudinal dynamics
+              improvements in Trackcpp, demonstrating the feasibility of
+              combining modeling, simulations and machine experiments.[3][2]
+            </p>
+            <p style="text-align: left">
+              These experiences provide the methodological basis for the
+              current project, where Parallel and fast BBA techniques are
+              being implemented and tested at SIRIUS.[3][2][1]
+            </p>
+          </div>
+          <div class="column">
+            <ul>
+              <li>
+                First PBBA implementation completed and tested in a machine
+                experiment on 13/10/2025.[1]
+              </li>
+              <li>
+                Initial analysis shows consistency between model predictions
+                and measured orbit responses, but detailed performance
+                evaluation (time reduction, robustness) is ongoing.[1]
+              </li>
+              <li>
+                Further experiments in 2026 will refine the method and assess
+                whether additional BBA techniques (e.g., Fast AC BBA) need to
+                be implemented.[1]
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h1>Next Steps</h1>
+      </section>
+
+      <section>
+        <h1>Conclusion</h1>
+        <p style="text-align: left; margin-top: 0.8em">
+          The SIRIUS Storage Ring requires precise and efficient BPM
+          calibration to fully exploit its 4th-generation performance,
+          motivating the study of alternative Beam-Based Alignment techniques
+          beyond the traditional, time-consuming serial method.[2][1]
+        </p>
+        <p style="text-align: left; margin-top: 0.4em">
+          Building on previous experience with optics correction and advanced
+          simulation tools at LNLS, this project combines theoretical
+          modeling, numerical simulations and machine experiments to validate
+          Parallel and fast BBA schemes tailored to the SIRIUS
+          environment.[3][2][1]
+        </p>
+        <p style="text-align: left; margin-top: 0.4em">
+          The expected outcome is a robust BBA procedure that significantly
+          reduces calibration time while preserving or improving BPM accuracy
+          and reproducibility, contributing directly to SIRIUS orbit control
+          and beam quality.[1]
+        </p>
+      </section>
+
+      <section>
+        <h1>Aknowledgments</h1>
+        <p style="text-align: left; margin-top: 0.8em">
+          I would like to thank my supervisor, Prof. Dr. Liu Lin, and
+          co-supervisor, Prof. Dr. Tulio C. R. da Rocha, for their guidance
+          and support throughout this project.[1]
+        </p>
+        <p style="text-align: left; margin-top: 0.4em">
+          I also acknowledge the FAC group at LNLS for fruitful discussions,
+          technical support and for providing the simulation and control
+          infrastructure used in this work.[2][3][1]
+        </p>
+        <p style="text-align: left; margin-top: 0.4em">
+          This work is supported by CAPES and carried out within the
+          collaboration between IFGW/UNICAMP and LNLS/CNPEM.[1]
+        </p>
+      </section>
     </div>
+  </div>
 
-    <!-- Footer -->
-    <div class="reveal-footer">
-      <span>V. D. de Souza</span>
-      <span>•</span>
-      <span>Alternative BBA techniques for SIRIUS</span>
-      <span>•</span>
-      <span>April X, 2026</span>
-    </div>
+  <!-- Footer -->
+  <div class="reveal-footer">
+    <span>V. D. de Souza</span>
+    <span>•</span>
+    <span>Alternative BBA techniques for SIRIUS</span>
+    <span>•</span>
+    <span>April X, 2026</span>
+  </div>
 
-    <div class="reveal-chapters" id="sectionHeaders"></div>
+  <div class="reveal-chapters" id="sectionHeaders"></div>
 
-    <script src="dist/reveal-dist/reveal.js"></script>
-    <script src="dist/reveal-dist/plugin/notes.js"></script>
-    <script src="dist/reveal-dist/plugin/markdown.js"></script>
-    <script src="dist/reveal-dist/plugin/highlight.js"></script>
-    <script>
-      Reveal.initialize({
-        width: 1600,
-        height: 900,
-        hash: true,
-        slideNumber: "c/t", // Mostra "slide atual / total"
+  <script src="dist/reveal-dist/reveal.js"></script>
+  <script src="dist/reveal-dist/plugin/notes.js"></script>
+  <script src="dist/reveal-dist/plugin/markdown.js"></script>
+  <script src="dist/reveal-dist/plugin/highlight.js"></script>
+  <script>
+    Reveal.initialize({
+      width: 1600,
+      height: 900,
+      hash: true,
+      slideNumber: "c/t", // Mostra "slide atual / total"
 
-        // Configurações de navegação
-        controls: false,
-        progress: false,
-        center: true,
-        // disableLayout: false,
-        margin: 0.05,
+      // Configurações de navegação
+      controls: false,
+      progress: false,
+      center: true,
+      // disableLayout: false,
+      margin: 0.05,
 
-        plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
-      });
-    </script>
+      plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+    });
+  </script>
 
-    <script>
-      const resetAll = document.getElementById("resetAll");
-      resetAll.addEventListener("click", () => {
-        Reveal.slide(0);
-      });
-      // resetAll.click();
+  <script>
+    const resetAll = document.getElementById("resetAll");
+    resetAll.addEventListener("click", () => {
+      Reveal.slide(0);
+    });
+    // resetAll.click();
 
-      const clickBox = document.getElementById("clickbox");
-      const menuButton = document.getElementById("URMenu");
-      const menuOptions = document.getElementById("menuOptions");
-      const toggleTheme = document.getElementById("toggleTheme");
+    const clickBox = document.getElementById("clickbox");
+    const menuButton = document.getElementById("URMenu");
+    const menuOptions = document.getElementById("menuOptions");
+    const toggleTheme = document.getElementById("toggleTheme");
 
-      const lightTheme = "white";
-      const darkTheme = "black";
+    const lightTheme = "white";
+    const darkTheme = "black";
 
-      let theme = lightTheme;
+    let theme = lightTheme;
 
-      checkToggles("theme", false);
-      function checkToggles(type, doToggle = true) {
-        if (type === "theme") {
-          if (doToggle) theme = theme === lightTheme ? darkTheme : lightTheme;
-          toggleTheme.textContent = theme === lightTheme ? "🌙" : "☀️";
-          // document.body.dataset.theme = theme;
-          theTheme = document.getElementById("theme");
-          theTheme.setAttribute("href", `styles/${theme}.css`);
-        }
+    checkToggles("theme", false);
+    function checkToggles(type, doToggle = true) {
+      if (type === "theme") {
+        if (doToggle) theme = theme === lightTheme ? darkTheme : lightTheme;
+        toggleTheme.textContent = theme === lightTheme ? "🌙" : "☀️";
+        // document.body.dataset.theme = theme;
+        theTheme = document.getElementById("theme");
+        theTheme.setAttribute("href", `styles/${theme}.css`);
       }
+    }
 
-      toggleTheme.addEventListener("click", () => {
-        checkToggles("theme");
-      });
+    toggleTheme.addEventListener("click", () => {
+      checkToggles("theme");
+    });
 
-      const sectionHeaders = document.getElementById("sectionHeaders");
-      const contentsList = document.getElementById("contentsList");
-      document.querySelectorAll("section").forEach((element, index) => {
-        if (element.querySelector("h1") === null) {
+    const sectionHeaders = document.getElementById("sectionHeaders");
+    const contentsList = document.getElementById("contentsList");
+    document.querySelectorAll("section").forEach((element, index) => {
+      if (element.querySelector("h1") === null) {
+        return;
+      } else {
+        e = document.createElement("span");
+        e.textContent = element.querySelector("h1").textContent;
+        if (e.textContent == document.getElementById("title").textContent) {
           return;
-        } else {
-          e = document.createElement("span");
-          e.textContent = element.querySelector("h1").textContent;
-          if (e.textContent == document.getElementById("title").textContent) {
-            return;
-          }
-          e.classList.add("clickable");
-          e.style.cursor = "pointer";
-          e.addEventListener("click", () => {
-            Reveal.slide(index);
-          });
-
-          ce = document.createElement("li");
-          ce.textContent = e.textContent;
-          ce.style.cursor = "pointer";
-          ce.style.margin = "1em 0 0 0";
-          ce.setAttribute("data-target", element.id);
-          ce.addEventListener("click", () => {
-            Reveal.slide(index);
-          });
-          contentsList.appendChild(ce);
-
-          sectionHeaders.appendChild(e);
-          e = document.createElement("span");
-          e.textContent = " • ";
-          sectionHeaders.appendChild(e);
         }
-      });
-      sectionHeaders.removeChild(sectionHeaders.lastChild);
-
-      function syncHeaderHighlight() {
-        sectionHeaders.querySelectorAll("span").forEach((element) => {
-          element.classList.remove("present");
+        e.classList.add("clickable");
+        e.style.cursor = "pointer";
+        e.addEventListener("click", () => {
+          Reveal.slide(index);
         });
-        /* agora adiccionar o estado "present" ao span que coincida à section atual ou anterior (caso a atual nao tenha h1)*/
-        /* agora adiccionar o estado "present" ao span que coincida à section atual ou anterior (caso a atual nao tenha h1)*/
-        let currentSlide = Reveal.getCurrentSlide();
-        let lastH1Text = null;
 
-        // Sobe para o pai se for um slide vertical, ou começa do atual
-        let checkSlide = currentSlide;
+        ce = document.createElement("li");
+        ce.textContent = e.textContent;
+        ce.style.cursor = "pointer";
+        ce.style.margin = "1em 0 0 0";
+        ce.setAttribute("data-target", element.id);
+        ce.addEventListener("click", () => {
+          Reveal.slide(index);
+        });
+        contentsList.appendChild(ce);
 
-        // Percorre o DOM para trás a partir do slide atual para achar o H1 mais próximo
-        while (checkSlide) {
-          let h1 = checkSlide.querySelector("h1");
-          if (
-            h1 &&
-            h1.textContent !== document.getElementById("title").textContent
-          ) {
-            lastH1Text = h1.textContent;
-            break;
-          }
+        sectionHeaders.appendChild(e);
+        e = document.createElement("span");
+        e.textContent = " • ";
+        sectionHeaders.appendChild(e);
+      }
+    });
+    sectionHeaders.removeChild(sectionHeaders.lastChild);
 
-          // Tenta o slide anterior no mesmo nível ou sobe para o pai (no caso de slides verticais)
-          if (checkSlide.previousElementSibling) {
-            checkSlide = checkSlide.previousElementSibling;
-            // Se o anterior tiver filhos (vertical), pula para o último filho dele para manter a ordem cronológica
-            if (
-              checkSlide.children.length > 0 &&
-              checkSlide.tagName === "SECTION"
-            ) {
-              const subSections = checkSlide.querySelectorAll("section");
-              if (subSections.length > 0)
-                checkSlide = subSections[subSections.length - 1];
-            }
-          } else {
-            checkSlide =
-              checkSlide.parentElement &&
-              checkSlide.parentElement.tagName === "SECTION"
-                ? checkSlide.parentElement
-                : null;
-          }
+    function syncHeaderHighlight() {
+      sectionHeaders.querySelectorAll("span").forEach((element) => {
+        element.classList.remove("present");
+      });
+      /* agora adiccionar o estado "present" ao span que coincida à section atual ou anterior (caso a atual nao tenha h1)*/
+      /* agora adiccionar o estado "present" ao span que coincida à section atual ou anterior (caso a atual nao tenha h1)*/
+      let currentSlide = Reveal.getCurrentSlide();
+      let lastH1Text = null;
+
+      // Sobe para o pai se for um slide vertical, ou começa do atual
+      let checkSlide = currentSlide;
+
+      // Percorre o DOM para trás a partir do slide atual para achar o H1 mais próximo
+      while (checkSlide) {
+        let h1 = checkSlide.querySelector("h1");
+        if (
+          h1 &&
+          h1.textContent !== document.getElementById("title").textContent
+        ) {
+          lastH1Text = h1.textContent;
+          break;
         }
 
-        // Aplica a classe "present" no span correspondente
-        if (lastH1Text) {
-          sectionHeaders.querySelectorAll("span").forEach((span) => {
-            if (span.textContent === lastH1Text) {
-              span.classList.add("present");
-            }
-          });
+        // Tenta o slide anterior no mesmo nível ou sobe para o pai (no caso de slides verticais)
+        if (checkSlide.previousElementSibling) {
+          checkSlide = checkSlide.previousElementSibling;
+          // Se o anterior tiver filhos (vertical), pula para o último filho dele para manter a ordem cronológica
+          if (
+            checkSlide.children.length > 0 &&
+            checkSlide.tagName === "SECTION"
+          ) {
+            const subSections = checkSlide.querySelectorAll("section");
+            if (subSections.length > 0)
+              checkSlide = subSections[subSections.length - 1];
+          }
+        } else {
+          checkSlide =
+            checkSlide.parentElement &&
+              checkSlide.parentElement.tagName === "SECTION"
+              ? checkSlide.parentElement
+              : null;
         }
       }
 
-      Reveal.addEventListener("slidechanged", syncHeaderHighlight);
-    </script>
-  </body>
+      // Aplica a classe "present" no span correspondente
+      if (lastH1Text) {
+        sectionHeaders.querySelectorAll("span").forEach((span) => {
+          if (span.textContent === lastH1Text) {
+            span.classList.add("present");
+          }
+        });
+      }
+    }
+
+    Reveal.addEventListener("slidechanged", syncHeaderHighlight);
+  </script>
+</body>
+
 </html>

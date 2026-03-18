@@ -4,7 +4,7 @@
 .reveal-footer {
   display: block;
   position: absolute;
-  font-size: 0.7em;
+  font-size: 0.6em;
   visibility: visible;
   color: var(--r-half-color);
 
@@ -18,7 +18,7 @@
 .reveal .slide-number {
   font-family: "Computer Modern Serif", serif;
   font-weight: bold;
-  font-size: 0.7em;
+  font-size: 0.6em;
   color: var(--r-main-color);
   background-color: var(--r-bg-color);
 }
@@ -154,7 +154,7 @@ button:hover {
   /* display: flex; */
   /* justify-content: left; */
   text-align: center;
-  font-size: 0.7em;
+  font-size: 0.6em;
   z-index: 1000;
 }
 
