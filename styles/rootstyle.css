@@ -5,8 +5,8 @@
   /* --r-main-font: "Georgia", serif;
   --r-heading-font: "Georgia", serif; */
   
-  --r-main-font: 'Computer Modern Serif', serif;
-  --r-heading-font: 'Computer Modern Serif', serif;
+  --r-main-font: 'Computer Modern Sans', sans-serif;
+  --r-heading-font: 'Computer Modern Sans', sans-serif;
   --r-code-font: 'Computer Modern Typewriter', monospace;
   
   --r-main-font-size: 32px;
@@ -22,7 +22,7 @@
   --r-heading2-size: 1.6em;
   --r-heading3-size: 1.3em;
   --r-heading4-size: 1em;
-  --r-code-font: monospace;
+  --r-footersize: 0.5em;
 }
 
 body {

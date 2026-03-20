@@ -4,7 +4,7 @@
 .reveal-footer {
   display: block;
   position: absolute;
-  font-size: 0.6em;
+  font-size: var(--r-footersize);
   visibility: visible;
   color: var(--r-half-color);
 
@@ -16,9 +16,9 @@
 }
 
 .reveal .slide-number {
-  font-family: "Computer Modern Serif", serif;
+  font-family: var(--r-main-font);
   font-weight: bold;
-  font-size: 0.6em;
+  font-size: var(--r-footersize);
   color: var(--r-main-color);
   background-color: var(--r-bg-color);
 }
@@ -154,8 +154,21 @@ button:hover {
   /* display: flex; */
   /* justify-content: left; */
   text-align: center;
-  font-size: 0.6em;
-  z-index: 1000;
+  font-size: var(--r-footersize);
+  z-index: 2000;
+}
+
+.reveal-chapters-pdf {
+  position: absolute;
+  top: 1em;
+  left: 1em;
+  color: var(--r-half-color);
+  /* width: 95%; */
+  /* display: flex; */
+  /* justify-content: left; */
+  text-align: center;
+  font-size: var(--r-footersize);
+  z-index: 2000;
 }
 
 .reveal-chapters span.present {
@@ -163,6 +176,11 @@ button:hover {
   color: var(--r-main-color);
   /* font-style: italic; */
   /* text-decoration: underline; */
+}
+
+.reveal-chapters-pdf span.present {
+  font-weight: bold;
+  color: var(--r-main-color);
 }
 
 .reveal-chapters span.clickable:hover {
