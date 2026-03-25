@@ -77,17 +77,6 @@ function animate() {
   renderer.render(scene, camera);
 }
 
-// Detecta quando o slide fica visível
-function onSlideVisible() {
-    isVisible = true;
-    clock.start();
-    animate();
-}
-
-function onSlideHidden() {
-    isVisible = false;
-}
-
 // Integração com Reveal.js
 if (window.Reveal) {
     Reveal.addEventListener('slidechanged', function(event) {

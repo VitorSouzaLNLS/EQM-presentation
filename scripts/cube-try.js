@@ -1,0 +1,230 @@
+import * as THREE from "three";
+// import { OrbitControls } from "three/addons/controls/OrbitControls.js";
+import {
+    CSS2DRenderer,
+    CSS2DObject,
+} from "three/addons/renderers/CSS2DRenderer.js";
+
+const container = document.getElementById("three-container");
+const scene = new THREE.Scene();
+
+const frustumHeight = 5;
+const camera = new THREE.OrthographicCamera(
+    (-frustumHeight * (container.clientWidth / container.clientHeight)) / 2,
+    (frustumHeight * (container.clientWidth / container.clientHeight)) / 2,
+    frustumHeight / 2,
+    -frustumHeight / 2,
+    0.1,
+    1000,
+);
+camera.position.set(2.5, 1.5, 2.5);
+camera.lookAt(0, 0, 0);
+
+const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+renderer.setSize(container.clientWidth, container.clientHeight);
+container.appendChild(renderer.domElement);
+
+const labelRenderer = new CSS2DRenderer();
+labelRenderer.setSize(container.clientWidth, container.clientHeight);
+labelRenderer.domElement.style.position = "absolute";
+labelRenderer.domElement.style.top = "0px";
+labelRenderer.domElement.style.left = "0px";
+labelRenderer.domElement.style.pointerEvents = "none";
+container.appendChild(labelRenderer.domElement);
+
+scene.background = null;
+
+// const controls = new OrbitControls(camera, renderer.domElement);
+
+const root = document.documentElement;
+const mainColor =
+    getComputedStyle(root).getPropertyValue("--r-main-color").trim() || "#000000";
+const halfColor =
+    getComputedStyle(root).getPropertyValue("--r-half-color").trim() || "#888888";
+
+// CORREÇÃO 2: Função para criar texto e renderizar a matemática dinamicamente
+function createText(id = "", color = mainColor) {
+    var labelDiv = document.querySelector(id);
+
+    labelDiv.style.color = color;
+    // labelDiv.style.fontSize = "22px"; // Tamanho base fixo para o MathJax calcular o SVG
+    // labelDiv.style.display = "inline-block";
+
+    const cssObject = new CSS2DObject(labelDiv);
+
+    return cssObject;
+}
+
+const v_text = createText("#label-vecv", "red");
+const labelR = createText("#label-vecr0", "gray");
+const x_text = createText("#label-xhat");
+const y_text = createText("#label-yhat");
+const s_text = createText("#label-shat");
+scene.add(x_text, y_text, s_text, v_text, labelR);
+
+const rho = 2;
+const orbitGeometry = new THREE.TorusGeometry(rho, 0.01, 16, 80);
+const orbitMaterial = new THREE.MeshBasicMaterial({
+    color: mainColor,
+    wireframe: false,
+});
+const orbit = new THREE.Mesh(orbitGeometry, orbitMaterial);
+orbit.rotation.x = Math.PI / 2;
+scene.add(orbit);
+
+const origin = new THREE.Vector3(0, 0, 0);
+const dirx = new THREE.Vector3(1, 0, 0);
+
+const arrowS = new THREE.ArrowHelper(origin, dirx, 1, mainColor);
+const arrowX = new THREE.ArrowHelper(origin, dirx, 1, mainColor);
+const arrowY = new THREE.ArrowHelper(origin, dirx, 1, mainColor);
+scene.add(arrowS, arrowX, arrowY);
+
+const arrowR = new THREE.ArrowHelper(origin, dirx, 1, halfColor);
+scene.add(arrowR);
+
+const electron = new THREE.Mesh(
+    new THREE.SphereGeometry(0.07, 16, 16),
+    new THREE.MeshBasicMaterial({ color: "red" }),
+);
+scene.add(electron);
+
+const arrowVel = new THREE.ArrowHelper(
+    new THREE.Vector3(),
+    new THREE.Vector3(),
+    0.3,
+    "red",
+);
+arrowVel.constantLengthInScreenSpace = false;
+scene.add(arrowVel);
+
+let prevPos = null;
+
+function onResize() {
+    // Se a largura for 0 (escondido), ignora
+    if (container.clientWidth === 0) return;
+
+    const width = container.clientWidth;
+    const height = container.clientHeight;
+    const aspect = width / height;
+    camera.left = (-frustumHeight * aspect) / 2;
+    camera.right = (frustumHeight * aspect) / 2;
+    camera.top = frustumHeight / 2;
+    camera.bottom = -frustumHeight / 2;
+    camera.updateProjectionMatrix();
+    renderer.setSize(width, height);
+    labelRenderer.setSize(width, height);
+}
+window.addEventListener("resize", onResize);
+
+const clock = new THREE.Timer();
+
+function fx(t) {
+    return 0.3 + 0.3 * Math.cos(2 * t);
+}
+function fy(t) {
+    return 0.3 + 0.3 * Math.cos(2 * t);
+}
+
+// Variáveis para controle da animação
+let animationId = null;
+let isAnimating = false;
+
+function animate() {
+    if (!isAnimating) return; // Só roda o loop se estiver visível
+
+    animationId = requestAnimationFrame(animate);
+    clock.update();
+    const delta = clock.getDelta();
+    const theta = clock.getElapsed();
+    const t = theta % (2 * Math.PI);
+
+    // controls.update();
+
+    x_text.lookAt(camera.position);
+
+    const x = rho * Math.cos(t);
+    const y = rho * Math.sin(t);
+
+    x_text.position.set(x, 0, y);
+    s_text.position.set(x, 0, y);
+
+    arrowX.position.set(x, 0, y);
+    var dirx_update = new THREE.Vector3(x, 0, y);
+    dirx_update.normalize();
+    arrowX.setDirection(dirx_update);
+    arrowX.setLength(1);
+    x_text.position.set(x + 1.3 * dirx_update.x, -0.75, y + 1.3 * dirx_update.z);
+    labelR.position.set(0.8 * dirx_update.x, -1.0, 0.8 * dirx_update.z);
+
+    arrowR.position.set(0, 0, 0);
+    arrowR.setDirection(dirx_update);
+    arrowR.setLength(rho);
+
+    arrowS.position.set(x, 0, y);
+    var dir = new THREE.Vector3(-y, 0, x);
+    dir.normalize();
+    arrowS.setDirection(dir);
+    arrowS.setLength(1);
+    s_text.position.set(x + 1.3 * dir.x, -0.75, y + 1.3 * dir.z);
+
+    arrowY.position.set(x, 0, y);
+    var dirY = new THREE.Vector3(0, 1, 0);
+    arrowY.setDirection(dirY);
+    arrowY.setLength(1);
+    y_text.position.set(x, 0.5, y);
+
+    electron.position.set(
+        x + fx(t) * dirx_update.x,
+        fy(t) * dirY.y,
+        y + fx(t) * dirx_update.z,
+    );
+
+    const vel = new THREE.Vector3();
+    vel
+        .subVectors(electron.position, prevPos || new THREE.Vector3())
+        .multiplyScalar(1 / delta);
+    arrowVel.setDirection(vel.normalize());
+    arrowVel.setLength(0.7);
+    arrowVel.position.copy(electron.position);
+
+    v_text.position.set(
+        electron.position.x + vel.x,
+        electron.position.y + vel.y - 0.75,
+        electron.position.z + vel.z,
+    );
+
+    prevPos = electron.position.clone();
+
+    renderer.render(scene, camera);
+    labelRenderer.render(scene, camera);
+}
+
+// CORREÇÃO 1: Intersection Observer (Substitui as chamadas globais de inicialização do render)
+const observer = new IntersectionObserver(
+    (entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                if (!isAnimating) {
+                    isAnimating = true;
+                    // Chama onResize porque quando a página carregou, o display podia estar 'none' (tamanho 0)
+                    onResize();
+                    // window.MathJax.typeset([x_text, s_text, y_text, labelR, v_text]);
+                    // window.MathJax.typesetPromise([x_text, s_text, y_text, labelR, v_text]);
+                    clock.reset(); // Evita saltos temporais se a aba ficou muito tempo em segundo plano
+                    animate();
+                }
+            } else {
+                // Quando sair do slide, cancela a animação para poupar CPU
+                isAnimating = false;
+                if (animationId) {
+                    cancelAnimationFrame(animationId);
+                }
+            }
+        });
+    },
+    { threshold: 0.1 },
+);
+
+// Inicia a observação da nossa div
+if (container) observer.observe(container);

@@ -7,12 +7,26 @@
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
     />
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicon_io/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon_io/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon_io/favicon-16x16.png">
-    <link rel="manifest" href="/favicon_io/site.webmanifest">
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/favicon_io/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/favicon_io/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/favicon_io/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/favicon_io/site.webmanifest" />
 
-    <title>Exame de Qualificação de Mestrado - Vitor Davi de Souza</title>
+    <title>EQM - Vitor Davi De Souza</title>
 
     <script>
       window.MathJax = {
@@ -51,12 +65,14 @@
   </head>
 
   <body data-theme="light">
+
     <div id="clickbox">
-      <topmenu id="URMenu">☰</topmenu>
-      <header id="menuOptions">
+      <!-- <topmenu id="URMenu">☰</topmenu> -->
+      <!-- <header id="menuOptions">
         <button id="toggleTheme">🌙</button>
         <button id="resetAll">🔄</button>
-      </header>
+      </header> -->
+      <homebutton id="resetAll">🔄</homebutton>
     </div>
 
     <div class="reveal">
@@ -281,12 +297,7 @@
           </div>
         </div> -->
 
-          <iframe
-            src="images/asy/sync-scheme.html"
-            width="100%"
-            height="400"
-            frameborder="0"
-          ></iframe>
+          <!-- <iframe src="./images/asy/sync-scheme.html" width="1121" height="412" frameborder="0"></iframe> -->
         </section>
 
         <section>
@@ -365,20 +376,32 @@
           </div>
         </section>
 
-        <section>
+        <section id="sec-three-container">
           <h2>Coordinate System</h2>
 
           <div class="two-columns">
             <div class="column">
-              <!-- <div style="display: flex; justify-content: center">
-              <object data="images/siscoord.svg" type="image/svg+xml" width="100%"></object>
-            </div> -->
-              <iframe
+              <div
+                id="three-container"
+                style="width: 100%; height: 500px; border: 0"
+              >
+                <!-- <object data="images/siscoord.svg" type="image/svg+xml" width="100%"></object> -->
+
+                <!-- <iframe
                 src="images/asy/siscoord.html"
                 width="100%"
                 height="400"
                 frameborder="0"
-              ></iframe>
+              ></iframe> -->
+
+                <div id="label-vecv">$\vec{v}$</div>
+                <div id="label-vecr0">$\vec{r}_0$</div>
+                <div id="label-xhat">$\hat{x}$</div>
+                <div id="label-yhat">$\hat{y}$</div>
+                <div id="label-shat">$\hat{s}$</div>
+
+                <script src="/scripts/cube-try.js" type="module"></script>
+              </div>
             </div>
 
             <div class="column">
@@ -387,7 +410,7 @@
                 following the design orbit, and the state of a particle is
                 written as:
               </p>
-              <p>$\mathbf{x} = (x, x', y, y', \delta, z)^T$.[3][2][1]</p>
+              <p>$\mathbf{x} = (x, x', y, y', \delta, z)^T$</p>
               <ul>
                 <li>
                   $x, y$: transverse displacements with respect to the design
@@ -938,26 +961,28 @@
       const menuButton = document.getElementById("URMenu");
       const menuOptions = document.getElementById("menuOptions");
       const toggleTheme = document.getElementById("toggleTheme");
+      if (clickBox !== null && menuButton !== null && menuOptions !== null && toggleTheme !== null) {
 
-      const lightTheme = "white";
-      const darkTheme = "black";
+        const lightTheme = "white";
+        const darkTheme = "black";
 
-      let theme = lightTheme;
+        let theme = lightTheme;
 
-      checkToggles("theme", false);
-      function checkToggles(type, doToggle = true) {
-        if (type === "theme") {
-          if (doToggle) theme = theme === lightTheme ? darkTheme : lightTheme;
-          toggleTheme.textContent = theme === lightTheme ? "🌙" : "☀️";
-          // document.body.dataset.theme = theme;
-          theTheme = document.getElementById("theme");
-          theTheme.setAttribute("href", `styles/${theme}.css`);
+        checkToggles("theme", false);
+        function checkToggles(type, doToggle = true) {
+          if (type === "theme") {
+            if (doToggle) theme = theme === lightTheme ? darkTheme : lightTheme;
+            toggleTheme.textContent = theme === lightTheme ? "🌙" : "☀️";
+            // document.body.dataset.theme = theme;
+            theTheme = document.getElementById("theme");
+            theTheme.setAttribute("href", `styles/${theme}.css`);
+          }
         }
-      }
 
-      toggleTheme.addEventListener("click", () => {
-        checkToggles("theme");
-      });
+        toggleTheme.addEventListener("click", () => {
+          checkToggles("theme");
+        });
+      }
 
       const sectionHeaders = document.getElementById("sectionHeaders");
       const contentsList = document.getElementById("contentsList");
