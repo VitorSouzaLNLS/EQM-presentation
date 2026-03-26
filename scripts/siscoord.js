@@ -5,7 +5,7 @@ import {
     CSS2DObject,
 } from "three/addons/renderers/CSS2DRenderer.js";
 
-const container = document.getElementById("three-container");
+const container = document.getElementById("siscoord-three-container");
 const scene = new THREE.Scene();
 
 const frustumHeight = 5;
