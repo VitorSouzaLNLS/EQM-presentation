@@ -1,0 +1,396 @@
+<!-- ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
+<!-- ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
+<!-- ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
+
+<section>
+    <h2>Magnetic Field Representation</h2>
+
+    <p style="margin-top: 1em">
+        In the Frenet-Serret frame, the transverse magnetic field can be expanded
+        locally around the design orbit using a multipole representation
+    </p>
+
+    <div class="multiple-columns" style="
+      margin-top: 1.5em;
+      width: 84%;
+      margin-left: 8%;
+      margin-right: 8%;
+      column-gap: 3em;
+    ">
+        <div class="column">
+            <p><b>General form</b></p>
+            <p>
+                $$B_y(x,y,s) + i B_x(x,y,s)
+                =
+                \sum_{n=0}^{\infty}
+                \left(B_n(s) + iA_n(s)\right)(x+iy)^n$$
+            </p>
+        </div>
+
+        <div class="column">
+            <ul style="margin-top: 0.5em">
+                <li>\(B_n\): normal multipole coefficients</li>
+                <li>\(A_n\): skew multipole coefficients</li>
+                <li>\(n=0\): dipole, \(n=1\): quadrupole, \(n=2\): sextupole</li>
+            </ul>
+        </div>
+    </div>
+
+    <p style="margin-top: 1.5em">
+        Dipoles provide bending, quadrupoles provide linear focusing,
+        and sextupoles introduce the leading nonlinear correction
+    </p>
+</section>
+
+<section>
+    <h2>Lowest-Order Multipoles</h2>
+
+    <p style="margin-top: 1em">
+        The first terms of the multipole expansion correspond to the magnetic
+        elements most relevant for linear optics and chromatic correction
+    </p>
+
+    <div class="multiple-columns" style="
+      margin-top: 1em;
+      width: 78%;
+      margin-left: 11%;
+      margin-right: 11%;
+    ">
+        <div class="column">
+            Dipole: <br />
+            $$\left\{
+            \begin{array}{l}
+            B_x = 0 \\
+            B_y = B_0
+            \end{array}
+            \right.$$
+        </div>
+
+        <div class="column">
+            Quadrupole: <br />
+            $$\left\{
+            \begin{array}{l}
+            B_x = B_1 y \\
+            B_y = B_1 x
+            \end{array}
+            \right.$$
+        </div>
+
+        <div class="column">
+            Sextupole: <br />
+            $$\left\{
+            \begin{array}{l}
+            B_x = 2 B_2 x y \\
+            B_y = B_2 (x^2 - y^2)
+            \end{array}
+            \right.$$
+        </div>
+    </div>
+
+    <p style="margin-top: 1.2em">
+        In what follows, these field coefficients are rewritten in terms of the
+        normalized strengths \(G(s)\), \(K(s)\) and \(S(s)\)
+    </p>
+</section>
+
+
+<section>
+    <h2>Normalized Magnetic Strengths</h2>
+
+    <p style="margin-top: 1em">
+        For beam dynamics, it is convenient to normalize the magnetic field
+        coefficients by the magnetic rigidity \(B\rho\)
+    </p>
+
+    <div class="multiple-columns" style="
+      margin-top: 1.5em;
+      width: 82%;
+      margin-left: 9%;
+      margin-right: 9%;
+      column-gap: 3em;
+    ">
+        <div class="column">
+            <p>
+                $$G(s) \equiv \frac{B_0(s)}{B\rho} = \frac{1}{\rho(s)}$$
+            </p>
+            <p>
+                $$K(s) \equiv \frac{B_1(s)}{B\rho}$$
+            </p>
+            <p>
+                $$S(s) \equiv \frac{B_2(s)}{B\rho}$$
+            </p>
+        </div>
+
+        <div class="column">
+            <ul style="margin-top: 0.5em">
+                <li>\(G(s)\): reference curvature set by the dipoles</li>
+                <li>\(K(s)\): quadrupole focusing strength</li>
+                <li>\(S(s)\): sextupole strength</li>
+            </ul>
+        </div>
+    </div>
+
+    <p style="margin-top: 1.5em">
+        These normalized functions are the quantities that naturally appear
+        in the transverse equations of motion
+    </p>
+</section>
+
+
+<section>
+    <h2>Linear Transverse Dynamics</h2>
+
+    <p style="margin-top: 1em">
+        In the paraxial and linear approximation, the transverse motion is governed
+        by the curvature and quadrupole focusing functions
+    </p>
+
+    <div class="multiple-columns" style="
+      margin-top: 1.5em;
+      width: 86%;
+      margin-left: 7%;
+      margin-right: 7%;
+      column-gap: 3em;
+    ">
+        <div class="column">
+            <p>
+                $$x'' = -\left(K + G^2\right)x + G\delta$$
+            </p>
+            <p>
+                $$y'' = K y$$
+            </p>
+        </div>
+
+        <div class="column">
+            <ul style="margin-top: 0.5em">
+                <li>The horizontal plane includes the effect of curvature</li>
+                <li>The quadrupoles define the linear focusing structure</li>
+                <li>For \(\delta = 0\), the homogeneous motion reduces to Hill's equation</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2>Betatron Motion and Dispersion</h2>
+
+    <div class="multiple-columns" style="
+      margin-top: 1em;
+      width: 88%;
+      margin-left: 6%;
+      margin-right: 6%;
+      column-gap: 3em;
+    ">
+        <div class="column">
+            <p>
+                For on-energy particles \((\delta = 0)\), the dynamics reduce to
+                Hill's equation and the solution can be written as
+            </p>
+
+            <p>
+                $$u(s)=\frac{a}{\sqrt{\beta_u(s)}}
+                \cos\!\left(\phi_u(s)-\phi_0\right),
+                \qquad u=x,y$$
+            </p>
+        </div>
+
+        <div class="column">
+            <p>
+                For off-momentum particles, the horizontal motion includes a particular
+                solution associated with the dispersion function
+            </p>
+
+            <p>
+                $$x(s)=x_\beta(s)+\eta(s)\delta$$
+            </p>
+
+            <p>
+                $$\eta'' = -\left(K+G^2\right)\eta + G$$
+            </p>
+        </div>
+    </div>
+
+    <p style="margin-top: 1.2em">
+        The optical functions \(\beta(s)\), \(\phi(s)\) and \(\eta(s)\)
+        determine the orbit response and are central to beam-based alignment analyses
+    </p>
+</section>
+
+<!-- ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
+<!-- ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
+<!-- ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
+
+<section>
+    <h1>Research Plan</h1>
+</section>
+
+<section>
+    <h2>The Project's Schedule</h2>
+    <div class="two-columns">
+        <div class="column">
+            <h3>Past and Ongoing (2025)</h3>
+            <ul>
+                <li>
+                    Mar-Jul/2025: Literature review on traditional and alternative
+                    BBA methods.[1]
+                </li>
+                <li>
+                    Apr-Aug/2025: Discussions with the LNLS Accelerator Physics
+                    Group (FAC) on candidate BBA techniques and feasibility at
+                    SIRIUS.[1]
+                </li>
+                <li>
+                    Aug-Sep/2025: Selection of the first method to be studied in
+                    depth (Parallel BBA) and start of simulations and initial
+                    implementation.[1]
+                </li>
+                <li>
+                    Oct/2025: First machine test of the Parallel BBA procedure at
+                    SIRIUS (experiment on 13/10/2025).[1]
+                </li>
+            </ul>
+        </div>
+        <div class="column">
+            <h3>Future (2025-2026)</h3>
+            <ul>
+                <li>
+                    Oct-Dec/2025: Analysis of first experiment data, debugging and
+                    optimization of PBBA scripts for SIRIUS.[1]
+                </li>
+                <li>
+                    Jan-Mar/2026: Additional PBBA experiments after machine
+                    shutdown, evaluation of the need for implementing further BBA
+                    methods.[1]
+                </li>
+                <li>
+                    Mar-Jun/2026: Additional PBBA runs (when available) and
+                    possible in-depth study of a second alternative BBA
+                    technique.[1]
+                </li>
+                <li>
+                    By Dec/2026: Completion of dissertation and final
+                    implementation recommendations for BBA at SIRIUS.[1]
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2>Academic Schedule</h2>
+    <div class="two-columns">
+        <div class="column">
+            <h3>Completed / Ongoing</h3>
+            <ul>
+                <li>
+                    1st semester 2025: Advanced Mechanics (FI-195), Quantum
+                    Mechanics I (FI-001).[1]
+                </li>
+                <li>
+                    2nd semester 2025: Techniques with Synchrotron Light (FI-089),
+                    dissertation plan writing.[1]
+                </li>
+                <li>English proficiency exam completed.[1]</li>
+            </ul>
+        </div>
+        <div class="column">
+            <h3>Planned</h3>
+            <ul>
+                <li>
+                    1st semester 2026: Electrodynamics I (FI-008 or equivalent),
+                    attendance at IFGW seminars and defenses.[1]
+                </li>
+                <li>
+                    1st semester 2026: Qualification Exam and prerequisite
+                    seminar.[1]
+                </li>
+                <li>2nd semester 2026: Dissertation writing and defense.[1]</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
+<!-- ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
+<!-- ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
+
+<section>
+    <h2>Experimental Setup</h2>
+    <div class="two-columns">
+        <div class="column">
+            <p style="text-align: left">
+                The main experimental system is the SIRIUS Storage Ring, with
+                its orbit correction system, quadrupole families and 160 BPMs
+                distributed along the ring.[2][1]
+            </p>
+            <p style="text-align: left">
+                The FAC group tools used for modeling and online control include
+                pyaccel, pymodels, apsuite and siriuspy, which provide optics
+                calculations, orbit and optics correction and high-level machine
+                control interfaces.[3][2][1]
+            </p>
+        </div>
+        <div class="column">
+            <ul>
+                <li>
+                    Orbit steering system and vertical/horizontal correctors.[2]
+                </li>
+                <li>
+                    Quadrupole families with programmable strengths for BBA
+                    modulation.[2][1]
+                </li>
+                <li>
+                    BPM system capable of acquiring orbit data during BBA
+                    procedures with sub-micrometer resolution.[2][1]
+                </li>
+                <li>
+                    Data analysis scripts for orbit response, SVD and fitting of
+                    BBA signals (in analogy with tools like Pynel used in
+                    dispersion studies).[3][2]
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2>Preliminary Results</h2>
+    <div class="two-columns">
+        <div class="column">
+            <p style="text-align: left">
+                Previrimenous work at LNLS has successfully implemented and
+                validated advanced optics correction techniques (e.g., vertical
+                dispersion correction using QS and CV methods) and longitudinal
+                dynamics improvements in Trackcpp, demonstrating the feasibility
+                of combining modeling, simulations and machine expets.[3][2]
+            </p>
+            <p style="text-align: left">
+                These experiences provide the methodological basis for the
+                current project, where Parallel and fast BBA techniques are
+                being implemented and tested at SIRIUS.[3][2][1]
+            </p>
+        </div>
+        <div class="column">
+            <ul>
+                <li>
+                    First PBBA implementation completed and tested in a machine
+                    experiment on 13/10/2025.[1]
+                </li>
+                <li>
+                    Initial analysis shows consistency between model predictions
+                    and measured orbit responses, but detailed performance
+                    evaluation (time reduction, robustness) is ongoing.[1]
+                </li>
+                <li>
+                    Further experiments in 2026 will refine the method and assess
+                    whether additional BBA techniques (e.g., Fast AC BBA) need to
+                    be implemented.[1]
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
+<!-- ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
+<!-- ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->

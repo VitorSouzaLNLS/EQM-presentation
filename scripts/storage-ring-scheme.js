@@ -1,5 +1,5 @@
 import * as THREE from "three";
-import { OrbitControls } from "three/addons/controls/OrbitControls.js";
+// import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 import {
     CSS2DRenderer,
     CSS2DObject,
@@ -20,8 +20,8 @@ const camera = new THREE.OrthographicCamera(
 camera.position.set(-1, 1.2, 1);
 camera.lookAt(0, 0, 0);
 
-const controls = new OrbitControls(camera, container);
-controls.enableDamping = true;
+// const controls = new OrbitControls(camera, container);
+// controls.enableDamping = true;
 
 const renderer = new THREE.WebGLRenderer({
     antialias: true,
@@ -315,7 +315,7 @@ const clock = new THREE.Timer();
 
 function updateFrame(progresso) {
 
-    controls.update();
+    // controls.update();
 
     if (progresso > 1) progresso %= 1;
 
@@ -335,15 +335,13 @@ let progresso = 0;
 
 function renderAnimation() {
     if (!isAnimating) return;
-
+    
     animationId = requestAnimationFrame(renderAnimation);
-
+    
     clock.update();
     const delta = clock.getDelta();
     progresso += delta * 0.5;
-    
     updateFrame(progresso);
-    isAnimating = true;
 }
 
 function renderImage() {
@@ -359,7 +357,7 @@ function renderImage() {
 
     // 2. Renderiza e captura só labels (transparente)
     labelRenderer.render(scene, camera);
-    const labelsDataURL = labelRenderer.domElement.toDataURL("image/png", 1.0);
+    // const labelsDataURL = labelRenderer.domElement.toDataURL("image/png", 1.0);
 
     // 3. Cria canvas temporário para COMBINAR as duas imagens
     const canvas = document.createElement("canvas");
@@ -375,7 +373,7 @@ function renderImage() {
 
         // Desenha labels por cima
         const imgLabels = new Image();
-        imgLabels.src = labelsDataURL;
+        // imgLabels.src = labelsDataURL;
         imgLabels.onload = () => {
             ctx.drawImage(imgLabels, 0, 0);
 

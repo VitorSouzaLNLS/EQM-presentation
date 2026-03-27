@@ -31,7 +31,7 @@ container.appendChild(renderer.domElement);
 const labelRenderer = new CSS2DRenderer();
 labelRenderer.setSize(container.clientWidth, container.clientHeight);
 labelRenderer.domElement.style.position = "absolute";
-labelRenderer.domElement.style.top = "0px";
+labelRenderer.domElement.style.top = "3.1em";
 labelRenderer.domElement.style.left = "0px";
 labelRenderer.domElement.style.pointerEvents = "none";
 container.appendChild(labelRenderer.domElement);
@@ -91,6 +91,8 @@ const electron = new THREE.Mesh(
 );
 scene.add(electron);
 
+
+
 const arrowVel = new THREE.ArrowHelper(
     new THREE.Vector3(),
     new THREE.Vector3(),
@@ -100,14 +102,36 @@ const arrowVel = new THREE.ArrowHelper(
 arrowVel.constantLengthInScreenSpace = false;
 scene.add(arrowVel);
 
+
 let prevPos = null;
 
 function fx(t) {
-    return 0.3 + 0.3 * Math.cos(2 * t);
+    return 0.07 * Math.cos(9 * t);
 }
 function fy(t) {
-    return 0.3 + 0.3 * Math.cos(2 * t);
+    return 0.1 * Math.cos(4 * t);
 }
+
+let e_traj = [];
+let t = 0;
+let dirY = new THREE.Vector3(0, 1, 0);
+for (let j=0; j<101; j++) {
+    t = j / 100 * 2 * Math.PI;
+    let x = rho * Math.cos(t);
+    let y = rho * Math.sin(t);
+    var dirx_update = new THREE.Vector3(x, 0, y);
+    dirx_update.normalize();
+    e_traj[j] = new THREE.Vector3(
+        x + fx(t) * dirx_update.x,
+        fy(t) * dirY.y,
+        y + fx(t) * dirx_update.z,
+    )
+}
+const geometry = new THREE.BufferGeometry().setFromPoints(e_traj);
+const material = new THREE.LineBasicMaterial({ color: "red" });
+const traj = new THREE.Line(geometry, material);
+scene.add(traj);
+
 
 function onResize() {
     if (container.clientWidth === 0) return;
@@ -218,7 +242,7 @@ function renderImage() {
 
     // 2. Renderiza e captura só labels (transparente)
     labelRenderer.render(scene, camera);
-    const labelsDataURL = labelRenderer.domElement.toDataURL("image/png", 1.0);
+    // const labelsDataURL = labelRenderer.domElement.toDataURL("image/png", 1.0);
 
     // 3. Cria canvas temporário para COMBINAR as duas imagens
     const canvas = document.createElement("canvas");
@@ -234,7 +258,7 @@ function renderImage() {
 
         // Desenha labels por cima
         const imgLabels = new Image();
-        imgLabels.src = labelsDataURL;
+        // imgLabels.src = labelsDataURL;
         imgLabels.onload = () => {
             ctx.drawImage(imgLabels, 0, 0);
 
