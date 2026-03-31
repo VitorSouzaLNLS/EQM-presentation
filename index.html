@@ -232,7 +232,7 @@
                 <h1>Theoretical Background</h1>
             </section>
 
-            <section data-transition="fade-out">
+            <section data-transition="slide-in fade-out">
                 <h2>Coordinate System</h2>
 
                 <p style="text-align: center; margin-top: 2em">
@@ -294,7 +294,7 @@
                                 $x'$ and $y'$ are the transverse angles
                             </li>
                             <li style="margin-top: 1em">
-                                $\delta$ is the energy deviation
+                                $\delta$ is the relative energy deviation
                             </li>
                             <li style="margin-top: 1em">
                                 $z$ is the longitudinal path length
@@ -304,47 +304,8 @@
                 </div>
             </section>
 
-            <!-- <section>
-          <h2>Magnetic Fields</h2>
-          <p style="margin-top: 1em">
-            This way, the magnetic fields for dipoles, quadrupoles and
-            sextupoles can be written as
-          </p>
-          <div
-            class="multiple-columns"
-            style="
-              margin-top: 1em;
-              width: 70%;
-              margin-left: 15%;
-              margin-right: 15%;
-            "
-          >
-            <div class="column">
-              Dipole: <br />
-              $$\left\lbrace\begin{array}{l}B_x = 0 \\ B_y =
-              B_0\end{array}\right.$$
-            </div>
-            <div class="column">
-              Quadrupole: <br />
-              $$\left\lbrace\begin{array}{l}B_x = B_1y \\ B_y = B_1x
-              \end{array}\right.$$
-            </div>
-            <div class="column">
-              Sextupole: <br />
-              $$\left\lbrace\begin{array}{l}B_x = 2 B_2 xy \\ B_y = B_2 (x^2 -
-              y^2) \end{array}\right.$$
-            </div>
-          </div>
-        </section> -->
-
-<!-- |||||||||||||||||||||||||||||||||||||||||||||||
-||||||||||||||||||||||||||||||||||||||||||||||||||| 
-|||||||||||||||||||||||||||||||||||||||||||||||||||
-|||||||||||||||||||||||||||||||||||||||||||||||||||
--->
-
             <section>
-                <h2>Magnetic Field Representation</h2>
+                <h2>Magnetic Fields</h2>
 
                 <p style="margin-top: 1em">
                     In the Frenet-Serret frame, the transverse magnetic field can be
@@ -352,18 +313,11 @@
                     representation
                 </p>
 
-                <div class="multiple-columns" style="
-              margin-top: 1.5em;
-              width: 84%;
-              margin-left: 8%;
-              margin-right: 8%;
-              column-gap: 3em;
-            ">
+                <div class="multiple-columns" style="margin-top: 1em">
                     <div class="column">
-                        <p><b>General form</b></p>
                         <p>
-                            $$B_y(x,y,s) + i B_x(x,y,s) = \sum_{n=0}^{\infty} \left(B_n(s) +
-                            iA_n(s)\right)(x+iy)^n$$
+                            $$B_y(x,y,s) + i B_x(x,y,s) = \sum_{n=0}^{\infty} \Big( B_n(s) +
+                            iA_n(s) \Big)(x+iy)^n$$
                         </p>
                     </div>
 
@@ -371,34 +325,16 @@
                         <ul style="margin-top: 0.5em">
                             <li>\(B_n\): normal multipole coefficients</li>
                             <li>\(A_n\): skew multipole coefficients</li>
-                            <li>
-                                \(n=0\): dipole, \(n=1\): quadrupole, \(n=2\): sextupole
-                            </li>
                         </ul>
                     </div>
                 </div>
 
-                <p style="margin-top: 1.5em">
-                    Dipoles provide bending, quadrupoles provide linear focusing, and
-                    sextupoles introduce the leading nonlinear correction
-                </p>
-            </section>
-
-            <section>
-                <h2>Lowest-Order Multipoles</h2>
-
                 <p style="margin-top: 1em">
-                    The first terms of the multipole expansion correspond to the
-                    magnetic elements most relevant for linear optics and chromatic
-                    correction
+                    The first terms of the expansion correspond to the elements most relevant for linear optics and
+                    chromatic correction:
                 </p>
 
-                <div class="multiple-columns" style="
-              margin-top: 1em;
-              width: 78%;
-              margin-left: 11%;
-              margin-right: 11%;
-            ">
+                <div class="multiple-columns" style="margin-top: 1em">
                     <div class="column">
                         Dipole: <br />
                         $$\left\{ \begin{array}{l} B_x = 0 \\ B_y = B_0 \end{array}
@@ -418,276 +354,150 @@
                     </div>
                 </div>
 
-                <p style="margin-top: 1.2em">
-                    In what follows, these field coefficients are rewritten in terms of
-                    the normalized strengths \(G(s)\), \(K(s)\) and \(S(s)\)
+                <p style="margin-top: 1em">
+                    Where $B_0$ is the constant dipolar magnetic field, $B_1 =
+                    \dfrac{\partial B}{\partial x}$ and $B_2 = \dfrac{\partial^2
+                    B}{\partial x^2}$
                 </p>
             </section>
 
             <section>
-                <h2>Normalized Magnetic Strengths</h2>
-
-                <p style="margin-top: 1em">
-                    For beam dynamics, it is convenient to normalize the magnetic field
-                    coefficients by the magnetic rigidity \(B\rho\)
-                </p>
-
-                <div class="multiple-columns" style="
-              margin-top: 1.5em;
-              width: 82%;
-              margin-left: 9%;
-              margin-right: 9%;
-              column-gap: 3em;
-            ">
-                    <div class="column">
-                        <p>$$G(s) \equiv \frac{B_0(s)}{B\rho} = \frac{1}{\rho(s)}$$</p>
-                        <p>$$K(s) \equiv \frac{B_1(s)}{B\rho}$$</p>
-                        <p>$$S(s) \equiv \frac{B_2(s)}{B\rho}$$</p>
-                    </div>
-
-                    <div class="column">
-                        <ul style="margin-top: 0.5em">
-                            <li>\(G(s)\): reference curvature set by the dipoles</li>
-                            <li>\(K(s)\): quadrupole focusing strength</li>
-                            <li>\(S(s)\): sextupole strength</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <p style="margin-top: 1.5em">
-                    These normalized functions are the quantities that naturally appear
-                    in the transverse equations of motion
-                </p>
-            </section>
-
-            <section>
-                <h2>Linear Transverse Dynamics</h2>
-
-                <p style="margin-top: 1em">
-                    In the paraxial and linear approximation, the transverse motion is
-                    governed by the curvature and quadrupole focusing functions
-                </p>
-
-                <div class="multiple-columns" style="
-              margin-top: 1.5em;
-              width: 86%;
-              margin-left: 7%;
-              margin-right: 7%;
-              column-gap: 3em;
-            ">
-                    <div class="column">
-                        <p>$$x'' = -\left(K + G^2\right)x + G\delta$$</p>
-                        <p>$$y'' = K y$$</p>
-                    </div>
-
-                    <div class="column">
-                        <ul style="margin-top: 0.5em">
-                            <li>The horizontal plane includes the effect of curvature</li>
-                            <li>The quadrupoles define the linear focusing structure</li>
-                            <li>
-                                For \(\delta = 0\), the homogeneous motion reduces to Hill's
-                                equation
+                <h2>Magnetic Fields</h2>
+                <div class="two-columns" style="margin-top: 3em">
+                    <div class="column" style="height: 100%; align-self: first baseline">
+                        <p>
+                            We conveniently normalize the magnetic field coefficients by the
+                            magnetic rigidity \(B\rho\), defining the magnetic lattice functions
+                        </p>
+                        <ul>
+                            <li style="margin-top: 1em;">
+                                The curvature function: $G(s) \equiv \dfrac{B_0(s)}{B\rho} =
+                                \dfrac{1}{\rho(s)}$
+                            </li>
+                            <li style="margin-top: 1em">
+                                The focusing function: $K(s) \equiv \dfrac{B_1(s)}{B\rho} =
+                                \dfrac{1}{B\rho}\dfrac{\partial B}{\partial x}{}$
+                            </li>
+                            <li style="margin-top: 1em">
+                                The sextupole strength: $S(s) \equiv \dfrac{B_2(s)}{B\rho} =
+                                \dfrac{1}{B\rho}\dfrac{\partial^2 B}{\partial x^2}$
                             </li>
                         </ul>
                     </div>
+                    <div class="column">
+                        <image src="images/lattice-functions.png" style="width: 100%" />
+                    </div>
                 </div>
             </section>
 
             <section>
-                <h2>Betatron Motion and Dispersion</h2>
+                <h2>Transverse Dynamics</h2>
+                <p style="margin-top: 2em">
+                    From the Hamiltonian, we derive the equations of motion:
+                </p>
+                <p style="margin-top: 1em">
+                    $$\left\{ \begin{array}{l} x'' = -\dfrac{(1 + Gx)^2}{1 +
+                    \delta}\dfrac{B_y}{B\rho} + G(1 + Gx) \\ y'' = +\dfrac{(1 + Gx)^2}{1
+                    + \delta}\dfrac{B_y}{B\rho} \end{array} \right.$$
+                </p>
 
-                <div class="multiple-columns" style="
-              margin-top: 1em;
-              width: 88%;
-              margin-left: 6%;
-              margin-right: 6%;
-              column-gap: 3em;
-            ">
-                    <div class="column">
+                <p style="margin-top: 2em">
+                    In the linear approximation, these equations become:
+                </p>
+
+                <p style="margin-top: 1em">
+                    $$\Biggl\{ \begin{array}{l} x'' = -\left(K + G^2\right)x + G\delta
+                    \\ y'' = +K y \end{array} \Biggr.$$
+                </p>
+            </section>
+
+            <section>
+                <h2>Transverse Dynamics</h2>
+
+                <div class="two-columns" style="margin-top: 2em;">
+                    <div class="column" style="height: 100%; align-self: center">
                         <p>
-                            For on-energy particles \((\delta = 0)\), the dynamics reduce to
-                            Hill's equation and the solution can be written as
+                            For on-energy particles, the equations of motion reduce to the
+                            Hill's equation
                         </p>
 
+                        <p>$$u'' = -K_u u$$</p>
+
+                        <p>where $u = x, y$ and $K_x = K + G^2, K_y = -K.$</p>
+                        <p style="margin-top: 1em;">The solutions then become</p>
+
                         <p>
-                            $$u(s)= a\sqrt{\beta_u(s)}
-                            \cos\!\left(\phi_u(s)-\phi_0\right), \qquad u=x,y$$
+                            $$u(s)= a\sqrt{\beta_u(s)} \cos\!\left(\phi_u(s)-\phi_0\right),
+                            \qquad \phi_u(s) = \int\limits_0^s \dfrac{1}{\beta_u(s')} ds'$$
                         </p>
+                        <p>which we call the betatron motion</p>
                     </div>
+                    <div class="column" style="height: 100%; align-self: center">
+                        <img src="images/betas.png" width="100%" style="margin-top: 1em;" />
+                    </div>
+                </div>
+            </section>
 
-                    <div class="column">
+            <section>
+                <h2>Transverse Dynamics</h2>
+                <div class="two-columns" style="margin-top: 2em;">
+                    <div class="column" style="height: 100%; align-self: center">
                         <p>
-                            For off-momentum particles, the horizontal motion includes a
-                            particular solution associated with the dispersion function
+                            For off-energy particles, the horizontal motion requires a
+                            particular solution
                         </p>
 
-                        <p>$$x(s)=x_\beta(s)+\eta(s)\delta$$</p>
+                        <p>$$ x'' = -(K + G^2) x + G\delta$$</p>
+
+                        <p>
+                            $\rightarrow$ where we choose $x_\delta(s) = \eta(s)\delta$
+
+
+                        </p>
+                        <p style="margin-top: 2em;">
+                            The solution describes an off-energy orbit associated to the dispersion function $\eta$,
+                            which satisfies
+                        </p>
 
                         <p>$$\eta'' = -\left(K+G^2\right)\eta + G$$</p>
                     </div>
+                    <div class="column" style="height: 100%; align-self: center">
+                        <img src="images/dispersion.png" width="100%" />
+                    </div>
                 </div>
-
-                <p style="margin-top: 1.2em">
-                    The optical functions \(\beta(s)\), \(\phi(s)\) and \(\eta(s)\)
-                    determine the orbit response and are central to beam-based alignment
-                    analyses
-                </p>
             </section>
 
-<!-- ||||||||||||||||||||||||||||||||||||||||||||||
-|||||||||||||||||||||||||||||||||||||||||||||||||||
-|||||||||||||||||||||||||||||||||||||||||||||||||||
-||||||||||||||||||||||||||||||||||||||||||||||||||| 
--->
+            <section>
+                <h2>Maps Notation</h2>
+                <p style="margin-top: 2em;">The particles' motion can also be described in terms of maps.<br> Each element on the lattice defines a map that transforms the particles' state:</p>
+                <p>$$\mathbf{x}(s_1) = \mathcal{M}_{s_1\leftarrow s_0}(\mathbf{x}(s_0))$$</p>
+                <p>A sequence of elements is just a composition of maps:</p>
+                <p>$$\mathbf{x}(s_5) = (\mathcal{M}_{s_5\leftarrow s_4}\circ\mathcal{M}_{s_4\leftarrow s_3}\circ\mathcal{M}_{s_3\leftarrow s_2}\circ\mathcal{M}_{s_2\leftarrow s_1}\circ\mathcal{M}_{s_1\leftarrow s_0})(\mathbf{x}(s_0))$$</p>
+                <p>The one-turn map is the composition of all the maps on an accelerator</p>
+                <p>$$\mathcal{M} =  \mathcal{M}_{s_{N+1}\leftarrow s_N}\circ\cdots\circ\mathcal{M}_{s_1\leftarrow s_0}$$</p>
+            </section>
+
+            <section>
+                <h2>Closed Orbit</h2>
+                <p style="margin-top: 2em;">After each turn, the particles' state follows</p>
+                <p>
+                    $$\begin{array}{rcl} 
+                    \mathbf{x}_1 &=& \mathcal{M}(\mathbf{x}_0)\\
+                    \mathbf{x}_2 &=& \mathcal{M}(\mathbf{x}_1)\\
+                    &\vdots&\\
+                    \mathbf{x}_{n+1} &=& \mathcal{M}(\mathbf{x}_n)
+                    \end{array}$$
+                </p>
+                <p style="margin-top: 2em;">The closed orbit is the fixed point of the one-turn map</p>
+                <p>$\mathbf{x}^* = \mathcal{M}(\mathbf{x}^*$)</p>
+            </section>
+
+            <section>
+                <h2>Beam Steering</h2>
+            </section>
 
             <section>
                 <h1>Beam-Based Alignment</h1>
-            </section>
-
-            <section>
-                <h2>Standard BBA</h2>
-                <div class="two-columns">
-                    <div class="column">
-                        <p style="text-align: left">
-                            In the traditional BBA, the goal is to determine the BPM offset
-                            relative to the magnetic center of the nearest quadrupole, using
-                            the beam itself as a probe.[1]
-                        </p>
-                        <p style="text-align: left">
-                            For each BPM-quadrupole pair $i$, the beam is steered to a set
-                            of transverse positions $(x_i, y_i)$ around the nominal orbit:
-                        </p>
-                        <p style="
-                  text-align: left;
-                  font-size: 0.9em;
-                  margin-top: 0.5em;
-                  font-family: &quot;Computer Modern&quot;, serif;
-                ">
-                            $x_i = x_{i0} + n\, \Delta x,\quad y_i = y_{i0} + m\, \Delta
-                            y,\quad n, m = 0,1,2,\dots$[1]
-                        </p>
-                    </div>
-                    <div class="column">
-                        <p style="text-align: left">
-                            For each beam position, the quadrupole strength is modulated
-                            around its nominal value:
-                        </p>
-                        <p style="
-                  text-align: left;
-                  font-size: 0.9em;
-                  margin-top: 0.5em;
-                  font-family: &quot;Computer Modern&quot;, serif;
-                ">
-                            $K = K_0 \pm \Delta K,$[1]
-                        </p>
-                        <p style="text-align: left; margin-top: 0.6em">
-                            and the induced orbit change is measured in all BPMs:
-                        </p>
-                        <p style="
-                  text-align: left;
-                  font-size: 0.85em;
-                  margin-top: 0.5em;
-                  font-family: &quot;Computer Modern&quot;, serif;
-                ">
-                            $\Delta \text{orb}_x = \text{orb}_x(+\Delta K) -
-                            \text{orb}_x(-\Delta K),$<br />
-                            $\Delta \text{orb}_y = \text{orb}_y(+\Delta K) -
-                            \text{orb}_y(-\Delta K).$[1]
-                        </p>
-                        <p style="text-align: left; margin-top: 0.6em">
-                            The BPM offset is obtained from the beam position where the
-                            induced orbit change vanishes, i.e. where the beam passes
-                            exactly through the quadrupole magnetic center:[1]
-                        </p>
-                        <p style="
-                  text-align: left;
-                  font-size: 0.85em;
-                  margin-top: 0.5em;
-                  font-family: &quot;Computer Modern&quot;, serif;
-                ">
-                            $x_{i,\text{offset}} = x_i\ \big|\ \Delta\text{orb}_x = 0,\quad
-                            y_{i,\text{offset}} = y_i\ \big|\ \Delta\text{orb}_y = 0.$[1]
-                        </p>
-                    </div>
-                </div>
-                <p style="text-align: left; margin-top: 0.8em">
-                    Although very accurate and conceptually simple, this serial
-                    procedure must be repeated for all BPM-quadrupole pairs and multiple
-                    beam positions, resulting in long calibration times at SIRIUS.[1]
-                </p>
-            </section>
-
-            <section>
-                <h2>Parallel BBA</h2>
-                <div class="two-columns">
-                    <div class="column">
-                        <p style="text-align: left">
-                            Parallel BBA techniques aim at measuring the alignment of
-                            multiple quadrupoles simultaneously by correcting or analyzing
-                            the orbit response to combined quadrupole strength
-                            variations.[1]
-                        </p>
-                        <p style="text-align: left">
-                            An example is the “Simultaneous beam-based alignment measurement
-                            for multiple magnets by correcting induced orbit shift”, where
-                            orbit distortions induced by quadrupole modulation are corrected
-                            using steering magnets, and the required corrector strengths
-                            encode the quadrupole-BPM offsets.[1]
-                        </p>
-                    </div>
-                    <div class="column">
-                        <ul>
-                            <li>
-                                Exploits global orbit response instead of scanning one
-                                quadrupole at a time.[1]
-                            </li>
-                            <li>
-                                Potentially reduces total measurement time and allows for more
-                                automated procedures.[1]
-                            </li>
-                            <li>
-                                Requires careful modeling of optics and corrector/BPM systems,
-                                and robust data analysis (e.g., SVD-based inversion).[2][1]
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <section>
-                <h2>Fast AC BBA</h2>
-                <div class="two-columns">
-                    <div class="column">
-                        <p style="text-align: left">
-                            Fast AC BBA techniques use time-varying (usually sinusoidal)
-                            excitation of quadrupole strengths and synchronous detection of
-                            the beam response at BPMs to extract offsets.[1]
-                        </p>
-                        <p style="text-align: left">
-                            Instead of stepping $K$ to $K_0 \pm \Delta K$ quasi-statically,
-                            a small AC modulation is applied around the nominal strength,
-                            and the resulting orbit oscillation at the modulation frequency
-                            is measured.[1]
-                        </p>
-                    </div>
-                    <div class="column">
-                        <ul>
-                            <li>
-                                Frequency-domain analysis improves signal-to-noise ratio and
-                                allows faster data acquisition.[1]
-                            </li>
-                            <li>
-                                AC methods can be combined with parallel schemes to obtain
-                                multi-magnet BBA with reduced machine time.[1]
-                            </li>
-                            <li>
-                                Implementation at SIRIUS must consider hardware limits,
-                                available modulation channels and impact on stored beam
-                                stability.[2][1]
-                            </li>
-                        </ul>
-                    </div>
-                </div>
             </section>
 
             <section>
