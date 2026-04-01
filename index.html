@@ -412,7 +412,7 @@
             </section>
 
             <section>
-                <h2>Transverse Dynamics</h2>
+                <h2>Betatron Motion</h2>
 
                 <div class="two-columns" style="margin-top: 2em;">
                     <div class="column" style="height: 100%; align-self: center">
@@ -423,14 +423,12 @@
 
                         <p>$$u'' = -K_u u$$</p>
 
-                        <p>where $u = x, y$ and $K_x = K + G^2, K_y = -K.$</p>
-                        <p style="margin-top: 1em;">The solutions then become</p>
-
+                        <p>where $u = x, y$, $\ K_x = K + G^2$ and $\ K_y = -K.$</p>
+                        <p style="margin-top: 1em;">The solution gives</p>
                         <p>
-                            $$u(s)= a\sqrt{\beta_u(s)} \cos\!\left(\phi_u(s)-\phi_0\right),
-                            \qquad \phi_u(s) = \int\limits_0^s \dfrac{1}{\beta_u(s')} ds'$$
+                            $$u(s)= a\sqrt{\beta_u(s)} \cos\!\left(\phi_u(s)-\phi_0\right)$$
                         </p>
-                        <p>which we call the betatron motion</p>
+                        <p>which we call the betatron oscillations</p>
                     </div>
                     <div class="column" style="height: 100%; align-self: center">
                         <img src="images/betas.png" width="100%" style="margin-top: 1em;" />
@@ -439,7 +437,20 @@
             </section>
 
             <section>
-                <h2>Transverse Dynamics</h2>
+                <h2>Betatron Motion</h2>
+                <p style="border: 3px solid black; border-radius: 50px; padding-left: 1em; padding-right: 1em; width: 30%; margin-left: 32%; margin-top: 2em;">
+                    $$u(s) = a\sqrt{\beta_u(s)} \cos\!\left(\phi_u(s)-\phi_0\right)$$
+                </p>
+                <p style="margin-top: 1em;">The betatron functions satisfy</p>
+                <p>
+                    $$\dfrac{1}{2}\beta'' + K(s)\beta = \dfrac{1}{\beta}\left[1 + \left(\dfrac{\beta'}{2}\right)^2\right] \qquad\qquad\Biggl\{\begin{array}{l} \beta(s) = \beta(s+L) \\ \beta'(s) = \beta'(s + L)\end{array}\Bigg.$$
+                </p>
+                <p>and the phase-advance and tune are</p>
+                <p>$$\phi_u(s) = \int\limits_0^s \dfrac{1}{\beta_u(s')} ds' \qquad \nu_u(s) = \dfrac{1}{2\pi}\int\limits_s^{s+L} \dfrac{1}{\beta_u(s')} ds'$$</p>
+            </section>
+
+            <section>
+                <h2>Dispersion</h2>
                 <div class="two-columns" style="margin-top: 2em;">
                     <div class="column" style="height: 100%; align-self: center">
                         <p>
@@ -451,8 +462,6 @@
 
                         <p>
                             $\rightarrow$ where we choose $x_\delta(s) = \eta(s)\delta$
-
-
                         </p>
                         <p style="margin-top: 2em;">
                             The solution describes an off-energy orbit associated to the dispersion function $\eta$,
@@ -465,6 +474,22 @@
                         <img src="images/dispersion.png" width="100%" />
                     </div>
                 </div>
+            </section>
+
+            <section>
+                <h2>Dispersion</h2>
+                <p style="margin-top: 2em;">
+                    The dispersion is a natural effect of the dipoles on the lattice, <br> 
+                    that "strongly" deflects less energetic particles <br>
+                    and "weakly" deflects more energetic particles
+                </p>
+                <div id="dispersion-three-container" style="width: 100%; height: 500px; border: 0">
+                    <p id="label-denom">$\delta$</p>
+                    <p id="label-depos">$\delta^+$</p>
+                    <p id="label-deneg">$\delta^-$</p>
+                    <p id="label-dipole">$\text{Dipole}$</p>
+                </div>
+                <script src="scripts/dispersion.js" type="module"></script>
             </section>
 
             <section>
@@ -493,7 +518,7 @@
             </section>
 
             <section>
-                <h2>Beam Steering</h2>
+                <h2>Beam Steering? Dipole kick? Gradient errors?</h2>
             </section>
 
             <section>

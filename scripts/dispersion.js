@@ -5,10 +5,10 @@ import {
     CSS2DObject,
 } from "three/addons/renderers/CSS2DRenderer.js";
 
-const container = document.getElementById("siscoord-three-container");
+const container = document.getElementById("dispersion-three-container");
 const scene = new THREE.Scene();
 
-const frustumHeight = 5;
+const frustumHeight = 4.5;
 const camera = new THREE.OrthographicCamera(
     (-frustumHeight * (container.clientWidth / container.clientHeight)) / 2,
     (frustumHeight * (container.clientWidth / container.clientHeight)) / 2,
@@ -17,7 +17,7 @@ const camera = new THREE.OrthographicCamera(
     0.1,
     1000,
 );
-camera.position.set(2.5, 1.5, 2.5);
+camera.position.set(0, 0, 20);
 camera.lookAt(0, 0, 0);
 
 const renderer = new THREE.WebGLRenderer({
@@ -31,12 +31,65 @@ container.appendChild(renderer.domElement);
 const labelRenderer = new CSS2DRenderer();
 labelRenderer.setSize(container.clientWidth, container.clientHeight);
 labelRenderer.domElement.style.position = "absolute";
-labelRenderer.domElement.style.top = "3.1em";
+labelRenderer.domElement.style.top = "8em";
 labelRenderer.domElement.style.left = "0px";
 labelRenderer.domElement.style.pointerEvents = "none";
 container.appendChild(labelRenderer.domElement);
 
 scene.background = null;
+
+
+////////////////////////////////////////////////////////////////////////
+
+// Dipolo: retângulo central
+const dipolo = new THREE.Mesh(
+    new THREE.PlaneGeometry(6, 3),
+    new THREE.MeshBasicMaterial({ color: 0x4cc9f0, transparent: true, opacity: 0.2 })
+);
+scene.add(dipolo);
+dipolo.position.set(0, 0, 0);
+
+function createTrajectory(bend, x = 6 / 2, y = 3 / 2, color) {
+    const start = new THREE.Vector3(-x, 0, 0);
+    const control = new THREE.Vector3(0, bend, 0);
+    const end = new THREE.Vector3(x, bend - y, 0);
+    const N = 33;
+    const curve = new THREE.QuadraticBezierCurve3(start, control, end);
+    const points = [];
+    for (let i = 0; i < N + 1; i++) {
+        const xi = (i / N) * x - 2 * x;
+        const yi = (i / N) * y - y;
+        points.push(new THREE.Vector3(xi, yi, 0));
+    }
+    points.push(...curve.getPoints(N));
+    for (let i = 0; i < N + 1; i++) {
+        const xi = (i / N) * x + x;
+        const yi = -(i / N) * y + bend - y;
+        points.push(new THREE.Vector3(xi, yi, 0));
+    }
+
+    const line = new THREE.Line(
+        new THREE.BufferGeometry().setFromPoints(points),
+        new THREE.LineBasicMaterial({ color })
+    );
+    scene.add(line);
+
+    const particle = new THREE.Mesh(
+        new THREE.CircleGeometry(0.07, 20),
+        new THREE.MeshBasicMaterial({ color })
+    );
+    particle.position.copy(start);
+    scene.add(particle);
+
+    return { line, particle, points};
+}
+
+const morenrg = createTrajectory(2.0, 3, 1.5, 0x0000ff);
+const nominal = createTrajectory(1.5, 3, 1.5, 0x000000);
+const lessnrg = createTrajectory(1.0, 3, 1.5, 0xff0000);
+
+// /////////////////////////////////////////////////////////////////////
+
 
 // NOVA VARIAVEL: Detecta modo print-pdf
 const isPrintPDF = !!window.location.search.match(/print-pdf/gi);
@@ -57,81 +110,13 @@ function createText(id = "", color = mainColor) {
     return cssObject;
 }
 
-const v_text = createText("#label-vecv", "red");
-const labelR = createText("#label-vecr0", "gray");
-const x_text = createText("#label-xhat");
-const y_text = createText("#label-yhat");
-const s_text = createText("#label-shat");
-scene.add(x_text, y_text, s_text, v_text, labelR);
+const depos = createText("#label-depos", "blue");
+const deneg = createText("#label-deneg", "red");
+const denom = createText("#label-denom");
+const dipole = createText("#label-dipole");
+scene.add(depos, deneg, denom, dipole);
 
-const rho = 2;
-const orbitGeometry = new THREE.TorusGeometry(rho, 0.01, 16, 80);
-const orbitMaterial = new THREE.MeshBasicMaterial({
-    color: mainColor,
-    wireframe: false,
-});
-const orbit = new THREE.Mesh(orbitGeometry, orbitMaterial);
-orbit.rotation.x = Math.PI / 2;
-scene.add(orbit);
-
-const origin = new THREE.Vector3(0, 0, 0);
-const dirx = new THREE.Vector3(1, 0, 0);
-
-const arrowS = new THREE.ArrowHelper(origin, dirx, 1, mainColor);
-const arrowX = new THREE.ArrowHelper(origin, dirx, 1, mainColor);
-const arrowY = new THREE.ArrowHelper(origin, dirx, 1, mainColor);
-scene.add(arrowS, arrowX, arrowY);
-
-const arrowR = new THREE.ArrowHelper(origin, dirx, 1, halfColor);
-scene.add(arrowR);
-
-const electron = new THREE.Mesh(
-    new THREE.SphereGeometry(0.05, 16, 16),
-    new THREE.MeshBasicMaterial({ color: "red" }),
-);
-scene.add(electron);
-
-
-
-const arrowVel = new THREE.ArrowHelper(
-    new THREE.Vector3(),
-    new THREE.Vector3(),
-    0.3,
-    "red",
-);
-arrowVel.constantLengthInScreenSpace = false;
-scene.add(arrowVel);
-
-
-let prevPos = null;
-
-function fx(t) {
-    return 0.07 * Math.cos(9 * t);
-}
-function fy(t) {
-    return 0.1 * Math.cos(4 * t);
-}
-
-let e_traj = [];
-let t = 0;
-let dirY = new THREE.Vector3(0, 1, 0);
-for (let j=0; j<101; j++) {
-    t = j / 100 * 2 * Math.PI;
-    let x = rho * Math.cos(t);
-    let y = rho * Math.sin(t);
-    var dirx_update = new THREE.Vector3(x, 0, y);
-    dirx_update.normalize();
-    e_traj[j] = new THREE.Vector3(
-        x + fx(t) * dirx_update.x,
-        fy(t) * dirY.y,
-        y + fx(t) * dirx_update.z,
-    )
-}
-const geometry = new THREE.BufferGeometry().setFromPoints(e_traj);
-const material = new THREE.LineBasicMaterial({ color: "red" });
-const traj = new THREE.Line(geometry, material);
-scene.add(traj);
-
+dipole.position.set(0, -1.2, 0);
 
 function onResize() {
     if (container.clientWidth === 0) return;
@@ -151,63 +136,68 @@ window.addEventListener("resize", onResize);
 
 const clock = new THREE.Timer();
 
+const pos0 = nominal.points[0];
+nominal.particle.position.set(pos0.x, pos0.y, pos0.z);
+lessnrg.particle.position.set(pos0.x, pos0.y, pos0.z);
+morenrg.particle.position.set(pos0.x, pos0.y, pos0.z);
+
 function updateFrame(delta, theta) {
-    const t = theta % (2 * Math.PI);
+    let t = theta * 0.4;
+    let part = null;
+    let label = null;
+    let yshift = 0;
+    let pos = null;
+    if (t > 3) {
+        t = t % 3;
+        nominal.particle.position.set(pos0.x, pos0.y, pos0.z);
+        lessnrg.particle.position.set(pos0.x, pos0.y, pos0.z);
+        morenrg.particle.position.set(pos0.x, pos0.y, pos0.z);
+    }
 
-    // controls.update();
+    if (0 < t && t <= 1) {
+        part = nominal;
+        label = denom;
+        yshift = 0.3;
+        nominal.particle.visible = true;
+        lessnrg.particle.visible = false;
+        morenrg.particle.visible = false;
+        denom.visible = true;
+        deneg.visible = false;
+        depos.visible = false;
+    }
+    else if (1 < t && t <= 2) {
+        t -= 1;
+        part = lessnrg;
+        label = deneg;
+        yshift = -0.3;
+        nominal.particle.visible = false;
+        lessnrg.particle.visible = true;
+        morenrg.particle.visible = false;
+        denom.visible = false;
+        deneg.visible = true;
+        depos.visible = false;
+    }
+    else if (2 < t && t <= 3) {
+        t -= 2;
+        part = morenrg;
+        label = depos;
+        yshift = 0.3;
+        nominal.particle.visible = false;
+        lessnrg.particle.visible = false;
+        morenrg.particle.visible = true;
+        denom.visible = false;
+        deneg.visible = false;
+        depos.visible = true;
+    }
 
-    const x = rho * Math.cos(t);
-    const y = rho * Math.sin(t);
-
-    x_text.position.set(x, 0, y);
-    s_text.position.set(x, 0, y);
-
-    arrowX.position.set(x, 0, y);
-    var dirx_update = new THREE.Vector3(x, 0, y);
-    dirx_update.normalize();
-    arrowX.setDirection(dirx_update);
-    arrowX.setLength(1);
-    x_text.position.set(x + 1.3 * dirx_update.x, -0.75, y + 1.3 * dirx_update.z);
-    labelR.position.set(0.8 * dirx_update.x, -1.0, 0.8 * dirx_update.z);
-
-    arrowR.position.set(0, 0, 0);
-    arrowR.setDirection(dirx_update);
-    arrowR.setLength(rho);
-
-    arrowS.position.set(x, 0, y);
-    var dir = new THREE.Vector3(-y, 0, x);
-    dir.normalize();
-    arrowS.setDirection(dir);
-    arrowS.setLength(1);
-    s_text.position.set(x + 1.3 * dir.x, -0.75, y + 1.3 * dir.z);
-
-    arrowY.position.set(x, 0, y);
-    var dirY = new THREE.Vector3(0, 1, 0);
-    arrowY.setDirection(dirY);
-    arrowY.setLength(1);
-    y_text.position.set(x, 0.5, y);
-
-    electron.position.set(
-        x + fx(t) * dirx_update.x,
-        fy(t) * dirY.y,
-        y + fx(t) * dirx_update.z,
-    );
-
-    const vel = new THREE.Vector3();
-    vel
-        .subVectors(electron.position, prevPos || new THREE.Vector3())
-        .multiplyScalar(1 / delta);
-    arrowVel.setDirection(vel.normalize());
-    arrowVel.setLength(0.7);
-    arrowVel.position.copy(electron.position);
-
-    v_text.position.set(
-        electron.position.x + vel.x,
-        electron.position.y + vel.y - 0.75,
-        electron.position.z + vel.z,
-    );
-
-    prevPos = electron.position.clone();
+    if (part) {
+        const idx = Math.floor(t*(part.points.length - 1)) - 1;
+        pos = part.points[idx];
+        if (pos) {
+            part.particle.position.set(pos.x, pos.y, pos.z);
+            label.position.set(pos.x, pos.y + yshift, pos.z);
+        }
+    }
 
     renderer.render(scene, camera);
     labelRenderer.render(scene, camera);

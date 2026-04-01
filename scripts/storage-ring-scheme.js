@@ -333,14 +333,21 @@ let animationId = null;
 let isAnimating = false;
 let progresso = 0;
 
-function renderAnimation() {
+let lastTime = 0;
+const fps = 30;
+const frameTime = 1000 / fps;
+
+function renderAnimation(now=0) {
     if (!isAnimating) return;
     
     animationId = requestAnimationFrame(renderAnimation);
+
+    if (now - lastTime < frameTime) return;
+    lastTime = now;
     
     clock.update();
     const delta = clock.getDelta();
-    progresso += delta * 0.5;
+    progresso += delta * 0.2;
     updateFrame(progresso);
 }
 
