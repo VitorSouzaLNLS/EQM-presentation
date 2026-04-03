@@ -304,7 +304,7 @@
                 </div>
             </section>
 
-            <section>
+            <section data-transition="slide-in fade-out">
                 <h2>Magnetic Fields</h2>
 
                 <p style="margin-top: 1em">
@@ -313,7 +313,7 @@
                     representation
                 </p>
 
-                <div class="multiple-columns" style="margin-top: 1em">
+                <div class="multiple-columns" style="margin-top: 0.5em">
                     <div class="column">
                         <p>
                             $$B_y(x,y,s) + i B_x(x,y,s) = \sum_{n=0}^{\infty} \Big( B_n(s) +
@@ -329,39 +329,39 @@
                     </div>
                 </div>
 
-                <p style="margin-top: 1em">
+                <p style="margin-top: 0em">
                     The first terms of the expansion correspond to the elements most relevant for linear optics and
                     chromatic correction:
                 </p>
 
-                <div class="multiple-columns" style="margin-top: 1em">
-                    <div class="column">
+                <div class="multiple-columns" style="margin-top: 0em">
+                    <div class="column" style="border: 2px solid; border-radius: 30px; padding-top: 0.5em;">
                         Dipole: <br />
-                        $$\left\{ \begin{array}{l} B_x = 0 \\ B_y = B_0 \end{array}
-                        \right.$$
+                        $$\Biggl\{ \begin{array}{l} B_x = 0 \\ B_y = B_0 \end{array}
+                        \Biggr.$$
                     </div>
 
-                    <div class="column">
+                    <div class="column" style="border: 2px solid; border-radius: 30px; padding-top: 0.5em;">
                         Quadrupole: <br />
-                        $$\left\{ \begin{array}{l} B_x = B_1 y \\ B_y = B_1 x \end{array}
-                        \right.$$
+                        $$\Biggl\{ \begin{array}{l} B_x = B_1 y \\ B_y = B_1 x \end{array}
+                        \Biggr.$$
                     </div>
 
-                    <div class="column">
+                    <div class="column" style="border: 2px solid; border-radius: 30px; padding-top: 0.5em;">
                         Sextupole: <br />
-                        $$\left\{ \begin{array}{l} B_x = 2 B_2 x y \\ B_y = B_2 (x^2 -
-                        y^2) \end{array} \right.$$
+                        $$\Biggl\{ \begin{array}{l} B_x = 2 B_2 x y \\ B_y = B_2 (x^2 -
+                        y^2) \end{array} \Biggr.$$
                     </div>
                 </div>
 
-                <p style="margin-top: 1em">
+                <p style="margin-top: 0.5em">
                     Where $B_0$ is the constant dipolar magnetic field, $B_1 =
                     \dfrac{\partial B}{\partial x}$ and $B_2 = \dfrac{\partial^2
                     B}{\partial x^2}$
                 </p>
             </section>
 
-            <section>
+            <section data-transition="fade-in fade-out">
                 <h2>Magnetic Fields</h2>
                 <div class="two-columns" style="margin-top: 3em">
                     <div class="column" style="height: 100%; align-self: first baseline">
@@ -390,6 +390,21 @@
                 </div>
             </section>
 
+            <section data-transition="fade-in slide-out">
+                <h2>Magnetic Fields</h2>
+                <div class="multiple-columns" style="margin-top: 2em; align-items: center;">
+                    <div class="column" style="align-items: center;">
+                        <image src="images/B2fig.png" style="height: 200px; width: auto; align-self: center;" />
+                    </div>
+                    <div class="column" style="align-items: center;">
+                        <image src="images/Quad.png" style="height: 200px; width: auto; align-self: center;" />
+                    </div>
+                    <div class="column" style="align-items: center;">
+                        <image src="images/Sext.png" style="height: 200px; width: auto; align-self: center;" />
+                    </div>
+                </div>
+            </section>
+
             <section>
                 <h2>Transverse Dynamics</h2>
                 <p style="margin-top: 2em">
@@ -411,7 +426,7 @@
                 </p>
             </section>
 
-            <section>
+            <section data-transition="slide-in fade-out">
                 <h2>Betatron Motion</h2>
 
                 <div class="two-columns" style="margin-top: 2em;">
@@ -436,20 +451,24 @@
                 </div>
             </section>
 
-            <section>
+            <section data-transition="fade-in slide-out">
                 <h2>Betatron Motion</h2>
-                <p style="border: 3px solid black; border-radius: 50px; padding-left: 1em; padding-right: 1em; width: 30%; margin-left: 32%; margin-top: 2em;">
+                <p
+                    style="border: 3px solid black; border-radius: 50px; padding-left: 1em; padding-right: 1em; width: 30%; margin-left: 33%; margin-top: 2em;">
                     $$u(s) = a\sqrt{\beta_u(s)} \cos\!\left(\phi_u(s)-\phi_0\right)$$
                 </p>
                 <p style="margin-top: 1em;">The betatron functions satisfy</p>
                 <p>
-                    $$\dfrac{1}{2}\beta'' + K(s)\beta = \dfrac{1}{\beta}\left[1 + \left(\dfrac{\beta'}{2}\right)^2\right] \qquad\qquad\Biggl\{\begin{array}{l} \beta(s) = \beta(s+L) \\ \beta'(s) = \beta'(s + L)\end{array}\Bigg.$$
+                    $$\dfrac{1}{2}\beta'' + K(s)\beta = \dfrac{1}{\beta}\left[1 +
+                    \left(\dfrac{\beta'}{2}\right)^2\right] \qquad\qquad\Biggl\{\begin{array}{l} \beta(s) = \beta(s+L)
+                    \\ \beta'(s) = \beta'(s + L)\end{array}\Bigg.$$
                 </p>
                 <p>and the phase-advance and tune are</p>
-                <p>$$\phi_u(s) = \int\limits_0^s \dfrac{1}{\beta_u(s')} ds' \qquad \nu_u(s) = \dfrac{1}{2\pi}\int\limits_s^{s+L} \dfrac{1}{\beta_u(s')} ds'$$</p>
+                <p>$$\phi_u(s) = \int\limits_0^s \dfrac{1}{\beta_u(s')} ds' \qquad \nu_u(s) =
+                    \dfrac{1}{2\pi}\int\limits_s^{s+L} \dfrac{1}{\beta_u(s')} ds'$$</p>
             </section>
 
-            <section>
+            <section data-transition="slide-in fade-out">
                 <h2>Dispersion</h2>
                 <div class="two-columns" style="margin-top: 2em;">
                     <div class="column" style="height: 100%; align-self: center">
@@ -476,10 +495,10 @@
                 </div>
             </section>
 
-            <section>
+            <section data-transition="fade-in slide-out">
                 <h2>Dispersion</h2>
                 <p style="margin-top: 2em;">
-                    The dispersion is a natural effect of the dipoles on the lattice, <br> 
+                    The dispersion is a natural effect of the dipoles on the lattice, <br>
                     that "strongly" deflects less energetic particles <br>
                     and "weakly" deflects more energetic particles
                 </p>
@@ -492,37 +511,188 @@
                 <script src="scripts/dispersion.js" type="module"></script>
             </section>
 
-            <section>
+            <section data-transition="slide-in fade-out">
                 <h2>Maps Notation</h2>
-                <p style="margin-top: 2em;">The particles' motion can also be described in terms of maps.<br> Each element on the lattice defines a map that transforms the particles' state:</p>
+                <p style="margin-top: 2em;">The particles' motion can also be described in terms of maps.<br> Each
+                    element on the lattice defines a map that transforms the particles' state:</p>
                 <p>$$\mathbf{x}(s_1) = \mathcal{M}_{s_1\leftarrow s_0}(\mathbf{x}(s_0))$$</p>
                 <p>A sequence of elements is just a composition of maps:</p>
-                <p>$$\mathbf{x}(s_5) = (\mathcal{M}_{s_5\leftarrow s_4}\circ\mathcal{M}_{s_4\leftarrow s_3}\circ\mathcal{M}_{s_3\leftarrow s_2}\circ\mathcal{M}_{s_2\leftarrow s_1}\circ\mathcal{M}_{s_1\leftarrow s_0})(\mathbf{x}(s_0))$$</p>
+                <p>$$\mathbf{x}(s_5) = (\mathcal{M}_{s_5\leftarrow s_4}\circ\mathcal{M}_{s_4\leftarrow
+                    s_3}\circ\mathcal{M}_{s_3\leftarrow s_2}\circ\mathcal{M}_{s_2\leftarrow
+                    s_1}\circ\mathcal{M}_{s_1\leftarrow s_0})(\mathbf{x}(s_0))$$</p>
                 <p>The one-turn map is the composition of all the maps on an accelerator</p>
-                <p>$$\mathcal{M} =  \mathcal{M}_{s_{N+1}\leftarrow s_N}\circ\cdots\circ\mathcal{M}_{s_1\leftarrow s_0}$$</p>
+                <p>$$\mathcal{M} = \mathcal{M}_{s_{N+1}\leftarrow s_N}\circ\cdots\circ\mathcal{M}_{s_1\leftarrow s_0}$$
+                </p>
+            </section>
+
+            <section data-transition="fade-in slide-out">
+                <h2>Maps Notation</h2>
+                <p style="margin-top: 2em;">As example, a drift element (an empty space) is described by the map:</p>
+                <p>$$\mathcal{M}_\text{drift} = \left\{\begin{array}{lcl}
+                    x &\leftarrow& Lx'_0 + x_0\\
+                    x' &\leftarrow& x'_0\\
+                    y &\leftarrow& Ly'_0 + y_0\\
+                    y' &\leftarrow& y'_0
+                    \end{array} \right.$$</p>
+                <p>which can be written in a matrix form (dealing with $x$ and $y$ separately):</p>
+                <p>$$M_\text{drift} = \left(\begin{array}{cc}
+                    1 & L\\
+                    0 & 1
+                    \end{array} \right)$$</p>
             </section>
 
             <section>
                 <h2>Closed Orbit</h2>
-                <p style="margin-top: 2em;">After each turn, the particles' state follows</p>
+                <p style="margin-top: 2em;">Knowing the one tune map, after each turn, the particles' state changes
+                    following:</p>
                 <p>
-                    $$\begin{array}{rcl} 
+                    $$\begin{array}{rcl}
                     \mathbf{x}_1 &=& \mathcal{M}(\mathbf{x}_0)\\
                     \mathbf{x}_2 &=& \mathcal{M}(\mathbf{x}_1)\\
                     &\vdots&\\
                     \mathbf{x}_{n+1} &=& \mathcal{M}(\mathbf{x}_n)
                     \end{array}$$
                 </p>
-                <p style="margin-top: 2em;">The closed orbit is the fixed point of the one-turn map</p>
+                <p style="margin-top: 1em;">This way, we call the fixed point of the one-turn map the closed orbit</p>
                 <p>$\mathbf{x}^* = \mathcal{M}(\mathbf{x}^*$)</p>
             </section>
 
-            <section>
-                <h2>Beam Steering? Dipole kick? Gradient errors?</h2>
+            <section data-transition="slide-in fade-out">
+                <h2>Orbit Feedback-System</h2>
+                <!-- talk about sofb, fofb, bpms, correctors and the orbit correction -->
+                <ul>
+                    <li>Orbit Feedback-System: Why?</li>
+                    <li>Orbit Feedback-System: SOFB and SOFB</li>
+                    <li>Orbit Feedback-System: Beam Position Monitors</li>
+                    <li>Orbit Feedback-System: Correctors</li>
+                    <li>Orbit Feedback-System: Orbit Correction</li>
+                </ul>
             </section>
+
+            <section data-transition="fade-in fade-out">
+                <h2>Orbit Feedback-System: Beam Position Monitors</h2>
+                <p style="margin-top: 2em;">In the SIRIUS storage ring, we have 160 BPMs that read the transverse beam
+                    position</p>
+                <div class="multiple-columns" style="align-items: center; gap: 0.5em;">
+                    <div class="column" style="flex: 0 0 40%;">
+                        <p style="margin-top: 2em;">They are designed with two pair of antennas and the signal received
+                            is converted to transverse positions as:</p>
+                        <p>$$x = \zeta\left(\dfrac{A - C}{A + C} - \dfrac{B - D}{B + D}\right)$$</p>
+                        <p>$$y = \zeta\left(\dfrac{B - D}{B + D} + \dfrac{A - C}{A + C}\right)$$</p>
+                        <p>where $\zeta = 8.5$ mm is a calibration factor</p>
+                        <p>$\rightarrow$ This gives a resolution of $\approx$2 nm</p>
+                    </div>
+                    <div class="column" style="flex: 0 0 30%;">
+                        <img src="images/bpm_scheme.png" style="max-width:100%; height:auto; border:none;" />
+                    </div>
+                    <div class="column" style="flex: 0 0 25%;">
+                        <img src="images/sirius_bpm.png" style="max-width:100%; height:auto; border:none;" />
+                    </div>
+                </div>
+            </section>
+
+            <section data-transition="fade-in fade-out">
+                <h2>Orbit Feedback-System: Correctors</h2>
+                <!-- talk about the correctos we have: dipolar kicks and correctors inside skew quadrupoles, the fiels and the kick angles -->
+            </section>
+
+            <section data-transition="fade-in slide-out">
+                <h2>Orbit Feedback-System: Orbit Correction</h2>
+                <!-- talk about the orbit correction x = Mx + theta to theta = M^(-1)x -->
+                <p>$$\vec{u} = \{ x_1, \dots , x_{160}, y_1, \dots , y_{160} \} $$</p>
+                <p>$$\vec{\theta} = \{ \theta_{(\text{\small CH}, 1)}, \dots , \theta_{(\text{\small CH}, 120)},
+                    \theta_{(\text{\small CV}, 1)}, \dots , \theta_{(\text{\small CV}, 160)}, \theta_{(\text{\small
+                    RF})} \} $$</p>
+                <p>$$\vec{u} = M\vec{u} + \vec{\theta} $$</p>
+                <p>$$\rightarrow \vec{\theta} = M^{\small -1}\ \vec{u} $$</p>
+            </section>
+
 
             <section>
                 <h1>Beam-Based Alignment</h1>
+            </section>
+
+            <section data-transition="slide-in fade-out">
+                <h2>The BBA Principle</h2>
+                <p style="margin-top: 2em;">Despite the high precision, the electric center of the BPMs does not
+                    necessarily match the design orbit</p>
+                <p style="margin-top: 2em;">$\rightarrow$ Then, we calibrate the BPMs by finding the offset between its'
+                    electric center and the magnetic centers of the closest quadrupoles</p>
+            </section>
+
+            <section data-transition="fade-in fade-out">
+                <h2>The BBA Principle</h2>
+                <p style="margin-top: 2em;">From the equations of motion, we know that a beam passing through a
+                    quadrupole will be kicked:</p>
+                <p>$$\Biggl\{\begin{array}{l} x'' = -K x \\ y'' = +K y \end{array}\Biggr. \quad \Rightarrow \quad
+                    \Biggl\{\begin{array}{l} \Delta x' = -K x \\ \Delta y' = +K y \end{array}\Biggr.$$</p>
+                <p>Considering a pair of BPM and quadrupole, if they are close enough, we can assume $x_\text{bpm}
+                    \approx x_\text{quad}$ and $y_\text{bpm} \approx y_\text{quad}$</p>
+                <p style="margin-top: 1em;">Knowing that there might be an offset, we write:</p>
+                <p>$$\Biggl\{\begin{array}{l} \Delta x' = -K (x - x_\text{offset}) \\ \Delta y' = +K (y -
+                    y_\text{offset}) \end{array}\Biggr.$$</p>
+            </section>
+
+            <section data-transition="fade-in slide-out">
+                <h2>The BBA Principle</h2>
+                <p
+                    style="border: 3px solid black; border-radius: 50px; padding-left: 1em; padding-right: 1em; width: 30%; margin-left: 33%; margin-top: 2em;">
+                    $$\Biggl\{\begin{array}{l} \Delta x' = -K (x - x_\text{offset}) \\ \Delta y' = +K (y -
+                    y_\text{offset}) \end{array}\Biggr.$$</p>
+                <p style="margin-top: 2em;">From this we determine the offset by varying the beam position ($x$ and/or
+                    $y$) and the quadrupole strength ($K$) </p>
+                <p style="margin-top: 1em;">$\rightarrow$ If changing the quadrupole strength the orbit does not change,
+                    then $x = x_\text{offset}$ (and/or $y = y_\text{offset}$) </p>
+            </section>
+
+            <section data-transition="slide-in fade-out">
+                <h2>Standart BBA</h2>
+                show the usage of standart BBA and citations
+            </section>
+
+            <section data-transition="fade-in fade-out">
+                <h2>Standart BBA</h2>
+                show the standart BBA procedure in "bullet points" like an algorithm
+            </section>
+
+            <section data-transition="fade-in fade-out">
+                <h2>Standart BBA</h2>
+                show the way the results are obtained: linear fitting quadratic fitting
+            </section>
+
+            <section data-transition="fade-in slide-out">
+                <h2>Standart BBA</h2>
+                show plots of the linear and quadratic fittings
+            </section>
+
+            <section data-transition="slide-in fade-out">
+                <h2>Parallel BBA</h2>
+                show the parallel BBA article, its origin, current usage adn citations
+            </section>
+
+            <section data-transition="fade-in fade-out">
+                <h2>Parallel BBA</h2>
+                show the parallel BBA procedure, the IOS calculation and correction
+            </section>
+
+            <section data-transition="fade-in slide-out">
+                <h2>Parallel BBA</h2>
+                show the way the results are obtained with Parallel BBA
+            </section>
+
+            <section data-transition="slide-in fade-out">
+                <h2>Fast BBA AC</h2>
+                show the Fast BBA AC article, its origin, current usage and citations
+            </section>
+
+            <section data-transition="fade-in fade-out">
+                <h2>Fast BBA AC</h2>
+                show the Fast BBA AC procedure
+            </section>
+
+            <section data-transition="fade-in slide-out">
+                <h2>Fast BBA AC</h2>
+                show the way the results are obtained with Fast BBA AC
             </section>
 
             <section>
@@ -547,44 +717,8 @@
 
             <section>
                 <h1>Conclusion</h1>
-                <p style="text-align: left; margin-top: 0.8em">
-                    The SIRIUS Storage Ring requires precise and efficient BPM
-                    calibration to fully exploit its 4th-generation performance,
-                    motivating the study of alternative Beam-Based Alignment techniques
-                    beyond the traditional, time-consuming serial method.[2][1]
-                </p>
-                <p style="text-align: left; margin-top: 0.4em">
-                    Building on previous experience with optics correction and advanced
-                    simulation tools at LNLS, this project combines theoretical
-                    modeling, numerical simulations and machine experiments to validate
-                    Parallel and fast BBA schemes tailored to the SIRIUS
-                    environment.[3][2][1]
-                </p>
-                <p style="text-align: left; margin-top: 0.4em">
-                    The expected outcome is a robust BBA procedure that significantly
-                    reduces calibration time while preserving or improving BPM accuracy
-                    and reproducibility, contributing directly to SIRIUS orbit control
-                    and beam quality.[1]
-                </p>
             </section>
 
-            <section>
-                <h1>Aknowledgments</h1>
-                <p style="text-align: left; margin-top: 0.8em">
-                    I would like to thank my supervisor, Prof. Dr. Liu Lin, and
-                    co-supervisor, Prof. Dr. Tulio C. R. da Rocha, for their guidance
-                    and support throughout this project.[1]
-                </p>
-                <p style="text-align: left; margin-top: 0.4em">
-                    I also acknowledge the FAC group at LNLS for fruitful discussions,
-                    technical support and for providing the simulation and control
-                    infrastructure used in this work.[2][3][1]
-                </p>
-                <p style="text-align: left; margin-top: 0.4em">
-                    This work is supported by CAPES and carried out within the
-                    collaboration between IFGW/UNICAMP and LNLS/CNPEM.[1]
-                </p>
-            </section>
         </div>
     </div>
 

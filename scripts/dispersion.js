@@ -49,23 +49,23 @@ const dipolo = new THREE.Mesh(
 scene.add(dipolo);
 dipolo.position.set(0, 0, 0);
 
-function createTrajectory(bend, x = 6 / 2, y = 3 / 2, color) {
-    const start = new THREE.Vector3(-x, 0, 0);
-    const control = new THREE.Vector3(0, bend, 0);
-    const end = new THREE.Vector3(x, bend - y, 0);
+function createTrajectory(bend, x = 6 / 2, y = 3 / 2, color, desvc=0.0, desvin=0.0, ang=1) {
+    const start = new THREE.Vector3(-x, desvin, 0);
+    const control = new THREE.Vector3(desvc, bend + desvin, 0);
+    const end = new THREE.Vector3(x, bend - y + desvin, 0);
     const N = 33;
     const curve = new THREE.QuadraticBezierCurve3(start, control, end);
     const points = [];
     for (let i = 0; i < N + 1; i++) {
         const xi = (i / N) * x - 2 * x;
         const yi = (i / N) * y - y;
-        points.push(new THREE.Vector3(xi, yi, 0));
+        points.push(new THREE.Vector3(xi, yi + desvin, 0));
     }
     points.push(...curve.getPoints(N));
     for (let i = 0; i < N + 1; i++) {
         const xi = (i / N) * x + x;
-        const yi = -(i / N) * y + bend - y;
-        points.push(new THREE.Vector3(xi, yi, 0));
+        const yi = -(i / N) * y * ang + bend - y;
+        points.push(new THREE.Vector3(xi, yi + desvin, 0));
     }
 
     const line = new THREE.Line(
@@ -84,9 +84,9 @@ function createTrajectory(bend, x = 6 / 2, y = 3 / 2, color) {
     return { line, particle, points};
 }
 
-const morenrg = createTrajectory(2.0, 3, 1.5, 0x0000ff);
-const nominal = createTrajectory(1.5, 3, 1.5, 0x000000);
-const lessnrg = createTrajectory(1.0, 3, 1.5, 0xff0000);
+const morenrg = createTrajectory(1.7, 3, 1.5, 0x0000ff, -0.2, 0.03, 0.9);
+const nominal = createTrajectory(1.5, 3, 1.5, 0x000000, 0, 0);
+const lessnrg = createTrajectory(1.3, 3, 1.5, 0xff0000, 0.2, -0.03, 1.1);
 
 // /////////////////////////////////////////////////////////////////////
 
