@@ -413,7 +413,7 @@
                 <p style="margin-top: 1em">
                     $$\left\{ \begin{array}{l} x'' = -\dfrac{(1 + Gx)^2}{1 +
                     \delta}\dfrac{B_y}{B\rho} + G(1 + Gx) \\ y'' = +\dfrac{(1 + Gx)^2}{1
-                    + \delta}\dfrac{B_y}{B\rho} \end{array} \right.$$
+                    + \delta}\dfrac{B_x}{B\rho} \end{array} \right.$$
                 </p>
 
                 <p style="margin-top: 2em">
@@ -543,7 +543,7 @@
 
             <section>
                 <h2>Closed Orbit</h2>
-                <p style="margin-top: 2em;">Knowing the one tune map, after each turn, the particles' state changes
+                <p style="margin-top: 2em;">Knowing the one turn map, after each turn, the particles' state changes
                     following:</p>
                 <p>
                     $$\begin{array}{rcl}
@@ -553,19 +553,21 @@
                     \mathbf{x}_{n+1} &=& \mathcal{M}(\mathbf{x}_n)
                     \end{array}$$
                 </p>
-                <p style="margin-top: 1em;">This way, we call the fixed point of the one-turn map the closed orbit</p>
+                <p style="margin-top: 1em;">This way, we call the fixed point of the one-turn map the closed orbit:</p>
                 <p>$\mathbf{x}^* = \mathcal{M}(\mathbf{x}^*$)</p>
             </section>
 
             <section data-transition="slide-in fade-out">
                 <h2>Orbit Feedback-System</h2>
                 <!-- talk about sofb, fofb, bpms, correctors and the orbit correction -->
-                <ul>
-                    <li>Orbit Feedback-System: Why?</li>
-                    <li>Orbit Feedback-System: SOFB and SOFB</li>
-                    <li>Orbit Feedback-System: Beam Position Monitors</li>
-                    <li>Orbit Feedback-System: Correctors</li>
-                    <li>Orbit Feedback-System: Orbit Correction</li>
+                <p style="margin-top: 2em;">$\rightarrow$ To ensure the machine is operating as intended, one
+                    fundamental system is the orbit feedback system.</p>
+                <p style="margin-top: 1em;">In the SIRIUS Storage Ring, we have a combination of sensors, actuators and
+                    algorithms to observe, control and correct the beam orbit:</p>
+                <ul style="margin-top: 1em;">
+                    <li>Beam Position Monitors: sensors that measure the transverse beam position;</li>
+                    <li>Correctors: magnets that kick and steer the beam;</li>
+                    <li>FOFB and SOFB: software algorithms to observe and correct the orbit;</li>
                 </ul>
             </section>
 
@@ -617,7 +619,7 @@
                 <p style="margin-top: 2em;">Despite the high precision, the electric center of the BPMs does not
                     necessarily match the design orbit</p>
                 <p style="margin-top: 2em;">$\rightarrow$ Then, we calibrate the BPMs by finding the offset between its'
-                    electric center and the magnetic centers of the closest quadrupoles</p>
+                    electric center and the magnetic center of the closest quadrupole</p>
             </section>
 
             <section data-transition="fade-in fade-out">
@@ -626,14 +628,13 @@
                     quadrupole will be kicked:</p>
                 <p>$$\Biggl\{\begin{array}{l} x'' = -K x \\ y'' = +K y \end{array}\Biggr. \quad \Rightarrow \quad
                     \Biggl\{\begin{array}{l} \Delta x' = -K x \\ \Delta y' = +K y \end{array}\Biggr.$$</p>
-                <p>Considering a pair of BPM and quadrupole, if they are close enough, we can assume $x_\text{bpm}
-                    \approx x_\text{quad}$ and $y_\text{bpm} \approx y_\text{quad}$</p>
+                <!-- <p>Considering a pair of BPM and quadrupole, if they are close enough, we can assume $x_\text{bpm} \approx x_\text{quad}$ and $y_\text{bpm} \approx y_\text{quad}$</p> -->
                 <p style="margin-top: 1em;">Knowing that there might be an offset, we write:</p>
                 <p>$$\Biggl\{\begin{array}{l} \Delta x' = -K (x - x_\text{offset}) \\ \Delta y' = +K (y -
                     y_\text{offset}) \end{array}\Biggr.$$</p>
             </section>
 
-            <section data-transition="fade-in slide-out">
+            <section data-transition="fade-in fade-out">
                 <h2>The BBA Principle</h2>
                 <p
                     style="border: 3px solid black; border-radius: 50px; padding-left: 1em; padding-right: 1em; width: 30%; margin-left: 33%; margin-top: 2em;">
@@ -645,24 +646,103 @@
                     then $x = x_\text{offset}$ (and/or $y = y_\text{offset}$) </p>
             </section>
 
+            <section data-transition="fade-in slide-out">
+                <h2>The BBA Principle</h2>
+                <p style="margin-top: 2em;">The same works for skew quadrupoles </p>
+                <p
+                    style="border: 3px solid black; border-radius: 50px; padding-left: 1em; padding-right: 1em; width: 30%; margin-left: 33%; margin-top: 1em;">
+                    $$\Biggl\{\begin{array}{l} \Delta x' = K (y - y_\text{offset}) \\ \Delta y' = K (x -
+                    x_\text{offset}) \end{array}\Biggr.$$</p>
+            </section>
+
             <section data-transition="slide-in fade-out">
                 <h2>Standart BBA</h2>
-                show the usage of standart BBA and citations
+                <p style="margin-top: 2em">
+                    The standard BBA method emerged in the 80s and was widely discussed/published in the 90s with seminal works, as:
+                </p>
+                <ul>
+                    <li style="margin-top: 0.5em; font-size: 0.75em">
+                        R. Schmidt, "Misalgnments from K-modulation" (CERN SL/93-19, 1993)
+                    </li>
+                    <li style="margin-top: 0.5em; font-size: 0.75em">
+                        P. Röjsel, "A Beam Position Measurement System Using Quadrupole Magnets Magnetic Centra as the Position Reference" (NIM, A 343, 1994)
+                    </li>
+                    <li style="margin-top: 0.5em; font-size: 0.75em">
+                        Barnett et al., "Dynamic Beam Based Alignment" (AIP 333, 1995)
+                    </li>
+                </ul>
+                <p style="margin-top: 1em">
+                    The method empirically applies the BBA principle by modulating the strength of quadrupoles and scanning the orbit on the BPMs to find the offsets
+                </p>
+                <p style="margin-top: 1em">
+                    In the SIRIUS Storage Ring, the method was studied and implemented in 2022&ndash;2023</p> 
+                <p style="margin-top: 0.5em; font-size: 0.75em">$\small\bullet$ A. B. da Cruz, "Aplicações do método de <em>Beam Based Alignment</em> para o anel de armazenamento do SIRIUS" (IFGW, UNICAMP, 2022)</p>
+                
             </section>
 
             <section data-transition="fade-in fade-out">
                 <h2>Standart BBA</h2>
-                show the standart BBA procedure in "bullet points" like an algorithm
+                <p style="margin-top: 2em;">The standart BBA procedure consists of:</p>
+                <ul style="margin-top: 1em; border: 2px solid black; border-radius: 30px; padding: 1em;">
+                    <li style="list-style: none; margin-top: 0.5em;">
+                        $\rightarrow$ Scan the transverse plane on a BPM: $\mathbf{r}_{i} = (x_i, y_i)$
+                    </li>
+                    <li style="list-style: none; margin-top: 0.5em;">
+                        $\qquad\rightarrow$ For each $\mathbf{r}_i$, vary the quadrupole strength: $K^\pm = K_0 \pm
+                        \Delta K$
+                    </li>
+                    <li style="list-style: none; margin-top: 0.5em;">
+                        $\qquad\qquad\rightarrow$ For each $K^\pm$, collect the orbit on all BPMs: $\vec{u}^\pm_i$
+                    </li>
+                    <li style="list-style: none; margin-top: 0.5em;">
+                        $\qquad\qquad\qquad\rightarrow$ Calculate the orbit distortion: $\Delta \vec{u}_i = \frac{1}{2}(\vec{u}^+_i
+                        - \vec{u}^-_i)$
+                    </li>
+                    <li style="list-style: none; margin-top: 0.5em;">
+                        $\rightarrow$ Fit
+                        <span style="border: 2px solid gray; border-radius: 10px; padding: 0.5em; margin-right: 0.3em;">
+                            $\Delta\vec{u}_i = \vec{a}\, \mathbf{r}_i + \vec{b}$
+                        </span>
+                        or
+                        <span style="border: 2px solid gray; border-radius: 10px; padding: 0.5em; margin-right: 0.3em;">
+                            $\chi_i^2 = a\, \mathbf{r}_i^2 +b\, \mathbf{r}_i + c$
+                        </span>
+                        where $\chi^2_i = \dfrac{1}{N_\text{\small BPMs}}\sum\limits_{j=0}^{N_\text{\small BPMs}}
+                        (\Delta u_{i,j})^2$
+                    </li>
+                    <li style="list-style: none; margin-top: 0.5em;">
+                        $\rightarrow$ Solve for
+                        <span
+                            style="border: 2px solid gray; border-radius: 10px; padding-top: 1em; padding-bottom: 1em; padding-left: 0.5em; padding-right: 0.5em; margin-right: 0.3em;">
+                            $\Delta\vec{u} = 0$: $\mathbf{r}_\text{offset} =
+                            \left\langle\dfrac{-\vec{b}}{\vec{a}}\right\rangle$
+                        </span>
+                        or
+                        <span
+                            style="border: 2px solid gray; border-radius: 10px; padding-top: 1em; padding-bottom: 1em; padding-left: 0.5em; padding-right: 0.5em">
+                            $\text{min}(\chi_i^2)$: $\mathbf{r}_\text{offset} = \left(\dfrac{-b}{2a}\right)$
+                        </span>
+                    </li>
+                </ul>
             </section>
 
             <section data-transition="fade-in fade-out">
                 <h2>Standart BBA</h2>
-                show the way the results are obtained: linear fitting quadratic fitting
+                <div class="two-columns" style="align-items: center; gap: 0.5em; margin-top: 2em;">
+                    <div class="column">
+                        <p><b>Linear Fitting</b></p>
+                        <image src="images/StdBBA-linear.png" style="height: 450px; width: auto; align-self: center; border: 2px solid black;" />
+                    </div>
+                    <div class="column">
+                        <p><b>Quadratic Fitting</b></p>
+                        <image src="images/StdBBA-quadratic.png" style="height: 450px; width: auto; align-self: center; border: 2px solid black;" />
+                    </div>
+                </div>
             </section>
 
             <section data-transition="fade-in slide-out">
                 <h2>Standart BBA</h2>
-                show plots of the linear and quadratic fittings
+                In SIRIUS, we perform the standart BBA on 160 BPMs, 
             </section>
 
             <section data-transition="slide-in fade-out">
