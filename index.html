@@ -239,10 +239,9 @@
                     We adopt a curvilinear coordinate system based on the Frenet-Serret
                     frame, that follows a design orbit $\vec{r}_0(s)$
                 </p>
-                <div class="two-columns">
-                    <div class="column">
-                        <div id="siscoord-three-container" style="width: 100%; height: 550px; border: 0; right: 0">
-                        </div>
+                <div class="two-columns" style="gap: 0;">
+                    <div class="column" style="flex: 0 0 60%;">
+                        <div id="siscoord-three-container" style="width: 100%; height: 550px; padding: 0;"></div>
                         <div id="label-vecv">$\vec{v}$</div>
                         <div id="label-vecr0">$\vec{r}_0$</div>
                         <div id="label-xhat">$\hat{x}$</div>
@@ -250,7 +249,7 @@
                         <div id="label-shat">$\hat{s}$</div>
                         <script src="scripts/siscoord.js" type="module"></script>
                     </div>
-                    <div class="column" style="align-self: center">
+                    <div class="column" style="align-self: center; text-align: left; flex: 0 0 60%;">
                         <ul>
                             <li style="list-style: none; margin-top: 1em">
                                 $\hat{s}(s) = \dfrac{d}{ds}\vec{r}_0(s)$
@@ -330,7 +329,8 @@
                 </div>
 
                 <p style="margin-top: 0em">
-                    The first terms of the expansion correspond to the elements most relevant for<br> linear optics, coupling and chromatic correction:
+                    The first terms of the expansion correspond to the elements most relevant for<br> linear optics,
+                    coupling and chromatic correction:
                 </p>
 
                 <div class="multiple-columns" style="margin-top: 0.5em">
@@ -360,9 +360,10 @@
                 </div>
 
                 <p style="margin-top: 1em">
-                    $B_0$ is the constant dipolar field, 
-                    $B_1 = \left.\dfrac{\partial B}{\partial x}\right|_{(x,y=0)}$,  
-                    $A_1 = \left.\dfrac{1}{2}\left( \dfrac{\partial B_y}{\partial x} - \dfrac{\partial B_x}{\partial y} \right)\right|_{(x,y=0)}$
+                    $B_0$ is the constant dipolar field,
+                    $B_1 = \left.\dfrac{\partial B}{\partial x}\right|_{(x,y=0)}$,
+                    $A_1 = \left.\dfrac{1}{2}\left( \dfrac{\partial B_y}{\partial x} - \dfrac{\partial B_x}{\partial y}
+                    \right)\right|_{(x,y=0)}$
                     and $B_2 = \left.\dfrac{\partial^2 B}{\partial x^2}\right|_{(x,y=0)}$
                 </p>
             </section>
@@ -399,7 +400,7 @@
 
             <section data-transition="fade-in slide-out">
                 <h2>Magnetic Fields</h2>
-                <div class="multiple-columns" style="margin-top: 2em; align-items: center;">
+                <div class="multiple-columns" style="margin-top: 0em; align-items: center;">
                     <div class="column" style="align-items: center;">
                         <p>Dipole</p>
                         <image src="images/B2fig.png" style="height: 200px; width: auto; align-self: center;" />
@@ -412,7 +413,7 @@
                     </div>
                     <div class="column" style="align-items: center;">
                         <p>Skew Quadrupole</p>
-                        <image src="images/Sext.png" style="height: 200px; width: auto; align-self: center;" />
+                        <image src="images/QS_booster.png" style="height: 200px; width: auto; align-self: center;" />
                         <image src="images/field-qs.png" style="height: 350px; width: auto; align-self: center;" />
                     </div>
                     <div class="column" style="align-items: center;">
@@ -478,8 +479,8 @@
                 <p style="margin-top: 1em;">The betatron functions satisfy</p>
                 <p>
                     $$\dfrac{1}{2}\beta'' + K(s)\beta = \dfrac{1}{\beta}\left[1 +
-                    \left(\dfrac{\beta'}{2}\right)^2\right] \qquad\qquad\Biggl\{\begin{array}{l} \beta(s) = \beta(s+L)
-                    \\ \beta'(s) = \beta'(s + L)\end{array}\Bigg.$$
+                    \left(\dfrac{\beta'}{2}\right)^2\right] \qquad \Biggl\{\begin{array}{rcl} \beta(s) &=& \beta(s+L)
+                    \\ \beta'(s) &=& \beta'(s + L)\end{array}\Bigg.$$
                 </p>
                 <p>and the phase-advance and tune are</p>
                 <p>$$\phi_u(s) = \int\limits_0^s \dfrac{1}{\beta_u(s')} ds' \qquad \nu_u(s) =
@@ -498,14 +499,16 @@
                         <p>$$ x'' = -(K + G^2) x + G\delta$$</p>
 
                         <p>
-                            $\rightarrow$ where we choose $x_\delta(s) = \eta(s)\delta$
+                            &RightArrow; we choose $x_\delta(s) = \eta(s)\delta$
                         </p>
                         <p style="margin-top: 2em;">
                             The solution describes an off-energy orbit associated to the dispersion function $\eta$,
                             which satisfies
                         </p>
 
-                        <p>$$\eta'' = -\left(K+G^2\right)\eta + G$$</p>
+                        <p>$$\eta'' = -\left(K+G^2\right)\eta + G \qquad \Biggl\{\begin{array}{rcl} \eta(s) &=&
+                            \eta(s+L)
+                            \\ \eta'(s) &=& \eta'(s + L)\end{array}\Bigg.$$$$</p>
                     </div>
                     <div class="column" style="height: 100%; align-self: center">
                         <img src="images/dispersion.png" width="100%" />
@@ -582,7 +585,7 @@
             <section data-transition="slide-in fade-out">
                 <h2>Orbit Feedback-System</h2>
                 <!-- talk about sofb, fofb, bpms, correctors and the orbit correction -->
-                <p style="margin-top: 2em;">$\rightarrow$ To ensure the machine is operating as intended, one
+                <p style="margin-top: 2em;">&RightArrow; To ensure the machine is operating as intended, one
                     fundamental system is the orbit feedback system.</p>
                 <p style="margin-top: 1em;">In the SIRIUS Storage Ring, we have a combination of sensors, actuators and
                     algorithms to observe, control and correct the beam orbit:</p>
@@ -595,18 +598,18 @@
 
             <section data-transition="fade-in fade-out">
                 <h2>Orbit Feedback-System: Beam Position Monitors</h2>
-                <p style="margin-top: 2em;">In the SIRIUS storage ring, we have 160 BPMs that read the transverse beam
+                <p style="margin-top: 1em;">&bull; 160 BPMs that read the transverse beam
                     position</p>
-                <div class="multiple-columns" style="align-items: center; gap: 0.5em;">
+                <div class="multiple-columns" style="align-items: center; gap: 0.5em; margin-top: 0;">
                     <div class="column" style="flex: 0 0 40%;">
                         <p style="margin-top: 2em;">They are designed with two pair of antennas and the signal received
                             is converted to transverse positions as:</p>
                         <p>$$x = \zeta\left(\dfrac{A - C}{A + C} - \dfrac{B - D}{B + D}\right)$$</p>
                         <p>$$y = \zeta\left(\dfrac{B - D}{B + D} + \dfrac{A - C}{A + C}\right)$$</p>
                         <p>where $\zeta = 8.5$ mm is a calibration factor</p>
-                        <p>$\rightarrow$ This gives a resolution of $\approx$2 nm</p>
+                        <p>&RightArrow; This gives a resolution of $\approx$2 nm</p>
                     </div>
-                    <div class="column" style="flex: 0 0 30%;">
+                    <div class="column" style="flex: 0 0 35%;">
                         <img src="images/bpm_scheme.png" style="max-width:100%; height:auto; border:none;" />
                     </div>
                     <div class="column" style="flex: 0 0 25%;">
@@ -618,13 +621,30 @@
             <section data-transition="fade-in fade-out">
                 <h2>Orbit Feedback-System: Correctors</h2>
                 <!-- talk about the correctos we have: dipolar kicks and correctors inside skew quadrupoles, the fiels and the kick angles -->
+                <!-- <p style="margin-top: 1em;">&bull;  correctors to steer the beam and correct the orbit</p> -->
+                <div class="multiple-columns" style="align-items: center; gap: 0.5em; margin-top: 2em;">
+                    <div class="column" style="flex: 0 0 65%;">
+                        <ul>
+                            <li>120 CH (mounted as sextupole trim coils) </li>
+                            <li>160 CV (140 from sextupole trim coils, 20 standalone)</li>
+                            <li>80 FCH (dedicated)</li>
+                            <li>80 FCV (dedicated)</li>
+                        </ul>
+                        <image src="images/SI_AB.png" style="height: auto; width: 100%; border:none; margin-top: 2em;" />
+                    </div>
+                    <div class="column" style="flex: 0 0 30%;">
+                        <img src="images/Fast_corrector.png" style="max-width:100%; height:auto; border:none;" />
+                    </div>
+                </div>
             </section>
 
             <section data-transition="fade-in slide-out">
                 <h2>Orbit Feedback-System: Orbit Correction</h2>
                 <!-- talk about the orbit correction x = Mx + theta to theta = M^(-1)x -->
                 <p style="margin-top: 2em;">The orbit: $\vec{u} = \{ x_1, \dots , x_{160}, y_1, \dots , y_{160} \} $</p>
-                <p>The correctors' kicks $\vec{\theta} = \{ \theta_{(\text{\small CH}, 1)}, \dots , \theta_{(\text{\small CH}, 120)}, \theta_{(\text{\small CV}, 1)}, \dots , \theta_{(\text{\small CV}, 160)}, \theta_{(\text{\small RF})} \} $</p>
+                <p>The correctors' kicks $\vec{\theta} = \{ \theta_{(\text{\small CH}, 1)}, \dots ,
+                    \theta_{(\text{\small CH}, 120)}, \theta_{(\text{\small CV}, 1)}, \dots , \theta_{(\text{\small CV},
+                    160)}, \theta_{(\text{\small RF})} \} $</p>
                 <p>The Orbit Response Matrix (ORM) $M_{i,j} = \dfrac{\partial u_i}{\partial \theta_j}$</p>
                 <p>The orbit correction</p>
                 <p>$$\vec{u} = M\vec{\theta}\quad \rightarrow\quad \vec{\theta} = M^{\small -1}\ \vec{u} $$</p>
@@ -679,26 +699,30 @@
             <section data-transition="slide-in fade-out">
                 <h2>Standart BBA</h2>
                 <p style="margin-top: 2em">
-                    The standard BBA method emerged in the 80s and was widely discussed/published in the 90s with seminal works, as:
+                    The standard BBA method emerged in the 80s and was widely discussed/published in the 90s with
+                    seminal works, as:
                 </p>
                 <ul>
                     <li style="margin-top: 0.5em; font-size: 0.75em">
                         R. Schmidt, "Misalgnments from K-modulation" (CERN SL/93-19, 1993)
                     </li>
                     <li style="margin-top: 0.5em; font-size: 0.75em">
-                        P. Röjsel, "A Beam Position Measurement System Using Quadrupole Magnets Magnetic Centra as the Position Reference" (NIM, A 343, 1994)
+                        P. Röjsel, "A Beam Position Measurement System Using Quadrupole Magnets Magnetic Centra as the
+                        Position Reference" (NIM, A 343, 1994)
                     </li>
                     <li style="margin-top: 0.5em; font-size: 0.75em">
                         Barnett et al., "Dynamic Beam Based Alignment" (AIP 333, 1995)
                     </li>
                 </ul>
                 <p style="margin-top: 1em">
-                    The method empirically applies the BBA principle by modulating the strength of quadrupoles and scanning the orbit on the BPMs to find the offsets
+                    The method empirically applies the BBA principle by modulating the strength of quadrupoles and
+                    scanning the orbit on the BPMs to find the offsets
                 </p>
                 <p style="margin-top: 1em">
-                    In the SIRIUS Storage Ring, the method was studied and implemented in 2022&ndash;2023</p> 
-                <p style="margin-top: 0.5em; font-size: 0.75em">$\small\bullet$ A. B. da Cruz, "Aplicações do método de <em>Beam Based Alignment</em> para o anel de armazenamento do SIRIUS" (IFGW, UNICAMP, 2022)</p>
-                
+                    In the SIRIUS Storage Ring, the method was studied and implemented in 2022&ndash;2023</p>
+                <p style="margin-top: 0.5em; font-size: 0.75em">$\small\bullet$ A. B. da Cruz, "Aplicações do método de
+                    <em>Beam Based Alignment</em> para o anel de armazenamento do SIRIUS" (IFGW, UNICAMP, 2022)</p>
+
             </section>
 
             <section data-transition="fade-in fade-out">
@@ -716,7 +740,8 @@
                         $\qquad\qquad\rightarrow$ For each $K^\pm$, collect the orbit on all BPMs: $\vec{u}^\pm_i$
                     </li>
                     <li style="list-style: none; margin-top: 0.5em;">
-                        $\qquad\qquad\qquad\rightarrow$ Calculate the orbit distortion: $\Delta \vec{u}_i = \frac{1}{2}(\vec{u}^+_i
+                        $\qquad\qquad\qquad\rightarrow$ Calculate the orbit distortion: $\Delta \vec{u}_i =
+                        \frac{1}{2}(\vec{u}^+_i
                         - \vec{u}^-_i)$
                     </li>
                     <li style="list-style: none; margin-top: 0.5em;">
@@ -752,18 +777,20 @@
                 <div class="two-columns" style="align-items: center; gap: 0.5em; margin-top: 2em;">
                     <div class="column">
                         <p><b>Linear Fitting</b></p>
-                        <image src="images/StdBBA-linear.png" style="height: 450px; width: auto; align-self: center; border: 2px solid black;" />
+                        <image src="images/StdBBA-linear.png"
+                            style="height: 450px; width: auto; align-self: center; border: 2px solid black;" />
                     </div>
                     <div class="column">
                         <p><b>Quadratic Fitting</b></p>
-                        <image src="images/StdBBA-quadratic.png" style="height: 450px; width: auto; align-self: center; border: 2px solid black;" />
+                        <image src="images/StdBBA-quadratic.png"
+                            style="height: 450px; width: auto; align-self: center; border: 2px solid black;" />
                     </div>
                 </div>
             </section>
 
             <section data-transition="fade-in slide-out">
                 <h2>Standart BBA</h2>
-                In SIRIUS, we perform the standart BBA on 160 BPMs, 
+                In SIRIUS, we perform the standart BBA on 160 BPMs,
             </section>
 
             <section data-transition="slide-in fade-out">

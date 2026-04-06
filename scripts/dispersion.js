@@ -61,7 +61,7 @@ function createTrajectory(bend, x = 6 / 2, y = 3 / 2, color, desvc=0.0, desvin=0
         const yi = (i / N) * y - y;
         points.push(new THREE.Vector3(xi, yi + desvin, 0));
     }
-    points.push(...curve.getPoints(N));
+    points.push(...curve.getPoints(Math.ceil(N*2)));
     for (let i = 0; i < N + 1; i++) {
         const xi = (i / N) * x + x;
         const yi = -(i / N) * y * ang + bend - y;
