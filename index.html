@@ -330,11 +330,10 @@
                 </div>
 
                 <p style="margin-top: 0em">
-                    The first terms of the expansion correspond to the elements most relevant for linear optics and
-                    chromatic correction:
+                    The first terms of the expansion correspond to the elements most relevant for<br> linear optics, coupling and chromatic correction:
                 </p>
 
-                <div class="multiple-columns" style="margin-top: 0em">
+                <div class="multiple-columns" style="margin-top: 0.5em">
                     <div class="column" style="border: 2px solid; border-radius: 30px; padding-top: 0.5em;">
                         Dipole: <br />
                         $$\Biggl\{ \begin{array}{l} B_x = 0 \\ B_y = B_0 \end{array}
@@ -348,16 +347,23 @@
                     </div>
 
                     <div class="column" style="border: 2px solid; border-radius: 30px; padding-top: 0.5em;">
-                        Sextupole: <br />
-                        $$\Biggl\{ \begin{array}{l} B_x = 2 B_2 x y \\ B_y = B_2 (x^2 -
-                        y^2) \end{array} \Biggr.$$
+                        Skew Quadrupole: <br />
+                        $$\Biggl\{ \begin{array}{l} B_x = A_1 x\\ B_y = -A_1 y \end{array} \Biggr.$$
                     </div>
+
+                    <div class="column" style="border: 2px solid; border-radius: 30px; padding-top: 0.5em;">
+                        Sextupole: <br />
+                        $$\Biggl\{ \begin{array}{l} B_x = 2 B_2 x y \\ B_y = B_2 (x^2 - y^2) \end{array}
+                        \Biggr.$$
+                    </div>
+
                 </div>
 
-                <p style="margin-top: 0.5em">
-                    Where $B_0$ is the constant dipolar magnetic field, $B_1 =
-                    \dfrac{\partial B}{\partial x}$ and $B_2 = \dfrac{\partial^2
-                    B}{\partial x^2}$
+                <p style="margin-top: 1em">
+                    $B_0$ is the constant dipolar field, 
+                    $B_1 = \left.\dfrac{\partial B}{\partial x}\right|_{(x,y=0)}$,  
+                    $A_1 = \left.\dfrac{1}{2}\left( \dfrac{\partial B_y}{\partial x} - \dfrac{\partial B_x}{\partial y} \right)\right|_{(x,y=0)}$
+                    and $B_2 = \left.\dfrac{\partial^2 B}{\partial x^2}\right|_{(x,y=0)}$
                 </p>
             </section>
 
@@ -375,17 +381,18 @@
                                 \dfrac{1}{\rho(s)}$
                             </li>
                             <li style="margin-top: 1em">
-                                The focusing function: $K(s) \equiv \dfrac{B_1(s)}{B\rho} =
-                                \dfrac{1}{B\rho}\dfrac{\partial B}{\partial x}{}$
+                                The focusing function: $K(s) \equiv \dfrac{B_1(s)}{B\rho}$
                             </li>
                             <li style="margin-top: 1em">
-                                The sextupole strength: $S(s) \equiv \dfrac{B_2(s)}{B\rho} =
-                                \dfrac{1}{B\rho}\dfrac{\partial^2 B}{\partial x^2}$
+                                The skew quad. strength: $K_S(s) \equiv \dfrac{A_1(s)}{B\rho}$
+                            </li>
+                            <li style="margin-top: 1em">
+                                The sextupole strength: $S(s) \equiv \dfrac{B_2(s)}{B\rho}$
                             </li>
                         </ul>
                     </div>
                     <div class="column">
-                        <image src="images/lattice-functions.png" style="width: 100%" />
+                        <image src="images/lattice-functions.png" style="width: auto; height: 600px;" />
                     </div>
                 </div>
             </section>
@@ -394,13 +401,24 @@
                 <h2>Magnetic Fields</h2>
                 <div class="multiple-columns" style="margin-top: 2em; align-items: center;">
                     <div class="column" style="align-items: center;">
+                        <p>Dipole</p>
                         <image src="images/B2fig.png" style="height: 200px; width: auto; align-self: center;" />
+                        <image src="images/field-dip.png" style="height: 350px; width: auto; align-self: center;" />
                     </div>
                     <div class="column" style="align-items: center;">
+                        <p>Quadrupole</p>
                         <image src="images/Quad.png" style="height: 200px; width: auto; align-self: center;" />
+                        <image src="images/field-quad.png" style="height: 350px; width: auto; align-self: center;" />
                     </div>
                     <div class="column" style="align-items: center;">
+                        <p>Skew Quadrupole</p>
                         <image src="images/Sext.png" style="height: 200px; width: auto; align-self: center;" />
+                        <image src="images/field-qs.png" style="height: 350px; width: auto; align-self: center;" />
+                    </div>
+                    <div class="column" style="align-items: center;">
+                        <p>Sextupole</p>
+                        <image src="images/Sext.png" style="height: 200px; width: auto; align-self: center;" />
+                        <image src="images/field-sext.png" style="height: 350px; width: auto; align-self: center;" />
                     </div>
                 </div>
             </section>
@@ -417,7 +435,7 @@
                 </p>
 
                 <p style="margin-top: 2em">
-                    In the linear approximation, these equations become:
+                    In the linear approximation (and without coupling), these equations become:
                 </p>
 
                 <p style="margin-top: 1em">
@@ -511,6 +529,10 @@
                 <script src="scripts/dispersion.js" type="module"></script>
             </section>
 
+            <section data-transition="slide-in slide-out">
+                <h2>Coupling</h2>
+            </section>
+
             <section data-transition="slide-in fade-out">
                 <h2>Maps Notation</h2>
                 <p style="margin-top: 2em;">The particles' motion can also be described in terms of maps.<br> Each
@@ -601,12 +623,11 @@
             <section data-transition="fade-in slide-out">
                 <h2>Orbit Feedback-System: Orbit Correction</h2>
                 <!-- talk about the orbit correction x = Mx + theta to theta = M^(-1)x -->
-                <p>$$\vec{u} = \{ x_1, \dots , x_{160}, y_1, \dots , y_{160} \} $$</p>
-                <p>$$\vec{\theta} = \{ \theta_{(\text{\small CH}, 1)}, \dots , \theta_{(\text{\small CH}, 120)},
-                    \theta_{(\text{\small CV}, 1)}, \dots , \theta_{(\text{\small CV}, 160)}, \theta_{(\text{\small
-                    RF})} \} $$</p>
-                <p>$$\vec{u} = M\vec{u} + \vec{\theta} $$</p>
-                <p>$$\rightarrow \vec{\theta} = M^{\small -1}\ \vec{u} $$</p>
+                <p style="margin-top: 2em;">The orbit: $\vec{u} = \{ x_1, \dots , x_{160}, y_1, \dots , y_{160} \} $</p>
+                <p>The correctors' kicks $\vec{\theta} = \{ \theta_{(\text{\small CH}, 1)}, \dots , \theta_{(\text{\small CH}, 120)}, \theta_{(\text{\small CV}, 1)}, \dots , \theta_{(\text{\small CV}, 160)}, \theta_{(\text{\small RF})} \} $</p>
+                <p>The Orbit Response Matrix (ORM) $M_{i,j} = \dfrac{\partial u_i}{\partial \theta_j}$</p>
+                <p>The orbit correction</p>
+                <p>$$\vec{u} = M\vec{\theta}\quad \rightarrow\quad \vec{\theta} = M^{\small -1}\ \vec{u} $$</p>
             </section>
 
 
@@ -648,10 +669,10 @@
 
             <section data-transition="fade-in slide-out">
                 <h2>The BBA Principle</h2>
-                <p style="margin-top: 2em;">The same works for skew quadrupoles </p>
+                <p style="margin-top: 3em;">The same works for skew quadrupoles </p>
                 <p
                     style="border: 3px solid black; border-radius: 50px; padding-left: 1em; padding-right: 1em; width: 30%; margin-left: 33%; margin-top: 1em;">
-                    $$\Biggl\{\begin{array}{l} \Delta x' = K (y - y_\text{offset}) \\ \Delta y' = K (x -
+                    $$\Biggl\{\begin{array}{l} \Delta x' = K_S (y - y_\text{offset}) \\ \Delta y' = K_S (x -
                     x_\text{offset}) \end{array}\Biggr.$$</p>
             </section>
 
