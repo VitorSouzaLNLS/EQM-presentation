@@ -927,12 +927,12 @@
                 <h2>Standart BBA</h2>
                 <p style="margin-top: 2em">The standart BBA procedure consists of:</p>
                 <ul style="
-              margin-top: 1em;
+              margin-top: 0em;
               border: 2px solid black;
               border-radius: 30px;
               padding: 1em;
             ">
-                    <li style="list-style: none; margin-top: 0.5em">
+                    <li style="list-style: none; margin-top: 0em">
                         $\rightarrow$ Scan the transverse plane on a BPM: $\mathbf{r}_{i}
                         = (x_i, y_i)$
                     </li>
@@ -1002,7 +1002,9 @@
 
             <section data-transition="fade-in fade-out">
                 <h2>Standart BBA</h2>
-                <div class="two-columns" style="align-items: center; gap: 0.5em; margin-top: 2em">
+                <p style="margin-top: 2em;">Typical standart BBA results for a single BPM are observed in the following
+                    plots</p>
+                <div class="two-columns" style="align-items: center; gap: 0.5em; margin-top: 1em">
                     <div class="column">
                         <p><b>Linear Fitting</b></p>
                         <image src="images/StdBBA-linear.png" style="
@@ -1026,23 +1028,156 @@
 
             <section data-transition="fade-in slide-out">
                 <h2>Standart BBA</h2>
-                In SIRIUS, we perform the standart BBA on 160 BPMs,
+                <p style="margin-top: 2em;">In SIRIUS:</p>
+                <ul>
+                    <li style="list-style-type: square;">160 BPMs</li>
+                    <li style="list-style-type: square;">orbit shifts on both planes ($x$, $y$) simultaniously</li>
+                    <li style="list-style-type: square;">8 orbit shifts per BPM (&plusmn;25&mu;m, &plusmn;50&mu;m,
+                        &plusmn;100&mu;m)</li>
+                    <li style="list-style-type: square;">approximately 2&Tilde;3 min per BPM</li>
+                    <li style="list-style-type: square;">6&Tilde;8 hours for a full BBA procedure</li>
+                    <!-- <li style="list-style-type: square;">error estimation: $\sigma_x$ = &plusmn;0.5&mu;m, $\sigma_y$ = &plusmn;1&mu;m</li> -->
+
+                </ul>
             </section>
 
             <section data-transition="slide-in fade-out">
                 <h2>Parallel BBA</h2>
-                show the parallel BBA article, its origin, current usage adn citations
+                <p style="margin-top: 2em">The Parallel Beam Beam Alignment (PBBA) was proposed by <em>Xiaobiao
+                        Huang</em> in 2022</p>
+                <p>Since then, it has been simulated and tested on accelerators such as</p>
+                <ul>
+                    <li> LCLS-II (USA, SLAC, 2022)</li>
+                    <li> SPEAR3 (USA, SLAC, 2022)</li>
+                    <li> FCC-ee (Switzerland, CERN, 2023/2024)</li>
+                    <li> KARA (Germany, KIT, 2024/2025)</li>
+                    <li> NSLS-II (USA, BNL, 2024)</li>
+                </ul>
+                <br>
+                <img src="images/PBBA-frontface.png" height="300px" width="auto"
+                    style="border: 3px solid black; border-radius: 20px; margin-top: 1em" />
             </section>
 
             <section data-transition="fade-in fade-out">
                 <h2>Parallel BBA</h2>
-                show the parallel BBA procedure, the IOS calculation and correction
+                <p style="margin-top: 2em">
+                    The Parallel BBA central idea is to minimize the <b>Induced Orbit Shift</b> (IOS) <br>
+                    caused by the simultaneous modulation of multiple quadrupoles
+                </p>
+                <p style="margin-top: 1em;">&RightArrow; Our goal is to find an orbit that satisfies:</p>
+                <p>$$\vec{u}(\vec{\theta}, \vec{K}_0) = \vec{u}(\vec{\theta}, \vec{K}^\pm)$$</p>
+                <p>where $\vec{\theta}$ is a configuration of kicks, $\vec{K}_0$ is the nominal quadrupole strengths and
+                    $\vec{K}^\pm = \vec{K}_0 \pm \Delta \vec{K}$</p>
+
+                <p style="margin-top: 1em;">&RightArrow; The IOS is defined as:</p>
+                <p>$$\vec{\xi} = \frac{1}{2}\left(\vec{u}(\vec{\theta}, \vec{K}^+) - \vec{u}(\vec{\theta},
+                    \vec{K}^-)\right)$$</p>
+
+                <p style="margin-top: 1em;">&RightArrow; Minimizing the IOS results in:</p>
+                <p>$$\vec{\xi} = 0 \quad\Leftrightarrow\quad \vec{u}(\vec{\theta}, \vec{K}^+) = \vec{u}(\vec{\theta},
+                    \vec{K}^-) \quad\Leftrightarrow\quad \vec{u}(\vec{\theta}, \vec{K}_0) = \vec{u}(\vec{\theta},
+                    \vec{K}^\pm)$$</p>
+            </section>
+
+            <section data-transition="fade-in fade-out">
+                <h2>Parallel BBA</h2>
+                <p style="margin-top: 2em">
+                    &RightArrow; The minimization of the IOS starts from linearizing $\vec{\xi}$ around an initial kick
+                    configuration $\vec{\theta}_0$
+                </p>
+                <p>
+                    $$\vec{\xi}\ \ =\ \
+                    \vec{\xi}(\vec{\theta_0}) + \dfrac{\partial \vec{\xi}}{\partial \vec{\theta}}(\vec{\theta} -
+                    \vec{\theta_0}) \ \ =\ \
+                    \vec{\xi}_0 + \mathbf{R}\Delta\vec{\theta}$$
+                </p>
+                <p>where $\mathbf{R}_{ij} = \partial \vec{\xi}_i/\partial \vec{\theta}_j$ is the IOS Response Matrix
+                    that can be measured or obtained with simulation models</p>
+                <p style="margin-top: 1em;">&RightArrow; Now, solving $\vec{\xi} = 0$ we get:</p>
+                <p>
+                    $$\Delta\vec{\theta} = -\mathbf{R}^{-1}\vec{\xi}_0$$
+                </p>
+                <p>&RightArrow; Finally, we get the kick configuration that minimizes the IOS and makes the orbit match
+                    the offsets:</p>
+                <p>
+                    $$\vec{\theta} = \vec{\theta_0} + \Delta\vec{\theta} \quad\Rightarrow\quad \vec{u}_\text{offset} =
+                    \vec{u}(\vec{\theta}, \vec{K}_0) = \vec{u}(\vec{\theta}, \vec{K}^\pm)$$
+                </p>
+            </section>
+
+            <section data-transition="fade-in fade-out">
+                <h2>Parallel BBA</h2>
+                <p style="margin-top: 2em">The Parallel BBA procedure consists of:</p>
+                <ul style="
+              margin-top: 0em;
+              border: 2px solid black;
+              border-radius: 30px;
+              padding: 1em;
+            ">
+                    <li style="list-style: none; margin-top: 0em">
+                        $\rightarrow$ Separate all BPM-Quad pairs in groups
+                    </li>
+                    <li style="list-style: none; margin-top: 0.5em">
+                        $\rightarrow$ Define $\vec{K}^+$ and $\vec{K}^-$ for each group
+                    </li>
+                    <li style="list-style: none; margin-top: 0.5em">
+                        $\rightarrow$ Calculate or measure the IOS response matrix $\mathbf{R}$ for each group
+                    </li>
+                    <li style="list-style: none; margin-top: 0.5em">
+                        $\rightarrow$ For each group, do:
+                    </li>
+                    <li style="list-style: none; margin-top: 0.5em">
+                        $\qquad\rightarrow$ Loop while $\vec{\xi} \neq 0$
+                    </li>
+                    <li style="list-style: none; margin-top: 0.5em">
+                        $\qquad\qquad\rightarrow$ Measure the IOS: $\vec{\xi} = \frac{1}{2}\left(\vec{u}(\vec{\theta},
+                        K^+) - \vec{u}(\vec{\theta}, K^-)\right)$
+                    </li>
+                    <li style="list-style: none; margin-top: 0.5em">
+                        $\qquad\qquad\rightarrow$ Compute the delta kicks: $\Delta\vec{\theta} =
+                        -\mathbf{R}^{-1}\vec{\xi}$
+                    </li>
+                    <li style="list-style: none; margin-top: 0.5em">
+                        $\qquad\qquad\rightarrow$ Apply the kicks: $\vec{\theta} = \vec{\theta} + \Delta\vec{\theta}$
+                    </li>
+                    <li style="list-style: none; margin-top: 0.5em">
+                        $\qquad\rightarrow$ Read and save the offsets: $\vec{u}_\text{offset} = \vec{u}(\vec{\theta},
+                        \vec{K}_0) = \vec{u}(\vec{\theta}, \vec{K}^\pm)$
+                    </li>
+                </ul>
             </section>
 
             <section data-transition="fade-in slide-out">
                 <h2>Parallel BBA</h2>
-                show the way the results are obtained with Parallel BBA
+                <div class="two-columns" style="gap: 0; margin-top: 2em;">
+                    <div class="column" style="flex: 0 0 60%;">
+                        <p style="margin-top: 1em;">&RightArrow; The Parallel BBA procedure requires the division of the
+                            BPM-Quad pairs in groups</p>
+                        <p style="margin-top: 1em;">&RightArrow; Consecutive BPM-Quad pairs in a group need at least 1
+                            BPM and 2 correctors (CH + CV) in between to ensure orbit control</p>
+                        <p style="margin-top: 1em;">&RightArrow; The selection of BPM-Quad pairs into groups is intended
+                            to avoid large tune shifts and coupling effects</p>
+                        <p style="margin-top: 1em;">&RightArrow; Typical groupping divides the BPM-Quad pairs by family
+                            and distance</p>
+                    </div>
+                    <div class="column" style="flex: 0 0 40%;">
+                        <img src="images/PBBA-dK.png" height="500px" width="auto" style="margin-top: 1em;">
+                    </div>
+                </div>
             </section>
+
+            <!-- <section data-transition="fade-in slide-out">
+                <h2>Parallel BBA</h2>
+                <p style="margin-top: 2em;">In SIRIUS:</p>
+                <ul>
+                    <li style="list-style-type: square;">Groups: 4&times;40 BPMs or 8&times;20 BPMs</li>
+                    <li style="list-style-type: square;">IOS Response Matrices are obtained via the SIRIUS Storage Ring model (> 1s)</li>
+                    <li style="list-style-type: square;">IOS is measured on both planes ($x$, $y$) simultaniously</li>
+                    <li style="list-style-type: square;">3&Tilde;5 loop iterations per group</li>
+                    <li style="list-style-type: square;">approximately 1&Tilde;2 min per group</li>
+                    <li style="list-style-type: square;">4&Tilde;10 minutes for a full PBBA procedure</li>
+                </ul>
+            </section> -->
 
             <section data-transition="slide-in fade-out">
                 <h2>Fast BBA AC</h2>
