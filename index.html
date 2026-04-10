@@ -592,7 +592,7 @@
                 <h2>Coupling</h2>
             </section> -->
 
-            <section data-transition="slide-in fade-out">
+            <!-- <section data-transition="slide-in fade-out">
                 <h2>Maps Notation</h2>
                 <p style="margin-top: 2em">
                     The particles' motion can also be described in terms of maps.<br />
@@ -619,7 +619,7 @@
                     $$\mathcal{M} = \mathcal{M}_{L\leftarrow
                     s_N}\circ\cdots\circ\mathcal{M}_{s_1\leftarrow s_0}$$
                 </p>
-            </section>
+            </section> -->
 
             <!-- <section data-transition="fade-in slide-out">
                 <h2>Maps Notation</h2>
@@ -642,7 +642,7 @@
                 </p>
             </section> -->
 
-            <section>
+            <!-- <section>
                 <h2>Closed Orbit</h2>
                 <p style="margin-top: 2em">
                     Knowing the one turn map, after each turn, the particles' state
@@ -658,15 +658,31 @@
                     orbit:
                 </p>
                 <p>$\mathbf{x}^* = \mathcal{M}(\mathbf{x}^*$)</p>
+            </section> -->
+
+            <section>
+                <h2>Closed Orbit</h2>
+                <p style="margin-top: 2em">
+                    In an ideal machine, the closed orbit is precisely the design orbit, in which the particles perform their betatrons oscillations and dispersive trajectories around
+                </p>
+
+                <p style="margin-top: 1em">&RightArrow; However, dipolar field imperfections distort the closed orbit:</p>
+
+                <p>$$u_{co}(s) = \dfrac{\sqrt{\beta_u(s)}}{2\sin{\pi\nu}}\int\limits_s^{s+L} \delta G_u(s')\sqrt{\beta_u(s')}\cos{\left(|\phi_u(s) - \phi_u(s')| - \pi\nu_u\right)}\Delta s'$$</p>
+
+                <p style="margin-top: 1em">
+                    To ensure the accelerator performs as designed, is essential to control and correct the closed orbit
+                </p>
+
+                <p style="margin-top: 1em">
+                    &RightArrow; To do that, we have the orbit feedback system
+                </p>
+
             </section>
 
             <section data-transition="slide-in fade-out">
                 <h2>Orbit Feedback-System</h2>
                 <!-- talk about sofb, fofb, bpms, correctors and the orbit correction -->
-                <p style="margin-top: 2em">
-                    &RightArrow; To ensure the machine is operating as intended, one
-                    fundamental system is the orbit feedback system.
-                </p>
                 <p style="margin-top: 1em">
                     In the SIRIUS Storage Ring, we have a combination of sensors,
                     actuators and algorithms to control the orbit:
@@ -789,11 +805,9 @@
                     Localized dipolar kicks disturb the closed orbit:
                 </p>
                 <p>
-                    $$u(s_i) = \dfrac{\sqrt{\beta_u(s_i)}}{2\sin{\pi\nu_u}}\sum \delta
-                    G(s_j)\sqrt{\beta_u(s_j)}\cos{\left(|\phi_u(s_i) - \phi_u(s_j)| -
-                    \pi\nu_u\right)}\Delta s_j $$
+                    $$\Delta u(s_i) = \dfrac{\sqrt{\beta_u(s_i)}}{2\sin{\pi\nu_u}}\sum \Delta\theta_j\sqrt{\beta_u(s_j)}\cos{\left(|\phi_u(s_i) - \phi_u(s_j)| -
+                    \pi\nu_u\right)} $$
                 </p>
-                <p>calling $\ \Delta\theta = \delta G \Delta s\ $, we write:</p>
 
                 <p style="
               border: 2px solid black;
@@ -848,7 +862,7 @@
                 </p>
             </section>
 
-            <section data-transition="fade-in slide-out">
+            <section data-transition="fade-in fade-out">
                 <h2>Orbit Feedback System: SOFB and FOFB</h2>
                 <div class="two-columns" style="gap: 1em; margin-top: 3em">
                     <div class="column" style="flex: 0 0 40%; margin-left: 10%">
@@ -892,6 +906,20 @@
                 </p> -->
             </section>
 
+            <section data-transition="fade-in slide-out">
+                <h2>Orbit Feedback System: the accuracy problem</h2>
+                <p style="margin-top: 3em">
+                    Despite the high precision, the electric center of the BPMs does not
+                    necessarily match the design orbit
+                </p>
+                <p style="margin-top: 1em">
+                    Natural imperfections and misalignments also make the BPMs inaccurate
+                </p>
+                <p style="margin-top: 1em">
+                    To solve this, we use Beam-Based Alignment techniques to calibrate the BPMs
+                </p>
+            </section>
+
             <section>
                 <h1>Beam-Based Alignment</h1>
             </section>
@@ -899,13 +927,13 @@
             <section data-transition="slide-in fade-out">
                 <h2>The BBA Principle</h2>
                 <p style="margin-top: 2em">
-                    Despite the high precision, the electric center of the BPMs does not
-                    necessarily match the design orbit
+                    The calibration of BPMs consists of finding the offsets that make the beam follow an ideal orbit
                 </p>
-                <p style="margin-top: 2em">
-                    $\rightarrow$ Then, we calibrate the BPMs by finding the offset
-                    between its' electric center and the magnetic center of the closest
-                    quadrupole
+                <p style="margin-top: 1em">
+                    This ideal orbit is the one in which the beam travels through the magnetic centers of the magnets on the accelerator
+                </p>
+                <p style="margin-top: 1em">
+                    Quadrupoles are the most suitable magnets for this calibration, since the orbit is linearly related to their strength
                 </p>
             </section>
 
@@ -1085,9 +1113,9 @@
 
             <section data-transition="fade-in fade-out">
                 <h2>Standart BBA</h2>
-                <p style="margin-top: 2em;">Typical standart BBA results for a single BPM are observed in the following
+                <p style="margin-top: 1em;">Typical standart BBA results for a single BPM are observed in the following
                     plots</p>
-                <div class="two-columns" style="align-items: center; gap: 0.5em; margin-top: 1em">
+                <!-- <div class="two-columns" style="align-items: center; gap: 0.5em; margin-top: 1em">
                     <div class="column">
                         <p><b>Linear Fitting</b></p>
                         <image src="images/StdBBA-linear.png" style="
@@ -1106,7 +1134,8 @@
                   border: 2px solid black;
                 " />
                     </div>
-                </div>
+                </div> -->
+                <img src="images/BBA-bpm-summary.png" height="600px" width="auto"/>
             </section>
 
             <section data-transition="fade-in slide-out">
@@ -1165,7 +1194,7 @@
                             \vec{K}^\pm)$$</p>
                     </div>
                     <div class="column" style="align-self: center; flex: 0 0 40%; margin-top: 2em;">
-                        <img src="images/pbba-plot-ios.png" height="550px" width="auto"/>
+                        <img src="images/pbba-plot-ios.png" height="550px" width="auto" />
                     </div>
 
             </section>
@@ -1174,28 +1203,30 @@
                 <h2>Parallel BBA</h2>
                 <div class="two-columns">
                     <div class="column" style="flex: 0 0 60%;">
-                <p style="margin-top: 2em">
-                    &RightArrow; Linearizing $\vec{\xi}$ around an initial kick
-                    configuration $\vec{\theta}_0$ gives:
-                </p>
-                <p>
-                    $$\vec{\xi}\ \ =\ \
-                    \vec{\xi}(\vec{\theta_0}) + \dfrac{\partial \vec{\xi}}{\partial \vec{\theta}}(\vec{\theta} -
-                    \vec{\theta_0}) \ \ =\ \
-                    \vec{\xi}_0 + \mathbf{R}\Delta\vec{\theta}$$
-                </p>
-                <p>where $\mathbf{R}_{ij} = \partial \vec{\xi}_i/\partial \vec{\theta}_j$ is the IOS Response Matrix</p>
-                <p style="margin-top: 1em;">&RightArrow; Solving for $\vec{\xi} = 0$ we get:</p>
-                <p>
-                    $$\Delta\vec{\theta} = -\mathbf{R}^{-1}\vec{\xi}_0$$
-                </p>
-                <p style="border: 2px solid black; border-radius: 30px; padding: 0.5em; margin-top: 1em">
-                    $\vec{\theta} = \vec{\theta_0} + \Delta\vec{\theta} \quad\Rightarrow\quad \vec{u}_\text{offset} =
-                    \vec{u}(\vec{\theta}, \vec{K}_0) = \vec{u}(\vec{\theta}, \vec{K}^\pm)$
-                </p>
+                        <p style="margin-top: 2em">
+                            &RightArrow; Linearizing $\vec{\xi}$ around an initial kick
+                            configuration $\vec{\theta}_0$ gives:
+                        </p>
+                        <p>
+                            $$\vec{\xi}\ \ =\ \
+                            \vec{\xi}(\vec{\theta_0}) + \dfrac{\partial \vec{\xi}}{\partial \vec{\theta}}(\vec{\theta} -
+                            \vec{\theta_0}) \ \ =\ \
+                            \vec{\xi}_0 + \mathbf{R}\Delta\vec{\theta}$$
+                        </p>
+                        <p>where $\mathbf{R}_{ij} = \partial \vec{\xi}_i/\partial \vec{\theta}_j$ is the IOS Response
+                            Matrix</p>
+                        <p style="margin-top: 1em;">&RightArrow; Solving for $\vec{\xi} = 0$ we get:</p>
+                        <p>
+                            $$\Delta\vec{\theta} = -\mathbf{R}^{-1}\vec{\xi}_0$$
+                        </p>
+                        <p style="border: 2px solid black; border-radius: 30px; padding: 0.5em; margin-top: 1em">
+                            $\vec{\theta} = \vec{\theta_0} + \Delta\vec{\theta} \quad\Rightarrow\quad
+                            \vec{u}_\text{offset} =
+                            \vec{u}(\vec{\theta}, \vec{K}_0) = \vec{u}(\vec{\theta}, \vec{K}^\pm)$
+                        </p>
                     </div>
                     <div class="column" style="align-self: center; flex: 0 0 40%; margin-top: 2em;">
-                        <img src="images/pbba-plot-dkicks.png" height="550px" width="auto"/>
+                        <img src="images/pbba-plot-dkicks.png" height="550px" width="auto" />
                     </div>
                 </div>
             </section>
@@ -1242,11 +1273,11 @@
                 </ul>
             </section>
 
-            <section data-transition="fade-in slide-out">
+            <!-- <section data-transition="fade-in slide-out">
                 <h2>Parallel BBA</h2>
                 <div class="two-columns" style="gap: 0; margin-top: 2em;">
-                    <div class="column" style="flex: 0 0 60%;">
-                        <p style="margin-top: 1em;">&RightArrow; The PBBA requires the division of the
+                    <div class="column" style="flex: 0 0 60%; align-self: center;">
+                        <p style="margin-top: 0em;">&RightArrow; The PBBA requires the division of the
                             BPM-Quad pairs in groups</p>
                         <p style="margin-top: 1em;">&RightArrow; Consecutive pairs in a group need at least 1
                             BPM and 2 correctors (CH + CV) in between to ensure orbit control</p>
@@ -1255,11 +1286,11 @@
                         <p style="margin-top: 1em;">&RightArrow; Typical groupping divides the BPM-Quad pairs by family
                             and distance</p>
                     </div>
-                    <div class="column" style="flex: 0 0 40%;">
+                    <div class="column" style="flex: 0 0 40%; align-self: center;">
                         <img src="images/PBBA-dK.png" height="500px" width="auto" style="margin-top: 1em;">
                     </div>
                 </div>
-            </section>
+            </section> -->
 
             <!-- <section data-transition="fade-in slide-out">
                 <h2>Parallel BBA</h2>
@@ -1294,120 +1325,82 @@
             <section data-transition="fade-in fade-out">
                 <h2>Fast BBA AC</h2>
                 <div class="two-columns" style="gap: 0;">
-                    <div class="column" style="flex: 0 0 60%; align-self: center;">
+                    <div class="column" style="flex: 0 0 55%; align-self: center;">
                         <p>
-                            The Fast BBA AC is an improvement of the standard BBA procedure:
+                            The Fast BBA AC is a robust improvement of the standard BBA:
                         </p>
 
                         <p style="margin-top: 1em">
-                            &RightArrow; Instead of discrete orbit shifts, AC excitations on the correctors are used to induce the orbit distortions
+                            &RightArrow; Instead of discrete orbit shifts, AC excitations on the correctors are used to
+                            induce the orbit distortions.
                         </p>
 
-                        <!-- <p style="margin-top: 1em;">
-                            &bullet; The central ideia is to use BPM readings at high acquisition rate to extract BPM offsets via harmonic analysis
-                        </p> -->
+                        <p style="margin-top: 1em">
+                            &RightArrow; High acquisition rate BPMs are used to collect the orbit data
+                        </p>
+
+
+                        <p style="margin-top: 1em">
+                            &RightArrow; The linear relationship between orbit distortions and quadrupole modulation is extracted with harmonic analysis to obtain the BPMs offsets
+                        </p>
+
                     </div>
-                    <div class="column" style="flex: 0 0 40%; margin-top: 2em;">
-                        <img src="images/fbbaac-plot.png" height="400px" width="auto" ">
+                    <div class="column" style="flex: 0 0 45%; margin-top: 2em;">
+                        <img src="images/fbbaac-plot.png" height="500px" width="auto" ">
                     </div>
                 </div>
 
-                <!-- <p style="margin-top: 1em;">
-                    &bullet; The principle is the same as the standard BBA: the orbit distortion is linearly proporional to the quadrupole strength and the BPM offset
-                </p> -->
-
-                <!-- <p style="margin-top: 1em;">
-                    &RightArrow; The BPMs record the orbit at high acquisition rate and
-                    the response at the excitation frequency is extracted
-                </p>
-
-                <p style="margin-top: 1em;">
-                    &RightArrow; Repeating the measurement for two quadrupole strengths
-                    allows the BPM-to-quad offset to be inferred
-                </p> -->
-
             </section>
 
-            <section data-transition="fade-in fade-out">
-                <h2>Fast BBA AC</h2>
-                <!-- <p style="margin-top: 2em;">
-                    &RightArrow; For each BPM, the orbit signal during the excitation can be written as:
-                </p>
-
-                <p>
-                    $$x_i(t) = \bar{x}_i + \text{AC response at } \omega_0$$
-                </p>
-
-                <p style="margin-top: 1em;">
-                    &RightArrow; The response at the corrector excitation frequency is extracted through:
-                </p>
-
-                <p>
-                    $$\alpha_i \approx \frac{2}{T}\int_0^T x_i(t)e^{-i\omega_0 t}\,dt$$
-                </p>
-
-                <p style="margin-top: 1em;">
-                    &RightArrow; $\bar{x}_i$ gives the <b>DC orbit</b>, while $\alpha_i$ gives the
-                    <b>orbit oscillation amplitude and phase</b> at the excitation frequency
-                </p> -->
-            </section>
-
-            <section data-transition="fade-in fade-out">
+            <!-- <section data-transition="fade-in fade-out">
                 <h2>Fast BBA AC</h2>
 
-                <!-- <p style="margin-top: 2em;">
-                    &RightArrow; The measurement is repeated for two quadrupole strengths:
-                </p>
+                <div class="two-columns" style="gap: 0; margin-top: 2em;">
+                    <div class="column" style="flex: 0 0 60%; align-self: center;">
+                        <p>We know that the orbit response is linear to the AC excitation</p>
 
-                <p>
-                    $$K^- = K_0 - \Delta K \qquad\text{and}\qquad K^+ = K_0 + \Delta K$$
-                </p>
+                        <p>$ x(t) - x^0 = \mathbf{R}_j (h(t) - h^0)$</p>
 
-                <p style="margin-top: 1em;">
-                    &RightArrow; For each case, the BPM provides:
-                </p>
+                        <p style="margin-top: 1em">this way, we can relate BPMs responses</p>
 
-                <p>
-                    $$\bar{x}_i \quad \text{(mean orbit)} \qquad\text{and}\qquad a_i \quad \text{(AC response)}$$
-                </p>
+                        <p>$ x_l(t) - x_l^0 = \frac{\mathbf{R}_{lj}}{\mathbf{R}_{kj}} (x_k(t) - x_k^0)$</p>
 
-                <p style="margin-top: 1em;">
-                    &RightArrow; The two resulting linear relations are the AC equivalent of the
-                    standard BBA corrector scan
-                </p>
+                        <p style="margin-top: 1em">Changing the quadupole strength to two configs. gives </p>
+                        <p>
+                            $\Biggl\{\begin{array}{l} 
+                            x_{l1}(t) - x_{l1}^0 = \frac{\mathbf{R}_{lj1}}{\mathbf{R}_{kj1}} (x_{k1}(t) - x_{k1}^0) \\
+                            x_{l2}(t) - x_{l2}^0 = \frac{\mathbf{R}_{lj2}}{\mathbf{R}_{kj2}} (x_{k2}(t) - x_{k2}^0) \\
+                            \end{array}\Biggr.$
+                        </p>
+                        <p style="margin-top: 1em">The intersection ensure that $x_{l2}^0 = x_{l1}^0$ and $x_{k2}^0 = x_{k1}^0$, then</p> 
 
-                <p style="margin-top: 1em;">
-                    &RightArrow; Their intersection gives the <b>BPM-to-quadrupole offset</b>
-                </p> -->
-            </section>
+                        <p>$$\Rightarrow x_{l,\text{offset}} = x_{l2}^0 = x_{l1}^0$$</p>
+                    </div>
+                    <div class="column" style="flex: 0 0 40%; align-self: center;">
+                        <img src="images/fbba-ac-lines.png" height="600px" width="auto" ">
+                    </div>
+                </div>
+            </section> -->
 
             <section data-transition="fade-in slide-out">
                 <h2>Fast BBA AC</h2>
                 <p style="margin-top: 2em">The FBBA-AC procedure consists of:</p>
 
-                <ul style="
-      margin-top: 0em;
-      border: 2px solid black;
-      border-radius: 30px;
-      padding: 1em;
-    ">
+                <ul style=" margin-top: 0em; border: 2px solid black; border-radius: 30px; padding: 1em; ">
                     <li style="list-style: none; margin-top: 0em">
-                        $\rightarrow$ Select one BPM-Quadrupole pair and suitable horizontal / vertical correctors
+                        $\rightarrow$ For each BPM-Quad pair:
                     </li>
                     <li style="list-style: none; margin-top: 0.5em">
-                        $\rightarrow$ Apply sinusoidal AC excitations to the correctors
+                        $\qquad\rightarrow$ For each quadrupole strength $K^-$ and $K^+$:
                     </li>
                     <li style="list-style: none; margin-top: 0.5em">
-                        $\rightarrow$ Acquire fast BPM data during the excitation
+                        $\qquad\qquad\rightarrow$ Apply sinusoidal AC excitations to suitable CH and/or CV
                     </li>
                     <li style="list-style: none; margin-top: 0.5em">
-                        $\rightarrow$ Extract the DC and AC orbit responses from harmonic analysis
+                        $\qquad\qquad\rightarrow$ Acquire fast BPM data during the excitation
                     </li>
                     <li style="list-style: none; margin-top: 0.5em">
-                        $\rightarrow$ Repeat the measurement for $K^-$ and $K^+$
-                    </li>
-                    <li style="list-style: none; margin-top: 0.5em">
-                        $\rightarrow$ Calculate ...
+                        $\qquad\rightarrow$ Correlate the orbit distortions to calculate the BPM offsets
                     </li>
                 </ul>
 
@@ -1425,16 +1418,108 @@
                 <h1>Preliminary Results</h1>
             </section>
 
-            <section>
+            <section data-transition="slide-in fade-out">
                 <h2>Parallel BBA: Simulations</h2>
+                <p style="margin-top: 2em; margin-bottom: 1em;">&RightArrow; First steps: divide BPM-Quad pairs into groups</p>
+                <!-- <div class="two-columns" style="gap: 0;">
+                    <div class="column" style="flex: 0 0 35%; align-items: center; align-self: center;">
+                        <ul>
+                            <li>Q4, QDB2, QDP2, QS @ (C3, M2)</li>
+                            <li>Q1, QS @ (C1, C3)</li>
+                            <li>Q1, QS @ (C1, C4)</li>
+                            <li>Q4, QDB2, QDP2, QS @ (M1, C2)</li>
+                        </ul>
+                    </div>
+                    <div class="column" style="flex: 0 0 65%; align-items: center; align-self: center;">
+                        <img src="images/PBBA-groups.png" height="500px" width="auto">
+                    </div>
+                </div> -->
+
+                <img src="images/PBBA-groups.png" height="500px" width="auto">
+
+                <p style="margin-bottom: 1em;"></p>
+
+                <span style="border: 4px solid royalblue; border-radius: 10px; padding: 0.3em; font-size: 0.85em;">
+                    Q4, QDB2, QDP2, QS @ (M2, C3)
+                </span>
+                &MediumSpace;
+                <span style="border: 4px solid yellowgreen; border-radius: 10px; padding: 0.3em; font-size: 0.85em;">
+                    Q1, QS @ (C1, C3)
+                </span>
+                &MediumSpace;
+                <span style="border: 4px solid magenta; border-radius: 10px; padding: 0.3em; font-size: 0.85em;">
+                    QS, Q1 @ (C1, C4)
+                </span>
+                &MediumSpace;
+                <span style="border: 4px solid orange; border-radius: 10px; padding: 0.3em; font-size: 0.85em;">
+                    QS, QDB2, QDP2 @ (M1, C2)
+                </span>
+
             </section>
 
-            <section>
+            <section data-transition="fade-in fade-out">
+                <h2>Parallel BBA: Simulations</h2>
+                <p style="margin-top: 2em">&RightArrow; Analyze the impact of measuring the IOS</p>
+                <p style="margin-top: 1em; font-size: 0.85em;">Tunes and coupling variation during IOS measurement</p>
+                <img src="images/PBBA-sim-tune&coup-iosmeas.png" height="550px" width="auto" />
+            </section>
+
+            <section data-transition="fade-in slide-out">
+                <h2>Parallel BBA: Simulations</h2>
+                <p style="margin-top: 2em">&RightArrow; Simulate a Parallel BBA run on the SIRIUS Storage Ring model</p>
+                <p style="margin-top: 1em; font-size: 0.85em;">PBBA: Group 0 (Q4, QDB2, QDP2, QS @ [M2, C3])</p>
+                <img src="images/PBBA-sim-pbbaonmodel.png" height="550px" width="auto" />
+            </section>
+
+            <section data-transition="slide-in fade-out">
                 <h2>Parallel BBA: Experiments</h2>
+                <ul style="margin-top: 3em;">
+                    <li>
+                        Oct 13, 2025 &mdash; First experiments (Groups 0 and 1 + a group of selected BPMs)
+                    </li>
+                    <li style="margin-top: 1em;">
+                        Dec 8, 2025 &mdash; First full PBBA runs
+                    </li>
+                    <li style="margin-top: 1em;">
+                        Jan 5, 2026 &mdash; Parallel BBA vs Standard BBA 
+                    </li>
+                    <li style="margin-top: 1em;">
+                        Jan 12 and Feb 9, 2026 &mdash; Groups rearrangements and convegence analysis
+                    </li>
+                </ul>
             </section>
 
-            <section>
-                <h2>Parallel BBA x Standard BBA</h2>
+            <section data-transition="fade-in fade-out">
+                <h2>Parallel BBA: Experiments</h2>
+                <p style="margin-top: 2em;">
+                    &bullet; October 13, 2025
+                </p>
+                <p style="margin-top: 1em;">PBBA and Standart BBA for selected BPMs</p>
+                <img src="images/PBBA-day13-10-25_AG.png" height="300px" width="auto" />
+                <p>PBBA for the "default" group 0</p>
+                <img src="images/PBBA-day13-10-25_Gdef0.png" height="300px" width="auto" />
+            </section>
+
+            <section data-transition="fade-in fade-out">
+                <h2>Parallel BBA: Experiments</h2>
+                <p style="margin-top: 2em;">
+                    &bullet; December 8, 2025: Full PBBA (all "default" groups)
+                </p>
+                <img src="images/PBBA-day8-12-25_Gdefs.png" height="750px" width="auto" />
+            </section>
+
+            <section data-transition="fade-in fade-out">
+                <h2>Parallel BBA: Experiments</h2>
+                <p style="margin-top: 2em;">
+                    &bullet; January 5, 2025
+                </p>
+            </section>
+
+            <section data-transition="fade-in slide-out">
+                <h2>Parallel BBA: Experiments</h2>
+                <p style="margin-top: 2em;">
+                    &bullet; January 12 and February 9, 2026
+                </p>
             </section>
 
             <section>
