@@ -926,15 +926,25 @@
 
             <section data-transition="slide-in fade-out">
                 <h2>The BBA Principle</h2>
-                <p style="margin-top: 2em">
-                    The calibration of BPMs consists of finding the offsets that make the beam follow an ideal orbit
-                </p>
-                <p style="margin-top: 1em">
-                    This ideal orbit is the one in which the beam travels through the magnetic centers of the magnets on the accelerator
-                </p>
-                <p style="margin-top: 1em">
-                    Quadrupoles are the most suitable magnets for this calibration, since the orbit is linearly related to their strength
-                </p>
+                <div class="two-columns" style="gap: 2em; margin-top: 1em">
+                    <div class="column" style="flex: 0 0 55%; align-self: center;">
+                        <p style="margin-top: 2em">
+                            The calibration of BPMs consists of finding the offsets that make the beam follow an ideal orbit
+                        </p>
+                        <p style="margin-top: 1em">
+                            This ideal orbit is the one in which the beam travels through the magnetic centers of the magnets on the accelerator
+                        </p>
+                        <p style="margin-top: 1em">
+                            Quadrupoles are the most suitable magnets for this, since the orbit is linearly related to their strength
+                        </p>
+                    </div>
+                    <div class="column" style="flex: 0 0 40%; align-self: center;">
+                        <!-- <span id="label-BPM">BPM</span>
+                        <div id="bpm-to-quad-offset-container" style="width: 100%; height: 500px; border: 0"></div>
+                        <script type="module" src="/scripts/bpm-to-quad-offset.js"></script> -->
+                        <img src="/images/bpm-to-quad-offset.png" width="auto" height="300px" />
+                    </div>
+                </div>
             </section>
 
             <section data-transition="fade-in fade-out">
