@@ -1,0 +1,37 @@
+\documentclass{standalone}
+
+\usepackage{amsmath}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, positioning, calc, }
+
+\begin{document}
+
+\begin{tikzpicture}[>=latex]
+    \coordinate (O) at (0, 0);
+    \coordinate (A) at (-2, 0.3);
+    \coordinate (B) at (-1, -0.7);
+    \coordinate (C) at (0, 0.1);
+    \coordinate (D) at (1, 0.5);
+
+    \pgfmathsetmacro{\blarg}{0.2}
+    \pgfmathsetmacro{\balt}{0.4}
+    
+    \path[fill=black!60, draw=none] ($(A)+(\blarg/2,\balt/2)$) rectangle ($(A)-(\blarg/2,\balt/2)$);
+    \node[above] at ($(A)+(0,\balt/2)$) {\tiny BPM$_1$};
+    
+    \path[fill=black!60, draw=none] ($(B)+(\blarg/2,\balt/2)$) rectangle ($(B)-(\blarg/2,\balt/2)$);
+    \node[above] at ($(B)+(0,\balt/2)$) {\tiny BPM$_2$};
+
+    \path[fill=black!60, draw=none] ($(C)+(\blarg/2,\balt/2)$) rectangle ($(C)-(\blarg/2,\balt/2)$);
+    \node[above] at ($(C)+(0,\balt/2)$) {\tiny BPM$_3$};
+
+    \path[fill=black!60, draw=none] ($(D)+(\blarg/2,\balt/2)$) rectangle ($(D)-(\blarg/2,\balt/2)$);
+    \node[above] at ($(D)+(0,\balt/2)$) {\tiny BPM$_4$};
+    
+    \draw[thick, ->] (-3, 0) -- (2, 0) node[right] {$s$};
+    \draw[thick, ->] (-2.8, -1) -- (-2.8, 1.5) node[above] {$x$};
+
+\end{tikzpicture}
+
+
+\end{document}

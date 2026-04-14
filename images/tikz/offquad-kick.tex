@@ -1,0 +1,41 @@
+\documentclass{standalone}
+
+\usepackage{amsmath}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, positioning, calc, }
+
+\begin{document}
+
+\begin{tikzpicture}[>=latex]
+    
+    \coordinate (Oreal) at (0, 0);
+    \pgfmathsetmacro{\off}{-0.3}   
+    \coordinate (O) at (0, \off+0.1);
+
+    \pgfmathsetmacro{\sini}{1.6}  
+    \pgfmathsetmacro{\dy}{0.5}  
+    \coordinate (Op) at (0, \dy);
+    \coordinate (Om) at (0, -\dy);
+
+    \coordinate (Ep) at (\sini, -\dy+\off);
+    \coordinate (Em) at (\sini, \dy+\off);
+
+    \coordinate (F) at (0.9, 0);
+
+    \pgfmathsetmacro{\qlarg}{0.5}   
+    \pgfmathsetmacro{\qalt}{1.5}
+
+    \path[fill=orange, draw=none] ($(O)+(\qlarg/2,\qalt/2)$) rectangle ($(O)-(\qlarg/2,\qalt/2)$);
+    \node[above] at ($(O)+(0,\qalt/2)$) {\scriptsize Quad};
+
+    \draw[thick, ->] (-2, 0) -- (2, 0) node[right] {$s$};
+    \draw[thick, ->] (-\sini+0.2, -1) -- (-\sini+0.2, 1) node[above] {$x$};
+
+    \draw[thick, densely dashed, blue] (-\sini, \dy) -- (Op) -- (Ep);
+    \draw[thick, densely dashed, red] (-\sini, -\dy) -- (Om) -- (Em);
+    \draw[thick, densely dashed, green] (-\sini, 0) -- (Oreal) -- (\sini, \off);
+
+\end{tikzpicture}
+
+
+\end{document}

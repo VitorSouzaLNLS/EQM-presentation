@@ -1,0 +1,1 @@
+`pdflatex quad-kick.tex && inkscape -T -o quad-kick.svg quad-kick.pdf`

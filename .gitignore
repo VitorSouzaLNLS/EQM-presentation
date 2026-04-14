@@ -1,3 +1,6 @@
 /dist/reveal-dist/demo.html
 /images/asy/trash
 fbbaac.html
+/images/tikz/*.aux
+/images/tikz/*.log
+/images/tikz/*.pdf

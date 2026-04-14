@@ -192,7 +192,7 @@ vchamb_text.position.set(-1.3*R, yshift, -0.1*R);
 
 bpm_text.position.set(0.4*R, yshift, -0.5*R);
 
-inj_text.position.set(-0.3*R, yshift, 0.6*R);
+inj_text.position.set(-0.1*R, yshift, 0.6*R);
 
 scene.add(dip_text, quad_text, sext_text, vchamb_text, rf_text, bpm_text, inj_text);
 
@@ -210,9 +210,9 @@ for (let i = 0; i < n; i++) {
 
     // Feixe de Injeção (Seta)
     if (i === n - 1) {
-        let start = new THREE.Vector3(-R / 1.7, 0, R / 2);
+        let start = new THREE.Vector3(R / 5, 0, R / 1.4);
         
-        var x0 = 0.7;
+        var x0 = 0.3;
         var ll = 0.3;
         createVacuumChamber(start, xyline(p, pn, x0));
         createQuad(xyline(p, pn, x0 - ll/4), t_mid, "gray", ll, 0.6, 0.6);
@@ -224,21 +224,21 @@ for (let i = 0; i < n; i++) {
     // Componentes ao longo do tubo
     if (i !== 1) {
         let r1 = 0.2;
-        createQuad(xyline(p, pn, r1), t_mid);
+        createQuad(xyline(p, pn, 1 - r1), t_mid);
         if (i !== n - 1) {
-            createQuad(xyline(p, pn, 1 - r1), t_mid);
+            createQuad(xyline(p, pn, r1), t_mid);
         }
 
         let r2 = 0.3;
-        createSext(xyline(p, pn, r2), t_mid);
+        createSext(xyline(p, pn, 1 - r2), t_mid);
         if (i !== n - 1) {
-            createSext(xyline(p, pn, 1 - r2), t_mid);
+            createSext(xyline(p, pn, r2), t_mid);
         }
 
         let r3 = 0.35;
-        createQuad(xyline(p, pn, r3), t_mid, "black", 0.2, 0.3, 0.3);
+        createQuad(xyline(p, pn, 1 - r3), t_mid, "black", 0.2, 0.3, 0.3);
         if (i !== n - 1) {
-            createQuad(xyline(p, pn, 1 - r3), t_mid, "black", 0.2, 0.3, 0.3);
+            createQuad(xyline(p, pn, r3), t_mid, "black", 0.2, 0.3, 0.3);
         }
 
     } else {
@@ -269,8 +269,8 @@ for (let i = 0; i < n; i++) {
 
 const orbit_pts = [];
 for (let i = 0; i < n; i++) {
-    let theta = i * 2 * Math.PI / n;
-    let thetan = (i + 1) * 2 * Math.PI / n;
+    let theta = -i * 2 * Math.PI / n;
+    let thetan = -(i + 1) * 2 * Math.PI / n;
     
     // Mapeando a trigonometria do Asymptote pro plano XZ (Y é altura no Threejs)
     let p = new THREE.Vector3(R * Math.sin(theta), 0, R * Math.cos(theta));

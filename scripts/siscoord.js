@@ -31,7 +31,7 @@ container.appendChild(renderer.domElement);
 const labelRenderer = new CSS2DRenderer();
 labelRenderer.setSize(container.clientWidth, container.clientHeight);
 labelRenderer.domElement.style.position = "absolute";
-labelRenderer.domElement.style.top = "3.1em";
+labelRenderer.domElement.style.top = "3.5em";
 labelRenderer.domElement.style.left = "0px";
 labelRenderer.domElement.style.pointerEvents = "none";
 container.appendChild(labelRenderer.domElement);
