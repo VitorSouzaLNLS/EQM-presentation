@@ -1,39 +1,62 @@
 \documentclass{standalone}
 
+\renewcommand{\familydefault}{\sfdefault}
 \usepackage{amsmath}
 \usepackage{tikz}
 \usetikzlibrary{arrows.meta, positioning, calc, }
 
+\newcommand{\quadrup}[5]{%
+  % #1 = x, #2 = y, #3 = largura, #4 = altura, #5 = cor
+  \fill[#5]
+    (#1-0.5*#3,#2+0.5*#4) --
+    (#1,#2) --
+    (#1+0.5*#3,#2+0.5*#4) --
+    cycle;
+  \fill[#5]
+    (#1-0.5*#3,#2-0.5*#4) --
+    (#1,#2) --
+    (#1+0.5*#3,#2-0.5*#4) --
+    cycle;
+}
+
+\newcommand{\bpmrule}[4]{%
+  % #1 = x_inicial, #2 = y, #3 = comprimento (cm), #4 = cor
+  \draw[#4, thick] (#1,-#2*0.5) -- (#1,#2*0.5);
+  \foreach \x in {1,...,#3} {
+    \draw[#4, thick] (#1, #2*0.5 - #2*\x/#3 + 0.5*#2/#3) -- ++(0.1,0);
+    % \node[below] at (#1+\x,#2-0.15) {\footnotesize \x};
+  }
+}
+
 \begin{document}
 
 \begin{tikzpicture}[>=latex]
-    \coordinate (O) at (0, 0);
 
-    \pgfmathsetmacro{\sini}{1.6}  
-    \pgfmathsetmacro{\dy}{0.5}  
+    \pgfmathsetmacro{\dy}{0.8}   
+    \coordinate (O) at  (0, 0);
     \coordinate (Op) at (0, \dy);
     \coordinate (Om) at (0, -\dy);
 
-    \coordinate (Ep) at (\sini, -\dy);
-    \coordinate (Em) at (\sini, \dy);
+    \coordinate (S) at  (-2, 0);
+    \coordinate (Sp) at (-2, \dy);
+    \coordinate (Sm) at (-2, -\dy);
 
-    \coordinate (F) at (0.9, 0);
+    \coordinate (F) at  (3, 0);
+    \coordinate (Fp) at (3, -\dy);
+    \coordinate (Fm) at (3, \dy);
 
-    \pgfmathsetmacro{\qlarg}{0.5}   
-    \pgfmathsetmacro{\qalt}{1.5}
+    \pgfmathsetmacro{\qlarg}{1}   
+    \pgfmathsetmacro{\qalt}{2.5}
 
-    \path[fill=orange, draw=none] ($(O)+(\qlarg/2,\qalt/2)$) rectangle ($(O)-(\qlarg/2,\qalt/2)$);
-    \node[above] at ($(O)+(0,\qalt/2)$) {\scriptsize Quad};
+    \quadrup{0}{0}{\qlarg}{\qalt}{orange}
 
-    \draw[thick, ->] (-2, 0) -- (2, 0) node[right] {$s$};
-    \draw[thick, ->] (-\sini+0.2, -1) -- (-\sini+0.2, 1) node[above] {$x$};
+    \node[above] at ($(O)+(0,\qalt/2)$) {Quad};
+    
+    \draw[thick, densely dashed] (-3, 0) -- (4, 0);
 
-    \draw[thick, densely dashed, blue] (-\sini, \dy) -- (Op) -- (F) -- (Ep);
-    \draw[thick, densely dashed, red] (-\sini, -\dy) -- (Om) -- (F) -- (Em);
-    \draw[thick, densely dashed, green] (-\sini, 0) -- (\sini, 0);
-
-    % \draw[line width=0.7pt, black, stealth-, densely dotted] ($(F) - (0, 0.7)$) -- (F);
-    % \node[below] at ($(F) - (0, 0.7)$) {\small $\frac{1}{KL}$};
+    \draw[line width=0.7pt, red] (S) -- (O) -- (F);
+    \draw[line width=0.7pt, red] (Sp) -- (Op) -- (Fp);
+    \draw[line width=0.7pt, red] (Sm) -- (Om) -- (Fm);
 
 \end{tikzpicture}
 

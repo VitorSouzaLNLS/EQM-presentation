@@ -1,8 +1,10 @@
     const resetAll = document.getElementById("resetAll");
-    resetAll.addEventListener("click", () => {
-      Reveal.slide(0);
-    });
-    // resetAll.click();
+    if (resetAll) {
+      resetAll.addEventListener("click", () => {
+        Reveal.slide(0);
+      });
+      // resetAll.click();
+    }
 
     const clickBox = document.getElementById("clickbox");
     const menuButton = document.getElementById("URMenu");

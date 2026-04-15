@@ -32,6 +32,7 @@
     <link rel="stylesheet" href="styles/rootstyle.css" id="rootstyle" />
     <link rel="stylesheet" href="styles/mystyle.css" id="mystyle" />
     <link rel="stylesheet" href="styles/white.css" id="theme" />
+    <link rel="stylesheet" href="styles/revmod.css" id="theme" />
 
     <script type="importmap">
       {
@@ -51,7 +52,7 @@
         <button id="resetAll">🔄</button>
       </header>
     </div> -->
-    <homebutton id="resetAll">🔄</homebutton>
+    <!-- <homebutton id="resetAll">🔄</homebutton> -->
     <!-- <animatebutton id="animateButton">⏸</animatebutton> -->
 
     <div class="reveal">
@@ -922,7 +923,7 @@
                         </p>
                     </div>
                     <div class="column" style="flex: 0 0 40%; align-self: center;">
-                        <img src="images/tikz/bpms_misaligned.svg" height="300px" width="auto"/>
+                        <img src="images/tikz/bpms_misaligned.svg" width="100%"/>
                     </div>
                 </div>
             </section>
@@ -933,30 +934,31 @@
 
             <section data-transition="slide-in fade-out">
                 <h2>The BBA Principle</h2>
-                <div class="two-columns" style="gap: 1em; margin-top: 2em">
+                <div class="two-columns" style="gap: 0em; margin-top: 2em">
                     <div class="column" style="flex: 0 0 55%; align-self: center; margin-left: 2%">
                         <p style="margin-top: 0em">
-                            The calibration of BPMs consists of finding the offsets that make the beam follow an ideal orbit
+                            The calibration of BPMs consists of finding the offsets that indicate where the beam travels
+                            through the magnetic centers of the magnets on the accelerator
                         </p>
                         <p style="margin-top: 1em">
-                            This ideal orbit is the one in which the beam travels through the magnetic centers of the magnets on the accelerator
+                            <!-- This ideal orbit is the one in which the beam travels through the magnetic centers of the magnets on the accelerator -->
                         </p>
                         <p style="margin-top: 1em">
                             Quadrupoles are the most suitable magnets for this, since the orbit is linearly related to their strength
                         </p>
                     </div>
-                    <div class="column" style="flex: 0 0 40%; align-self: center;">
+                    <div class="column" style="flex: 0 0 45%; align-self: center;">
                         <!-- <span id="label-BPM">BPM</span>
                         <div id="bpm-to-quad-offset-container" style="width: 100%; height: 500px; border: 0"></div>
                         <script type="module" src="/scripts/bpm-to-quad-offset.js"></script> -->
-                        <img src="images/tikz/bpm2quad-offset.svg" width="auto" height="300px" />
+                        <img src="images/tikz/bpm2quad-offset.svg" width="100%"/>
                     </div>
                 </div>
             </section>
 
             <section data-transition="fade-in fade-out">
                 <h2>The BBA Principle</h2>
-                <div class="two-columns" style="gap: 1em; margin-top: 2em">
+                <div class="two-columns" style="gap: 1em; margin-top: 1em">
                     <div class="column" style="flex: 0 0 55%; align-self: center; margin-left: 2%">
                         <p>
                             From the equations of motion, we know that a beam passing through a
@@ -1468,7 +1470,7 @@
 
             <section data-transition="slide-in fade-out">
                 <h2>Parallel BBA: Simulations</h2>
-                <p style="margin-top: 2em; margin-bottom: 1em;">&RightArrow; First steps: divide BPM-Quad pairs into groups</p>
+                <p style="margin-top: 2em; margin-bottom: 0em;">&RightArrow; First steps: divide BPM-Quad pairs into groups</p>
                 <!-- <div class="two-columns" style="gap: 0;">
                     <div class="column" style="flex: 0 0 35%; align-items: center; align-self: center;">
                         <ul>
