@@ -3,28 +3,24 @@ import solids;
 import graph3;
 
 settings.tex="pdflatex";
-settings.texpath="C:\texlive\2026\bin\windows";
-settings.dvips="C:\texlive\2026\bin\windows\dvips.exe";
-settings.dvisvgm="C:\texlive\2026\bin\windows\dvisvgm.exe";
-settings.gs="C:\Program Files\gs\gs10.07.0\bin\gswin64c.exe";
-settings.convert="C:\Program Files\ImageMagick-7.1.2-Q16-HDRI\magick.exe";
-settings.outformat="svg";
-// settings.antialias=8;
-// settings.render=16;
+// settings.texpath="C:\texlive\2026\bin\windows";
+// settings.dvips="C:\texlive\2026\bin\windows\dvips.exe";
+// settings.dvisvgm="C:\texlive\2026\bin\windows\dvisvgm.exe";
+// settings.gs="C:\Program Files\gs\gs10.07.0\bin\gswin64c.exe";
+// settings.convert="C:\Program Files\ImageMagick-7.1.2-Q16-HDRI\magick.exe";
+settings.outformat="png";
+settings.antialias=2;
+settings.render=4;
 // settings.prc=true;
-settings.keys=true;
-settings.offline=true;
+// settings.keys=true;
+// settings.offline=true;
 
-// texpreamble(
-//   "
-//   \usepackage{helvet}
-//   \renewcommand{\familydefault}{\sfdefault}
-//   "
-// );
+// usepackage("helvet");
 
 real global_scale = 0.7;
 size(1600*global_scale, 900*global_scale);
 defaultpen(fontsize(30pt));
+// defaultpen(fontface("sans serif"));
 
 real R = 1;
 int n = 12;
@@ -79,8 +75,8 @@ for (int i=0; i<n; ++i) {
     //     // draw((-R/2, R/3) -- xyline(p, pn, 0.8), vchambcolor, Arrow(8*res, Relative(0.5)));
     //   	pair tp = xyline(p, pn, 0.8);
     //   	draw((-R/2, R/3, 0) -- (tp.x, tp.y, 0), SE, vchambcolor, Arrow3(10*res, Relative(0.5)));
-    //   	// label("\LARGE Beam", (tp.x - R/2, tp.y - R/3, R/8), SE, vchambcolor);
-    //   	// label("\LARGE Injection", (tp.x - R/2, tp.y - R/3, R/16), SE, vchambcolor);
+    //   	// label("\sffamily\LARGE Beam", (tp.x - R/2, tp.y - R/3, R/8), SE, vchambcolor);
+    //   	// label("\sffamily\LARGE Injection", (tp.x - R/2, tp.y - R/3, R/16), SE, vchambcolor);
       
     //     // label(minipage("\centering Beam Injection"), (-R/3.5, 0)+((-R/2, R/3)+xyline(p, pn, 0.8))/2, SE, vchambcolor); 
     // }
@@ -88,7 +84,7 @@ for (int i=0; i<n; ++i) {
     if (i == n-1) {
         //draw((-R/2, R/3) -- xyline(p, pn, 0.8), vchambcolor, Arrow(8*res, Relative(0.5)));
       	pair tp = xyline(p, pn, 0.8);
-      	draw("\LARGE Beam Injection", (-R/2, R/3, 0) -- (tp.x, tp.y, 0), SE, vchambcolor, Arrow3(10*res, Relative(0.5)));
+      	draw("\sffamily\LARGE Beam Injection", (-R/2, R/3, 0) -- (tp.x, tp.y, 0), SE, vchambcolor, Arrow3(10*res, Relative(0.5)));
       	//label("\scriptsize Beam", (tp.x - R/2, tp.y - R/3, R/8), SE, vchambcolor);
       	//label("\scriptsize Injection", (tp.x - R/2, tp.y - R/3, R/16), SE, vchambcolor);
       
@@ -101,7 +97,7 @@ for (int i=0; i<n; ++i) {
     if (i == 4) {
         ////label("Vacuum System", xyline(p, pn, 0.5), SW, vchambcolor); 
       	pair spo = xyline(p, pn, 0.5);
-      	label("\LARGE Vacuum System", (spo.x, spo.y, -R/20), SE, vchambcolor);
+      	label("\sffamily\LARGE Vacuum System", (spo.x, spo.y, -R/20), SE, vchambcolor);
     }
 
     if (i != 1) {
@@ -117,8 +113,8 @@ for (int i=0; i<n; ++i) {
             if (i == n-2) {
                 ////label(minipage("\flushright Focusing Magnets\\ {\color{orange}Quadrupoles}"), (-R/10, 0)+xyline(p, pn, 1-r), W);
               pair spo = xyline(p, pn, 1-r);
-              label("\LARGE Focusing Magnets", (spo.x, spo.y, R/8), NW);
-              label("\LARGE Quadrupoles", (spo.x, spo.y, R/16), NW, quadcolor);
+              label("\sffamily\LARGE Focusing Magnets", (spo.x, spo.y, R/8), NW);
+              label("\sffamily\LARGE Quadrupoles", (spo.x, spo.y, R/16), NW, quadcolor);
             }
     
             r = 0.3;
@@ -134,14 +130,14 @@ for (int i=0; i<n; ++i) {
                 ////label("High-order Magnets", (-R/10, +R/15)+xyline(p, pn, 1-r), W);
                 ////label("Sextupoles, Octupoles", (-R/10, -R/15)+xyline(p, pn, 1-r), W, sextcolor);
               pair spo = xyline(p, pn, 1-r);
-              label("\LARGE High-order-field Magnets", (spo.x, spo.y, -R/18), SW);
-              label("\LARGE Sextupoles, Octupoles", (spo.x, spo.y, -R/8), SW, sextcolor);
+              label("\sffamily\LARGE High-order-field Magnets", (spo.x, spo.y, -R/18), SW);
+              label("\sffamily\LARGE Sextupoles, Octupoles", (spo.x, spo.y, -R/8), SW, sextcolor);
             }
     }
     else {
       	pair spo = xyline(p, pn, 0.5);
       	drawcavity((spo.x, spo.y, 0), (thetan+theta)/2, cavitycolor);
-      	label("\LARGE RF Cavity", (spo.x, spo.y, R/16), NE);
+      	label("\sffamily\LARGE RF Cavity", (spo.x, spo.y, R/16), NE);
     }
 }
 
@@ -150,8 +146,8 @@ for (int i=0; i<n; ++i) {
     p = (R - 0.02*res)*(sin(theta), cos(theta));
   	drawdip(p, theta, dipcolor);
 }
-label("\LARGE Guidance Magnets", (0, R, R/8), N);
-label("\LARGE Dipoles", (0, R, R/16), N, dipcolor);
+label("\sffamily\LARGE Guidance Magnets", (0, R, R/8), N);
+label("\sffamily\LARGE Dipoles", (0, R, R/16), N, dipcolor);
 
 //label(minipage("\centering Beam\\ Injection"), (-R/8,R/2), vchambcolor); 
 //label("Vacuum System", (-0.85*R, -0.94*R), vchambcolor); 

@@ -88,7 +88,7 @@
             <section>
                 <h2>SIRIUS</h2>
                 <div class="two-columns">
-                    <div class="column" style="flex: 0 0 52%">
+                    <div class="column">
                         <p style="text-align: left">
                             SIRIUS is the Brazilian 4th-generation synchrotron light source,
                             operated by the Brazilian Synchrotron Light Laboratory (LNLS) at
@@ -139,6 +139,9 @@
 
                     <div class="column">
                         <img src="images/png/sirius-picture.png" alt="SIRIUS" style="width: 100%; margin-top: 1em" />
+                        <p style="font-size: 0.5em; text-align: center; margin-top: -0.5em">
+                            Aerial view of the SIRIUS facility at CNPEM.[2]
+                        </p>
                     </div>
                 </div>
             </section>
@@ -162,38 +165,30 @@
                 <h2>Motivation</h2>
                 <ul>
                     <li style="margin-top: 1em">
-                        The SIRIUS's Storage Ring needs <b>sub-micrometer orbit stability</b> to
+                        The SIRIUS's Storage Ring needs sub-micrometer orbit stability to
                         maintain its performance
                     </li>
                     <li style="margin-top: 1em">
                         The orbit stability depends on the precision and accuracy of the
-                        <b>Beam Position Monitors</b> (BPM)
+                        Beam Position Monitors (BPM)
                     </li>
                     <li style="margin-top: 1em">
                         The BPMs have high precision (nanometer-level) but low accuracy
                     </li>
                     <li style="margin-top: 1em">
-                        So we calibrate the BPMs using the <b>Beam-Based Alignment</b> (BBA)
+                        So we calibrate the BPMs using the Beam-Based Alignment (BBA)
                         procedure
                     </li>
                 </ul>
-
-                <h2 style="margin-top: 2em;">The Problem</h2>
-                <p style="
-                    margin-top: 0em; 
-                    border: 2px solid black; 
-                    border-radius: 30px; 
-                    padding-top: 0.5em; 
-                    padding-bottom: 0.5em;
-                    padding-left: 0;
-                    padding-right: 0;
-                    width: 80%;
-                    margin-left: 10%;
-                ">
-                    The current BBA procedure is very time-consuming (6 &Tilde; 8 hours for all 160 BPMs)
-                </p>
             </section>
 
+            <section>
+                <h2>The Problem</h2>
+                <p style="margin-top: 2em">
+                    The current BBA procedure is very time-consuming:<br />the
+                    calibration for all 160 BPMs usually takes 6-8 hours
+                </p>
+            </section>
 
             <section>
                 <h2>Objectives</h2>
@@ -240,7 +235,7 @@
             <section data-transition="slide-in fade-out">
                 <h2>Coordinate System</h2>
 
-                <p style="text-align: center; margin-top: 1em">
+                <p style="text-align: center; margin-top: 2em">
                     We adopt a curvilinear coordinate system based on the Frenet-Serret
                     frame, that follows a design orbit $\vec{r}_0(s)$
                 </p>
@@ -254,7 +249,7 @@
                         <div id="label-shat">$\hat{s}$</div>
                         <script src="scripts/siscoord.js" type="module"></script>
                     </div>
-                    <div class="column" style="align-self: center; text-align: left; flex: 0 0 40%">
+                    <div class="column" style="align-self: center; text-align: left; flex: 0 0 60%">
                         <ul>
                             <li style="list-style: none; margin-top: 1em">
                                 $\hat{s}(s) = \dfrac{d}{ds}\vec{r}_0(s)$
@@ -314,13 +309,12 @@
             <section data-transition="slide-in fade-out">
                 <h2>Magnetic Fields</h2>
 
-                <p style="margin-top: 1em">
+                <p style="margin-top: 2em">
                     In the Frenet-Serret frame, the transverse magnetic fields can be
                     multipole-expanded around the design orbit
-                    $$B_y(x,y,s) + i B_x(x,y,s) = \sum_{n=0}^{\infty} \Big( B_n(s) + iA_n(s) \Big)(x+iy)^n$$
                 </p>
 
-                <!-- <div class="multiple-columns" style="margin-top: 0.5em">
+                <div class="multiple-columns" style="margin-top: 0.5em">
                     <div class="column">
                         <p>
                             $$B_y(x,y,s) + i B_x(x,y,s) = \sum_{n=0}^{\infty} \Big( B_n(s) +
@@ -334,7 +328,7 @@
                             <li>\(A_n\): skew multipole coefficients</li>
                         </ul>
                     </div>
-                </div> -->
+                </div>
 
                 <!-- <p style="margin-top: 0em">
                     The first terms of the expansion correspond to the elements most
@@ -671,22 +665,20 @@
             <section>
                 <h2>Closed Orbit</h2>
                 <p style="margin-top: 2em">
-                    In an ideal machine the closed orbit is the design orbit, in which particles travel around
+                    In an ideal machine, the closed orbit is precisely the design orbit, in which the particles perform their betatrons oscillations and dispersive trajectories around
                 </p>
 
-                <p style="margin-top: 1em">&RightArrow; However, dipolar field imperfections distort the closed orbit:
-                </p>
+                <p style="margin-top: 1em">&RightArrow; However, dipolar field imperfections distort the closed orbit:</p>
 
-                <p>$$u_{co}(s) = \dfrac{\sqrt{\beta_u(s)}}{2\sin{\pi\nu}}\int\limits_s^{s+L} \delta
-                    G_u(s')\sqrt{\beta_u(s')}\cos{\left(|\phi_u(s) - \phi_u(s')| - \pi\nu_u\right)}\Delta s'$$</p>
+                <p>$$u_{co}(s) = \dfrac{\sqrt{\beta_u(s)}}{2\sin{\pi\nu}}\int\limits_s^{s+L} \delta G_u(s')\sqrt{\beta_u(s')}\cos{\left(|\phi_u(s) - \phi_u(s')| - \pi\nu_u\right)}\Delta s'$$</p>
 
                 <p style="margin-top: 1em">
                     To ensure the accelerator performs as designed, is essential to control and correct the closed orbit
                 </p>
 
-                <!-- <p style="margin-top: 1em">
+                <p style="margin-top: 1em">
                     &RightArrow; To do that, we have the orbit feedback system
-                </p> -->
+                </p>
 
             </section>
 
@@ -815,8 +807,7 @@
                     Localized dipolar kicks disturb the closed orbit:
                 </p>
                 <p>
-                    $$\Delta u(s_i) = \dfrac{\sqrt{\beta_u(s_i)}}{2\sin{\pi\nu_u}}\sum
-                    \Delta\theta_j\sqrt{\beta_u(s_j)}\cos{\left(|\phi_u(s_i) - \phi_u(s_j)| -
+                    $$\Delta u(s_i) = \dfrac{\sqrt{\beta_u(s_i)}}{2\sin{\pi\nu_u}}\sum \Delta\theta_j\sqrt{\beta_u(s_j)}\cos{\left(|\phi_u(s_i) - \phi_u(s_j)| -
                     \pi\nu_u\right)} $$
                 </p>
 
@@ -920,20 +911,20 @@
             <section data-transition="fade-in slide-out">
                 <h2>Orbit Feedback System: the accuracy problem</h2>
                 <div class="two-columns" style="gap: 0em; margin-top: 2em">
-                    <div class="column" style="flex: 0 0 65%; justify-content: space-evenly;">
+                    <div class="column" style="flex: 0 0 60%">
                         <p style="margin-top: 2em">
-                            The electric center of BPMs does not
+                            Despite the high precision, the electric center of the BPMs does not
                             necessarily match the design orbit
                         </p>
-                        <p style="margin-top: 2em">
+                        <p style="margin-top: 1em">
                             Natural imperfections and misalignments also make the BPMs inaccurate
                         </p>
-                        <p style="margin-top: 2em">
-                            &RightArrow; To solve this, we use Beam-Based Alignment techniques <br>to calibrate the BPMs
+                        <p style="margin-top: 1em">
+                            To solve this, we use Beam-Based Alignment techniques to calibrate the BPMs
                         </p>
                     </div>
-                    <div class="column" style="flex: 0 0 35%; align-self: center;">
-                        <img src="images/tikz/bpms_misaligned.svg" width="100%" />
+                    <div class="column" style="flex: 0 0 40%; align-self: center;">
+                        <img src="images/tikz/bpms_misaligned.svg" width="100%"/>
                     </div>
                 </div>
             </section>
@@ -944,123 +935,59 @@
 
             <section data-transition="slide-in fade-out">
                 <h2>The BBA Principle</h2>
-                <div class="two-columns" style="gap: 0em; margin-top: 3em">
-                    <div class="column" style="flex: 0 0 40%; align-self: center; margin-left: 0">
+                <div class="two-columns" style="gap: 0em; margin-top: 2em">
+                    <div class="column" style="flex: 0 0 55%; align-self: center; margin-left: 2%">
                         <p style="margin-top: 0em">
-                            The calibration of BPMs consists of finding the offsets
-                            that indicate whether the beam travels on an "ideal" orbit defined by the magnetic centers
-                            of the magnets on the accelerator
+                            The calibration of BPMs consists of finding the BPM offsets 
+                        </p>
+                        <p style="margin-top: 1em">
+                            <!-- This ideal orbit is the one in which the beam travels through the magnetic centers of the magnets on the accelerator -->
+                        </p>
+                        <p style="margin-top: 1em">
+                            Quadrupoles are the most suitable magnets for this, since the orbit is linearly related to their strength
                         </p>
                     </div>
-                    <div class="column" style="align-self: center;">
-                        <img src="images/tikz/bpm2quad-offset.svg" width="100%" />
+                    <div class="column" style="flex: 0 0 45%; align-self: center;">
+                        <!-- <span id="label-BPM">BPM</span>
+                        <div id="bpm-to-quad-offset-container" style="width: 100%; height: 500px; border: 0"></div>
+                        <script type="module" src="/scripts/bpm-to-quad-offset.js"></script> -->
+                        <img src="images/tikz/bpm2quad-offset.svg" width="100%"/>
                     </div>
                 </div>
             </section>
 
             <section data-transition="fade-in fade-out">
                 <h2>The BBA Principle</h2>
-                <div class="two-columns" style="gap: 0em; margin-top: 2em">
-                    <div class="column" style="flex: 0 0 40%; align-self: center; margin-left: 0">
-                        <p style="margin-top: 0em;">The distance between a BPM and a magnet also limits the accuracy of
-                            the
-                            offset:
+                <div class="two-columns" style="gap: 1em; margin-top: 1em">
+                    <div class="column" style="flex: 0 0 55%; align-self: center; margin-left: 2%">
+                        <p>
+                            From the equations of motion, we know that a beam passing through a
+                            quadrupole will be kicked:
                         </p>
-                        <ul>
-                            <li>
-                                farther the BPM &RightArrow; higher the difference between $x_\text{offset, BBA}$ and
-                                $x_\text{offset, real}$
-                            </li>
-                            <li>closer the BPM &RightArrow; $x_\text{offset, BBA} \approx x_\text{offset, real}$</li>
-                        </ul>
-                        <!-- <div class="multiple-columns" style="gap: 0.5em; margin-top: 1em">
-                    <div class="column" style="flex: 0 0 33%; align-self: center;">
-                        <img src="images/tikz/bpm2quad-offset-far.svg" height="auto" width="100%" />
-                    </div>
-                    <div class="column" style="flex: 0 0 33%; align-self: center;">
-                        <img src="images/tikz/bpm2quad-offset-close.svg" height="auto" width="100%" />
-                    </div>
-                    <div class="column" style="flex: 0 0 33%; align-self: center;">
-                        <img src="images/tikz/bpm2quad-offset-closer.svg" height="auto" width="100%" />
-                    </div>
-                </div> -->
-                    </div>
-                    <div class="column" style="align-self: center;">
-                        <div class="r-stack" style="margin-top: 0;">
-                            <!-- inicial -->
-                            <img src="images/tikz/bpm2quad-offset-far.svg" width="100%" class="fragment fade-out"
-                                data-fragment-index="0" style="transform: translateX(-5%);"/>
-
-
-                            <img src="images/tikz/bpm2quad-offset-close.svg" width="86%" class="fragment fade-in-then-out"
-                                data-fragment-index="0" />
-
-                            <!-- passo 3 -->
-                            <img src="images/tikz/bpm2quad-offset-closer.svg" width="86%" class="fragment fade-in-then-out"
-                                data-fragment-index="1" />
-
-                            <img src="images/tikz/bpm2quad-offset-ontop.svg" width="85%" class="fragment fade-in-then-out" 
-                            data-fragment-index="2" />
+                        <p>
+                            $$\Biggl\{\begin{array}{l} x'' = -K x \\ y'' = +K y
+                            \end{array}\Biggr. \quad \Rightarrow \quad \Biggl\{\begin{array}{l}
+                            \Delta x' = -K x \\ \Delta y' = +K y \end{array}\Biggr.$$
+                        </p>
+                        <!-- <p>Considering a pair of BPM and quadrupole, if they are close enough, we can assume $x_\text{bpm} \approx x_\text{quad}$ and $y_\text{bpm} \approx y_\text{quad}$</p> -->
+                        <!-- <p style="margin-top: 1em">
+                            Knowing that there might be an offset, we write:
+                        </p>
+                        <p>
+                            $$\Biggl\{\begin{array}{l} \Delta x' = -K (x - x_\text{offset}) \\
+                            \Delta y' = +K (y - y_\text{offset}) \end{array}\Biggr.$$
+                        </p> -->
                         </div>
-                    </div>
-            </section>
-
-            <section data-transition="fade-in fade-out">
-                <h2>The BBA Principle</h2>
-                <div class="two-columns" style="gap: 1em; margin-top: 2em">
-                    <div class="column" style="flex: 0 0 50%; align-self: center; margin-left: 2%">
-                        <p>
-                            Quadrupoles are the most suitable magnets for this, since the orbit is linearly related to
-                            their strength
-                        </p>
-
-                        <p style="margin-top: 1em">
-                            From the EOM, we know that a beam passing off-center will experience a kick and disturb the
-                            orbit
-                        </p>
-                        <p>
-                            $$\Delta x' = -KL\, x$$
-                        </p>
-                    </div>
-                    <div class="column" style="align-self: center;">
+                    <div class="column" style="flex: 0 0 40%; align-self: center;">
+                        <!-- <span id="label-BPM">BPM</span>
+                        <div id="bpm-to-quad-offset-container" style="width: 100%; height: 500px; border: 0"></div>
+                        <script type="module" src="/scripts/bpm-to-quad-offset.js"></script> -->
                         <img src="images/tikz/quad-kick.svg" width="auto" height="400px" />
                     </div>
                 </div>
             </section>
 
-            <section data-transition="fade-in slide-out">
-                <h2>The BBA Principle</h2>
-                <div class="two-columns" style="gap: 1em; margin-top: 2em">
-                    <div class="column" style="flex: 0 0 50%; align-self: center; margin-left: 2%">
-                        <p>
-                            For a BPM-Quad pair close enough, we can assume
-                        </p>
-                        <p>
-                            $$x_\text{quad} \approx (x_\text{bpm} - x_\text{offset, real}) \approx (x_\text{bpm} -
-                            x_\text{offset, BBA})$$
-                        </p>
-                        <p>
-                            This way
-                        </p>
-                        <p>
-                            $$\Delta x' \approx -KL\, (x - x_\text{offset})$$
-                        </p>
-                    </div>
-                    <div class="column" style="align-self: center;">
-                        <img src="images/tikz/quad-kick-bpm.svg" width="auto" height="450px" />
-                    </div>
-                </div>
-                <p class="fragment fade-in" style="margin-top: 0em">
-                    From this we determine the offset by varying the beam position ($x$
-                    and/or $y$) and the quadrupole strength ($K$)
-                </p>
-                <p class="fragment fade-in" style="margin-top: 0.5em">
-                    $\rightarrow$ If changing the quadrupole strength the orbit does not
-                    change, then $x = x_\text{offset}$ (and/or $y = y_\text{offset}$)
-                </p>
-            </section>
-
-            <!-- <section data-transition="fade-in fade-out">
+            <section data-transition="fade-in fade-out">
                 <h2>The BBA Principle</h2>
                 <div class="two-columns" style="gap: 1em; margin-top: 2em">
                     <div class="column" style="flex: 0 0 55%; align-self: center; margin-left: 2%">
@@ -1071,17 +998,17 @@
                             $$\Biggl\{\begin{array}{l} \Delta x' = -K (x - x_\text{offset}) \\
                             \Delta y' = +K (y - y_\text{offset}) \end{array}\Biggr.$$
                         </p>
-                    </div>
+                        </div>
                     <div class="column" style="flex: 0 0 40%; align-self: center;">
-                        <span id="label-BPM">BPM</span>
+                        <!-- <span id="label-BPM">BPM</span>
                         <div id="bpm-to-quad-offset-container" style="width: 100%; height: 500px; border: 0"></div>
-                        <script type="module" src="/scripts/bpm-to-quad-offset.js"></script>
+                        <script type="module" src="/scripts/bpm-to-quad-offset.js"></script> -->
                         <img src="images/tikz/offquad-kick.svg" width="auto" height="400px" />
                     </div>
                 </div>
-            </section> -->
+            </section>
 
-            <!-- <section data-transition="fade-in fade-out">
+            <section data-transition="fade-in fade-out">
                 <h2>The BBA Principle</h2>
                 <p style="
               border: 3px solid black;
@@ -1103,9 +1030,9 @@
                     $\rightarrow$ If changing the quadrupole strength the orbit does not
                     change, then $x = x_\text{offset}$ (and/or $y = y_\text{offset}$)
                 </p>
-            </section> -->
+            </section>
 
-            <!-- <section data-transition="fade-in slide-out">
+            <section data-transition="fade-in slide-out">
                 <h2>The BBA Principle</h2>
                 <p style="margin-top: 3em">The same works for skew quadrupoles</p>
                 <p style="
@@ -1120,7 +1047,7 @@
                     $$\Biggl\{\begin{array}{l} \Delta x' = K_S (y - y_\text{offset}) \\
                     \Delta y' = K_S (x - x_\text{offset}) \end{array}\Biggr.$$
                 </p>
-            </section> -->
+            </section>
 
             <section data-transition="slide-in fade-out">
                 <h2>Standart BBA</h2>
@@ -1227,7 +1154,7 @@
                   padding-left: 0.5em;
                   padding-right: 0.5em;
                 ">
-                            $\dfrac{\partial\chi^2}{\partial\mathbf{r}} = 0$: $\mathbf{r}_\text{offset} =
+                            $\text{min}(\chi_i^2)$: $\mathbf{r}_\text{offset} =
                             \left(\dfrac{-b}{2a}\right)$
                         </span>
                     </li>
@@ -1258,7 +1185,7 @@
                 " />
                     </div>
                 </div> -->
-                <img src="images/png/BBA-bpm-summary.png" height="600px" width="auto" />
+                <img src="images/png/BBA-bpm-summary.png" height="600px" width="auto"/>
             </section>
 
             <section data-transition="fade-in slide-out">
@@ -1281,7 +1208,7 @@
                 <p style="margin-top: 2em">The Parallel Beam Beam Alignment (PBBA) was proposed by <em>Xiaobiao
                         Huang</em> in 2022</p>
                 <p>Since then, it has been simulated and tested on accelerators such as</p>
-                <ul style="font-size: 0.75em;">
+                <ul>
                     <li> LCLS-II (USA, SLAC, 2022)</li>
                     <li> SPEAR3 (USA, SLAC, 2022)</li>
                     <li> FCC-ee (Switzerland, CERN, 2023/2024)</li>
@@ -1296,7 +1223,7 @@
             <section data-transition="fade-in fade-out">
                 <h2>Parallel BBA</h2>
                 <div class="two-columns">
-                    <div class="column" style="flex: 0 0 55%;">
+                    <div class="column" style="flex: 0 0 60%;">
                         <p style="margin-top: 2em">
                             &bullet; The central idea is to minimize the <b>Induced Orbit Shift</b> (IOS)
                         </p>
@@ -1316,16 +1243,16 @@
                             \vec{u}(\vec{\theta},
                             \vec{K}^\pm)$$</p>
                     </div>
-                    <div class="column" style="align-self: center; margin-top: 2em;">
-                        <img src="images/png/pbba-plot-ios.png" height="auto" width="100%" />
+                    <div class="column" style="align-self: center; flex: 0 0 40%; margin-top: 2em;">
+                        <img src="images/png/pbba-plot-ios.png" height="550px" width="auto" />
                     </div>
 
             </section>
 
             <section data-transition="fade-in fade-out">
                 <h2>Parallel BBA</h2>
-                <div class="two-columns" style="gap: 0em; align-content: center;">
-                    <div class="column" style="flex: 0 0 50%; align-self: center;">
+                <div class="two-columns">
+                    <div class="column" style="flex: 0 0 60%;">
                         <p style="margin-top: 2em">
                             &RightArrow; Linearizing $\vec{\xi}$ around an initial kick
                             configuration $\vec{\theta}_0$ gives:
@@ -1348,8 +1275,8 @@
                             \vec{u}(\vec{\theta}, \vec{K}_0) = \vec{u}(\vec{\theta}, \vec{K}^\pm)$
                         </p>
                     </div>
-                    <div class="column" style="align-self: center; margin-top: 2em;">
-                        <img src="images/png/pbba-plot-dkicks.png" height="600px" width="auto" />
+                    <div class="column" style="align-self: center; flex: 0 0 40%; margin-top: 2em;">
+                        <img src="images/png/pbba-plot-dkicks.png" height="550px" width="auto" />
                     </div>
                 </div>
             </section>
@@ -1362,7 +1289,6 @@
               border: 2px solid black;
               border-radius: 30px;
               padding: 1em;
-              /* font-size: 0.8em; */
             ">
                     <li style="list-style: none; margin-top: 0em">
                         $\rightarrow$ Separate all BPM-Quad pairs into groups
@@ -1465,8 +1391,7 @@
 
 
                         <p style="margin-top: 1em">
-                            &RightArrow; The linear relationship between orbit distortions and quadrupole modulation is
-                            extracted with harmonic analysis to obtain the BPMs offsets
+                            &RightArrow; The linear relationship between orbit distortions and quadrupole modulation is extracted with harmonic analysis to obtain the BPMs offsets
                         </p>
 
                     </div>
@@ -1477,64 +1402,59 @@
 
             </section>
 
-            <!-- <section data-transition=" fade-in fade-out">
-                        <h2>Fast BBA AC</h2>
+            <!-- <section data-transition="fade-in fade-out">
+                <h2>Fast BBA AC</h2>
 
-                        <div class="two-columns" style="gap: 0; margin-top: 2em;">
-                            <div class="column" style="flex: 0 0 60%; align-self: center;">
-                                <p>We know that the orbit response is linear to the AC excitation</p>
+                <div class="two-columns" style="gap: 0; margin-top: 2em;">
+                    <div class="column" style="flex: 0 0 60%; align-self: center;">
+                        <p>We know that the orbit response is linear to the AC excitation</p>
 
-                                <p>$ x(t) - x^0 = \mathbf{R}_j (h(t) - h^0)$</p>
+                        <p>$ x(t) - x^0 = \mathbf{R}_j (h(t) - h^0)$</p>
 
-                                <p style="margin-top: 1em">this way, we can relate BPMs responses</p>
+                        <p style="margin-top: 1em">this way, we can relate BPMs responses</p>
 
-                                <p>$ x_l(t) - x_l^0 = \frac{\mathbf{R}_{lj}}{\mathbf{R}_{kj}} (x_k(t) - x_k^0)$</p>
+                        <p>$ x_l(t) - x_l^0 = \frac{\mathbf{R}_{lj}}{\mathbf{R}_{kj}} (x_k(t) - x_k^0)$</p>
 
-                                <p style="margin-top: 1em">Changing the quadupole strength to two configs. gives </p>
-                                <p>
-                                    $\Biggl\{\begin{array}{l}
-                                    x_{l1}(t) - x_{l1}^0 = \frac{\mathbf{R}_{lj1}}{\mathbf{R}_{kj1}} (x_{k1}(t) -
-                                    x_{k1}^0) \\
-                                    x_{l2}(t) - x_{l2}^0 = \frac{\mathbf{R}_{lj2}}{\mathbf{R}_{kj2}} (x_{k2}(t) -
-                                    x_{k2}^0) \\
-                                    \end{array}\Biggr.$
-                                </p>
-                                <p style="margin-top: 1em">The intersection ensure that $x_{l2}^0 = x_{l1}^0$ and
-                                    $x_{k2}^0 = x_{k1}^0$, then</p>
+                        <p style="margin-top: 1em">Changing the quadupole strength to two configs. gives </p>
+                        <p>
+                            $\Biggl\{\begin{array}{l} 
+                            x_{l1}(t) - x_{l1}^0 = \frac{\mathbf{R}_{lj1}}{\mathbf{R}_{kj1}} (x_{k1}(t) - x_{k1}^0) \\
+                            x_{l2}(t) - x_{l2}^0 = \frac{\mathbf{R}_{lj2}}{\mathbf{R}_{kj2}} (x_{k2}(t) - x_{k2}^0) \\
+                            \end{array}\Biggr.$
+                        </p>
+                        <p style="margin-top: 1em">The intersection ensure that $x_{l2}^0 = x_{l1}^0$ and $x_{k2}^0 = x_{k1}^0$, then</p> 
 
-                                <p>$$\Rightarrow x_{l,\text{offset}} = x_{l2}^0 = x_{l1}^0$$</p>
-                            </div>
-                            <div class="column" style="flex: 0 0 40%; align-self: center;">
-                                <img src="images/png/fbba-ac-lines.png" height="600px" width="auto" ">
+                        <p>$$\Rightarrow x_{l,\text{offset}} = x_{l2}^0 = x_{l1}^0$$</p>
+                    </div>
+                    <div class="column" style="flex: 0 0 40%; align-self: center;">
+                        <img src="images/png/fbba-ac-lines.png" height="600px" width="auto" ">
                     </div>
                 </div>
             </section> -->
 
-            <section data-transition=" fade-in slide-out">
-                                <h2>Fast BBA AC</h2>
-                                <p style="margin-top: 2em">The FBBA-AC procedure consists of:</p>
+            <section data-transition="fade-in slide-out">
+                <h2>Fast BBA AC</h2>
+                <p style="margin-top: 2em">The FBBA-AC procedure consists of:</p>
 
-                                <ul
-                                    style=" margin-top: 0em; border: 2px solid black; border-radius: 30px; padding: 1em; ">
-                                    <li style="list-style: none; margin-top: 0em">
-                                        $\rightarrow$ For each BPM-Quad pair:
-                                    </li>
-                                    <li style="list-style: none; margin-top: 0.5em">
-                                        $\qquad\rightarrow$ For each quadrupole strength $K^-$ and $K^+$:
-                                    </li>
-                                    <li style="list-style: none; margin-top: 0.5em">
-                                        $\qquad\qquad\rightarrow$ Apply sinusoidal AC excitations to suitable CH and/or
-                                        CV
-                                    </li>
-                                    <li style="list-style: none; margin-top: 0.5em">
-                                        $\qquad\qquad\rightarrow$ Acquire fast BPM data during the excitation
-                                    </li>
-                                    <li style="list-style: none; margin-top: 0.5em">
-                                        $\qquad\rightarrow$ Correlate the orbit distortions to calculate the BPM offsets
-                                    </li>
-                                </ul>
+                <ul style=" margin-top: 0em; border: 2px solid black; border-radius: 30px; padding: 1em; ">
+                    <li style="list-style: none; margin-top: 0em">
+                        $\rightarrow$ For each BPM-Quad pair:
+                    </li>
+                    <li style="list-style: none; margin-top: 0.5em">
+                        $\qquad\rightarrow$ For each quadrupole strength $K^-$ and $K^+$:
+                    </li>
+                    <li style="list-style: none; margin-top: 0.5em">
+                        $\qquad\qquad\rightarrow$ Apply sinusoidal AC excitations to suitable CH and/or CV
+                    </li>
+                    <li style="list-style: none; margin-top: 0.5em">
+                        $\qquad\qquad\rightarrow$ Acquire fast BPM data during the excitation
+                    </li>
+                    <li style="list-style: none; margin-top: 0.5em">
+                        $\qquad\rightarrow$ Correlate the orbit distortions to calculate the BPM offsets
+                    </li>
+                </ul>
 
-                                <!-- <p style="margin-top: 1.5em;">
+                <!-- <p style="margin-top: 1.5em;">
                     <b>Main advantages:</b> much faster than standard BBA, naturally compatible with dual-plane
                     excitation,
                     and robust to coupling / BPM roll / corrector tilt
@@ -1550,8 +1470,7 @@
 
             <section data-transition="slide-in fade-out">
                 <h2>Parallel BBA: Simulations</h2>
-                <p style="margin-top: 2em; margin-bottom: 0em;">&RightArrow; First steps: divide BPM-Quad pairs into
-                    groups</p>
+                <p style="margin-top: 2em; margin-bottom: 0em;">&RightArrow; First steps: divide BPM-Quad pairs into groups</p>
                 <!-- <div class="two-columns" style="gap: 0;">
                     <div class="column" style="flex: 0 0 35%; align-items: center; align-self: center;">
                         <ul>
@@ -1612,7 +1531,7 @@
                         Dec 8, 2025 &mdash; First full PBBA runs
                     </li>
                     <li style="margin-top: 1em;">
-                        Jan 5, 2026 &mdash; Parallel BBA vs Standard BBA
+                        Jan 5, 2026 &mdash; Parallel BBA vs Standard BBA 
                     </li>
                     <li style="margin-top: 1em;">
                         Jan 12 and Feb 9, 2026 &mdash; Groups rearrangements and convegence analysis
@@ -1622,47 +1541,47 @@
 
             <section data-transition="fade-in fade-out">
                 <h2>Parallel BBA: Experiments</h2>
-                <p style="margin-top: 0em; font-size: 0.8em;">
+                <p style="margin-top: 2em;">
                     &bullet; October 13, 2025
                 </p>
-                <p style="font-size: 0.8em;">PBBA and Standart BBA for selected BPMs</p>
-                <img src="images/png/PBBA-day13-10-25_AG.png" height="250px" width="auto" />
-                <p style="font-size: 0.8em;">PBBA for the "default" group 0</p>
-                <img src="images/png/PBBA-day13-10-25_Gdef0.png" height="250px" width="auto" />
+                <p style="margin-top: 1em;">PBBA and Standart BBA for selected BPMs</p>
+                <img src="images/png/PBBA-day13-10-25_AG.png" height="300px" width="auto" />
+                <p>PBBA for the "default" group 0</p>
+                <img src="images/png/PBBA-day13-10-25_Gdef0.png" height="300px" width="auto" />
             </section>
 
             <section data-transition="fade-in fade-out">
                 <h2>Parallel BBA: Experiments</h2>
-                <p style="margin-top: 0em; font-size: 0.8em;">
+                <p style="margin-top: 2em;">
                     &bullet; December 8, 2025: Full PBBA (all "default" groups)
                 </p>
-                <img src="images/png/PBBA-day8-12-25_Gdefs.png" height="650px" width="auto" />
+                <img src="images/png/PBBA-day8-12-25_Gdefs.png" height="750px" width="auto" />
             </section>
 
             <section data-transition="fade-in fade-out">
                 <h2>Parallel BBA: Experiments</h2>
-                <p style="margin-top: 2em; font-size: 0.8em;">
+                <p style="margin-top: 2em;">
                     &bullet; January 5, 2025
                 </p>
-                <div class="two-columns" style="gap: 0em; margin-top: 0em">
+                <div class="two-columns" style="gap: 0em; margin-top: 1em">
                     <div class="column" style="flex: 0 0 65%">
-                        <img src="images/png/PBBA-day5-1-26_Gdefs.png" height="500px" width="auto" />
+                        <img src="images/png/PBBA-day5-1-26_Gdefs.png" height="550px" width="auto" />
                     </div>
                     <div class="column" style="flex: 0 0 35%; align-self: center;">
-                        <img src="images/png/PBBA-day5-1-26_diff.png" height="450px" width="auto" />
+                        <img src="images/png/PBBA-day5-1-26_diff.png" height="500px" width="auto" />
                     </div>
                 </div>
             </section>
 
             <section data-transition="fade-in slide-out">
                 <h2>Parallel BBA: Experiments</h2>
-                <p style="margin-top: 2em; font-size: 0.8em;">
+                <p style="margin-top: 2em;">
                     &bullet; January 12 and February 9, 2026
                 </p>
                 <!-- <img src="images/png/PBBA-day12-01-26_MultiG.png" height="650px" width="auto" /> -->
                 <div class="two-columns" style="gap: 0em; margin-top: 0em">
                     <div class="column" style="flex: 0 0 70%">
-                        <img src="images/png/PBBA-day12-01-26_MultiG.png" height="auto" width="100%" />
+                        <img src="images/png/PBBA-day12-01-26_MultiG.png" height="600px" width="auto" />
                     </div>
                     <div class="column" style="flex: 0 0 30%; align-self: center;">
                         <img src="images/png/PBBA-day12-01-26_diff.png" height="500px" width="auto" />
@@ -1676,10 +1595,6 @@
 
             <section>
                 <h1>Conclusion</h1>
-            </section>
-
-            <section>
-                <h1>Aknowledgments</h1>
             </section>
         </div>
     </div>

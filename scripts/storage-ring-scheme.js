@@ -361,46 +361,62 @@ function renderImage() {
     // 1. Renderiza e captura só 3D (órbita, setas, etc.)
     renderer.render(scene, camera);
     const threeDataURL = renderer.domElement.toDataURL("image/png", 1.0);
+    renderer.dispose();
+    container.removeChild(renderer.domElement);
+
+    const a = document.createElement("img");
+    a.src = threeDataURL;
+    container.appendChild(a);
+    a.style.zIndex = 1;
+    a.style.scale = 1.07;
 
     // 2. Renderiza e captura só labels (transparente)
+    [dip_text, quad_text, sext_text, vchamb_text, rf_text, bpm_text, inj_text].forEach(
+        t => {
+            t.style.margin = 0;
+            t.style.padding = 0;
+        }
+    );
     labelRenderer.render(scene, camera);
     // const labelsDataURL = labelRenderer.domElement.toDataURL("image/png", 1.0);
 
     // 3. Cria canvas temporário para COMBINAR as duas imagens
-    const canvas = document.createElement("canvas");
-    const ctx = canvas.getContext("2d");
-    canvas.width = container.clientWidth;
-    canvas.height = container.clientHeight;
+    // const canvas = document.createElement("canvas");
+    // const ctx = canvas.getContext("2d");
+    // canvas.width = container.clientWidth;
+    // canvas.height = container.clientHeight;
 
-    // Desenha 3D primeiro
-    const img3D = new Image();
-    img3D.src = threeDataURL;
-    img3D.onload = () => {
-        ctx.drawImage(img3D, 0, 0);
+    // // Desenha 3D primeiro
+    // const img3D = new Image();
+    // img3D.src = threeDataURL;
+    // img3D.onload = () => {
+    //     ctx.drawImage(img3D, 0, 0);
 
-        // Desenha labels por cima
-        const imgLabels = new Image();
-        // imgLabels.src = labelsDataURL;
-        imgLabels.onload = () => {
-            ctx.drawImage(imgLabels, 0, 0);
+    //     // Desenha labels por cima
+    //     const imgLabels = new Image();
+    //     // imgLabels.src = labelsDataURL;
+    //     imgLabels.onload = () => {
+    //         ctx.drawImage(imgLabels, 0, 0);
 
-            // FINAL: canvas combinado como imagem única
-            const finalDataURL = canvas.toDataURL("image/png", 1.0);
-            const finalImg = document.createElement("img");
-            finalImg.src = finalDataURL;
-            finalImg.style.width = "100%";
-            finalImg.style.height = "100%";
-            finalImg.style.objectFit = "contain";
+    //         // FINAL: canvas combinado como imagem única
+    //         const finalDataURL = canvas.toDataURL("image/png", 1.0);
+    //         const finalImg = document.createElement("img");
+    //         finalImg.id = "finalImg";
+    //         finalImg.src = finalDataURL;
+    //         finalImg.style.width = "100%";
+    //         finalImg.style.height = "100%";
+    //         finalImg.style.objectFit = "contain";
 
-            // Limpa renderers e coloca imagem final
-            container.removeChild(renderer.domElement);
-            const labelDom = labelRenderer.domElement;
-            if (labelDom.parentNode) {
-                labelDom.parentNode.removeChild(labelDom);
-            }
-            container.appendChild(finalImg);
-        };
-    };
+    //         // Limpa renderers e coloca imagem final
+    //         container.removeChild(renderer.domElement);
+    //         const labelDom = labelRenderer.domElement;
+    //         if (labelDom.parentNode) {
+    //             labelDom.parentNode.removeChild(labelDom);
+    //         }
+    //         container.appendChild(finalImg);
+    //         container.id = "finalContainer";
+    //     };
+    // };
 }
 
 const observer = new IntersectionObserver(

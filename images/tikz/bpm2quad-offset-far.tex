@@ -26,15 +26,15 @@
     \pgfmathparse{\x == 33 ? 1 : 0}
     \ifnum\pgfmathresult>0\relax
       \draw[#4, thick] (#1, 0.5*#2 - #2*\x/#3 + 0.5*#2/#3)
-                    -- ++(-0.2,0) node[right, xshift={-1em}] {\footnotesize 0};
+                    -- ++(0.2,0) node[right, xshift={-0.25em}] {\footnotesize 0};
     \else
       \pgfmathparse{mod(\x - 3,5) == 0 ? 1 : 0}
       \ifnum\pgfmathresult>0\relax
         \draw[#4, thick] (#1, 0.5*#2 - #2*\x/#3 + 0.5*#2/#3)
-                    -- ++(-0.2,0);
+                    -- ++(0.2,0);
       \else
         \draw[#4, line width=0.65pt] (#1, 0.5*#2 - #2*\x/#3 + 0.5*#2/#3)
-                      -- ++(-0.1,0);
+                      -- ++(0.1,0);
       \fi
     \fi
   }
@@ -44,9 +44,7 @@
 
 \begin{tikzpicture}[>=latex]
     \coordinate (O) at (0, 0);
-    \pgfmathsetmacro{\sbpm}{-1}  
-    \pgfmathsetmacro{\xbpm}{0.4}   
-    \coordinate (B) at (\sbpm, \xbpm);
+    \coordinate (B) at (-2, 0.7);
 
     \pgfmathsetmacro{\qlarg}{1}   
     \pgfmathsetmacro{\qalt}{2.5}
@@ -55,24 +53,26 @@
 
     \node[above] at ($(O)+(0,\qalt/2)$) {Quad};
     
-    \draw[thick, densely dashed] (-3, 0) -- (2, 0);
+    \draw[thick, densely dashed] (-4, 0) -- (2, 0);
 
-    \draw[line width=0.7pt, red, -stealth] ($1.7*(B)$) -- ($(O) + (0, 1.7*\xbpm)$) -- ($(0.4, 0) + -1.4*(B)$);% node[right, yshift={-0.25em}] {\small{beam}};
+    \draw[line width=0.7pt, red, -stealth] ($1.7*(B)$) -- ($-1*(B)$) node[right, yshift={-0.25em}] {\small{beam}};
+    % \draw[line width=0.7pt, blue, -stealth] (-3.4, 1.1) -- (0, 0.3) -- (2, -0.6);% node[right, yshift={-0.25em}] {\small{beam}};
 
     % régua
-    \bpmrule{\sbpm}{4}{41}{black}
+    \bpmrule{-2}{4}{41}{black}
     \pgfmathsetmacro{\dybba}{-1.17}
-    \node[above, black] at (\sbpm, 2) {\small{BPM}};
-    % \draw[thick, gray, <->] (-2.2, \dybba) -- (-2.2, 0) node[midway, left] {\small $x_\text{\tiny{offset,real}}$};
-    % \draw[thick, gray, <->] (-3.5, \dybba) -- (-3.5, 0.7) node[midway, left, yshift={-0.5em}] {\small $x_\text{\tiny{offset,BBA}}$};
-    % \draw[thick, densely dotted, black] (B) -- ++(-1.6, 0);
-    % \draw[thick, densely dotted, black] (-2, \dybba) -- ++(-1.6, 0);
+    \node[above, black] at (-2, 2) {\small{BPM}};
+    \draw[thick, gray, <->] (-2.2, \dybba) -- (-2.2, 0) node[midway, left] {\small $x_\text{\tiny{offset,real}}$};
+    \draw[thick, gray, <->] (-3.5, \dybba) -- (-3.5, 0.7) node[midway, left, yshift={-0.5em}] {\small $x_\text{\tiny{offset,BBA}}$};
+    \draw[thick, densely dotted, black] (B) -- ++(-1.6, 0);
+    \draw[thick, densely dotted, black] (-2, \dybba) -- ++(-1.6, 0);
 
     
 \end{tikzpicture}
 
 
 \end{document}
+
 
 % \documentclass{standalone}
 

@@ -2,17 +2,17 @@ import three;
 import graph3;
 
 settings.tex="pdflatex";
-settings.texpath="C:\texlive\2026\bin\windows";
-settings.dvips="C:\texlive\2026\bin\windows\dvips.exe";
-settings.dvisvgm="C:\texlive\2026\bin\windows\dvisvgm.exe";
-settings.gs="C:\Program Files\gs\gs10.07.0\bin\gswin64c.exe";
-settings.convert="C:\Program Files\ImageMagick-7.1.2-Q16-HDRI\magick.exe";
-settings.outformat="html";
-// settings.antialias=8;
-// settings.render=16;
+// settings.texpath="C:\texlive\2026\bin\windows";
+// settings.dvips="C:\texlive\2026\bin\windows\dvips.exe";
+// settings.dvisvgm="C:\texlive\2026\bin\windows\dvisvgm.exe";
+// settings.gs="C:\Program Files\gs\gs10.07.0\bin\gswin64c.exe";
+// settings.convert="C:\Program Files\ImageMagick-7.1.2-Q16-HDRI\magick.exe";
+// settings.outformat="html";
+settings.antialias=2;
+settings.render=16;
 // settings.prc=true;
-settings.keys=true;
-settings.offline=true;
+// settings.keys=true;
+// settings.offline=true;
 
 real rho = 2;
 

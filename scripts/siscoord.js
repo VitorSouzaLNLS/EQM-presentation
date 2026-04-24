@@ -31,7 +31,7 @@ container.appendChild(renderer.domElement);
 const labelRenderer = new CSS2DRenderer();
 labelRenderer.setSize(container.clientWidth, container.clientHeight);
 labelRenderer.domElement.style.position = "absolute";
-labelRenderer.domElement.style.top = "3.5em";
+labelRenderer.domElement.style.top = "2.5em";
 labelRenderer.domElement.style.left = "0px";
 labelRenderer.domElement.style.pointerEvents = "none";
 container.appendChild(labelRenderer.domElement);
@@ -240,52 +240,72 @@ function renderImage() {
     clock.update();
 
     const delta = clock.getDelta();
-    const theta = 1.65 * Math.PI;
+    const theta = 1.55 * Math.PI;
+    // arrowVel.opacity = 0;
+    // v_text.style.visible = false;
     updateFrame(delta, theta); // posiciona tudo
 
     // 1. Renderiza e captura só 3D (órbita, setas, etc.)
     renderer.render(scene, camera);
     const threeDataURL = renderer.domElement.toDataURL("image/png", 1.0);
+    renderer.dispose();
+    container.removeChild(renderer.domElement);
+
+    const a = document.createElement("img");
+    a.src = threeDataURL;
+    container.appendChild(a);
+    a.style.zIndex = 1;
+    a.style.scale = 1.15;
+    a.style.marginRight = "0.8em";
+    a.style.marginTop = "1em";
 
     // 2. Renderiza e captura só labels (transparente)
+    [s_text, x_text, y_text, v_text, labelR].forEach((t) => {
+        t.style.margin = 0;
+        t.style.padding = 0;
+        // t.style.transform = "translateY(50%)";
+    })
+    // s_text.style.marginLeft = "1em";
+    // y_text.style.marginBottom = "3em";
+    // y_text.style.marginRight = "0.2em";
     labelRenderer.render(scene, camera);
     // const labelsDataURL = labelRenderer.domElement.toDataURL("image/png", 1.0);
 
-    // 3. Cria canvas temporário para COMBINAR as duas imagens
-    const canvas = document.createElement("canvas");
-    const ctx = canvas.getContext("2d");
-    canvas.width = container.clientWidth;
-    canvas.height = container.clientHeight;
+    // // 3. Cria canvas temporário para COMBINAR as duas imagens
+    // const canvas = document.createElement("canvas");
+    // const ctx = canvas.getContext("2d");
+    // canvas.width = container.clientWidth;
+    // canvas.height = container.clientHeight;
 
-    // Desenha 3D primeiro
-    const img3D = new Image();
-    img3D.src = threeDataURL;
-    img3D.onload = () => {
-        ctx.drawImage(img3D, 0, 0);
+    // // Desenha 3D primeiro
+    // const img3D = new Image();
+    // img3D.src = threeDataURL;
+    // img3D.onload = () => {
+    //     ctx.drawImage(img3D, 0, 0);
 
-        // Desenha labels por cima
-        const imgLabels = new Image();
-        // imgLabels.src = labelsDataURL;
-        imgLabels.onload = () => {
-            ctx.drawImage(imgLabels, 0, 0);
+    //     // Desenha labels por cima
+    //     const imgLabels = new Image();
+    //     // imgLabels.src = labelsDataURL;
+    //     imgLabels.onload = () => {
+    //         ctx.drawImage(imgLabels, 0, 0);
 
-            // FINAL: canvas combinado como imagem única
-            const finalDataURL = canvas.toDataURL("image/png", 1.0);
-            const finalImg = document.createElement("img");
-            finalImg.src = finalDataURL;
-            finalImg.style.width = "100%";
-            finalImg.style.height = "100%";
-            finalImg.style.objectFit = "contain";
+    //         // FINAL: canvas combinado como imagem única
+    //         const finalDataURL = canvas.toDataURL("image/png", 1.0);
+    //         const finalImg = document.createElement("img");
+    //         finalImg.src = finalDataURL;
+    //         finalImg.style.width = "100%";
+    //         finalImg.style.height = "100%";
+    //         finalImg.style.objectFit = "contain";
 
-            // Limpa renderers e coloca imagem final
-            container.removeChild(renderer.domElement);
-            const labelDom = labelRenderer.domElement;
-            if (labelDom.parentNode) {
-                labelDom.parentNode.removeChild(labelDom);
-            }
-            container.appendChild(finalImg);
-        };
-    };
+    //         // Limpa renderers e coloca imagem final
+    //         container.removeChild(renderer.domElement);
+    //         const labelDom = labelRenderer.domElement;
+    //         if (labelDom.parentNode) {
+    //             labelDom.parentNode.removeChild(labelDom);
+    //         }
+    //         container.appendChild(finalImg);
+    //     };
+    // };
 }
 
 const observer = new IntersectionObserver(
