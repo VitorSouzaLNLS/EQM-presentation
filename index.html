@@ -1625,10 +1625,22 @@
                 <p style="margin-top: 0em; font-size: 0.8em;">
                     &bullet; October 13, 2025
                 </p>
-                <p style="font-size: 0.8em;">PBBA and Standard BBA for selected BPMs</p>
-                <img src="images/png/PBBA-day13-10-25_AG.png" height="250px" width="auto" />
-                <p style="font-size: 0.8em;">PBBA for the "default" group 0</p>
-                <img src="images/png/PBBA-day13-10-25_Gdef0.png" height="250px" width="auto" />
+                <div class="r-stack" style="margin-top: 0;">
+                    <div class="fragment semi-fade-out" data-fragment-index="0">
+                        <p style="font-size: 0.7em;">PBBA and Standard BBA for selected (4) BPMs</p>
+                        <img src="images/png/PBBA-day13-10-25_AG.png" height="250px" width="auto" style="margin: 0; padding: 0;"/>
+                        <p style="font-size: 0.7em; margin: 0; padding: 0;">PBBA for the "default" group 0</p>
+                        <img src="images/png/PBBA-day13-10-25_Gdef0.png" height="250px" width="auto" style="margin: 0; padding: 0;"/>
+                    </div>
+                    <div class="fragment current-visible" data-fragment-index="0">
+                        <p style="border: 2px solid; border-radius: 30px; padding: 1em; background-color: lightyellow;">
+                            &bullet; The Standard BBA runs for the group of selected (4) BPMs took &Tilde;8 minutes (&approx; 2min/BPM)<br>
+                            &bullet; Each PBBA run for both groups took &Tilde;1 minute &RightArrow; does not scale with the number of BPMs<br><br>
+                            &bullet; For the group of selected BPMs, the results of the Standard BBA and PBBA differ by &pm;2&mu;m<br><br>
+                            &bullet; For the "default" group 0: the results of each PBBA runs differ by &pm;6&mu;m
+                        </p>
+                    </div>
+                </div>
             </section>
 
             <section data-transition="fade-in fade-out">
@@ -1636,20 +1648,40 @@
                 <p style="margin-top: 0em; font-size: 0.8em;">
                     &bullet; December 8, 2025: Full PBBA (all "default" groups)
                 </p>
-                <img src="images/png/PBBA-day8-12-25_Gdefs.png" height="650px" width="auto" />
+                <div class="r-stack" style="margin-top: 0;">
+                    <div class="fragment semi-fade-out" data-fragment-index="0">
+                        <img src="images/png/PBBA-day8-12-25_Gdefs.png" height="650px" width="auto" />
+                    </div>
+                    <div class="fragment current-visible" data-fragment-index="0">
+                        <p style="border: 2px solid; border-radius: 30px; padding: 1em; background-color: lightyellow;">
+                            &bullet; Each full PBBA run took &approx; 4min (1 min/group)<br><br>
+                            &bullet; For all groups, the differences between each PBBA run are smaller then &pm;8&mu;m
+                        </p>
+                    </div>
+                </div>
             </section>
 
             <section data-transition="fade-in fade-out">
                 <h2>Parallel BBA: Experiments</h2>
                 <p style="margin-top: 2em; font-size: 0.8em;">
-                    &bullet; January 5, 2025
+                    &bullet; January 5, 2025: Full PBBA before and after a full Standard BBA
                 </p>
-                <div class="two-columns" style="gap: 0em; margin-top: 0em">
-                    <div class="column" style="flex: 0 0 65%">
-                        <img src="images/png/PBBA-day5-1-26_Gdefs.png" height="500px" width="auto" />
+                <div class="r-stack" style="margin-top: 0;">
+                    <div class="fragment semi-fade-out" data-fragment-index="0">
+                        <div class="two-columns" style="gap: 0em; margin-top: 0em">
+                            <div class="column" style="flex: 0 0 65%">
+                                <img src="images/png/PBBA-day5-1-26_Gdefs.png" height="500px" width="auto" />
+                            </div>
+                            <div class="column" style="flex: 0 0 35%; align-self: center;">
+                                <img src="images/png/PBBA-day5-1-26_diff.png" height="450px" width="auto" />
+                            </div>
+                        </div>
                     </div>
-                    <div class="column" style="flex: 0 0 35%; align-self: center;">
-                        <img src="images/png/PBBA-day5-1-26_diff.png" height="450px" width="auto" />
+                    <div class="fragment current-visible" data-fragment-index="0">
+                        <p style="border: 2px solid; border-radius: 30px; padding: 1em; background-color: lightyellow;">
+                            &bullet; Each full PBBA run took &approx; 4min (1 min/group)<br><br>
+                            &bullet; For all groups, the differences between each PBBA run are smaller then &pm;8&mu;m
+                        </p>
                     </div>
                 </div>
             </section>
