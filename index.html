@@ -60,15 +60,15 @@
             <!-- Slide de Título -->
             <section>
                 <h1 id="title">
-                    Alternative Beam-Based Alignment techniques for SIRIUS
+                    Alternative Beam-Based Alignment techniques for the SIRIUS Storage Ring
                 </h1>
                 <h3 style="font-weight: normal; margin-top: 1em">
-                    Qualification Exam
+                    Masters Qualification Exam
                 </h3>
                 <h4 style="margin-top: 2em">Vitor Davi de Souza</h4>
-                <p style="margin-top: 2em">Prof. Dr. Liu Lin</p>
+                <p style="margin-top: 2em">Prof. Dr. Tulio Costa Rizuti da Rocha</p>
                 <p style="font-size: 0.8em; margin-top: 2em">
-                    <em>April X, 2026</em>
+                    <em>May 15, 2026</em>
                 </p>
             </section>
 
@@ -161,50 +161,52 @@
             <section>
                 <h2>Motivation</h2>
                 <ul>
-                    <li style="margin-top: 1em">
+                    <li style="margin-top: 1em" class="fragment fade-in">
                         The SIRIUS's Storage Ring needs <b>sub-micrometer orbit stability</b> to
                         maintain its performance
                     </li>
-                    <li style="margin-top: 1em">
+                    <li style="margin-top: 1em" class="fragment fade-in">
                         The orbit stability depends on the precision and accuracy of the
                         <b>Beam Position Monitors</b> (BPM)
                     </li>
-                    <li style="margin-top: 1em">
+                    <li style="margin-top: 1em" class="fragment fade-in">
                         The BPMs have high precision (nanometer-level) but low accuracy
                     </li>
-                    <li style="margin-top: 1em">
+                    <li style="margin-top: 1em" class="fragment fade-in">
                         So we calibrate the BPMs using the <b>Beam-Based Alignment</b> (BBA)
                         procedure
                     </li>
                 </ul>
 
-                <h2 style="margin-top: 2em;">The Problem</h2>
-                <p style="
-                    margin-top: 0em; 
-                    border: 2px solid black; 
-                    border-radius: 30px; 
-                    padding-top: 0.5em; 
-                    padding-bottom: 0.5em;
-                    padding-left: 0;
-                    padding-right: 0;
-                    width: 80%;
-                    margin-left: 10%;
-                ">
-                    The current BBA procedure is very time-consuming (6 &Tilde; 8 hours for all 160 BPMs)
-                </p>
+                <div class="fragment fade-in">
+                    <h2 style="margin-top: 2em;">The Problem</h2>
+                    <p style="
+                        margin-top: 0em; 
+                        border: 2px solid black; 
+                        border-radius: 30px; 
+                        padding-top: 0.5em; 
+                        padding-bottom: 0.5em;
+                        padding-left: 0;
+                        padding-right: 0;
+                        width: 80%;
+                        margin-left: 10%;
+                    ">
+                        The current BBA procedure is very time-consuming (6&Tilde;8 hours for all 160 BPMs)
+                    </p>
+                </div>
             </section>
 
 
             <section>
                 <h2>Objectives</h2>
                 <ul>
-                    <li style="margin-top: 1em">
+                    <li style="margin-top: 1em" class="fragment fade-in">
                         Study and validate alternative Beam-Based Alignment techniques for
                         SIRIUS
                     </li>
                 </ul>
                 <div class="multiple-columns" style="margin-top: 2em">
-                    <div class="column">
+                    <div class="column fragment fade-in">
                         <p style="border: 2px solid; border-radius: 12px">
                             Bibliographical Review
                         </p>
@@ -215,14 +217,14 @@
                             <li>Others</li>
                         </ul>
                     </div>
-                    <div class="column">
+                    <div class="column fragment fade-in">
                         <p style="border: 2px solid; border-radius: 12px">Simulations</p>
                         <p>
                             Explore BBA methods with the SIRIUS Storage Ring model
                             <!-- with the FAC simulation packages: <code>trackcpp</code>, <code>pyaccel</code>, <code>pymodels</code>, <code>apsuite</code>, ... -->
                         </p>
                     </div>
-                    <div class="column">
+                    <div class="column fragment fade-in">
                         <p style="border: 2px solid; border-radius: 12px">
                             Implementation and Experiments
                         </p>
@@ -246,7 +248,7 @@
                 </p>
                 <div class="two-columns" style="gap: 0">
                     <div class="column" style="flex: 0 0 60%">
-                        <div id="siscoord-three-container" style="width: 100%; height: 450px; padding: 0"></div>
+                        <div id="siscoord-three-container" style="width: 100%; height: 400px; padding: 0"></div>
                         <div id="label-vecv">$\vec{v}$</div>
                         <div id="label-vecr0">$\vec{r}_0$</div>
                         <div id="label-xhat">$\hat{x}$</div>
@@ -254,9 +256,9 @@
                         <div id="label-shat">$\hat{s}$</div>
                         <script src="scripts/siscoord.js" type="module"></script>
                     </div>
-                    <div class="column" style="align-self: center; text-align: left; flex: 0 0 40%">
+                    <div class="column" style="text-align: left; flex: 0 0 40%; align-self: center;">
                         <ul>
-                            <li style="list-style: none; margin-top: 1em">
+                            <li style="list-style: none; margin: 0;">
                                 $\hat{s}(s) = \dfrac{d}{ds}\vec{r}_0(s)$
                             </li>
                             <li style="list-style: none; margin-top: 1em">
@@ -268,9 +270,9 @@
                         </ul>
                     </div>
                 </div>
-                <p>For high energy particles ($v \rightarrow c$), their state is described in terms of smalldeviations
-                    from the design orbit:</p>
-                <p>$\mathbf{x} = (x, x', y, y')^T$</p>
+                <p>For high energy particles ($v \rightarrow c$), their state is described in terms of small deviations
+                    from the design orbit</p>
+                <!-- <p>$\mathbf{x} = (x, x', y, y')^T$</p> -->
             </section>
 
             <!-- <section data-transition="fade-in slide-out">
@@ -314,11 +316,11 @@
             <section data-transition="slide-in fade-out">
                 <h2>Magnetic Fields</h2>
 
-                <p style="margin-top: 1em">
+                <p style="margin-top: 1em" class="fragment fade-in">
                     In the Frenet-Serret frame, the transverse magnetic fields can be
                     multipole-expanded around the design orbit
-                    $$B_y(x,y,s) + i B_x(x,y,s) = \sum_{n=0}^{\infty} \Big( B_n(s) + iA_n(s) \Big)(x+iy)^n$$
                 </p>
+                <p class="fragment fade-in" style="margin-top: 1em; margin-bottom: 1em;"> $B_y(x,y,s) + i B_x(x,y,s) = \sum \Big( B_n(s) + iA_n(s) \Big)(x+iy)^n$</p>
 
                 <!-- <div class="multiple-columns" style="margin-top: 0.5em">
                     <div class="column">
@@ -343,21 +345,21 @@
                 </p> -->
 
                 <div class="multiple-columns" style="margin-top: 0.5em">
-                    <div class="column" style="border: 2px solid; border-radius: 30px; padding-top: 0.5em">
+                    <div class="column fragment fade-in" style="border: 2px solid; border-radius: 30px; padding-top: 0.5em">
                         Dipole: <br />
                         <image src="images/png/B2fig.png" style="height: 200px; width: auto; align-self: center" />
                         $$\Biggl\{ \begin{array}{l} B_x = 0 \\ B_y = B_0 \end{array}
                         \Biggr.$$
                     </div>
 
-                    <div class="column" style="border: 2px solid; border-radius: 30px; padding-top: 0.5em">
+                    <div class="column fragment fade-in" style="border: 2px solid; border-radius: 30px; padding-top: 0.5em">
                         Quadrupole: <br />
                         <image src="images/png/Quad.png" style="height: 200px; width: auto; align-self: center" />
                         $$\Biggl\{ \begin{array}{l} B_x = B_1 y \\ B_y = B_1 x \end{array}
                         \Biggr.$$
                     </div>
 
-                    <div class="column" style="border: 2px solid; border-radius: 30px; padding-top: 0.5em">
+                    <div class="column fragment fade-in" style="border: 2px solid; border-radius: 30px; padding-top: 0.5em">
                         Skew Quadrupole: <br />
                         <image src="images/png/QS_booster.png" style="height: 200px; width: auto; align-self: center" />
                         $$\Biggl\{ \begin{array}{l} B_x = A_1 x\\ B_y = -A_1 y \end{array}
@@ -384,12 +386,12 @@
             <section data-transition="fade-in fade-out">
                 <h2>Magnetic Fields</h2>
 
-                <p style="margin-top: 2em">
+                <p style="margin-top: 1em">
                     We normalize the field coefficients by the magnetic rigidity \(B\rho\), defining the magnetic
                     lattice functions
                 </p>
 
-                <div class="multiple-columns" style="margin-top: 2em">
+                <div class="multiple-columns" style="margin-top: 1em">
                     <div class="column" style="border: 2px solid; border-radius: 30px; padding-top: 0.5em">
                         Dipole: <br />
                         <image src="images/png/field-dip.png" style="height: 250px; width: auto; align-self: center" />
@@ -472,51 +474,52 @@
 
             <section>
                 <h2>Transverse Dynamics</h2>
-                <p style="margin-top: 2em">
-                    From the Hamiltonian, we derive the equations of motion:
+                <p style="margin-top: 1em" class="fragment fade-in">
+                    From the Hamiltonian formalism, we derive the equations of motion
                 </p>
                 <div class="two-columns" style="margin-top: 0em">
-                    <div class="column" style="flex: 0 0 40%; margin-left: 15%;">
+                    <div class="column fragment fade-in" style="flex: 0 0 40%; margin-left: 15%;">
                         <p>
                             $$\left\{ \begin{array}{l} x'' = -\dfrac{(1 + Gx)^2}{1 +
                             \delta}\dfrac{B_y}{B\rho} + G(1 + Gx) \\ y'' = +\dfrac{(1 + Gx)^2}{1
                             + \delta}\dfrac{B_x}{B\rho} \end{array} \right.$$
                         </p>
                     </div>
-                    <div class="column" style="flex: 0 0 30%; align-self: center; text-align: left;">
+                    <div class="column fragment fade-in" style="flex: 0 0 30%; align-self: center; text-align: left;">
                         <p>where $\delta = \frac{p - p_0}{p_0} \approx \frac{E - E_0}{E_0}$ </p>
                     </div>
                 </div>
-                <p style="margin-top: 1em">
-                    In the linear approximation (and without coupling):
-                </p>
+                <div class="fragment fade-in">
+                    <p style="margin-top: 1em">
+                        In the linear approximation (and without coupling):
+                    </p>
 
-                <p>
-                    $$\Biggl\{ \begin{array}{l} x'' = -\left(K + G^2\right)x + G\delta
-                    \\ y'' = +K y \end{array} \Biggr.$$
-                </p>
+                    <p>
+                        $$\Biggl\{ \begin{array}{l} x'' = -\left(K + G^2\right)x + G\delta
+                        \\ y'' = +K y \end{array} \Biggr.$$
+                    </p>
+                </div>
             </section>
 
             <section data-transition="slide-in fade-out">
                 <h2>Betatron Motion</h2>
 
-                <div class="two-columns" style="margin-top: 2em">
+                <div class="two-columns" style="margin-top: 0em">
                     <div class="column" style="height: 100%; align-self: center">
-                        <p>
+                        <p class="fragment fade-in">
                             For on-energy particles, the equations of motion reduce to the
                             Hill's equation
+                            $$u'' = -K_u u$$
                         </p>
 
-                        <p>$$u'' = -K_u u$$</p>
-
-                        <p>where $u = x, y$, $\ K_x = K + G^2$ and $\ K_y = -K.$</p>
-                        <p style="margin-top: 1em">The solution gives</p>
-                        <p>
+                        <p class="fragment fade-in">where $u = x, y$, $\ K_x = K + G^2$ and $\ K_y = -K.$</p>
+                        <p style="margin-top: 1em" class="fragment fade-in">
+                            The solution gives
                             $$u(s)= a\sqrt{\beta_u(s)} \cos\!\left(\phi_u(s)-\phi_0\right)$$
                         </p>
-                        <p>which we call the betatron oscillations</p>
+                        <p class="fragment fade-in">which we call the betatron oscillations</p>
                     </div>
-                    <div class="column" style="height: 100%; align-self: center">
+                    <div class="column fragment fade-in" style="height: 100%; align-self: center">
                         <img src="images/png/betas.png" width="100%" style="margin-top: 1em" />
                     </div>
                 </div>
@@ -531,19 +534,19 @@
               padding-right: 1em;
               width: 30%;
               margin-left: 33%;
-              margin-top: 2em;
+              margin-top: 1em;
             ">
                     $$u(s) = a\sqrt{\beta_u(s)} \cos\!\left(\phi_u(s)-\phi_0\right)$$
                 </p>
-                <p style="margin-top: 1em">The betatron functions satisfy</p>
-                <p>
+                <p style="margin-top: 1em" class="fragment fade-in">
+                    The betatron functions satisfy
                     $$\dfrac{1}{2}\beta'' + K(s)\beta = \dfrac{1}{\beta}\left[1 +
                     \left(\dfrac{\beta'}{2}\right)^2\right] \qquad
                     \Biggl\{\begin{array}{rcl} \beta(s) &=& \beta(s+L) \\ \beta'(s) &=&
                     \beta'(s + L)\end{array}\Bigg.$$
                 </p>
-                <p>and the phase-advance and tune are</p>
-                <p>
+                <p class="fragment fade-in">
+                    and we define the phase-advance and tune
                     $$\phi_u(s) = \int\limits_0^s \dfrac{1}{\beta_u(s')} ds' \qquad
                     \nu_u(s) = \dfrac{1}{2\pi}\int\limits_s^{s+L} \dfrac{1}{\beta_u(s')}
                     ds'$$
@@ -552,29 +555,26 @@
 
             <section data-transition="slide-in slide-out">
                 <h2>Dispersion</h2>
-                <div class="two-columns" style="margin-top: 2em">
+                <div class="two-columns" style="margin-top: 0em">
                     <div class="column" style="height: 100%; align-self: center">
-                        <p>
+                        <p class="fragment fade-in">
                             For off-energy particles, the horizontal motion requires a
                             particular solution
+                            $$ x'' = -(K + G^2) x + G\delta$$
                         </p>
 
-                        <p>$$ x'' = -(K + G^2) x + G\delta$$</p>
-
-                        <p>&RightArrow; we choose $x_\delta(s) = \eta(s)\delta$</p>
-                        <p style="margin-top: 2em">
+                        <p class="fragment fade-in">&RightArrow; we choose $x_\delta(s) = \eta(s)\delta$</p>
+                        <p style="margin-top: 1em" class="fragment fade-in">
                             The solution describes an off-energy orbit associated to the
-                            dispersion function $\eta$, which satisfies
-                        </p>
+                            dispersion function $\eta$<span class="fragment fade-in">, which satisfies
 
-                        <p>
                             $$\eta'' = -\left(K+G^2\right)\eta + G \qquad
                             \Biggl\{\begin{array}{rcl} \eta(s) &=& \eta(s+L) \\ \eta'(s) &=&
-                            \eta'(s + L)\end{array}\Bigg.$$
+                            \eta'(s + L)\end{array}\Bigg.$$</span>
                         </p>
                     </div>
-                    <div class="column" style="height: 100%; align-self: center">
-                        <img src="images/png/dispersion.png" width="100%" />
+                    <div class="column fragment fade-in" style="height: 100%; align-self: center; margin-top: 1em">
+                        <img src="images/png/dispersion.png" width="95%" />
                     </div>
                 </div>
             </section>
@@ -670,18 +670,21 @@
 
             <section>
                 <h2>Closed Orbit</h2>
-                <p style="margin-top: 2em">
+                <p style="margin-top: 2em" class="fragment fade-in">
                     In an ideal machine the closed orbit is the design orbit, in which particles travel around
                 </p>
 
-                <p style="margin-top: 1em">&RightArrow; However, dipolar field imperfections distort the closed orbit:
+                <p style="margin-top: 1em"  class="fragment fade-in">
+                    &RightArrow; However, dipolar field imperfections ($\delta G$) distort the closed orbit
                 </p>
 
-                <p>$$u_{co}(s) = \dfrac{\sqrt{\beta_u(s)}}{2\sin{\pi\nu}}\int\limits_s^{s+L} \delta
-                    G_u(s')\sqrt{\beta_u(s')}\cos{\left(|\phi_u(s) - \phi_u(s')| - \pi\nu_u\right)}\Delta s'$$</p>
+                <p class="fragment fade-in">
+                    $$u_{co}(s) = \dfrac{\sqrt{\beta_u(s)}}{2\sin{\pi\nu}}\int\limits_s^{s+L} \delta
+                    G_u(s')\sqrt{\beta_u(s')}\cos{\left(|\phi_u(s) - \phi_u(s')| - \pi\nu_u\right)}\Delta s'$$
+                </p>
 
-                <p style="margin-top: 1em">
-                    To ensure the accelerator performs as designed, is essential to control and correct the closed orbit
+                <p style="margin-top: 1em"  class="fragment fade-in">
+                    To ensure the accelerator performs as designed, is essential to <b>control</b> and <b>correct</b> the closed orbit
                 </p>
 
                 <!-- <p style="margin-top: 1em">
@@ -693,17 +696,19 @@
             <section data-transition="slide-in fade-out">
                 <h2>Orbit Feedback-System</h2>
                 <!-- talk about sofb, fofb, bpms, correctors and the orbit correction -->
-                <p style="margin-top: 1em">
+                <p style="margin-top: 1em" class="fragment fade-in">
                     In the SIRIUS Storage Ring, we have a combination of sensors,
-                    actuators and algorithms to control the orbit:
+                    actuators and algorithms to control the orbit
                 </p>
                 <ul style="margin-top: 1em">
-                    <li>
-                        Beam Position Monitors;
+                    <li class="fragment fade-in">
+                        Beam Position Monitors
                     </li>
-                    <li>Correctors;</li>
-                    <li>
-                        FOFB and SOFB;
+                    <li class="fragment fade-in" style="margin-top: 1em">
+                        Corrector Magnets
+                    </li>
+                    <li class="fragment fade-in" style="margin-top: 1em">
+                        FOFB and SOFB
                     </li>
                 </ul>
                 <!-- <ul style="margin-top: 1em">
@@ -721,30 +726,30 @@
 
             <section data-transition="fade-in fade-out">
                 <h2>Orbit Feedback-System: Beam Position Monitors</h2>
-                <p style="margin-top: 1em">
+                <p style="margin-top: 1em" class="fragment fade-in">
                     &bull; 160 BPMs to read the transverse beam position
                 </p>
                 <div class="multiple-columns" style="gap: 0.5em; margin-top: 0">
-                    <div class="column" style="flex: 0 0 40%; align-self: center;">
-                        <p>
-                            Sensors built with two pair of antennas that convert the received signal following:
+                    <div class="column fragment fade-in" style="flex: 0 0 30%; align-self: center;">
+                        <img src="images/png/sirius_bpm.png" width="100%" height="auto" />
+                    </div>
+                    <div class="column fragment fade-in" style="flex: 0 0 29%; align-self: center">
+                        <img src="images/tikz/bpm_scheme.svg" style="width: 100%; height: auto; border: none" />
+                    </div>
+                    <div class="column" style="align-self: center;">
+                        <p class="fragment fade-in">
+                            Two pair of antennas that convert current signal into transverse beam position
                         </p>
-                        <p>
+                        <p class="fragment fade-in">
                             $$x = \zeta\left(\dfrac{A - C}{A + C} - \dfrac{B - D}{B +
                             D}\right)$$
                         </p>
-                        <p>
+                        <p class="fragment fade-in">
                             $$y = \zeta\left(\dfrac{B - D}{B + D} + \dfrac{A - C}{A +
                             C}\right)$$
                         </p>
-                        <p>where $\zeta = 8.5$ mm is a calibration factor</p>
-                        <p>&RightArrow; This gives a resolution of $\approx$2 nm</p>
-                    </div>
-                    <div class="column" style="flex: 0 0 30%; align-self: center">
-                        <img src="images/tikz/bpm_scheme.svg" style="width: 100%; height: auto; border: none" />
-                    </div>
-                    <div class="column" style="flex: 0 0 25%; align-self: center;">
-                        <img src="images/png/sirius_bpm.png" width="100%" height="auto" />
+                        <p class="fragment fade-in">where $\zeta = 8.5$ mm is a calibration factor</p>
+                        <p class="fragment fade-in">&RightArrow; This gives a resolution of $\approx$2 nm</p>
                     </div>
                 </div>
             </section>
@@ -753,19 +758,19 @@
                 <h2>Orbit Feedback-System: Correctors</h2>
                 <!-- talk about the correctos we have: dipolar kicks and correctors inside skew quadrupoles, the fiels and the kick angles -->
                 <!-- <p style="margin-top: 1em;">&bull;  correctors to steer the beam and correct the orbit</p> -->
-                <div class="multiple-columns" style="align-items: center; gap: 0.5em; margin-top: 2em">
-                    <div class="column" style="flex: 0 0 65%">
+                <div class="multiple-columns" style="align-items: center; gap: 0em; margin-top: 0em">
+                    <div class="column fragment fade-in" style="margin-top: 2em; flex: 0 0 30%;">
+                        <img src="images/png/Fast_corrector.png" style="max-width: 100%; height: auto; border: none" />
+                    </div>
+                    <div class="column">
                         <ul>
-                            <li>120 CH (slow horizontal correctors)</li>
-                            <li>160 CV (slow vertical correctors)</li>
-                            <li> 80 FCH (fast horizontal correctors)</li>
-                            <li>80 FCV (fast vertical correctors)</li>
+                            <li class="fragment fade-in">120 CH (slow horizontal correctors)</li>
+                            <li class="fragment fade-in">160 CV (slow vertical correctors)</li>
+                            <li class="fragment fade-in"> 80 FCH (fast horizontal correctors)</li>
+                            <li class="fragment fade-in">80 FCV (fast vertical correctors)</li>
                         </ul>
                         <image src="images/png/SI_AB.png"
-                            style="height: auto; width: 100%; border: none; margin-top: 2em" />
-                    </div>
-                    <div class="column" style="flex: 0 0 30%">
-                        <img src="images/png/Fast_corrector.png" style="max-width: 100%; height: auto; border: none" />
+                            style="height: auto; width: 100%; border: none; margin-top: 2em" class="fragment fade-in"/>
                     </div>
                 </div>
             </section>
@@ -811,34 +816,35 @@
             <section data-transition="fade-in fade-out">
                 <h2>Orbit Feedback-System: Orbit Correction</h2>
                 <!-- talk about the orbit correction x = Mx + theta to theta = M^(-1)x -->
-                <p style="margin-top: 2em">
-                    Localized dipolar kicks disturb the closed orbit:
+                <p style="margin-top: 1em" class="fragment fade-in">
+                    As dipolar field imperfections, localized dipolar kicks also change the closed orbit
                 </p>
-                <p>
+                <p class="fragment fade-in">
                     $$\Delta u(s_i) = \dfrac{\sqrt{\beta_u(s_i)}}{2\sin{\pi\nu_u}}\sum
                     \Delta\theta_j\sqrt{\beta_u(s_j)}\cos{\left(|\phi_u(s_i) - \phi_u(s_j)| -
                     \pi\nu_u\right)} $$
                 </p>
 
-                <p style="
-              border: 2px solid black;
-              border-radius: 20px;
-              padding-left: 0.5em;
-              padding-right: 0.5em;
-              padding-top: 1em;
-              padding-bottom: 1em;
-              width: 20%;
-              margin-left: 40%;
-              margin-top: 1em;
+                <p class="fragment fade-in"
+                    style="
+                    border: 2px solid black;
+                    border-radius: 20px;
+                    padding-left: 0.5em;
+                    padding-right: 0.5em;
+                    padding-top: 1em;
+                    padding-bottom: 1em;
+                    width: 20%;
+                    margin-left: 40%;
+                    margin-top: 1em;
             ">
                     $\Delta\vec{u} = \mathbf{M}\Delta\vec{\theta}$
                 </p>
-                <p style="margin-top: 1em">where</p>
-                <p>$\vec{u} = ( x_1, \dots , x_{\text{\small N}_\text{BPM}}, y_1, \dots , y_{\text{\small N}_\text{BPM}}
+                <p style="margin-top: 1em" class="fragment fade-in">where</p>
+                <p style="margin-top: 1em;" class="fragment fade-in">$\vec{u} = ( x_1, \dots , x_{\text{\small N}_\text{BPM}}, y_1, \dots , y_{\text{\small N}_\text{BPM}}
                     )$</p>
-                <p style="margin-top: 1em;">$\vec{\theta} = ( \theta_{1}^x, \dots ,\theta_{\text{\small N}_\text{CH}}^x,
+                <p style="margin-top: 1em;" class="fragment fade-in">$\vec{\theta} = ( \theta_{1}^x, \dots ,\theta_{\text{\small N}_\text{CH}}^x,
                     \theta_{1}^y, \dots ,\theta_{\text{\small N}_\text{CV}}^y )$ </p>
-                <p style="margin-top: 1em;">and $\mathbf{M}$ is the Orbit Response Matrix</p>
+                <p style="margin-top: 1em;" class="fragment fade-in">and $\mathbf{M}$ is the Orbit Response Matrix</p>
 
 
             </section>
@@ -858,16 +864,15 @@
                     $$\Delta\vec{u} = \mathbf{M}\Delta\vec{\theta}$$
                 </p>
                 <p style="margin-top: 1em">
-                    Lets say we read an orbit distortion $\vec{u}_0$ on the machine, we
-                    need $\vec{u}_0 + \Delta \vec{u} = 0$, then
+                    <span class="fragment fade-in">Lets say we read an orbit distortion $\vec{u}_0$ on the machine</span><span class="fragment fade-in">, we need $\vec{u}_0 + \Delta \vec{u} = 0$</span>
                 </p>
-                <p style="margin-top: 1em">
+                <p style="margin-top: 1em" class="fragment fade-in">
                     &RightArrow; $\vec{u}_0 + \mathbf{M}\Delta\vec{\theta} = 0$
                 </p>
-                <p style="margin-top: 1em">
+                <p style="margin-top: 1em" class="fragment fade-in">
                     &RightArrow; $\Delta \vec{\theta} = -\mathbf{M}^{-1}\vec{u}_0$
                 </p>
-                <p style="margin-top: 1em">
+                <p style="margin-top: 1em" class="fragment fade-in">
                     giving us the necessary kicks $\Delta\vec{\theta}$ to correct the
                     distortion
                 </p>
@@ -875,17 +880,17 @@
 
             <section data-transition="fade-in fade-out">
                 <h2>Orbit Feedback System: SOFB and FOFB</h2>
-                <div class="two-columns" style="gap: 1em; margin-top: 3em">
+                <div class="two-columns" style="gap: 1em; margin-top: 2em">
                     <div class="column" style="flex: 0 0 40%; margin-left: 10%">
-                        <h4>SOFB</h4>
+                        <h4 class="fragment fade-in" data-fragment-index="0">SOFB</h4>
                         <ul>
-                            <li><b>S</b>low <b>O</b>rbit <b>F</b>eed<b>B</b>ack</li>
-                            <li>@10 Hz</li>
-                            <li>160 BPMs</li>
-                            <li>120 CH + 160 CV + 1 RF</li>
-                            <li>
+                            <li class="fragment fade-in" data-fragment-index="1"><b>S</b>low <b>O</b>rbit <b>F</b>eed<b>B</b>ack</li>
+                            <li class="fragment fade-in" data-fragment-index="2">@10 Hz</li>
+                            <li class="fragment fade-in" data-fragment-index="3">160 BPMs</li>
+                            <li class="fragment fade-in" data-fragment-index="4">120 CH + 160 CV + 1 RF</li>
+                            <li class="fragment fade-in" data-fragment-index="5">
                                 Compensates slow drifts
-                                <ul>
+                                <ul class="fragment fade-in" data-fragment-index="6">
                                     <li>Thermal effects</li>
                                     <li>Ground and lunar motion</li>
                                     <li>Residual misalignments</li>
@@ -893,19 +898,19 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="column" style="flex: 0 0 40%">
-                        <h4>FOFB</h4>
+                    <div class="column">
+                        <h4 class="fragment fade-in" data-fragment-index="0">FOFB</h4>
                         <ul>
-                            <li><b>F</b>ast <b>O</b>rbit <b>F</b>eed<b>B</b>ack</li>
-                            <li>@48 kHz</li>
-                            <li>80 BPMs</li>
-                            <li>80 FCH + 80 FCV</li>
-                            <li>
-                                Rejects disturbances from 0.1 Hz to 1 kHz
-                                <ul>
+                            <li class="fragment fade-in" data-fragment-index="1"><b>F</b>ast <b>O</b>rbit <b>F</b>eed<b>B</b>ack</li>
+                            <li class="fragment fade-in" data-fragment-index="2">@48 kHz</li>
+                            <li class="fragment fade-in" data-fragment-index="3">80 BPMs</li>
+                            <li class="fragment fade-in" data-fragment-index="4">80 FCH + 80 FCV</li>
+                            <li class="fragment fade-in" data-fragment-index="5">
+                                Compensates disturbances from <br>0.1 Hz to 1 kHz
+                                <ul class="fragment fade-in" data-fragment-index="6">
                                     <li>Booster interference (2 Hz)</li>
                                     <li>Electric-? ressonance (60 Hz)</li>
-                                    <li>Insertion Devices Motion</li>
+                                    <li>Motion of Insertion Devices</li>
                                 </ul>
                             </li>
                         </ul>
@@ -921,18 +926,18 @@
                 <h2>Orbit Feedback System: the accuracy problem</h2>
                 <div class="two-columns" style="gap: 0em; margin-top: 2em">
                     <div class="column" style="flex: 0 0 65%; justify-content: space-evenly;">
-                        <p style="margin-top: 2em">
+                        <p style="margin-top: 2em" class="fragment fade-in" data-fragment-index="0">
                             The electric center of BPMs does not
                             necessarily match the design orbit
                         </p>
-                        <p style="margin-top: 2em">
+                        <p style="margin-top: 2em" class="fragment fade-in" data-fragment-index="1">
                             Natural imperfections and misalignments also make the BPMs inaccurate
                         </p>
-                        <p style="margin-top: 2em">
+                        <p style="margin-top: 2em" class="fragment fade-in" data-fragment-index="2">
                             &RightArrow; To solve this, we use Beam-Based Alignment techniques <br>to calibrate the BPMs
                         </p>
                     </div>
-                    <div class="column" style="flex: 0 0 35%; align-self: center;">
+                    <div class="column fragment fade-in" style="flex: 0 0 35%; align-self: center;" data-fragment-index="0">
                         <img src="images/tikz/bpms_misaligned.svg" width="100%" />
                     </div>
                 </div>
@@ -944,7 +949,7 @@
 
             <section data-transition="slide-in fade-out">
                 <h2>The BBA Principle</h2>
-                <div class="two-columns" style="gap: 0em; margin-top: 3em">
+                <div class="two-columns" style="gap: 0em; margin-top: 0em">
                     <div class="column" style="flex: 0 0 40%; align-self: center; margin-left: 0">
                         <p style="margin-top: 0em">
                             The calibration of BPMs consists of finding the offsets
@@ -952,7 +957,7 @@
                             of the magnets on the accelerator
                         </p>
                     </div>
-                    <div class="column" style="align-self: center;">
+                    <div class="column fragment fade-in" style="align-self: center;">
                         <img src="images/tikz/bpm2quad-offset.svg" width="100%" />
                     </div>
                 </div>
@@ -960,18 +965,18 @@
 
             <section data-transition="fade-in fade-out">
                 <h2>The BBA Principle</h2>
-                <div class="two-columns" style="gap: 0em; margin-top: 2em">
+                <div class="two-columns" style="gap: 0em; margin-top: 0em">
                     <div class="column" style="flex: 0 0 40%; align-self: center; margin-left: 0">
-                        <p style="margin-top: 0em;">The distance between a BPM and a magnet also limits the accuracy of
-                            the
-                            offset:
+                        <p style="margin-top: 0em;">The distance between a BPM and a magnet also limits the accuracy of the offset
                         </p>
                         <ul>
-                            <li>
+                            <li class="fragment fade-in" data-fragment-index="3">
                                 farther the BPM &RightArrow; higher the difference between $x_\text{offset, BBA}$ and
                                 $x_\text{offset, real}$
+                            </li >
+                            <li class="fragment fade-in" data-fragment-index="4">
+                                closer the BPM &RightArrow; $x_\text{offset, BBA} \approx x_\text{offset, real}$
                             </li>
-                            <li>closer the BPM &RightArrow; $x_\text{offset, BBA} \approx x_\text{offset, real}$</li>
                         </ul>
                         <!-- <div class="multiple-columns" style="gap: 0.5em; margin-top: 1em">
                     <div class="column" style="flex: 0 0 33%; align-self: center;">
@@ -1000,30 +1005,28 @@
                                 class="fragment fade-in-then-out" data-fragment-index="1" />
 
                             <img src="images/tikz/bpm2quad-offset-ontop.svg" width="85%"
-                                class="fragment fade-in-then-out" data-fragment-index="2" />
+                                class="fragment fade-in" data-fragment-index="2" />
                         </div>
                     </div>
             </section>
 
             <section data-transition="fade-in fade-out">
                 <h2>The BBA Principle</h2>
-                <div class="two-columns" style="gap: 1em; margin-top: 2em">
+                <div class="two-columns" style="gap: 1em; margin-top: 0em">
                     <div class="column" style="flex: 0 0 50%; align-self: center; margin-left: 2%">
-                        <p>
-                            Quadrupoles are the most suitable magnets for this, since the orbit is linearly related to
-                            their strength
-                        </p>
-
                         <p style="margin-top: 1em">
-                            From the EOM, we know that a beam passing off-center will experience a kick and disturb the
+                            From the EOM, we know that a beam passing off-center on a quadrupole will experience a kick and disturb the
                             orbit
                         </p>
-                        <p>
+                        <p class="fragment fade-in" data-fragment-index="0">
                             $$\Delta x' = -KL\, x$$
+                        </p>
+                        <p class="fragment fade-in" data-fragment-index="1">
+                            This makes quadrupoles the most suitable magnets for BBA, since the orbit shift, beam position and quadrupole strength are linearly related
                         </p>
                     </div>
                     <div class="column" style="align-self: center;">
-                        <img src="images/tikz/quad-kick.svg" width="auto" height="400px" />
+                        <img src="images/tikz/quad-kick.svg" width="auto" height="400px" class="fragment fade-in" data-fragment-index="0"/>
                     </div>
                 </div>
             </section>
@@ -1033,30 +1036,25 @@
                 <div class="two-columns" style="gap: 1em; margin-top: 2em">
                     <div class="column" style="flex: 0 0 50%; align-self: center; margin-left: 2%">
                         <p>
-                            For a BPM-Quad pair close enough, we can assume
-                        </p>
-                        <p>
+                            For a BPM-Quad pair close enough
                             $$x_\text{quad} \approx (x_\text{bpm} - x_\text{offset, real}) \approx (x_\text{bpm} -
                             x_\text{offset, BBA})$$
                         </p>
-                        <p>
+                        <p class="fragment fade-in" data-fragment-index="1">
                             This way
-                        </p>
-                        <p>
                             $$\Delta x' \approx -KL\, (x - x_\text{offset})$$
                         </p>
                     </div>
                     <div class="column" style="align-self: center;">
-                        <img src="images/tikz/quad-kick-bpm.svg" width="auto" height="450px" />
+                        <img src="images/tikz/quad-kick-bpm.svg" width="auto" height="450px" class="fragment fade-in" data-fragment-index="0"/>
                     </div>
                 </div>
                 <p class="fragment fade-in" style="margin-top: 0em">
-                    From this we determine the offset by varying the beam position ($x$
-                    and/or $y$) and the quadrupole strength ($K$)
+                    From this we determine the offset by varying the beam position and the quadrupole strength
                 </p>
                 <p class="fragment fade-in" style="margin-top: 0.5em">
-                    $\rightarrow$ If changing the quadrupole strength the orbit does not
-                    change, then $x = x_\text{offset}$ (and/or $y = y_\text{offset}$)
+                    $\rightarrow$ If  the orbit does not
+                    change when varying the changing $K$, then $x = x_\text{offset}$
                 </p>
             </section>
 
@@ -1740,7 +1738,7 @@
         <span>•</span>
         <span>Alternative BBA techniques for SIRIUS</span>
         <span>•</span>
-        <span>April X, 2026</span>
+        <span>May 15, 2026</span>
     </div>
 
     <div class="reveal-chapters" id="sectionHeaders"></div>

@@ -138,7 +138,7 @@
                   <span>•</span>
                   <span>Alternative BBA techniques for SIRIUS</span>
                   <span>•</span>
-                  <span>April X, 2026</span>
+                  <span>May 15, 2026</span>
                 `;
             element.appendChild(F);
             const G = document.createElement("div");
