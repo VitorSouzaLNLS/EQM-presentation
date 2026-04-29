@@ -1053,7 +1053,7 @@
                     From this we determine the offset by varying the beam position and the quadrupole strength
                 </p>
                 <p class="fragment fade-in" style="margin-top: 0.5em">
-                    $\rightarrow$ If  the orbit does not
+                    &RightArrow; If the orbit does not
                     change when varying the changing $K$, then $x = x_\text{offset}$
                 </p>
             </section>
@@ -1122,11 +1122,11 @@
 
             <section data-transition="slide-in fade-out">
                 <h2>Standard BBA</h2>
-                <p style="margin-top: 2em">
+                <p style="margin-top: 1em" class="fragment fade-in">
                     The standard BBA method emerged in the 80s and was widely
-                    discussed in the 90s with seminal works:
+                    discussed in the 90s with seminal works
                 </p>
-                <ul>
+                <ul class="fragment fade-in">
                     <li style="margin-top: 0.5em; font-size: 0.75em">
                         R. Schmidt, "Misalignments from K-modulation" (CERN SL/93-19, 1993)
                     </li>
@@ -1139,13 +1139,13 @@
                         Barnett et al., "Dynamic Beam Based Alignment" (AIP 333, 1995)
                     </li>
                 </ul>
-                <p style="margin-top: 1em">
+                <p style="margin-top: 1em" class="fragment fade-in">
                     The method empirically applies the BBA principle by modulating the
                     strength of quadrupoles and scanning the orbit on the BPMs to find
                     the offsets
                 </p>
-                <p style="margin-top: 1em">
-                    In the SIRIUS Storage Ring, the method was studied and implemented
+                <p style="margin-top: 1em" class="fragment fade-in">
+                    &RightArrow; In the SIRIUS Storage Ring, the method was studied and implemented
                     in 2019&ndash;2020 (commissioning)
                 </p>
                 <!-- <p style="margin-top: 0.5em; font-size: 0.75em">
@@ -1157,7 +1157,7 @@
 
             <section data-transition="fade-in fade-out">
                 <h2>Standard BBA</h2>
-                <p style="margin-top: 2em">The standard BBA procedure consists of:</p>
+                <p style="margin-top: 1em">The standard BBA procedure consists of:</p>
                 <ul style="
               margin-top: 0em;
               border: 2px solid black;
@@ -1265,8 +1265,7 @@
                 <ul>
                     <li style="list-style-type: square;">160 BPMs</li>
                     <li style="list-style-type: square;">orbit shifts on both planes ($x$, $y$) simultaneously</li>
-                    <li style="list-style-type: square;">8 orbit shifts per BPM (&plusmn;25&mu;m, &plusmn;50&mu;m,
-                        &plusmn;75&mu;m, &plusmn;100&mu;m)</li>
+                    <li style="list-style-type: square;">8 orbit shifts per BPM (&plusmn;25&mu;m, &plusmn;50&mu;m, &plusmn;75&mu;m, &plusmn;100&mu;m)</li>
                     <li style="list-style-type: square;">approximately 2&Tilde;3 min per BPM</li>
                     <li style="list-style-type: square;">6&Tilde;8 hours for a full BBA procedure</li>
                     <!-- <li style="list-style-type: square;">error estimation: $\sigma_x$ = &plusmn;0.5&mu;m, $\sigma_y$ = &plusmn;1&mu;m</li> -->
@@ -1276,19 +1275,18 @@
 
             <section data-transition="slide-in fade-out">
                 <h2>Parallel BBA</h2>
-                <p style="margin-top: 2em">The Parallel Beam Beam Alignment (PBBA) was proposed by <em>Xiaobiao
-                        Huang</em> in 2022</p>
-                <p>Since then, it has been simulated and tested on accelerators such as</p>
-                <ul style="font-size: 0.75em;">
+                <p style="margin-top: 1em" class="fragment fade-in" data-fragment-index="0">The Parallel Beam Beam Alignment (PBBA) was proposed by <em>Xiaobiao
+                    Huang</em> in 2022</p>
+                <img src="images/png/PBBA-frontface.png" height="250px" width="auto"
+                        style="border: 3px solid black; border-radius: 20px; margin-top: 0em" class="fragment fade-in" data-fragment-index="1"/>
+                <p class="fragment fade-in" data-fragment-index="2">Since then, it has been simulated and tested on accelerators such as</p>
+                <ul style="font-size: 0.75em;" class="fragment fade-in" data-fragment-index="2">
                     <li> LCLS-II (USA, SLAC, 2022)</li>
                     <li> SPEAR3 (USA, SLAC, 2022)</li>
                     <li> FCC-ee (Switzerland, CERN, 2023/2024)</li>
                     <li> KARA (Germany, KIT, 2024/2025)</li>
                     <li> NSLS-II (USA, BNL, 2024)</li>
                 </ul>
-                <br>
-                <img src="images/png/PBBA-frontface.png" height="300px" width="auto"
-                    style="border: 3px solid black; border-radius: 20px; margin-top: 1em" />
             </section>
 
             <section data-transition="fade-in fade-out">
@@ -1298,24 +1296,26 @@
                         <p style="margin-top: 1em">
                             &bullet; The central idea is to minimize the <b>Induced Orbit Shift</b> (IOS)
                         </p>
-                        <p style="margin-top: 1em;">&RightArrow; Our goal is to find an orbit that satisfies:</p>
-                        <p>$$\vec{u}(\vec{\theta}, \vec{K}_0) = \vec{u}(\vec{\theta}, \vec{K}^\pm)$$</p>
-                        <!-- <p>where $\vec{\theta}$ is a configuration of kicks, $\vec{K}_0$ is the nominal quadrupole strengths and
-                        $\vec{K}^\pm = \vec{K}_0 \pm \Delta \vec{K}$</p> -->
-
-                        <p style="margin-top: 1em;">&RightArrow; The IOS is defined as:</p>
-                        <p>$$\vec{\xi} = \frac{1}{2}\left(\vec{u}(\vec{\theta}, \vec{K}^+) - \vec{u}(\vec{\theta},
-                            \vec{K}^-)\right)$$</p>
-
-                        <p style="margin-top: 1em;">&RightArrow; Minimizing the IOS results in:</p>
-                        <p>$$\vec{\xi} = 0 \Leftrightarrow \vec{u}(\vec{\theta}, \vec{K}^+) =
+                        <p style="margin-top: 1em;" class="fragment fade-in" data-fragment-index="0">
+                            &RightArrow; Our goal is to find an orbit that satisfies:
+                            $$\vec{u}(\vec{\theta}, \vec{K}_0) = \vec{u}(\vec{\theta}, \vec{K}^\pm)$$
+                        </p>
+                        <p style="margin-top: 1em;" class="fragment fade-in" data-fragment-index="1">
+                            &RightArrow; The IOS is defined as:
+                            $$\vec{\xi} = \frac{1}{2}\left(\vec{u}(\vec{\theta}, \vec{K}^+) - \vec{u}(\vec{\theta},
+                            \vec{K}^-)\right)$$
+                        </p>
+                        <p style="margin-top: 1em;" class="fragment fade-in" data-fragment-index="2">
+                            &RightArrow; Minimizing the IOS results in:
+                            $$\vec{\xi} = 0 \Leftrightarrow \vec{u}(\vec{\theta}, \vec{K}^+) =
                             \vec{u}(\vec{\theta},
                             \vec{K}^-) \Leftrightarrow \vec{u}(\vec{\theta}, \vec{K}_0) =
                             \vec{u}(\vec{\theta},
-                            \vec{K}^\pm)$$</p>
+                            \vec{K}^\pm)$$
+                        </p>
                     </div>
                     <div class="column" style="align-self: center; margin-top: 2em;">
-                        <img src="images/png/pbba-plot-ios.png" height="auto" width="100%" />
+                        <img src="images/png/pbba-plot-ios.png" height="auto" width="100%" class="fragment fade-in" data-fragment-index="3"/>
                     </div>
 
             </section>
@@ -1327,27 +1327,25 @@
                         <p style="margin-top: 0em">
                             &RightArrow; Linearizing $\vec{\xi}$ around an initial kick
                             configuration $\vec{\theta}_0$ gives:
-                        </p>
-                        <p>
                             $$\vec{\xi}\ \ =\ \
                             \vec{\xi}(\vec{\theta_0}) + \dfrac{\partial \vec{\xi}}{\partial \vec{\theta}}(\vec{\theta} -
                             \vec{\theta_0}) \ \ =\ \
                             \vec{\xi}_0 + \mathbf{R}\Delta\vec{\theta}$$
                         </p>
-                        <p>where $\mathbf{R}_{ij} = \partial \vec{\xi}_i/\partial \vec{\theta}_j$ is the IOS Response
+                        <p class="fragment fade-in">where $\mathbf{R}_{ij} = \partial \vec{\xi}_i/\partial \vec{\theta}_j$ is the IOS Response
                             Matrix</p>
-                        <p style="margin-top: 1em;">&RightArrow; Solving for $\vec{\xi} = 0$ we get:</p>
-                        <p>
+                        <p style="margin-top: 1em;" class="fragment fade-in">
+                            &RightArrow; Solving for $\vec{\xi} = 0$ we get:
                             $$\Delta\vec{\theta} = -\mathbf{R}^{-1}\vec{\xi}_0$$
                         </p>
-                        <p style="border: 2px solid black; border-radius: 30px; padding: 0.5em; margin-top: 1em">
+                        <p style="border: 2px solid black; border-radius: 30px; padding: 0.5em; margin-top: 1em" class="fragment fade-in">
                             $\vec{\theta} = \vec{\theta_0} + \Delta\vec{\theta} \quad\Rightarrow\quad
                             \vec{u}_\text{offset} =
                             \vec{u}(\vec{\theta}, \vec{K}_0) = \vec{u}(\vec{\theta}, \vec{K}^\pm)$
                         </p>
                     </div>
                     <div class="column" style="align-self: center; margin-top: 1em;">
-                        <img src="images/png/pbba-plot-dkicks.png" height="600px" width="auto" />
+                        <img src="images/png/pbba-plot-dkicks.png" height="600px" width="auto" class="fragment fade-in"/>
                     </div>
                 </div>
             </section>
@@ -1382,12 +1380,12 @@
                         K^+) - \vec{u}(\vec{\theta}, K^-)\right)$
                     </li>
                     <li style="list-style: none; margin-top: 0.5em">
-                        $\qquad\qquad\rightarrow$ Compute the delta kicks: $\Delta\vec{\theta} =
-                        -\mathbf{R}^{-1}\vec{\xi}$
+                        $\qquad\qquad\rightarrow$ Compute the delta kicks ($\Delta\vec{\theta} =
+                        -\mathbf{R}^{-1}\vec{\xi})$ and apply ($\vec{\theta} = \vec{\theta} + \Delta\vec{\theta}$)
                     </li>
-                    <li style="list-style: none; margin-top: 0.5em">
+                    <!-- <li style="list-style: none; margin-top: 0.5em">
                         $\qquad\qquad\rightarrow$ Apply the kicks: $\vec{\theta} = \vec{\theta} + \Delta\vec{\theta}$
-                    </li>
+                    </li> -->
                     <li style="list-style: none; margin-top: 0.5em">
                         $\qquad\rightarrow$ Read and save the offsets: $\vec{u}_\text{offset} = \vec{u}(\vec{\theta},
                         \vec{K}_0) = \vec{u}(\vec{\theta}, \vec{K}^\pm)$
@@ -1432,16 +1430,16 @@
                 <p style="margin-top: 1em">The Fast Beam Beam Alignment with AC excitations (FBBA-AC) was proposed by
                     <em>Zeus Martí (et al.)</em> in 2020
                 </p>
-                <p>Since then, it has been simulated and tested on accelerators such as</p>
-                <ul style="font-size: 0.8em;">
+                <img src="images/png/FBBAAC-frontface.png" height="250px" width="auto"
+                    style="border: 3px solid black; border-radius: 20px; margin-top: 0em" class="fragment fade-in" data-fragment-index="0"/>
+                <p class="fragment fade-in" data-fragment-index="1">Since then, it has been simulated and tested on accelerators such as</p>
+                <ul style="font-size: 0.8em;" class="fragment fade-in" data-fragment-index="1">
                     <li> ALBA (Spain, CELLS, 2020)</li>
                     <li> Diamond (UK, DLS, 2023-2024)</li>
                     <li> HEPS (China, IHEP, 2023)</li>
                     <li> HALF (China, NSRL, 2025) </li>
                 </ul>
                 <br>
-                <img src="images/png/FBBAAC-frontface.png" height="300px" width="auto"
-                    style="border: 3px solid black; border-radius: 20px; margin-top: 1em" />
             </section>
 
             <section data-transition="fade-in fade-out">
@@ -1449,27 +1447,27 @@
                 <div class="two-columns" style="gap: 0;">
                     <div class="column" style="flex: 0 0 55%; align-self: center;">
                         <p>
-                            The Fast BBA AC is a robust improvement of the standard BBA:
+                            The Fast BBA AC is a robust improvement of the standard BBA
                         </p>
 
-                        <p style="margin-top: 1em">
+                        <p style="margin-top: 1em" class="fragment fade-in">
                             &RightArrow; Instead of discrete orbit shifts, AC excitations on the correctors are used to
                             induce the orbit distortions.
                         </p>
 
-                        <p style="margin-top: 1em">
+                        <p style="margin-top: 1em" class="fragment fade-in">
                             &RightArrow; High acquisition rate BPMs are used to collect the orbit data
                         </p>
 
 
-                        <p style="margin-top: 1em">
+                        <p style="margin-top: 1em" class="fragment fade-in">
                             &RightArrow; The linear relationship between orbit distortions and quadrupole modulation is
                             extracted with harmonic analysis to obtain the BPMs offsets
                         </p>
 
                     </div>
                     <div class="column" style="flex: 0 0 45%; margin-top: 2em;">
-                        <img src="images/png/fbbaac-plot.png" height="500px" width="auto" ">
+                        <img src="images/png/fbbaac-plot.png" height="500px" width="auto" class="fragment fade-in">
                     </div>
                 </div>
 
@@ -1625,17 +1623,17 @@
                 </p>
                 <div class="r-stack" style="margin-top: 0;">
                     <div class="fragment semi-fade-out" data-fragment-index="0">
-                        <p style="font-size: 0.7em;">PBBA and Standard BBA for selected (4) BPMs</p>
+                        <p style="font-size: 0.7em;">PBBA and Standard BBA for a group of 4 selected BPMs</p>
                         <img src="images/png/PBBA-day13-10-25_AG.png" height="250px" width="auto" style="margin: 0; padding: 0;"/>
                         <p style="font-size: 0.7em; margin: 0; padding: 0;">PBBA for the "default" group 0</p>
                         <img src="images/png/PBBA-day13-10-25_Gdef0.png" height="250px" width="auto" style="margin: 0; padding: 0;"/>
                     </div>
                     <div class="fragment current-visible" data-fragment-index="0">
                         <p style="border: 2px solid; border-radius: 30px; padding: 1em; background-color: lightyellow;">
-                            &bullet; The Standard BBA runs for the group of selected (4) BPMs took &Tilde;8 minutes (&approx; 2min/BPM)<br>
+                            &bullet; The Standard BBA runs for the group of 4 selected BPMs took &Tilde;8 minutes (&approx; 2min/BPM)<br>
                             &bullet; Each PBBA run for both groups took &Tilde;1 minute &RightArrow; does not scale with the number of BPMs<br><br>
-                            &bullet; For the group of selected BPMs, the results of the Standard BBA and PBBA differ by &pm;2&mu;m<br><br>
-                            &bullet; For the "default" group 0: the results of each PBBA runs differ by &pm;6&mu;m
+                            &bullet; For the group of 4 selected BPMs, the results between the Standard BBA and PBBA differ by &pm;2&mu;m<br><br>
+                            &bullet; For the "default" group 0: the results of each PBBA run differ by &pm;6&mu;m
                         </p>
                     </div>
                 </div>
@@ -1677,8 +1675,39 @@
                     </div>
                     <div class="fragment current-visible" data-fragment-index="0">
                         <p style="border: 2px solid; border-radius: 30px; padding: 1em; background-color: lightyellow;">
-                            &bullet; Each full PBBA run took &approx; 4min (1 min/group)<br><br>
-                            &bullet; For all groups, the differences between each PBBA run are smaller then &pm;8&mu;m
+                            &bullet; The differences between the results of Standard BBA and PBBA are smaller then &pm;30&mu;m<br>with $\sigma_x$ = &pm;3.46&mu;m and $\sigma_y$ = &pm;6.78&mu;m
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section data-transition="fade-in fade-out">
+                <h2>Parallel BBA: Experiments</h2>
+                <p style="margin-top: 2em; font-size: 0.8em;">
+                    &bullet; January 12 and February 9, 2026
+                </p>
+                <!-- <img src="images/png/PBBA-day12-01-26_MultiG.png" height="650px" width="auto" /> -->
+                 <div class="r-stack" style="margin-top: 0;">
+                    <div class="fragment semi-fade-out" data-fragment-index="0">
+                        <div class="two-columns" style="gap: 0em; margin-top: 0em">
+                            <div class="column" style="flex: 0 0 70%">
+                                <img src="images/png/PBBA-day12-01-26_MultiG.png" height="auto" width="100%" />
+                            </div>
+                            <div class="column" style="flex: 0 0 30%; align-self: center;">
+                                <img src="images/png/PBBA-day12-01-26_diff.png" height="450px" width="auto" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fragment current-visible" data-fragment-index="0">
+                        <p style="border: 2px solid; border-radius: 30px; padding: 1em; background-color: lightyellow;">
+                            &bullet; For all the configuration of groups, the convegence is achieved in 3&Tilde;4 iterations<br>
+                            &RightArrow; which reduces the run execution time by 33%&Tilde;50%<br><br>
+                            &bullet; The configuration of 8 groups is the most stable: kicks converge and stay still<br><br>
+                            &bullet; For a single BPM, the differences between the Standard BBA and PBBA runs are:<br>
+                            Groups 4x40: ($x$) &pm;6&mu;m and ($y$) &pm;7&mu;m<br>
+                            Groups 8x20: ($x$) &pm;2.5&mu;m and ($y$) &pm;4&mu;m<br>
+                            Groups 16x10: ($x$) &pm;5&mu;m and ($y$) &pm;7&mu;m<br><br>
+                            &bullet; The Standard BBA results from the linear and quadratic fits differ by ($x$) &pm;0.5&mu;m and ($y$) &pm;3&mu;m
                         </p>
                     </div>
                 </div>
@@ -1686,28 +1715,22 @@
 
             <section data-transition="fade-in slide-out">
                 <h2>Parallel BBA: Experiments</h2>
-                <p style="margin-top: 2em; font-size: 0.8em;">
-                    &bullet; January 12 and February 9, 2026
-                </p>
-                <!-- <img src="images/png/PBBA-day12-01-26_MultiG.png" height="650px" width="auto" /> -->
-                <div class="two-columns" style="gap: 0em; margin-top: 0em">
-                    <div class="column" style="flex: 0 0 70%">
-                        <img src="images/png/PBBA-day12-01-26_MultiG.png" height="auto" width="100%" />
-                    </div>
-                    <div class="column" style="flex: 0 0 30%; align-self: center;">
-                        <img src="images/png/PBBA-day12-01-26_diff.png" height="450px" width="auto" />
-                    </div>
-                </div>
+                <p style="margin-top: 2em;">Until now PBBA has shown:</p>
+                <ul>
+                    <li style="list-style-type: square;">High speed &mdash; the execution time is 45/90 times faster (6 hours to 4/8 minutes)</li>
+                    <li style="list-style-type: square;">Accuracy &mdash;</li>
+                    <li style="list-style-type: square;">Repeatability &mdash;</li>
+                </ul>
             </section>
 
             <section>
                 <h1>Next Steps</h1>
                 <ul style="margin-top: 2em;">
+                    <li style="margin-top: 0em;">Continue PBBA experiments to improve and polish its implementation on SIRIUS</li>
                     <li style="margin-top: 0em;">Study the FBBA-AC method in greater depth</li>
-                    <li style="margin-top: 0em;">Assess the feasibility of implementing and testing FBBA-AC at SIRIUS
-                    </li>
+                    <li style="margin-top: 0em;">Implement and test FBBA-AC at SIRIUS</li>
                     <li style="margin-top: 0em;">Compare the overall performance of the different methods</li>
-                    <li style="margin-top: 0em;">If time permits: investigate, implement, and test other methods</li>
+                    <li style="margin-top: 0em;">Bibliographical survey of additional methods</li>
                 </ul>
             </section>
 
