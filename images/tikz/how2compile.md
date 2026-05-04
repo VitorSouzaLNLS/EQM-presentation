@@ -11,3 +11,6 @@ pdflatex bpm2quad-offset-closer.tex && inkscape -T -o bpm2quad-offset-closer.svg
 pdflatex bpm2quad-offset-ontop.tex && inkscape -T -o bpm2quad-offset-ontop.svg bpm2quad-offset-ontop.pdf
 
 pdflatex offquad-kick.tex && inkscape -T -o offquad-kick.svg offquad-kick.pdf
+
+pdflatex bpm_scheme.tex && inkscape -T -o bpm_scheme.svg bpm_scheme.pdf
+pdflatex bpm_scheme_color.tex && inkscape -T -o bpm_scheme_color.svg bpm_scheme_color.pdf

@@ -1,0 +1,9 @@
+<div class="two-columns" style="margin-top: 1em; gap: 0;">
+                    <div class="column" style="flex: 0 0 60%; align-self: center; text-align: left; margin-left: 10%;">
+                        Localized dipolar kicks disturb the closed orbit
+                    </div>
+                    <div class="column" style="margin-top: 1em;">
+                        <img src="images/closedorbit.png" height="auto" width="100%" />
+                    </div>
+                    
+                </div>

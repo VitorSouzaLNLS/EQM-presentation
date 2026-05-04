@@ -72,6 +72,11 @@ h4 {
   line-height: 1.3;
   font-weight: inherit;
 }
+
+.reveal:has(.slides section.present[data-visibility="uncounted"]) .slide-number {
+  display: none !important;
+}
+
 .reveal h1,
 .reveal h2,
 .reveal h3,
