@@ -407,27 +407,47 @@
                 </div>
             </section>
 
-            <section>
-                <h2>Closed Orbit and Orbit Distortion</h2>
-                <div class="two-columns" style="margin-top: 1em">
-                    <div class="column" style="flex: 0 0 60%; margin-left: 5%;">
-                        <p>
-                            The passage through all elements of the accelerator is described by the one-turn matrix
-                            $$M = M_{L \leftarrow s_{N}} \cdots \cdot M_{s_2 \leftarrow s_1} \cdot M_{s_1 \leftarrow s_0}$$
-                        </p>
-                        <p>
-                            The closed orbit is the fixed point of the one-turn matrix
-                            $$\mathbf{x}^* = M \mathbf{x}^*$$
-                        </p>
-                        <p>
-                            In ideal accelerator, the closed orbit is the design orbit. However, dipolar kicks distort the closed orbit
-                        </p>
-                        <p>
-                            This distortion is usually caused by field imperfections, misalignments, corrector magnets 
-                        </p>
-                    </div>
+            <section data-transition="slide-in fade-out">
+                <h2>Closed Orbit</h2>
+                <div class="two-columns" style="margin-top: 2em; gap: 0;">
+                        <div class="column" style="flex: 0 0 55%; margin-left: 5%;">
+                            <p>
+                                The passage through all elements of the accelerator is described by the one-turn matrix
+                                $$M = M_{(s_0 + L) \leftarrow s_0} = M_{L \leftarrow s_{N}} \cdots \cdot M_{s_2 \leftarrow s_1} \cdot M_{s_1 \leftarrow s_0}$$
+                            </p>
+                            <p>
+                                The closed orbit is the fixed point of the one-turn matrix
+                                $$\mathbf{x}^*(s) = M \mathbf{x}^*(s)$$
+                            </p>
+                            <p>
+                                We often call closed orbit the $x$ and $y$ components of $\mathbf{x}^*(s)$
+                                $$\vec{u} = \{x^*_{s_0}, x^*_{s_1}, \dots, x^*_{s_{N}}, y^*_{s_0}, y^*_{s_1}, \dots, y^*_{s_{N}}\}$$
+                            </p>
+                            <p>In an ideal accelerator, the closed orbit is the design orbit</p>
+                        </div>
                     <div class="column">
-                        <img src="images/closedorbit.png" width="auto" height="auto">
+                        <img src="images/tikz/orbit-closed.svg" width="auto" height="600px"/>
+                    </div>
+                </div>
+            </section>
+
+            <section data-transition="fade-in fade-out">
+                <h2>Orbit Distortion</h2>
+                <div class="two-columns" style="margin-top: 2em; gap: 0;">
+                        <div class="column" style="flex: 0 0 55%; margin-left: 5%;">
+                            <p>
+                                However, dipolar kicks that change the angle $x'$ disturb the closed orbit 
+                                $$\frac{ec}{E_0}\Delta B = \Delta x' = \theta \quad \Rightarrow \quad \mathbf{x}^*(s_0) = M \mathbf{x}^*(s_0) + \begin{pmatrix} 0 \\ \theta \end{pmatrix} $$
+                            </p>
+                            <p>
+                                The disturbance is propagated and particles now follow the perturbed closed orbit
+                            </p>
+                            <p>
+                                The main sour 
+                            </p>
+                        </div>
+                    <div class="column">
+                        <img src="images/tikz/orbit-distortion.svg" width="auto" height="600px"/>
                     </div>
                 </div>
             </section>
