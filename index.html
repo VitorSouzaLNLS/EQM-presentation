@@ -436,14 +436,19 @@
                 <div class="two-columns" style="margin-top: 2em; gap: 0;">
                         <div class="column" style="flex: 0 0 55%; margin-left: 5%;">
                             <p>
-                                However, dipolar kicks that change the angle $x'$ disturb the closed orbit 
+                                However, dipolar kicks disturb the closed orbit 
                                 $$\frac{ec}{E_0}\Delta B = \Delta x' = \theta \quad \Rightarrow \quad \mathbf{x}^*(s_0) = M \mathbf{x}^*(s_0) + \begin{pmatrix} 0 \\ \theta \end{pmatrix} $$
                             </p>
                             <p>
                                 The disturbance is propagated and particles now follow the perturbed closed orbit
                             </p>
-                            <p>
-                                The main sour 
+                            <p style="margin-top: 1em">
+                                The main sources of orbit distortion are:
+                                <ul>
+                                    <li>Field imperfections</li>
+                                    <li>Misalignments</li>
+                                    <li>Corrector magnets</li>
+                                </ul> 
                             </p>
                         </div>
                     <div class="column">
@@ -454,12 +459,42 @@
 
             <section>
                 <h2>Orbit Correction</h2>
-                <p>$$\Delta\vec{u} = \mathbf{M}\Delta\vec{\theta}$$</p>
-                <p>$$\left|\Delta\vec{u} - \mathbf{M}\Delta\vec{\theta}\right|^2$$</p>
-                <p>$$\Delta\vec{\theta} = - \mathbf{M}^\dagger\Delta\vec{u}$$</p>
+                <div class="two-columns" style="margin-top: 2em;">
+                    <div class="column" style="flex: 0 0 50%;">
+                        <p>
+                            For the accelerator to perform as designed, we need the closed orbit the closest to the design orbit
+                        </p>
+                        <p style="margin-top: 1em">
+                            &RightArrow;To do this, we need to observe and correct the orbit
+                        </p>
+                        <p style="margin-top: 1em">
+                            &bullet; BPMs measure the orbit and the orbit distortion ($\Delta\vec{u}$)
+                        </p>
+                        <p style="margin-top: 1em">
+                            &bullet; Corrector magnets kick the beam ($\Delta\vec{\theta}$)
+                        </p>
+                        <p style="margin-top: 1em">
+                            &bullet; With the Orbit Response Matrix ($\mathbf{M}$) we know how the kicks affect the orbit
+                        </p>
+                    </div>
+                    <div class="column">
+                        <p style="margin-top: 1em">
+                            $$\Delta\vec{u} = \mathbf{M}\Delta\vec{\theta}$$
+                        </p>
+                        
+                        <p> 
+                            Then, to correct the orbit, we minimize
+                            $$\left|\Delta\vec{u} - \mathbf{M}\Delta\vec{\theta}\right|^2$$
+                        </p>
+                        <p>
+                            &RightArrow; Which provides the necessary kicks to correct the orbit
+                            $$\Delta\vec{\theta} = - \mathbf{M}^\dagger\Delta\vec{u}$$
+                        </p>
+                    </div>
+                </div>
             </section>
 
-            <section data-transition="slide-in fade-out">
+            <!-- <section data-transition="slide-in fade-out">
                 <h2>Orbit Feedback-System</h2>
                 <p style="margin-top: 1em">
                     In the SIRIUS Storage Ring, we have sensors,
@@ -476,7 +511,7 @@
                         FOFB and SOFB
                     </li>
                 </ul>
-            </section>
+            </section> -->
 
             <section data-transition="fade-in fade-out">
                 <h2>Orbit Feedback-System: Beam Position Monitors</h2>
@@ -492,10 +527,10 @@
                     </div>
                     <div class="column" style="align-self: center;">
                         <p>
-                            &bullet; 160 BPMs
+                            &bullet; At SIRIUS: 160 BPMs
                         </p>
                         <p>
-                            Two pairs of antennas that read the transverse beam position
+                                Two pairs of antennas that read the transverse beam position
                         </p>
                         <div class="r-stack">
                             <p class="fragment fade-out" data-fragment-index="0">
@@ -504,7 +539,7 @@
                             </p>  
                             <p class="fragment current-visible" data-fragment-index="0">
                                 $$x \propto \dfrac{{\color{blue}(A + D)} - \color{red}{(B + C)}}{A + B + C + D}$$
-                                $$y \propto \dfrac{{\color{darkgreen}(A + B)} - {\color{darkorange}(C + D)}}{A + B + C + D}$$
+                                $$y \propto \dfrac{{\color{green}(A + B)} - {\color{darkorange}(C + D)}}{A + B + C + D}$$
                             </p>   
                         </div>
                         <p>&RightArrow; Sub-micron resolution</p>
@@ -519,6 +554,9 @@
                         <img src="images/png/Fast_corrector.png" style="max-width: 100%; height: auto; border: none" />
                     </div>
                     <div class="column">
+                        <p>
+                            At SIRIUS:
+                        </p>
                         <ul>
                             <li>120 CH (slow horizontal correctors)</li>
                             <li>160 CV (slow vertical correctors)</li>
