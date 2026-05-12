@@ -32,7 +32,7 @@
     <link rel="stylesheet" href="styles/rootstyle.css" id="rootstyle" />
     <link rel="stylesheet" href="styles/mystyle.css" id="mystyle" />
     <link rel="stylesheet" href="styles/white.css" id="theme" />
-    <link rel="stylesheet" href="styles/revmod.css" id="theme" />
+    <link rel="stylesheet" href="styles/revmod.css" id="theme2" />
 
     <script type="importmap">
       {
@@ -110,15 +110,10 @@
                                 <td style="text-align: center">200 mA</td>
                                 <td style="text-align: center">350 mA</td>
                             </tr>
-                            <tr class="no-rule">
-                                <td>Lifetime</td>
-                                <td style="text-align: center">≈ 17 h</td>
-                                <td style="text-align: center">≈ 10 h</td>
-                            </tr>
                             <tr class="bottom-rule">
-                                <td>Number of beamlines</td>
-                                <td style="text-align: center">A</td>
-                                <td style="text-align: center">B</td>
+                                <td>Lifetime</td>
+                                <td style="text-align: center">≈ 8 h</td>
+                                <td style="text-align: center"> &GT;10 h</td>
                             </tr>
                         </table>
                     </div>
@@ -147,7 +142,7 @@
                 <h2>Motivation</h2>
                 <ul>
                     <li style="margin-top: 1em">
-                        The SIRIUS's Storage Ring needs <b>sub-micrometer orbit stability</b> to
+                        The SIRIUS Storage Ring needs <b>sub-micrometer orbit stability</b> to
                         maintain its performance
                     </li>
                     <li style="margin-top: 1em" class="fragment fade-in">
@@ -176,7 +171,7 @@
                         width: 80%;
                         margin-left: 10%;
                     ">
-                        The current BBA procedure is very time-consuming (6&Tilde;8 hours) 
+                        The current BBA procedure is very time-consuming (6&dash;8 hours)
                     </p>
                 </div>
             </section>
@@ -277,13 +272,13 @@
                     <div class="column r-stack" style="border: 2px solid; border-radius: 30px; padding-top: 0.5em">
                         <div class="fragment fade-out" data-fragment-index="1">
                             Dipole: <br />
-                            <image src="images/png/B2fig.png" style="height: 200px; width: auto; align-self: center" />
+                            <img src="images/png/B2fig.png" style="height: 200px; width: auto; align-self: center" />
                             $$\Biggl\{ \begin{array}{l} B_x = 0 \\ B_y = B_0 \end{array}
                             \Biggr.$$
                         </div>
                         <div class="fragment current-visible" data-fragment-index="1">
                             Dipole: <br />
-                            <image src="images/png/field-dip.png"
+                            <img src="images/png/field-dip.png"
                                 style="height: 250px; width: auto; align-self: center" />
                             <p>$G(s) \equiv \dfrac{ec}{E_0}B_0(s) = \dfrac{1}{\rho(s)}$</p>
                             <p style="margin-top: 1em;">(Curvature function)</p>
@@ -293,13 +288,13 @@
                     <div class="column r-stack" style="border: 2px solid; border-radius: 30px; padding-top: 0.5em">
                         <div class="fragment fade-out" data-fragment-index="1">
                             Quadrupole: <br />
-                            <image src="images/png/Quad.png" style="height: 200px; width: auto; align-self: center" />
+                            <img src="images/png/Quad.png" style="height: 200px; width: auto; align-self: center" />
                             $$\Biggl\{ \begin{array}{l} B_x = B_1 y \\ B_y = B_1 x \end{array}
                             \Biggr.$$
                         </div>
                         <div class="fragment current-visible" data-fragment-index="1">
                             Quadrupole: <br />
-                            <image src="images/png/field-quad.png"
+                            <img src="images/png/field-quad.png"
                                 style="height: 250px; width: auto; align-self: center" />
                             <p>$K(s) \equiv \dfrac{ec}{E_0}B_1(s)$</p>
                             <p style="margin-top: 1em;">(Focusing function)</p>
@@ -310,14 +305,14 @@
                     <div class="column r-stack" style="border: 2px solid; border-radius: 30px; padding-top: 0.5em">
                         <div class="fragment fade-out" data-fragment-index="1">
                             Skew Quadrupole: <br />
-                            <image src="images/png/QS_booster.png"
+                            <img src="images/png/QS_booster.png"
                                 style="height: 200px; width: auto; align-self: center" />
                             $$\Biggl\{ \begin{array}{l} B_x = A_1 x\\ B_y = -A_1 y \end{array}
                             \Biggr.$$
                         </div>
                         <div class="fragment current-visible" data-fragment-index="1">
                             Skew Quadrupole: <br />
-                            <image src="images/png/field-qs.png"
+                            <img src="images/png/field-qs.png"
                                 style="height: 250px; width: auto; align-self: center" />
                             <p>$K_S(s) \equiv \dfrac{ec}{E_0}A_1(s)$</p>
                             <p style="margin-top: 1em;">(Skew quad. strength)</p>
@@ -410,23 +405,25 @@
             <section data-transition="slide-in fade-out">
                 <h2>Closed Orbit</h2>
                 <div class="two-columns" style="margin-top: 2em; gap: 0;">
-                        <div class="column" style="flex: 0 0 55%; margin-left: 5%;">
-                            <p>
-                                The passage through all elements of the accelerator is described by the one-turn matrix
-                                $$M = M_{(s_0 + L) \leftarrow s_0} = M_{L \leftarrow s_{N}} \cdots \cdot M_{s_2 \leftarrow s_1} \cdot M_{s_1 \leftarrow s_0}$$
-                            </p>
-                            <p>
-                                The closed orbit is the fixed point of the one-turn matrix
-                                $$\mathbf{x}^*(s) = M \mathbf{x}^*(s)$$
-                            </p>
-                            <p>
-                                We often call closed orbit the $x$ and $y$ components of $\mathbf{x}^*(s)$
-                                $$\vec{u} = \{x^*_{s_0}, x^*_{s_1}, \dots, x^*_{s_{N}}, y^*_{s_0}, y^*_{s_1}, \dots, y^*_{s_{N}}\}$$
-                            </p>
-                            <p>In an ideal accelerator, the closed orbit is the design orbit</p>
-                        </div>
+                    <div class="column" style="flex: 0 0 55%; margin-left: 5%;">
+                        <p>
+                            The passage through all elements of the accelerator is described by the one-turn matrix
+                            $$M = M_{(s_0 + L) \leftarrow s_0} = M_{L \leftarrow s_{N}} \cdots \cdot M_{s_2 \leftarrow
+                            s_1} \cdot M_{s_1 \leftarrow s_0}$$
+                        </p>
+                        <p>
+                            The closed orbit is the fixed point of the one-turn matrix
+                            $$\mathbf{x}^*(s) = M \mathbf{x}^*(s)$$
+                        </p>
+                        <p>
+                            We often call closed orbit the $x$ and $y$ components of $\mathbf{x}^*(s)$
+                            $$\vec{u} = \{x^*_{s_0}, x^*_{s_1}, \dots, x^*_{s_{N}}, y^*_{s_0}, y^*_{s_1}, \dots,
+                            y^*_{s_{N}}\}$$
+                        </p>
+                        <p>In an ideal accelerator, the closed orbit is the design orbit</p>
+                    </div>
                     <div class="column">
-                        <img src="images/tikz/orbit-closed.svg" width="auto" height="600px"/>
+                        <img src="images/tikz/orbit-closed.svg" width="auto" height="600px" />
                     </div>
                 </div>
             </section>
@@ -434,25 +431,26 @@
             <section data-transition="fade-in fade-out">
                 <h2>Orbit Distortion</h2>
                 <div class="two-columns" style="margin-top: 2em; gap: 0;">
-                        <div class="column" style="flex: 0 0 55%; margin-left: 5%;">
-                            <p>
-                                However, dipolar kicks disturb the closed orbit 
-                                $$\frac{ec}{E_0}\Delta B = \Delta x' = \theta \quad \Rightarrow \quad \mathbf{x}^*(s_0) = M \mathbf{x}^*(s_0) + \begin{pmatrix} 0 \\ \theta \end{pmatrix} $$
-                            </p>
-                            <p>
-                                The disturbance is propagated and particles now follow the perturbed closed orbit
-                            </p>
-                            <p style="margin-top: 1em">
-                                The main sources of orbit distortion are:
-                                <ul>
-                                    <li>Field imperfections</li>
-                                    <li>Misalignments</li>
-                                    <li>Corrector magnets</li>
-                                </ul> 
-                            </p>
-                        </div>
+                    <div class="column" style="flex: 0 0 55%; margin-left: 5%;">
+                        <p>
+                            However, dipolar kicks disturb the closed orbit
+                            $$\frac{ec}{E_0}\Delta B = \Delta x' = \theta \quad \Rightarrow \quad \mathbf{x}^*(s_0) = M
+                            \mathbf{x}^*(s_0) + \begin{pmatrix} 0 \\ \theta \end{pmatrix} $$
+                        </p>
+                        <p>
+                            The disturbance is propagated and particles now follow the perturbed closed orbit
+                        </p>
+                        <p style="margin-top: 1em">
+                            The main sources of orbit distortion are:
+                        <ul>
+                            <li>Field imperfections</li>
+                            <li>Misalignments</li>
+                            <li>Corrector magnets</li>
+                        </ul>
+                        </p>
+                    </div>
                     <div class="column">
-                        <img src="images/tikz/orbit-distortion.svg" width="auto" height="600px"/>
+                        <img src="images/tikz/orbit-distortion.svg" width="auto" height="600px" />
                     </div>
                 </div>
             </section>
@@ -462,27 +460,31 @@
                 <div class="two-columns" style="margin-top: 2em;">
                     <div class="column" style="flex: 0 0 50%;">
                         <p>
-                            For the accelerator to perform as designed, we need the closed orbit the closest to the design orbit
+                            For the accelerator to perform as designed, we need the closed orbit the closest to the
+                            design orbit
                         </p>
                         <p style="margin-top: 1em">
                             &RightArrow;To do this, we need to observe and correct the orbit
                         </p>
-                        <p style="margin-top: 1em">
-                            &bullet; BPMs measure the orbit and the orbit distortion ($\Delta\vec{u}$)
-                        </p>
-                        <p style="margin-top: 1em">
-                            &bullet; Corrector magnets kick the beam ($\Delta\vec{\theta}$)
-                        </p>
-                        <p style="margin-top: 1em">
-                            &bullet; With the Orbit Response Matrix ($\mathbf{M}$) we know how the kicks affect the orbit
-                        </p>
+                        <ul>
+                            <li style="margin-top: 1em">
+                                BPMs measure the orbit and the orbit distortion ($\Delta\vec{u}$)
+                            </li>
+                            <li style="margin-top: 1em">
+                                Corrector magnets kick the beam ($\vec{\theta}$)
+                            </li>
+                            <li style="margin-top: 1em">
+                                The Orbit Response Matrix ($\mathbf{M}$) describes how kicks affect the orbit
+                            </li>
+                        </ul>
+
                     </div>
                     <div class="column">
                         <p style="margin-top: 1em">
                             $$\Delta\vec{u} = \mathbf{M}\Delta\vec{\theta}$$
                         </p>
-                        
-                        <p> 
+
+                        <p>
                             Then, to correct the orbit, we minimize
                             $$\left|\Delta\vec{u} - \mathbf{M}\Delta\vec{\theta}\right|^2$$
                         </p>
@@ -517,12 +519,14 @@
                 <h2>Orbit Feedback-System: Beam Position Monitors</h2>
                 <div class="multiple-columns" style="gap: 0.5em; margin-top: 2em">
                     <div class="column" style="flex: 0 0 30%; align-self: center;">
-                        <img src="images/png/sirius_bpm.png" width="100%" height="auto"/>
+                        <img src="images/png/sirius_bpm.png" width="100%" height="auto" />
                     </div>
                     <div class="column" style="flex: 0 0 29%; align-self: center">
                         <div class="r-stack">
-                            <img src="images/tikz/bpm_scheme.svg" style="width: 100%; height: auto; border: none" class="fragment fade-out" data-fragment-index="0"/>
-                            <img src="images/tikz/bpm_scheme_color.svg" style="width: 100%; height: auto; border: none" class="fragment current-visible" data-fragment-index="0"/>
+                            <img src="images/tikz/bpm_scheme.svg" style="width: 100%; height: auto; border: none"
+                                class="fragment fade-out" data-fragment-index="0" />
+                            <img src="images/tikz/bpm_scheme_color.svg" style="width: 100%; height: auto; border: none"
+                                class="fragment current-visible" data-fragment-index="0" />
                         </div>
                     </div>
                     <div class="column" style="align-self: center;">
@@ -530,17 +534,18 @@
                             &bullet; At SIRIUS: 160 BPMs
                         </p>
                         <p>
-                                Two pairs of antennas that read the transverse beam position
+                            Two pairs of antennas that read the transverse beam position
                         </p>
                         <div class="r-stack">
                             <p class="fragment fade-out" data-fragment-index="0">
                                 $$x \propto \dfrac{(A + D) - (B + C)}{A + B + C + D}$$
                                 $$y \propto \dfrac{(A + B) - (C + D)}{A + B + C + D}$$
-                            </p>  
+                            </p>
                             <p class="fragment current-visible" data-fragment-index="0">
                                 $$x \propto \dfrac{{\color{blue}(A + D)} - \color{red}{(B + C)}}{A + B + C + D}$$
-                                $$y \propto \dfrac{{\color{green}(A + B)} - {\color{darkorange}(C + D)}}{A + B + C + D}$$
-                            </p>   
+                                $$y \propto \dfrac{{\color{green}(A + B)} - {\color{darkorange}(C + D)}}{A + B + C +
+                                D}$$
+                            </p>
                         </div>
                         <p>&RightArrow; Sub-micron resolution</p>
                     </div>
@@ -563,7 +568,7 @@
                             <li>80 FCH (fast horizontal correctors)</li>
                             <li>80 FCV (fast vertical correctors)</li>
                         </ul>
-                        <image src="images/png/SI_AB.png"
+                        <img src="images/png/SI_AB.png"
                             style="height: auto; width: 100%; border: none; margin-top: 2em" />
                     </div>
                 </div>
@@ -606,7 +611,7 @@
                     </div>
                 </div>
                 <p style="margin-top: 2em">
-                    SOFB download kicks (4% @ 10 Hz) from FOFB to avoid the
+                    SOFB downloads kicks (4% @ 10 Hz) from FOFB to avoid the
                     saturation of the fast correctors
                 </p>
             </section>
@@ -636,13 +641,44 @@
 
             <section data-transition="slide-in fade-out">
                 <h2>The BBA Principle</h2>
-                
+                <div class="two-columns" style="gap: 0em; margin-top: 2em">
+                    <div class="column" style="flex: 0 0 50%; align-self: center; margin-left: 0">
+                        <p>&bullet; The beam itself is used as a surveying tool to determine the offset between a BPM's
+                            electric center and the magnetic center of a magnet
+                        </p>
+                        <p style="margin-top: 1em;">
+                            &bullet; Quadrupoles are the most suitable elements for this purpose since their strength, the beam
+                            position and the orbit are linearly related: $\Delta x'= -KL\, x$
+                        </p>
+                    </div>
+                    <div class="column" style="align-self: center; align-content: center; border: 0;">
+                        <!-- <p>$\Delta x' = -KL\, x$</p>
+                        <img src="images/tikz/bba_principle_K0.svg" width="90%" class="fragment fade-out" data-fragment-index="0"/>
+                        <img src="images/tikz/bba_principle_K0.svg" width="90%" class="fragment current-visible" data-fragment-index="0"/>
+                        <img src="images/tikz/bba_principle_K0.svg" width="90%" class="fragment" data-fragment-index="0"/> -->
+
+                        <div id="bba-three-container" style="width: 100%; height: 400px; padding: 0; margin: 0;"></div>
+                        <div id="bba-label-BPM">BPM</div>
+                        <div id="bba-label-Quad">Quad</div>
+                        <div id="bba-label-zero">0</div>
+                        <div id="bba-label-K0">$K_0$</div>
+                        <div id="bba-label-Kp">$K^+$</div>
+                        <div id="bba-label-Km">$K^-$</div>
+                        <div id="bba-label-beam">Beam</div>
+                        <span class="fragment bba-step" data-fragment-index="0"></span>
+                        <span class="fragment bba-step" data-fragment-index="1"></span>
+                        <span class="fragment bba-step" data-fragment-index="2"></span>
+                        <script src="scripts/bba-principle.js" type="module"></script>
+                    </div>
+                </div>
+                <div class="fragment fade-in" data-fragment-index="3">&RightArrow; Therefore, BBA is the experimental
+                    method of defining the BPMs ideal reference</div>
             </section>
 
             <section data-transition="slide-in fade-out">
                 <h2>Standard BBA</h2>
                 <p style="margin-top: 1em">
-                    The standard BBA method emerged in the 80s&Tilde;90s with seminal works
+                    The standard BBA method emerged in the 80s&dash;90s with seminal works
                 </p>
                 <ul>
                     <li style="margin-top: 0.5em; font-size: 0.75em">
@@ -699,14 +735,16 @@
                         $\Delta \vec{u}_i$
                     </li>
                     <li style="list-style: none; margin-top: 0.5em">
-                        &RightArrow; Minimize $\left|\Delta u - (ar + b)\right|^2$ (linear fit) or $\left|(\Delta u)^2 - (ar^2 + br + c)\right|$ (quadratic fit)
+                        &RightArrow; Minimize $\left|\Delta u - (ar + b)\right|^2$ (linear fit) or $\left|(\Delta u)^2 -
+                        (ar^2 + br + c)\right|$ (quadratic fit)
                     </li>
                     <li style="list-style: none; margin-top: 0.5em">
-                        &RightArrow; Obtain the offsets: $r_\text{offset} = \left\langle\dfrac{-b}{a}\right\rangle$ or $r_\text{offset} = \left(\dfrac{-b}{2a}\right)$
+                        &RightArrow; Obtain the offsets: $r_\text{offset} = \left\langle\dfrac{-b}{a}\right\rangle$ or
+                        $r_\text{offset} = \left(\dfrac{-b}{2a}\right)$
                     </li>
                 </ul>
             </section>
-            
+
             <section data-transition="fade-in slide-out">
                 <h2>Standard BBA</h2>
                 <p style="margin-top: 2em;">At SIRIUS:</p>
@@ -715,26 +753,27 @@
                     <li style="list-style-type: square;">90 normal quadrupoles and 70 skew quadrupoles</li>
                     <li style="list-style-type: square;">orbit shifts on both planes ($x$, $y$) simultaneously</li>
                     <li style="list-style-type: square;">9 scan points per BPM (range: &plusmn;100&mu;m)</li>
-                    <li style="list-style-type: square;">approximately 2&Tilde;3 min per BPM</li>
-                    <li style="list-style-type: square;">6&Tilde;8 hours for a full BBA procedure</li>
+                    <li style="list-style-type: square;">approximately 2&dash;3 min per BPM</li>
+                    <li style="list-style-type: square;">6&dash;8 hours for a full BBA procedure</li>
                 </ul>
             </section>
-            
+
             <section data-transition="fade-in fade-out">
                 <h2>Standard BBA</h2>
                 <p style="margin-top: 1em;">Typical standard BBA results at SIRIUS for a single BPM</p>
                 <img src="images/png/BBA-bpm-summary.png" height="600px" width="auto" />
             </section>
 
-            
+
 
             <section data-transition="slide-in fade-out">
                 <h2>Parallel BBA</h2>
-                <p style="margin-top: 1em">The Parallel Beam Beam Alignment (PBBA) was proposed by <em>Xiaobiao
+                <p style="margin-top: 1em">The Parallel Beam-Based Alignment (PBBA) was proposed by <em>Xiaobiao
                         Huang</em> in 2022</p>
                 <img src="images/png/PBBA-frontface.png" height="250px" width="auto"
                     style="border: 3px solid black; border-radius: 20px; margin-top: 0em" />
-                <p class="fragment fade-in" data-fragment-index="0">Since then, it has been simulated and experimented on
+                <p class="fragment fade-in" data-fragment-index="0">Since then, it has been simulated and experimented
+                    on
                     accelerators such as</p>
                 <ul style="font-size: 0.75em;" class="fragment fade-in" data-fragment-index="0">
                     <li> LCLS-II (USA, SLAC, 2022)</li>
@@ -836,8 +875,6 @@
                 </ul>
             </section>
 
-            </section>
-
             <section data-visibility="uncounted">
                 <h1>Preliminary Results</h1>
             </section>
@@ -896,7 +933,7 @@
                         Jan 5, 2026 &mdash; Parallel BBA vs Standard BBA
                     </li>
                     <li style="margin-top: 1em;">
-                        Jan 12 and Feb 9, 2026 &mdash; Groups rearrangement and convegence analysis
+                        Jan 12 and Feb 9, 2026 &mdash; Group rearrangement and convegence analysis
                     </li>
                 </ul>
             </section>
@@ -904,7 +941,7 @@
             <section data-transition="fade-in fade-out">
                 <h2>Parallel BBA: Experiments</h2>
                 <p style="margin-top: 0em; font-size: 0.8em;">
-                    &bullet; October 13, 2025
+                    &bullet; Oct 13, 2025
                 </p>
                 <div class="r-stack" style="margin-top: 0;">
                     <div class="fragment semi-fade-out" data-fragment-index="0">
@@ -918,7 +955,7 @@
                     <div class="fragment current-visible" data-fragment-index="0">
                         <p style="border: 2px solid; border-radius: 30px; padding: 1em; background-color: lightyellow;">
                             &bullet; The Standard BBA runs for the group of 4 selected BPMs took &Tilde;8 minutes
-                            (&approx; 2min/BPM)<br>
+                            (&approx; 2 min/BPM)<br>
                             &bullet; Each PBBA run for both groups took &Tilde;1 minute &RightArrow; does not scale with
                             the number of BPMs<br><br>
                             &bullet; For the group of 4 selected BPMs, the results between the Standard BBA and PBBA
@@ -932,7 +969,7 @@
             <section data-transition="fade-in fade-out">
                 <h2>Parallel BBA: Experiments</h2>
                 <p style="margin-top: 0em; font-size: 0.8em;">
-                    &bullet; December 8, 2025: Full PBBA (all "default" groups)
+                    &bullet; Dec 8, 2025: Full PBBA (all "default" groups)
                 </p>
                 <div class="r-stack" style="margin-top: 0;">
                     <div class="fragment semi-fade-out" data-fragment-index="0">
@@ -940,8 +977,8 @@
                     </div>
                     <div class="fragment current-visible" data-fragment-index="0">
                         <p style="border: 2px solid; border-radius: 30px; padding: 1em; background-color: lightyellow;">
-                            &bullet; Each full PBBA run took &approx; 4min (1 min/group)<br><br>
-                            &bullet; For all groups, the differences between each PBBA run are smaller then &pm;8&mu;m
+                            &bullet; Each full PBBA run took &approx; 4 min (1 min/group)<br><br>
+                            &bullet; For all groups, the differences between each PBBA run are smaller than &pm;8&mu;m
                         </p>
                     </div>
                 </div>
@@ -950,7 +987,7 @@
             <section data-transition="fade-in fade-out">
                 <h2>Parallel BBA: Experiments</h2>
                 <p style="margin-top: 2em; font-size: 0.8em;">
-                    &bullet; January 5, 2025: Full PBBA before and after a full Standard BBA
+                    &bullet; Jan 5, 2026: Full PBBA before and after a full Standard BBA
                 </p>
                 <div class="r-stack" style="margin-top: 0;">
                     <div class="fragment semi-fade-out" data-fragment-index="0">
@@ -965,7 +1002,7 @@
                     </div>
                     <div class="fragment current-visible" data-fragment-index="0">
                         <p style="border: 2px solid; border-radius: 30px; padding: 1em; background-color: lightyellow;">
-                            &bullet; The differences between the results of Standard BBA and PBBA are smaller then
+                            &bullet; The differences between the results of Standard BBA and PBBA are smaller than
                             &pm;30&mu;m<br>with $\sigma_x$ = &pm;3.46&mu;m and $\sigma_y$ = &pm;6.78&mu;m
                         </p>
                     </div>
@@ -975,7 +1012,7 @@
             <section data-transition="fade-in fade-out">
                 <h2>Parallel BBA: Experiments</h2>
                 <p style="margin-top: 2em; font-size: 0.8em;">
-                    &bullet; January 12 and February 9, 2026
+                    &bullet; Jan 12 and Feb 9, 2026
                 </p>
                 <div class="r-stack" style="margin-top: 0;">
                     <div class="fragment semi-fade-out" data-fragment-index="0">
@@ -990,9 +1027,9 @@
                     </div>
                     <div class="fragment current-visible" data-fragment-index="0">
                         <p style="border: 2px solid; border-radius: 30px; padding: 1em; background-color: lightyellow;">
-                            &bullet; For all the configuration of groups, the convegence is achieved in 3&Tilde;4
+                            &bullet; For all group configurations, convegence is achieved in 3&dash;4
                             iterations<br>
-                            &RightArrow; which reduces the run execution time by 33%&Tilde;50%<br><br>
+                            &RightArrow; which reduces the run execution time by 33%&dash;50%<br><br>
                             &bullet; The configuration of 8 groups is the most stable: kicks converge and stay
                             still<br><br>
                             &bullet; For a single BPM, the differences between the Standard BBA and PBBA runs are:<br>
@@ -1008,10 +1045,10 @@
 
             <section data-transition="fade-in slide-out">
                 <h2>Parallel BBA: Partial Conclusion</h2>
-                <p style="margin-top: 2em;">Until now PBBA has shown:</p>
+                <p style="margin-top: 2em;">So far, PBBA has shown:</p>
                 <ul>
-                    <li style="list-style-type: square;">High speed &mdash; the execution time is 45&Tilde;90 times
-                        faster (6 hours to 4&Tilde;8 minutes)</li>
+                    <li style="list-style-type: square;">High speed &mdash; the execution time is 45&dash;90 times
+                        faster (6 hours to 4&dash;8 minutes)</li>
                     <li style="list-style-type: square;">Accuracy &mdash; comparisons with Standard BBA show differences
                         of a few microns </li>
                     <li style="list-style-type: square;">Repeatability &mdash; PBBA runs under the same configuration
@@ -1036,7 +1073,8 @@
                 <h1>Next Steps</h1>
                 <div style="margin-top: 2em;">
                     <ul>
-                        <li>A contribution work to be presented at the IPAC'26 (International Particle Accelerator Conference)</li>
+                        <li>A contribution to be presented at the IPAC'26 (International Particle Accelerator
+                            Conference)</li>
                         <li>Continue PBBA experiments to improve and polish the implementation</li>
                         <li>Study the FBBA-AC method in greater depth</li>
                         <li>Implement and validate FBBA-AC at SIRIUS</li>
