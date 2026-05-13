@@ -785,7 +785,7 @@
 
             <section data-transition="fade-in fade-out">
                 <h2>Parallel BBA</h2>
-                <div class="two-columns">
+                <!-- <div class="two-columns">
                     <div class="column" style="flex: 0 0 50%;">
                         <p style="margin-top: 1em">
                             &bullet; The central idea is to minimize the <b>Induced Orbit Shift</b> (IOS)
@@ -831,7 +831,24 @@
                             \vec{u}(\vec{\theta}, \vec{K}_0) = \vec{u}(\vec{\theta}, \vec{K}^\pm)$
                         </p>
                     </div>
-                </div>
+                </div> -->
+                <p style="margin-top: 1em">
+                    &bullet; The central idea is to speedup the BBA execution time by calibrating many BPMs simultaneously
+                </p>
+
+                <p style="margin-top: 1em" class="fragment fade-in">
+                    &bullet; For that, BPM-Quadrupole pairs are separated into groups
+                </p>
+
+                <p style="margin-top: 1em;" class="fragment fade-in">
+                    &bullet; For each group, the strength of the quadrupoles are modulated at once, producing the Induced Orbit Shift  
+                </p>
+
+                <p style="margin-top: 1em" class="fragment fade-in">
+                    &bullet; Minimizing the IOS therefore means the beam is centered at the magnetic center of the modulated quadrupoles
+                </p>
+
+                <p style="margin-top: 1em" class="fragment fade-in">&bullet; The readings of the BPMs of the group when the IOS is minimized yields the offsets directly</p>
             </section>
 
             <section data-transition="fade-in fade-out">
@@ -857,19 +874,15 @@
                         $\rightarrow$ For each group, do:
                     </li>
                     <li style="list-style: none; margin-top: 0.5em">
-                        $\qquad\rightarrow$ Loop while $\vec{\xi} \neq 0$
-                    </li>
-                    <li style="list-style: none; margin-top: 0.5em">
-                        $\qquad\qquad\rightarrow$ Measure the IOS: $\vec{\xi} = \frac{1}{2}\left(\vec{u}(\vec{\theta},
-                        K^+) - \vec{u}(\vec{\theta}, K^-)\right)$
+                        $\qquad\rightarrow$ Measure the IOS: $\vec{\xi} = \vec{u}(\vec{\theta},
+                        K^+) - \vec{u}(\vec{\theta}, K^-)$
                     </li>
                     <li style="list-style: none; margin-top: 0.5em">
                         $\qquad\qquad\rightarrow$ Compute the delta kicks ($\Delta\vec{\theta} =
                         -\mathbf{R}^{-1}\vec{\xi})$ and apply ($\vec{\theta} = \vec{\theta} + \Delta\vec{\theta}$)
                     </li>
                     <li style="list-style: none; margin-top: 0.5em">
-                        $\qquad\rightarrow$ Read and save the offsets: $\vec{u}_\text{offset} = \vec{u}(\vec{\theta},
-                        \vec{K}_0) = \vec{u}(\vec{\theta}, \vec{K}^\pm)$
+                        $\qquad\rightarrow$ Read the offsets of the BPMs of the group from $\vec{u}(\vec{\theta}, \vec{K}_0)$
                     </li>
                 </ul>
             </section>
