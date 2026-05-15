@@ -171,7 +171,7 @@
                         width: 80%;
                         margin-left: 10%;
                     ">
-                        The current BBA procedure is very time-consuming (6&dash;8 hours)
+                        The current BBA procedure is very <b>time-consuming</b> (6&dash;8 hours)
                     </p>
                 </div>
             </section>
@@ -541,8 +541,8 @@
                             $$x \propto \dfrac{(A + D) - (B + C)}{A + B + C + D}$$
                             $$y \propto \dfrac{(A + B) - (C + D)}{A + B + C + D}$$
                         </p>
-                        <p>&RightArrow; High precision &Tilde; sub-micron</p>
-                        <p>&RightArrow; Low accuracy &Tilde; 100&mu;m<br>(fabrication, mechanical and electrical errors)
+                        <p>&RightArrow; High precision &sim;sub-micron</p>
+                        <p>&RightArrow; Low accuracy &sim;100&mu;m<br>(fabrication, mechanical and electrical errors)
                         </p>
                     </div>
                 </div>
@@ -616,8 +616,8 @@
                 <div class="two-columns" style="gap: 0em; margin-top: 2em">
                     <div class="column" style="flex: 0 0 65%; justify-content: space-evenly;">
                         <p style="margin-top: 2em">
-                            The electric center of BPMs is inaccurate and larger than<br> the alignment tolerance of
-                            magnets (&lsim; 30&mu;m)
+                            The electric center of BPMs is inaccurate (&sim;100&mu;m) and larger than<br> the alignment tolerance of
+                            magnets (&sim;30&mu;m)
                         </p>
                         <p style="margin-top: 2em" class="fragment fade-in">
                             &RightArrow; We use the beam as a probe to calibrate the BPM offsets<br>
@@ -718,7 +718,7 @@
                 </ul>
                 <p style="margin-top: 1em" class="fragment fade-in">
                     The method consists of modulating the
-                    strength of quadrupoles in discrete steps and <br> scanning the orbit (also discrete) on the BPMs to
+                    strength of quadrupoles in discrete steps and <br> scanning the orbit, also in discrete  steps, on the BPMs to
                     find
                     the offsets
                 </p>
@@ -740,14 +740,20 @@
                                 padding: 1em;
                                 ">
                             <li style="list-style: none; margin-top: 0em">
-                                &RightArrow; Scan the beam position on a BPM: $r_i$ = $x_i$ or $y_i$
+                                &RightArrow; For each BPM
+                            </li>
+                            <li style="list-style: none; margin-top: 0em">
+                                &nbsp;&nbsp;&nbsp;&nbsp;
+                                &RightArrow; Scan the beam position: $r_i$ = $x_i$ or $y_i$
                             </li>
                             <li style="list-style: none; margin-top: 0.5em">
+                                &nbsp;&nbsp;&nbsp;&nbsp;
                                 &nbsp;&nbsp;&nbsp;&nbsp;
                                 &RightArrow; For each $r_i$, vary the quadrupole
                                 strength: $K^\pm = K_0 \pm \Delta K$
                             </li>
                             <li style="list-style: none; margin-top: 0.5em">
+                                &nbsp;&nbsp;&nbsp;&nbsp;
                                 &nbsp;&nbsp;&nbsp;&nbsp;
                                 &nbsp;&nbsp;&nbsp;&nbsp;
                                 &RightArrow; For each $K^\pm$, collect the orbit on
@@ -757,11 +763,14 @@
                                 &nbsp;&nbsp;&nbsp;&nbsp;
                                 &nbsp;&nbsp;&nbsp;&nbsp;
                                 &nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;
                                 &RightArrow; Calculate the orbit distortion:
-                                $\Delta \vec{u}_i$
+                                $\Delta \vec{u}_i = \frac{1}{2}(\vec{u}^+_i - \vec{u}^-_i)$
                             </li>
                             <li style="list-style: none; margin-top: 0.5em">
+                                &nbsp;&nbsp;&nbsp;&nbsp;
                                 &RightArrow; Minimize $\left|\Delta u - (ar + b)\right|^2$ (linear fit) <br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;
                                 &nbsp;&nbsp;&nbsp;&nbsp;
                                 &nbsp;&nbsp;&nbsp;&nbsp;
                                 &nbsp;&nbsp;
@@ -769,7 +778,8 @@
                                 (ar^2 + br + c)\right|$ (quadratic fit)
                             </li>
                             <li style="list-style: none; margin-top: 0.5em">
-                                &RightArrow; Obtain the offsets: $r_\text{offset} =
+                                &nbsp;&nbsp;&nbsp;&nbsp;
+                                &RightArrow; Obtain the offset: $r_\text{offset} =
                                 \left\langle\dfrac{-b}{a}\right\rangle$ or
                                 $r_\text{offset} = \left(\dfrac{-b}{2a}\right)$
                             </li>
@@ -909,7 +919,7 @@
                         &RightArrow; Define $\vec{K}^+$ and $\vec{K}^-$ for each group
                     </li>
                     <li style="list-style: none; margin-top: 0.5em">
-                        &RightArrow; Get the IOS Response Matrix $\mathbf{R}$ for each group
+                        &RightArrow; Get the IOS Response Matrix $\mathbf{J}$ for each group
                     </li>
                     <li style="list-style: none; margin-top: 0.5em">
                         &RightArrow; For each group, do:
@@ -917,12 +927,12 @@
                     <li style="list-style: none; margin-top: 0.5em">
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         &RightArrow; Measure the IOS: $\vec{\xi} = \vec{u}(\vec{\theta},
-                        K^+) - \vec{u}(\vec{\theta}, K^-)$
+                        \vec{K}^+) - \vec{u}(\vec{\theta}, \vec{K}^-)$
                     </li>
                     <li style="list-style: none; margin-top: 0.5em">
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         &RightArrow; Compute the delta kicks ($\Delta\vec{\theta} =
-                        -\mathbf{R}^{-1}\vec{\xi})$ and apply
+                        -\mathbf{J}^\dagger\vec{\xi})$ and apply
                     </li>
                     <li style="list-style: none; margin-top: 0.5em">
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -1007,6 +1017,9 @@
                 </p>
                 <img src="images/png/pbba-day13-10-25-selgp.png" height="500px" width="auto"
                     style="margin: 0; padding: 0;" />
+
+                <p style="margin-top: 0em">&RightArrow; BBA execution time: &sim;8 minutes (&sim;2min/BPM)</p>
+                <p style="margin-top: 0em">&RightArrow; PBBA execution time: 1 minute (&sim;1min/group)</p>
             </section>
 
             <section data-transition="fade-in fade-out">
@@ -1024,7 +1037,7 @@
                     &bullet; Dec 8, 2025
                 </p>
                 <img src="images/png/PBBA-day8-12-25_Gdefs-new.png" height="500px" width="auto" />
-
+                <p style="margin-top: 0em">&RightArrow; PBBA execution time: &sim;4 minutes (&sim;1min/group)</p>
             </section>
 
             <section data-transition="fade-in fade-out">
@@ -1044,13 +1057,14 @@
                 </p>
                 <img src="images/png/PBBA-day12-01-26_MultiG-new.png" height="500px" width="auto" />
                 <img src="images/png/PBBA-day12-01-26_diff-new.png" height="500px" width="auto" />
+                <p style="margin-top: 0em">&RightArrow; PBBA execution time: &sim;4 min for 4&times;40, 8&ndash;10 min for 8&times;20, &sim;15 min for 16&times;10<br> (&sim;1min/group)</p>
             </section>
 
             <section data-transition="fade-in slide-out">
                 <h2>Parallel BBA: Partial Conclusion</h2>
                 <ul style="margin-top: 2em; list-style: none;">
-                    <li>&CirclePlus; High speed &mdash; the execution time is 45&dash;90 times
-                        faster (6 hours to 4&dash;8 minutes)</li>
+                    <li>&CirclePlus; High speed &mdash; the execution time is 25&ndash;90 times
+                        faster (6 hours to 4&ndash;15 minutes)</li>
                     <li>&CirclePlus; Accuracy &mdash; comparisons with Standard BBA show differences
                         of a few microns </li>
                     <li>&CirclePlus; Repeatability &mdash; PBBA runs under the same configuration
