@@ -106,10 +106,10 @@ scene.add(arrowVel);
 let prevPos = null;
 
 function fx(t) {
-    return 0.07 * Math.cos(9 * t);
+    return 0.15 * Math.cos(9 * t);
 }
 function fy(t) {
-    return 0.1 * Math.cos(4 * t);
+    return 0.2 * Math.cos(5 * t);
 }
 
 let e_traj = [];
@@ -167,7 +167,7 @@ function updateFrame(delta, theta) {
     dirx_update.normalize();
     arrowX.setDirection(dirx_update);
     arrowX.setLength(1);
-    x_text.position.set(x + 1.3 * dirx_update.x, -0.75, y + 1.3 * dirx_update.z);
+    x_text.position.set(x + 1.3 * dirx_update.x, -0.7, y + 1.3 * dirx_update.z);
     labelR.position.set(0.8 * dirx_update.x, -1.0, 0.8 * dirx_update.z);
 
     arrowR.position.set(0, 0, 0);
@@ -179,13 +179,13 @@ function updateFrame(delta, theta) {
     dir.normalize();
     arrowS.setDirection(dir);
     arrowS.setLength(1);
-    s_text.position.set(x + 1.3 * dir.x, -0.75, y + 1.3 * dir.z);
+    s_text.position.set(x + 1.3 * dir.x, -0.7, y + 1.3 * dir.z);
 
     arrowY.position.set(x, 0, y);
     var dirY = new THREE.Vector3(0, 1, 0);
     arrowY.setDirection(dirY);
     arrowY.setLength(1);
-    y_text.position.set(x, 0.5, y);
+    y_text.position.set(x, 0.55, y);
 
     electron.position.set(
         x + fx(t) * dirx_update.x,

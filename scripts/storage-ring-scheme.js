@@ -285,7 +285,7 @@ for (let i = 0; i < n; i++) {
 const orbit = new THREE.CatmullRomCurve3(orbit_pts);
 
 const eletron = new THREE.Mesh(
-    new THREE.SphereGeometry(0.012, 16, 16),
+    new THREE.SphereGeometry(0.02, 16, 16),
     new THREE.MeshBasicMaterial({ color: 'red' })
 );
 scene.add(eletron);

@@ -127,7 +127,7 @@ const beamlabel = createText("#bba-label-beam", "red");
 scene.add(bpmlabel, zerolabel, quadlabel, K0label, Kplabel, Kmlabel, beamlabel);
 
 bpmlabel.position.set(xshift - 4, 4.5, 0);
-zerolabel.position.set(xshift - 4.7, -2.5, 0);
+zerolabel.position.set(xshift - 4.7, -2.4, 0);
 quadlabel.position.set(xshift + 0, 3.5, 0);
 
 const points = [
